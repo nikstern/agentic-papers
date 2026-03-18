@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Graph-based Agent Memory: Taxonomy, Techniques, and Applications",
+    "url": "https://arxiv.org/abs/2602.05665",
+    "year": 2026,
+    "authors": "Yang et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "survey"
+  },
+  {
+    "title": "AI Agent Systems: Architectures, Applications, and Evaluation",
+    "url": "https://arxiv.org/abs/2601.01743",
+    "year": 2026,
+    "authors": "Xu et al.",
+    "candidate_topic": "llm-multi-agent-systems",
+    "paper_type": "survey"
+  },
+  {
+    "title": "A Survey on Agent-as-a-Judge",
+    "url": "https://arxiv.org/abs/2601.05111",
+    "year": 2026,
+    "authors": "You et al.",
+    "candidate_topic": "agent-evaluation",
+    "paper_type": "survey"
+  },
+  {
+    "title": "Toward Efficient Agents: A Survey of Memory, Tool learning, and Planning",
+    "url": "https://arxiv.org/abs/2601.14192",
+    "year": 2026,
+    "authors": "Yang et al.",
+    "candidate_topic": "llm-multi-agent-systems",
+    "paper_type": "survey"
+  },
+  {
+    "title": "A Survey of Self-Evolving Agents: What, When, How, and Where to Evolve on the Path to Artificial Super Intelligence",
+    "url": "https://arxiv.org/abs/2507.21046",
+    "year": 2025,
+    "authors": "Xu et al.",
+    "candidate_topic": "llm-multi-agent-systems",
+    "paper_type": "survey"
+  },
+  {
+    "title": "Memory for Autonomous LLM Agents: Mechanisms, Evaluation, and Emerging Frontiers",
+    "url": "https://arxiv.org/abs/2603.07670",
+    "year": 2026,
+    "authors": "Du",
+    "candidate_topic": "memory-context",
+    "paper_type": "survey"
+  }
+]

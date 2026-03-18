@@ -1,0 +1,58 @@
+[
+  {
+    "title": "A-MEM: Agentic Memory for LLM Agents",
+    "url": "https://arxiv.org/abs/2502.12110",
+    "year": 2025,
+    "authors": "Xu et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "system"
+  },
+  {
+    "title": "A Survey on the Memory Mechanism of Large Language Model based Agents",
+    "url": "https://arxiv.org/abs/2404.13501",
+    "year": 2024,
+    "authors": "Zhang et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "survey"
+  },
+  {
+    "title": "Rethinking Memory in LLM based Agents: Representations, Operations, and Emerging Topics",
+    "url": "https://arxiv.org/abs/2505.00675",
+    "year": 2025,
+    "authors": "Du et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "survey"
+  },
+  {
+    "title": "Position: Episodic Memory is the Missing Piece for Long-Term LLM Agents",
+    "url": "https://arxiv.org/abs/2502.06975",
+    "year": 2025,
+    "authors": "Pink et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "position"
+  },
+  {
+    "title": "How Memory Management Impacts LLM Agents: An Empirical Study of Experience-Following Behavior",
+    "url": "https://arxiv.org/abs/2505.16067",
+    "year": 2025,
+    "authors": "Xiong et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "application"
+  },
+  {
+    "title": "Memory in the Age of AI Agents",
+    "url": "https://arxiv.org/abs/2512.13564",
+    "year": 2025,
+    "authors": "Hu et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "survey"
+  },
+  {
+    "title": "Graph-based Agent Memory: Taxonomy, Techniques, and Applications",
+    "url": "https://arxiv.org/abs/2602.05665",
+    "year": 2026,
+    "authors": "Yang et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "survey"
+  }
+]

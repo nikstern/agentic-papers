@@ -1,0 +1,29 @@
+{
+  "paper_id": "26",
+  "summary": "This survey focuses on the efficiency of LLM-based agents, organizing the field around memory, tool learning, and planning while treating agent performance as a Pareto trade-off between effectiveness and resource cost.",
+  "why_it_matters": "It gives the vault a systems-oriented view of efficient agents and is especially relevant if you care about deployability, context growth, latency, and token cost.",
+  "method_setup": "The paper reviews efficiency techniques across memory construction and access, tool selection and invocation, and single-agent and multi-agent planning, then summarizes common metrics and benchmark practices for efficiency-aware evaluation.",
+  "key_claims": [
+    "Agent efficiency should be analyzed at the system level rather than only at the base-model level.",
+    "Memory, tool use, and planning are the dominant sources of agent inefficiency and require different optimization strategies.",
+    "A useful notion of efficient agents is performance under explicit cost and latency constraints, not raw task success alone."
+  ],
+  "limitations": [
+    "The survey emphasizes taxonomy and synthesis more than direct head-to-head empirical validation.",
+    "It highlights the lack of unified evaluation standards, so many efficiency comparisons remain difficult to normalize across papers."
+  ],
+  "evaluates": [
+    "efficient agent design",
+    "memory efficiency",
+    "tool-learning efficiency",
+    "planning efficiency"
+  ],
+  "builds_on_unresolved": [
+    "MemGPT",
+    "Voyager"
+  ],
+  "compares_to_unresolved": [
+    "A Survey on the Memory Mechanism of Large Language Model based Agents",
+    "Rethinking Memory in LLM based Agents: Representations, Operations, and Emerging Topics"
+  ]
+}

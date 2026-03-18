@@ -1,0 +1,58 @@
+[
+  {
+    "title": "INMS: Memory Sharing for Large Language Model based Agents",
+    "url": "https://arxiv.org/abs/2404.09982",
+    "year": 2024,
+    "authors": "Gao and Zhang",
+    "candidate_topic": "memory-context",
+    "paper_type": "system"
+  },
+  {
+    "title": "G-Memory: Tracing Hierarchical Memory for Multi-Agent Systems",
+    "url": "https://arxiv.org/abs/2506.07398",
+    "year": 2025,
+    "authors": "Zhang et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "system"
+  },
+  {
+    "title": "Collaborative Memory: Multi-User Memory Sharing in LLM Agents with Dynamic Access Control",
+    "url": "https://arxiv.org/abs/2505.18279",
+    "year": 2025,
+    "authors": "Rezazadeh et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "system"
+  },
+  {
+    "title": "Intrinsic Memory Agents: Heterogeneous Multi-Agent LLM Systems through Structured Contextual Memory",
+    "url": "https://arxiv.org/abs/2508.08997",
+    "year": 2025,
+    "authors": "Yuen et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "system"
+  },
+  {
+    "title": "Enhancing Reasoning with Collaboration and Memory",
+    "url": "https://arxiv.org/abs/2503.05944",
+    "year": 2025,
+    "authors": "Michelman et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "system"
+  },
+  {
+    "title": "Multi-Agent Memory from a Computer Architecture Perspective: Visions and Challenges Ahead",
+    "url": "https://arxiv.org/abs/2603.10062",
+    "year": 2026,
+    "authors": "Yu et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "position"
+  },
+  {
+    "title": "Exploring Advanced LLM Multi-Agent Systems Based on Blackboard Architecture",
+    "url": "https://arxiv.org/abs/2507.01701",
+    "year": 2025,
+    "authors": "Han and Zhang",
+    "candidate_topic": "llm-multi-agent-systems",
+    "paper_type": "system"
+  }
+]

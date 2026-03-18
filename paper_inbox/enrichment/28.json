@@ -1,0 +1,38 @@
+{
+  "paper_id": "28",
+  "summary": "This survey studies memory as the central module that turns stateless LLMs into adaptive agents, proposing a structured taxonomy for temporal scope, representational substrate, control policy, and evaluation.",
+  "why_it_matters": "It is one of the strongest new memory overviews for the vault because it connects design mechanisms, engineering trade-offs, and agent-level evaluation in one place.",
+  "method_setup": "The paper formalizes memory in the agent loop, surveys context-resident memory, retrieval-augmented memory, reflective memory, hierarchical memory, and learned memory control, and reviews recent memory benchmarks and deployment concerns.",
+  "key_claims": [
+    "Memory should be treated as a first-class systems module rather than as a minor add-on to prompting.",
+    "Long context alone is not a substitute for explicit memory design and retrieval control.",
+    "Agent memory should be evaluated through downstream agent performance, efficiency, and governance, not only retrieval quality."
+  ],
+  "limitations": [
+    "As a survey, it organizes and interprets the field but does not directly validate a new memory architecture.",
+    "The paper also notes that memory evaluation remains fragmented and that standardized cross-paper comparisons are still immature."
+  ],
+  "evaluates": [
+    "agent memory mechanisms",
+    "memory evaluation",
+    "memory engineering trade-offs"
+  ],
+  "builds_on_unresolved": [
+    "ReAct",
+    "Reflexion",
+    "Generative Agents",
+    "Memory Networks",
+    "Neural Turing Machines",
+    "Differentiable Neural Computers",
+    "RAG",
+    "RETRO",
+    "Voyager"
+  ],
+  "compares_to_unresolved": [
+    "MemBench",
+    "MemoryAgentBench",
+    "MemoryArena",
+    "LoCoMo",
+    "Agentic Memory"
+  ]
+}

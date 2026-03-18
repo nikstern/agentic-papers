@@ -1,0 +1,109 @@
+[
+  {
+    "paper_id": 17,
+    "summary": "INMS proposes a shared memory framework for LLM-based agents where agents generate, evaluate, retrieve, and reuse high-quality prompt-answer memories to improve collective performance on open-ended tasks.",
+    "why_it_matters": "It is the most directly relevant systems paper in the vault for shared memory across LLM agents and collective enhancement.",
+    "method_setup": "The framework stores high-quality prompt-answer pairs in a shared memory pool, retrieves them with a continuously trained dense retriever, and evaluates performance across literary creation, unconventional logic, and plan generation domains.",
+    "key_claims": [
+      "Shared memory among agents improves performance on open-ended tasks.",
+      "Three-shot retrieval from the shared memory pool often works best.",
+      "The framework can help open-source models outperform stronger zero-shot closed models in some settings."
+    ],
+    "limitations": [
+      "The evaluation focuses on a few synthetic or curated domains rather than broad real-world deployments.",
+      "Benefits are strongest when memories are domain-relevant rather than drawn from a single global pool."
+    ],
+    "evaluates": [
+      "open-ended question answering",
+      "shared memory for multi-agent learning"
+    ],
+    "builds_on_unresolved": [
+      "MemGPT: Towards LLMs as Operating Systems"
+    ],
+    "compares_to_unresolved": [
+      "Retrieval-Augmented Generation",
+      "MemoryBank"
+    ]
+  },
+  {
+    "paper_id": 18,
+    "summary": "G-Memory introduces a hierarchical memory architecture for multi-agent systems with interaction graphs, query graphs, and insight graphs to support self-evolving collaboration over time.",
+    "why_it_matters": "It is a high-value anchor for shared multi-agent memory because it explicitly treats memory as a hierarchical, MAS-specific substrate rather than a single-agent add-on.",
+    "method_setup": "G-Memory retrieves relevant historical queries, traverses upward to abstract insights and downward to condensed interaction traces, then updates the memory hierarchy after each task; it is evaluated across multiple multi-agent frameworks and task domains.",
+    "key_claims": [
+      "Hierarchical memory improves multi-agent performance across reasoning, embodied action, and game tasks.",
+      "Both high-level insight memory and fine-grained interaction memory matter.",
+      "The design improves results without excessive token overhead compared with alternative memory designs."
+    ],
+    "limitations": [
+      "The paper still evaluates in benchmark settings rather than large enterprise deployments.",
+      "Safety and robustness concerns remain if the underlying models or memories are compromised."
+    ],
+    "evaluates": [
+      "multi-agent reasoning",
+      "embodied action",
+      "game tasks"
+    ],
+    "builds_on_unresolved": [
+      "MemoryBank",
+      "Generative Agents",
+      "Voyager"
+    ],
+    "compares_to_unresolved": [
+      "MetaGPT",
+      "ChatDev"
+    ]
+  },
+  {
+    "paper_id": 19,
+    "summary": "Collaborative Memory proposes a multi-user, multi-agent memory framework with private and shared memory tiers governed by dynamic access control, enabling secure memory sharing under changing permissions.",
+    "why_it_matters": "It extends shared-memory design toward enterprise-grade constraints by making access control and provenance central to the memory substrate.",
+    "method_setup": "The framework uses dynamic user-agent and agent-resource access graphs, read and write policies, and provenance-aware memory fragments; it is evaluated in collaborative scenarios with unrestricted, asymmetric, and evolving access permissions.",
+    "key_claims": [
+      "Controlled memory sharing reduces redundant retrieval and external calls without harming accuracy.",
+      "The system can adapt to changing permissions while preserving strict access boundaries.",
+      "Provable auditability and policy-aware sharing are feasible within a collaborative memory substrate."
+    ],
+    "limitations": [
+      "The evaluation is based on controlled or synthetic scenarios rather than a live enterprise environment.",
+      "The framework still depends on LLM components that may hallucinate or mishandle policy edge cases."
+    ],
+    "evaluates": [
+      "multi-user collaborative memory",
+      "dynamic access-controlled sharing"
+    ],
+    "builds_on_unresolved": [
+      "MemGPT: Towards LLMs as Operating Systems"
+    ],
+    "compares_to_unresolved": [
+      "Memory Sharing for Large Language Model based Agents",
+      "MemTree"
+    ]
+  },
+  {
+    "paper_id": 20,
+    "summary": "Intrinsic Memory Agents equips each agent in a multi-agent LLM system with its own structured, role-specific memory that is updated from its own outputs to preserve perspective and procedural consistency.",
+    "why_it_matters": "It is a strong systems paper for heterogeneous shared-memory settings because it argues against homogeneous memory and shows the value of structured contextual memory per agent.",
+    "method_setup": "The method defines role-specific JSON memory templates, injects those memories into agent context, and updates memory after each turn based on the agent's own output; it is evaluated on PDDL planning and a collaborative data-pipeline design task.",
+    "key_claims": [
+      "Agent-specific structured memory improves collaborative task quality.",
+      "The approach reduces role drift and preserves procedural coherence.",
+      "Higher-quality outputs are achieved without needing more conversation turns."
+    ],
+    "limitations": [
+      "Memory templates are manually specified, which limits adaptability.",
+      "The approach uses more tokens per conversation than simpler baselines."
+    ],
+    "evaluates": [
+      "structured planning",
+      "collaborative system design"
+    ],
+    "builds_on_unresolved": [
+      "MemGPT: Towards LLMs as Operating Systems",
+      "Retrieval-Augmented Generation"
+    ],
+    "compares_to_unresolved": [
+      "G-Memory: Tracing Hierarchical Memory for Multi-Agent Systems"
+    ]
+  }
+]

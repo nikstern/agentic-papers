@@ -1,0 +1,26 @@
+{
+  "paper_id": "8",
+  "summary": "A-MEM is a memory system for LLM agents that dynamically organizes notes, links related memories, and evolves existing memory entries over time.",
+  "why_it_matters": "It is a strong systems anchor for agentic memory because it moves beyond static storage and retrieval toward adaptive memory organization.",
+  "method_setup": "The system constructs structured notes, retrieves top-k related memories, uses LLMs to generate links, and updates prior memories through memory evolution; the paper evaluates this on long-term conversational tasks such as LoCoMo and DialSim against memory baselines.",
+  "key_claims": [
+    "Dynamic linking and memory evolution improve long-term agent performance.",
+    "A-MEM outperforms memory baselines especially on multi-hop reasoning tasks.",
+    "The architecture reduces token usage substantially relative to some baselines."
+  ],
+  "limitations": [
+    "The evaluation is concentrated on conversational long-term memory settings.",
+    "The paper leaves multimodal memory and broader open-world deployment as future work."
+  ],
+  "evaluates": [
+    "long-term conversational memory",
+    "multi-hop reasoning"
+  ],
+  "builds_on_unresolved": [],
+  "compares_to_unresolved": [
+    "MemGPT",
+    "MemoryBank",
+    "ReadAgent",
+    "LoCoMo"
+  ]
+}

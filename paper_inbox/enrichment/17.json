@@ -1,0 +1,26 @@
+{
+  "paper_id": "17",
+  "summary": "INMS proposes a shared memory framework for LLM-based agents where agents generate, evaluate, retrieve, and reuse high-quality prompt-answer memories to improve collective performance on open-ended tasks.",
+  "why_it_matters": "It is the most directly relevant systems paper in the vault for shared memory across LLM agents and collective enhancement.",
+  "method_setup": "The framework stores high-quality prompt-answer pairs in a shared memory pool, retrieves them with a continuously trained dense retriever, and evaluates performance across literary creation, unconventional logic, and plan generation domains.",
+  "key_claims": [
+    "Shared memory among agents improves performance on open-ended tasks.",
+    "Three-shot retrieval from the shared memory pool often works best.",
+    "The framework can help open-source models outperform stronger zero-shot closed models in some settings."
+  ],
+  "limitations": [
+    "The evaluation focuses on a few synthetic or curated domains rather than broad real-world deployments.",
+    "Benefits are strongest when memories are domain-relevant rather than drawn from a single global pool."
+  ],
+  "evaluates": [
+    "open-ended question answering",
+    "shared memory for multi-agent learning"
+  ],
+  "builds_on_unresolved": [
+    "MemGPT: Towards LLMs as Operating Systems"
+  ],
+  "compares_to_unresolved": [
+    "Retrieval-Augmented Generation",
+    "MemoryBank"
+  ]
+}

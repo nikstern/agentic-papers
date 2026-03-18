@@ -1,0 +1,18 @@
+[
+  {
+    "title": "MultiAgentBench: Evaluating the Collaboration and Competition of LLM Agents",
+    "url": "https://arxiv.org/abs/2503.01935",
+    "year": 2025,
+    "authors": "Zhu et al.",
+    "candidate_topic": "agent-evaluation",
+    "paper_type": "benchmark"
+  },
+  {
+    "title": "MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework",
+    "url": "https://arxiv.org/abs/2308.00352",
+    "year": 2023,
+    "authors": "Hong et al.",
+    "candidate_topic": "llm-multi-agent-systems",
+    "paper_type": "system"
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "paper_id": "18",
+  "summary": "G-Memory introduces a hierarchical memory architecture for multi-agent systems with interaction graphs, query graphs, and insight graphs to support self-evolving collaboration over time.",
+  "why_it_matters": "It is a high-value anchor for shared multi-agent memory because it explicitly treats memory as a hierarchical, MAS-specific substrate rather than a single-agent add-on.",
+  "method_setup": "G-Memory retrieves relevant historical queries, traverses upward to abstract insights and downward to condensed interaction traces, then updates the memory hierarchy after each task; it is evaluated across multiple multi-agent frameworks and task domains.",
+  "key_claims": [
+    "Hierarchical memory improves multi-agent performance across reasoning, embodied action, and game tasks.",
+    "Both high-level insight memory and fine-grained interaction memory matter.",
+    "The design improves results without excessive token overhead compared with alternative memory designs."
+  ],
+  "limitations": [
+    "The paper still evaluates in benchmark settings rather than large enterprise deployments.",
+    "Safety and robustness concerns remain if the underlying models or memories are compromised."
+  ],
+  "evaluates": [
+    "multi-agent reasoning",
+    "embodied action",
+    "game tasks"
+  ],
+  "builds_on_unresolved": [
+    "MemoryBank",
+    "Generative Agents",
+    "Voyager"
+  ],
+  "compares_to_unresolved": [
+    "MetaGPT",
+    "ChatDev"
+  ]
+}

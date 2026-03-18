@@ -1,0 +1,18 @@
+[
+  {
+    "title": "MemGPT: Towards LLMs as Operating Systems",
+    "url": "https://arxiv.org/abs/2310.08560",
+    "year": 2023,
+    "authors": "Packer et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "system"
+  },
+  {
+    "title": "A Human-Inspired Reading Agent with Gist Memory of Very Long Contexts",
+    "url": "https://arxiv.org/abs/2402.09727",
+    "year": 2024,
+    "authors": "Lee et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "system"
+  }
+]

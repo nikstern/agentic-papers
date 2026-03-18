@@ -1,0 +1,102 @@
+[
+  {
+    "paper_id": 24,
+    "summary": "This survey frames AI agents as systems that couple a foundation model with memory, tools, verifiers, and an execution loop, then organizes the field around architectures, orchestration patterns, applications, and evaluation.",
+    "why_it_matters": "It is a broad 2026 overview paper that can anchor the vault's multi-agent and agent-systems layer with a unified taxonomy and evaluation framing.",
+    "method_setup": "The paper is a survey that synthesizes agent architectures such as RAG, ReAct-style control loops, MRKL-style tool routing, critic and reflection mechanisms, search-based deliberation, and multi-agent orchestration, then proposes a multidimensional evaluation framework.",
+    "key_claims": [
+      "AI agents should be understood as systems problems, not just as stronger base models.",
+      "A useful agent taxonomy needs to cover policy cores, memory, tools, verifiers, planners, and environments together.",
+      "Agent evaluation should include task success, efficiency, tool correctness, trajectory quality, robustness, and safety rather than a single headline metric."
+    ],
+    "limitations": [
+      "It is a synthesis paper rather than an empirical benchmark or system implementation.",
+      "Its breadth is high, but that also means some subareas are treated at a higher level than specialized surveys."
+    ],
+    "evaluates": [
+      "ai agent architectures",
+      "agent evaluation frameworks",
+      "tool-use and planning systems"
+    ],
+    "builds_on_unresolved": [
+      "ReAct",
+      "MRKL",
+      "Tree of Thoughts",
+      "Toolformer"
+    ],
+    "compares_to_unresolved": [
+      "AgentBench",
+      "WebArena",
+      "ToolBench",
+      "SWE-bench",
+      "GAIA"
+    ]
+  },
+  {
+    "paper_id": 26,
+    "summary": "This survey focuses on the efficiency of LLM-based agents, organizing the field around memory, tool learning, and planning while treating agent performance as a Pareto trade-off between effectiveness and resource cost.",
+    "why_it_matters": "It gives the vault a systems-oriented view of efficient agents and is especially relevant if you care about deployability, context growth, latency, and token cost.",
+    "method_setup": "The paper reviews efficiency techniques across memory construction and access, tool selection and invocation, and single-agent and multi-agent planning, then summarizes common metrics and benchmark practices for efficiency-aware evaluation.",
+    "key_claims": [
+      "Agent efficiency should be analyzed at the system level rather than only at the base-model level.",
+      "Memory, tool use, and planning are the dominant sources of agent inefficiency and require different optimization strategies.",
+      "A useful notion of efficient agents is performance under explicit cost and latency constraints, not raw task success alone."
+    ],
+    "limitations": [
+      "The survey emphasizes taxonomy and synthesis more than direct head-to-head empirical validation.",
+      "It highlights the lack of unified evaluation standards, so many efficiency comparisons remain difficult to normalize across papers."
+    ],
+    "evaluates": [
+      "efficient agent design",
+      "memory efficiency",
+      "tool-learning efficiency",
+      "planning efficiency"
+    ],
+    "builds_on_unresolved": [
+      "MemGPT",
+      "Voyager"
+    ],
+    "compares_to_unresolved": [
+      "A Survey on the Memory Mechanism of Large Language Model based Agents",
+      "Rethinking Memory in LLM based Agents: Representations, Operations, and Emerging Topics"
+    ]
+  },
+  {
+    "paper_id": 28,
+    "summary": "This survey studies memory as the central module that turns stateless LLMs into adaptive agents, proposing a structured taxonomy for temporal scope, representational substrate, control policy, and evaluation.",
+    "why_it_matters": "It is one of the strongest new memory overviews for the vault because it connects design mechanisms, engineering trade-offs, and agent-level evaluation in one place.",
+    "method_setup": "The paper formalizes memory in the agent loop, surveys context-resident memory, retrieval-augmented memory, reflective memory, hierarchical memory, and learned memory control, and reviews recent memory benchmarks and deployment concerns.",
+    "key_claims": [
+      "Memory should be treated as a first-class systems module rather than as a minor add-on to prompting.",
+      "Long context alone is not a substitute for explicit memory design and retrieval control.",
+      "Agent memory should be evaluated through downstream agent performance, efficiency, and governance, not only retrieval quality."
+    ],
+    "limitations": [
+      "As a survey, it organizes and interprets the field but does not directly validate a new memory architecture.",
+      "The paper also notes that memory evaluation remains fragmented and that standardized cross-paper comparisons are still immature."
+    ],
+    "evaluates": [
+      "agent memory mechanisms",
+      "memory evaluation",
+      "memory engineering trade-offs"
+    ],
+    "builds_on_unresolved": [
+      "ReAct",
+      "Reflexion",
+      "Generative Agents",
+      "Memory Networks",
+      "Neural Turing Machines",
+      "Differentiable Neural Computers",
+      "RAG",
+      "RETRO",
+      "Voyager"
+    ],
+    "compares_to_unresolved": [
+      "MemBench",
+      "MemoryAgentBench",
+      "MemoryArena",
+      "LoCoMo",
+      "Agentic Memory"
+    ]
+  }
+]

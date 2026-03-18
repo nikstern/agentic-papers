@@ -1,0 +1,10 @@
+.DS_Store
+__pycache__/
+*.pyc
+
+# Local editor state
+.obsidian/workspace.json
+
+# Generated workflow artifacts
+paper_inbox/last_import.json
+paper_inbox/approved_for_enrichment.json
