@@ -8,6 +8,7 @@ paper_type: "position"
 primary_topic: "task-allocation"
 secondary_topics: []
 status: "ingested"
+enrichment_status: "pending"
 tags:
   - "papers"
   - "task-allocation"

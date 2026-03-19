@@ -23,8 +23,12 @@ Each import also writes `last_import.json`, which records the exact assigned
 
 ## Enrichment Import
 
-After approved papers are analyzed with `answer_pdf_queries`, save the results as
-a JSON array matching `enrichment.example.json`, then import them with:
+Approved papers should enter the vault immediately. Enrichment then runs as a
+second phase and rerenders notes after the fact.
+
+After approved papers are analyzed with `answer_pdf_queries` or, when needed,
+`get_paper_content`, save the results as a JSON array matching
+`enrichment.example.json`, then import them with:
 
 ```bash
 make import-enrichment FILE=paper_inbox/enrichment.example.json
@@ -40,7 +44,8 @@ make export-enrichment-input
 ```
 
 This writes `approved_for_enrichment.json` with the paper IDs, URLs, and fixed
-query set to use with `answer_pdf_queries`.
+query set to use for background enrichment. Only papers with active reading
+state and `enrichment_status = pending` are exported.
 
 ## Note Schema
 
@@ -62,6 +67,7 @@ Notes keep only flat, Obsidian-safe properties in frontmatter.
 - `source`
 - `paper_type`
 - `status`
+- `enrichment_status`
 
 ## Allowed `candidate_topic`
 
@@ -91,6 +97,12 @@ Notes keep only flat, Obsidian-safe properties in frontmatter.
 - `cited`
 - `discarded`
 
+## Allowed `enrichment_status`
+
+- `pending`
+- `enriched`
+- `failed`
+
 ## Rules
 
 1. One paper per CSV row.
@@ -100,5 +112,11 @@ Notes keep only flat, Obsidian-safe properties in frontmatter.
 5. Title and URL duplicates are rejected by the scripts.
 6. Search results should enter as `candidate`.
 7. Only `approved` papers are ingested into notes.
-8. The ingestion script only accepts the controlled vocabularies above.
-9. Topic links are derived from `candidate_topic`, not handwritten per note.
+8. Approved papers are ingested immediately; enrichment is a follow-up step.
+9. Every row must carry an authoritative `enrichment_status`.
+10. Enrichment should be minimal and fixed-schema by default.
+11. The preferred enrichment path is `answer_pdf_queries`, with `get_paper_content` as fallback.
+12. Successful enrichment import sets `enrichment_status = enriched`.
+13. Failed extraction attempts should be recorded as `enrichment_status = failed`.
+14. The ingestion script only accepts the controlled vocabularies above.
+15. Topic links are derived from `candidate_topic`, not handwritten per note.

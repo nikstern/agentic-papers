@@ -8,7 +8,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 INBOX = ROOT / "paper_inbox" / "papers.csv"
 OUTPUT = ROOT / "paper_inbox" / "approved_for_enrichment.json"
-ACTIVE_FOR_ENRICHMENT = {"approved", "ingested", "skimmed", "deep_read", "cited"}
+ACTIVE_FOR_ENRICHMENT = {"ingested", "skimmed", "deep_read", "cited"}
+PENDING_ENRICHMENT = "pending"
 QUERY_SET = [
     "What is the main contribution of this paper in 1-2 sentences?",
     "Which paper type best fits this paper: survey, benchmark, system, position, or application?",
@@ -34,6 +35,7 @@ def main() -> None:
             }
             for row in rows
             if row["status"] in ACTIVE_FOR_ENRICHMENT
+            and row["enrichment_status"] == PENDING_ENRICHMENT
         ],
     }
 

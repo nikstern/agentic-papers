@@ -9,6 +9,18 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 INBOX = ROOT / "paper_inbox" / "papers.csv"
 ENRICHMENT_DIR = ROOT / "paper_inbox" / "enrichment"
+FIELDNAMES = [
+    "paper_id",
+    "title",
+    "url",
+    "year",
+    "authors",
+    "candidate_topic",
+    "source",
+    "paper_type",
+    "status",
+    "enrichment_status",
+]
 REQUIRED_FIELDS = [
     "paper_id",
     "summary",
@@ -36,7 +48,10 @@ def fail(message: str) -> None:
 
 def load_rows() -> list[dict]:
     with INBOX.open(newline="", encoding="utf-8") as handle:
-        return list(csv.DictReader(handle))
+        reader = csv.DictReader(handle)
+        if reader.fieldnames != FIELDNAMES:
+            fail("papers.csv header does not match expected schema")
+        return list(reader)
 
 
 def load_items(path: Path) -> list[dict]:
@@ -79,6 +94,7 @@ def main() -> None:
     rows = load_rows()
     known_ids = {row["paper_id"] for row in rows}
     items = load_items(input_path)
+    rows_by_id = {row["paper_id"]: row for row in rows}
 
     ENRICHMENT_DIR.mkdir(parents=True, exist_ok=True)
     for index, item in enumerate(items, start=1):
@@ -91,6 +107,12 @@ def main() -> None:
             json.dumps(payload, indent=2) + "\n",
             encoding="utf-8",
         )
+        rows_by_id[paper_id]["enrichment_status"] = "enriched"
+
+    with INBOX.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=FIELDNAMES)
+        writer.writeheader()
+        writer.writerows(rows)
 
     print(f"Imported enrichment for {len(items)} papers.")
 

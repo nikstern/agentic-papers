@@ -8,6 +8,7 @@ paper_type: "survey"
 primary_topic: "memory-context"
 secondary_topics: []
 status: "ingested"
+enrichment_status: "enriched"
 tags:
   - "papers"
   - "memory-context"

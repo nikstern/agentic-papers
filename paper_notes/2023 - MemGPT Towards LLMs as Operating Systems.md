@@ -8,6 +8,7 @@ paper_type: "system"
 primary_topic: "memory-context"
 secondary_topics: []
 status: "ingested"
+enrichment_status: "pending"
 tags:
   - "papers"
   - "memory-context"

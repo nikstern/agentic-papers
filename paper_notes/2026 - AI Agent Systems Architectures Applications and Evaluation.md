@@ -8,6 +8,7 @@ paper_type: "survey"
 primary_topic: "llm-multi-agent-systems"
 secondary_topics: []
 status: "ingested"
+enrichment_status: "enriched"
 tags:
   - "papers"
   - "llm-multi-agent-systems"

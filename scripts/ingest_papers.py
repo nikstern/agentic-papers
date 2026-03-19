@@ -23,6 +23,7 @@ REQUIRED_COLUMNS = [
     "source",
     "paper_type",
     "status",
+    "enrichment_status",
 ]
 
 ALLOWED_TOPICS = {
@@ -45,6 +46,7 @@ ALLOWED_STATUS = {
     "cited",
     "discarded",
 }
+ALLOWED_ENRICHMENT_STATUS = {"pending", "enriched", "failed"}
 ACTIVE_NOTE_STATUS = {"approved", "ingested", "skimmed", "deep_read", "cited"}
 ENRICHMENT_KEYS = {
     "summary": "",
@@ -116,6 +118,10 @@ def load_enrichment(paper_id: str) -> dict:
     return data
 
 
+def has_enrichment_file(paper_id: str) -> bool:
+    return (ENRICHMENT_DIR / f"{paper_id}.json").exists()
+
+
 def resolve_relations(
     unresolved_titles: list[str],
     title_index: dict[str, str],
@@ -166,6 +172,7 @@ paper_type: {yaml_string(row["paper_type"])}
 primary_topic: {yaml_string(row["candidate_topic"])}
 secondary_topics: []
 status: {yaml_string(row["status"])}
+enrichment_status: {yaml_string(row["enrichment_status"])}
 tags:
   - "papers"
   - {yaml_string(row["candidate_topic"])}
@@ -208,6 +215,11 @@ def validate_row(row_num: int, row: dict) -> None:
         fail(f"row {row_num}: invalid paper_type '{row['paper_type']}'")
     if row["status"] not in ALLOWED_STATUS:
         fail(f"row {row_num}: invalid status '{row['status']}'")
+    if row["enrichment_status"] not in ALLOWED_ENRICHMENT_STATUS:
+        fail(
+            f"row {row_num}: invalid enrichment_status "
+            f"'{row['enrichment_status']}'"
+        )
     if not row["paper_id"].isdigit():
         fail(f"row {row_num}: paper_id must be numeric")
     if not row["year"].isdigit() or len(row["year"]) != 4:
@@ -293,6 +305,8 @@ def main() -> None:
         if row["status"] == "approved":
             row["status"] = "ingested"
             newly_ingested_count += 1
+        if not has_enrichment_file(row["paper_id"]) and row["enrichment_status"] != "failed":
+            row["enrichment_status"] = "pending"
         filename = note_name(row["year"], row["title"])
         path = NOTES_DIR / filename
         path.write_text(render_note(row, title_index), encoding="utf-8")

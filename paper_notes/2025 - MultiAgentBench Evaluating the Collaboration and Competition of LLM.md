@@ -8,6 +8,7 @@ paper_type: "benchmark"
 primary_topic: "agent-evaluation"
 secondary_topics: []
 status: "ingested"
+enrichment_status: "pending"
 tags:
   - "papers"
   - "agent-evaluation"

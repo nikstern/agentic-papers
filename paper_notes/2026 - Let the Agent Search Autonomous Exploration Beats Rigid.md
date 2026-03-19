@@ -8,6 +8,7 @@ paper_type: "system"
 primary_topic: "search-retrieval"
 secondary_topics: []
 status: "ingested"
+enrichment_status: "pending"
 tags:
   - "papers"
   - "search-retrieval"

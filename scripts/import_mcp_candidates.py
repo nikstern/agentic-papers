@@ -20,6 +20,7 @@ FIELDNAMES = [
     "source",
     "paper_type",
     "status",
+    "enrichment_status",
 ]
 REQUIRED_INPUT_FIELDS = [
     "title",
@@ -130,6 +131,7 @@ def main() -> None:
             "source": "alphaxiv-mcp",
             "paper_type": str(item["paper_type"]).strip(),
             "status": "candidate",
+            "enrichment_status": "pending",
         }
         existing_rows.append(
             row
