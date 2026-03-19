@@ -3,6 +3,7 @@ __pycache__/
 *.pyc
 
 # Local editor state
+.obsidian/graph.json
 .obsidian/workspace.json
 
 # Generated workflow artifacts
