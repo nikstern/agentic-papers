@@ -8,6 +8,8 @@ paper_type: "system"
 primary_topic: "memory-context"
 secondary_topics: []
 status: "ingested"
+priority: "0"
+last_read: ""
 enrichment_status: "enriched"
 tags:
   - "papers"
@@ -27,7 +29,7 @@ compares_to_unresolved:
 relations: []
 source: "alphaxiv-mcp"
 ---
-
+<!-- GENERATED:START -->
 # Summary
 Buffer of Thoughts equips LLMs with a meta-buffer of distilled thought templates that can be retrieved and adapted for new reasoning problems.
 
@@ -55,3 +57,7 @@ The framework distills high-level thought templates from solved problems, stores
 - `builds_on_unresolved` Tree of Thoughts
 - `compares_to_unresolved` Graph of Thoughts
 - `compares_to_unresolved` Meta Prompting
+<!-- GENERATED:END -->
+
+## My Notes
+

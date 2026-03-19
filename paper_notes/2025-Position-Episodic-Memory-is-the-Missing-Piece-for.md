@@ -8,6 +8,8 @@ paper_type: "position"
 primary_topic: "memory-context"
 secondary_topics: []
 status: "ingested"
+priority: "0"
+last_read: ""
 enrichment_status: "enriched"
 tags:
   - "papers"
@@ -25,7 +27,7 @@ compares_to_unresolved: []
 relations: []
 source: "alphaxiv-mcp"
 ---
-
+<!-- GENERATED:START -->
 # Summary
 This position paper argues that episodic memory is the missing component for long-term LLM agents because it supports instance-specific, contextual, and single-shot learning that existing memory approaches only partially capture.
 
@@ -51,3 +53,7 @@ The paper operationalizes episodic memory through properties such as long-term s
 - `evaluates` long-term agent design
 - `builds_on` [[2023-MemGPT-Towards-LLMs-as-Operating-Systems]]
 - `builds_on_unresolved` Complementary Learning Systems Theory
+<!-- GENERATED:END -->
+
+## My Notes
+

@@ -8,6 +8,8 @@ paper_type: "application"
 primary_topic: "task-allocation"
 secondary_topics: []
 status: "ingested"
+priority: "0"
+last_read: ""
 enrichment_status: "enriched"
 tags:
   - "papers"
@@ -24,7 +26,7 @@ compares_to_unresolved: []
 relations: []
 source: "alphaxiv-mcp"
 ---
-
+<!-- GENERATED:START -->
 # Summary
 Chain-of-Symbol prompting replaces verbose natural-language reasoning traces with compact symbolic intermediate representations, especially for structured spatial reasoning tasks.
 
@@ -49,3 +51,7 @@ The paper converts chain-of-thought examples into symbolic forms for spatial pla
 - `evaluates` planning with symbolic traces
 - `evaluates` prompt efficiency
 - `builds_on_unresolved` Chain-of-Thought
+<!-- GENERATED:END -->
+
+## My Notes
+

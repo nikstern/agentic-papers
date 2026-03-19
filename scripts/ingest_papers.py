@@ -12,6 +12,13 @@ INBOX = ROOT / "paper_inbox" / "papers.csv"
 ENRICHMENT_DIR = ROOT / "paper_inbox" / "enrichment"
 NOTES_DIR = ROOT / "paper_notes"
 TOPICS_DIR = ROOT / "topic_maps"
+GENERATED_START = "<!-- GENERATED:START -->"
+GENERATED_END = "<!-- GENERATED:END -->"
+USER_FRONTMATTER_DEFAULTS = {
+    "priority": "0",
+    "last_read": "",
+}
+USER_OWNED_FIELDS = {"status", "priority", "last_read"}
 
 REQUIRED_COLUMNS = [
     "paper_id",
@@ -118,6 +125,57 @@ def load_enrichment(paper_id: str) -> dict:
     return data
 
 
+def parse_frontmatter(text: str) -> dict[str, str]:
+    if not text.startswith("---\n"):
+        return {}
+    parts = text.split("---\n", 2)
+    if len(parts) < 3:
+        return {}
+
+    data: dict[str, str] = {}
+    for line in parts[1].splitlines():
+        if not line or line.startswith(" ") or ":" not in line:
+            continue
+        key, value = line.split(":", 1)
+        data[key.strip()] = value.strip().strip('"')
+    return data
+
+
+def extract_user_notes(text: str) -> str:
+    if not text:
+        return ""
+    if GENERATED_END in text:
+        _, _, remainder = text.partition(GENERATED_END)
+        remainder = remainder.lstrip("\n")
+        if remainder.startswith("## My Notes"):
+            _, _, notes = remainder.partition("\n")
+            return notes.lstrip("\n").rstrip()
+        return remainder.rstrip()
+    if "\n## My Notes\n" in text:
+        _, _, notes = text.partition("\n## My Notes\n")
+        return notes.rstrip()
+    return ""
+
+
+def load_existing_note_state(path: Path, fallback_status: str) -> dict[str, str]:
+    if not path.exists():
+        return {
+            "status": fallback_status,
+            "priority": USER_FRONTMATTER_DEFAULTS["priority"],
+            "last_read": USER_FRONTMATTER_DEFAULTS["last_read"],
+            "my_notes": "",
+        }
+
+    text = path.read_text(encoding="utf-8")
+    frontmatter = parse_frontmatter(text)
+    return {
+        "status": frontmatter.get("status", fallback_status),
+        "priority": frontmatter.get("priority", USER_FRONTMATTER_DEFAULTS["priority"]),
+        "last_read": frontmatter.get("last_read", USER_FRONTMATTER_DEFAULTS["last_read"]),
+        "my_notes": extract_user_notes(text),
+    }
+
+
 def has_enrichment_file(paper_id: str) -> bool:
     return (ENRICHMENT_DIR / f"{paper_id}.json").exists()
 
@@ -137,7 +195,7 @@ def resolve_relations(
     return resolved, unresolved
 
 
-def render_note(row: dict, title_index: dict[str, str]) -> str:
+def render_note(row: dict, title_index: dict[str, str], note_state: dict[str, str]) -> str:
     topic = topic_link(row["candidate_topic"])
     enrichment = load_enrichment(row["paper_id"])
     builds_on, builds_on_unresolved = resolve_relations(
@@ -162,30 +220,7 @@ def render_note(row: dict, title_index: dict[str, str]) -> str:
     ):
         for value in values:
             connections.append(f"- `{relation_type}` {value}")
-    return f"""---
-paper_id: {row["paper_id"]}
-title: {yaml_string(row["title"])}
-year: {row["year"]}
-authors: {yaml_string(row["authors"])}
-url: {yaml_string(row["url"])}
-paper_type: {yaml_string(row["paper_type"])}
-primary_topic: {yaml_string(row["candidate_topic"])}
-secondary_topics: []
-status: {yaml_string(row["status"])}
-enrichment_status: {yaml_string(row["enrichment_status"])}
-tags:
-  - "papers"
-  - {yaml_string(row["candidate_topic"])}
-evaluates:{yaml_list_block(enrichment["evaluates"])}
-builds_on:{yaml_list_block(builds_on)}
-compares_to:{yaml_list_block(compares_to)}
-builds_on_unresolved:{yaml_list_block(builds_on_unresolved)}
-compares_to_unresolved:{yaml_list_block(compares_to_unresolved)}
-relations: []
-source: {yaml_string(row["source"])}
----
-
-# Summary
+    generated_block = f"""# Summary
 {enrichment["summary"]}
 
 # Why It Matters
@@ -201,7 +236,43 @@ source: {yaml_string(row["source"])}
 {limitations}
 
 # Connections
-{chr(10).join(connections)}
+{chr(10).join(connections)}"""
+    user_notes = note_state["my_notes"]
+    my_notes_block = "## My Notes"
+    if user_notes:
+        my_notes_block += f"\n{user_notes}"
+    else:
+        my_notes_block += "\n"
+
+    return f"""---
+paper_id: {row["paper_id"]}
+title: {yaml_string(row["title"])}
+year: {row["year"]}
+authors: {yaml_string(row["authors"])}
+url: {yaml_string(row["url"])}
+paper_type: {yaml_string(row["paper_type"])}
+primary_topic: {yaml_string(row["candidate_topic"])}
+secondary_topics: []
+status: {yaml_string(note_state["status"])}
+priority: {yaml_string(note_state["priority"])}
+last_read: {yaml_string(note_state["last_read"])}
+enrichment_status: {yaml_string(row["enrichment_status"])}
+tags:
+  - "papers"
+  - {yaml_string(row["candidate_topic"])}
+evaluates:{yaml_list_block(enrichment["evaluates"])}
+builds_on:{yaml_list_block(builds_on)}
+compares_to:{yaml_list_block(compares_to)}
+builds_on_unresolved:{yaml_list_block(builds_on_unresolved)}
+compares_to_unresolved:{yaml_list_block(compares_to_unresolved)}
+relations: []
+source: {yaml_string(row["source"])}
+---
+{GENERATED_START}
+{generated_block}
+{GENERATED_END}
+
+{my_notes_block}
 """
 
 
@@ -294,22 +365,38 @@ def main() -> None:
 
     rendered_count = 0
     newly_ingested_count = 0
+    note_states: dict[str, dict[str, str]] = {}
+    effective_rows: list[dict] = []
+    for row in rows:
+        filename = note_name(row["year"], row["title"])
+        path = NOTES_DIR / filename
+        initial_status = "ingested" if row["status"] == "approved" else row["status"]
+        note_state = load_existing_note_state(path, initial_status)
+        note_states[row["paper_id"]] = note_state
+
+        effective_row = dict(row)
+        effective_row["status"] = note_state["status"]
+        if row["status"] == "approved" and note_state["status"] == "ingested":
+            newly_ingested_count += 1
+        effective_rows.append(effective_row)
+
     title_index = {
         normalize_title(row["title"]): note_name(row["year"], row["title"]).replace(".md", "")
-        for row in rows
+        for row in effective_rows
         if row["status"] in ACTIVE_NOTE_STATUS
     }
-    for row in rows:
+    for row, effective_row in zip(rows, effective_rows):
+        row["status"] = effective_row["status"]
         if row["status"] not in ACTIVE_NOTE_STATUS:
             continue
-        if row["status"] == "approved":
-            row["status"] = "ingested"
-            newly_ingested_count += 1
         if not has_enrichment_file(row["paper_id"]) and row["enrichment_status"] != "failed":
             row["enrichment_status"] = "pending"
         filename = note_name(row["year"], row["title"])
         path = NOTES_DIR / filename
-        path.write_text(render_note(row, title_index), encoding="utf-8")
+        path.write_text(
+            render_note(row, title_index, note_states[row["paper_id"]]),
+            encoding="utf-8",
+        )
         rendered_count += 1
 
     with INBOX.open("w", newline="", encoding="utf-8") as handle:

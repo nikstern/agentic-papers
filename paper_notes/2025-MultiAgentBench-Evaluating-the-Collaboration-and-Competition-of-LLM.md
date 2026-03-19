@@ -8,6 +8,8 @@ paper_type: "benchmark"
 primary_topic: "agent-evaluation"
 secondary_topics: []
 status: "ingested"
+priority: "0"
+last_read: ""
 enrichment_status: "enriched"
 tags:
   - "papers"
@@ -25,7 +27,7 @@ compares_to_unresolved:
 relations: []
 source: "manual"
 ---
-
+<!-- GENERATED:START -->
 # Summary
 MultiAgentBench introduces a benchmark and framework for evaluating collaboration and competition in LLM-based multi-agent systems across research, coding, database, game, and negotiation scenarios.
 
@@ -51,3 +53,7 @@ The paper introduces the MARBLE framework, evaluates multiple coordination topol
 - `evaluates` coordination protocols
 - `compares_to_unresolved` AgentBench
 - `compares_to_unresolved` ResearchTown
+<!-- GENERATED:END -->
+
+## My Notes
+

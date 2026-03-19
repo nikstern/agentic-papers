@@ -8,6 +8,8 @@ paper_type: "survey"
 primary_topic: "memory-context"
 secondary_topics: []
 status: "ingested"
+priority: "0"
+last_read: ""
 enrichment_status: "enriched"
 tags:
   - "papers"
@@ -29,7 +31,7 @@ compares_to_unresolved:
 relations: []
 source: "alphaxiv-mcp"
 ---
-
+<!-- GENERATED:START -->
 # Summary
 This survey reviews memory mechanisms in LLM-based agents, organizing the area around memory forms, functions, and dynamics rather than a simple short-term versus long-term split.
 
@@ -59,3 +61,7 @@ The paper formalizes agent memory, distinguishes it from generic RAG and context
 - `builds_on_unresolved` Generative Agents
 - `compares_to_unresolved` MemBench
 - `compares_to_unresolved` LoCoMo
+<!-- GENERATED:END -->
+
+## My Notes
+

@@ -7,7 +7,9 @@ url: "https://arxiv.org/abs/2502.12110"
 paper_type: "system"
 primary_topic: "memory-context"
 secondary_topics: []
-status: "ingested"
+status: "cited"
+priority: "0"
+last_read: ""
 enrichment_status: "enriched"
 tags:
   - "papers"
@@ -26,7 +28,7 @@ compares_to_unresolved:
 relations: []
 source: "alphaxiv-mcp"
 ---
-
+<!-- GENERATED:START -->
 # Summary
 A-MEM is a memory system for LLM agents that dynamically organizes notes, links related memories, and evolves existing memory entries over time.
 
@@ -53,3 +55,7 @@ The system constructs structured notes, retrieves top-k related memories, uses L
 - `compares_to` [[2024-A-Human-Inspired-Reading-Agent-with-Gist-Memory-of]]
 - `compares_to_unresolved` MemoryBank
 - `compares_to_unresolved` LoCoMo
+<!-- GENERATED:END -->
+
+## My Notes
+

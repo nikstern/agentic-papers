@@ -8,6 +8,8 @@ paper_type: "application"
 primary_topic: "memory-context"
 secondary_topics: []
 status: "ingested"
+priority: "0"
+last_read: ""
 enrichment_status: "enriched"
 tags:
   - "papers"
@@ -23,7 +25,7 @@ compares_to_unresolved: []
 relations: []
 source: "alphaxiv-mcp"
 ---
-
+<!-- GENERATED:START -->
 # Summary
 This empirical study examines how memory addition and deletion policies affect long-term LLM agent behavior, especially when agents learn from their own imperfect trajectories.
 
@@ -47,3 +49,7 @@ The paper studies synthetic and real agents under different memory addition and 
 - `evaluates` memory management policies
 - `evaluates` experience replay in agents
 - `evaluates` long-term agent robustness
+<!-- GENERATED:END -->
+
+## My Notes
+

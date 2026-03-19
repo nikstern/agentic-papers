@@ -8,6 +8,8 @@ paper_type: "survey"
 primary_topic: "llm-multi-agent-systems"
 secondary_topics: []
 status: "ingested"
+priority: "0"
+last_read: ""
 enrichment_status: "enriched"
 tags:
   - "papers"
@@ -26,7 +28,7 @@ compares_to_unresolved: []
 relations: []
 source: "alphaxiv-mcp"
 ---
-
+<!-- GENERATED:START -->
 # Summary
 This survey studies collaboration mechanisms in LLM-based multi-agent systems through the lenses of collaboration type, organizational structure, strategy, and coordination protocol.
 
@@ -53,3 +55,7 @@ The paper surveys cooperative, competitive, and coopetitive systems, analyzes ce
 - `builds_on` [[2023-MetaGPT-Meta-Programming-for-A-Multi-Agent-Collaborative-Framework]]
 - `builds_on` [[2023-CAMEL-Communicative-Agents-for-Mind-Exploration-of-Large]]
 - `builds_on_unresolved` AutoGen
+<!-- GENERATED:END -->
+
+## My Notes
+

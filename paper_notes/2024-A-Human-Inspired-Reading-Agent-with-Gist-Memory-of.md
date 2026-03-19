@@ -8,6 +8,8 @@ paper_type: "system"
 primary_topic: "memory-context"
 secondary_topics: []
 status: "ingested"
+priority: "0"
+last_read: ""
 enrichment_status: "enriched"
 tags:
   - "papers"
@@ -25,7 +27,7 @@ compares_to_unresolved:
 relations: []
 source: "alphaxiv-mcp"
 ---
-
+<!-- GENERATED:START -->
 # Summary
 ReadAgent is a human-inspired reading system that builds gist memory for long documents and then selectively looks up raw passages when more detail is needed.
 
@@ -51,3 +53,7 @@ The method paginates documents into natural episodes, compresses them into gist 
 - `evaluates` interactive retrieval
 - `compares_to_unresolved` NarrativeQA
 - `compares_to_unresolved` QuALITY
+<!-- GENERATED:END -->
+
+## My Notes
+

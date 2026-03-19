@@ -8,6 +8,8 @@ paper_type: "system"
 primary_topic: "memory-context"
 secondary_topics: []
 status: "ingested"
+priority: "0"
+last_read: ""
 enrichment_status: "enriched"
 tags:
   - "papers"
@@ -26,7 +28,7 @@ compares_to_unresolved: []
 relations: []
 source: "alphaxiv-mcp"
 ---
-
+<!-- GENERATED:START -->
 # Summary
 Enhancing Reasoning with Collaboration and Memory compares collaboration patterns and memory-retrieval strategies to test when external exemplars help reasoning and when random context can outperform similarity-based retrieval.
 
@@ -53,3 +55,7 @@ The study evaluates single-agent prompting, self-consistency, varied-context pro
 - `builds_on_unresolved` Chain-of-Thought
 - `builds_on_unresolved` Analogical Prompting
 - `builds_on_unresolved` self-consistency
+<!-- GENERATED:END -->
+
+## My Notes
+

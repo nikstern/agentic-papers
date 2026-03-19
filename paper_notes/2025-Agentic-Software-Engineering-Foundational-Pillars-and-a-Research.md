@@ -8,6 +8,8 @@ paper_type: "position"
 primary_topic: "software-agents"
 secondary_topics: []
 status: "ingested"
+priority: "0"
+last_read: ""
 enrichment_status: "enriched"
 tags:
   - "papers"
@@ -23,7 +25,7 @@ compares_to_unresolved: []
 relations: []
 source: "alphaxiv-mcp"
 ---
-
+<!-- GENERATED:START -->
 # Summary
 This position paper proposes Structured Agentic Software Engineering, reframing software engineering around human agent coaches, autonomous software agents, and version-controlled collaboration artifacts.
 
@@ -47,3 +49,7 @@ The paper proposes a dual human-and-agent view of software engineering, introduc
 - `evaluates` agentic software engineering
 - `evaluates` human-agent collaboration
 - `evaluates` engineering process design
+<!-- GENERATED:END -->
+
+## My Notes
+

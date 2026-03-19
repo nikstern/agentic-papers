@@ -8,6 +8,8 @@ paper_type: "system"
 primary_topic: "memory-context"
 secondary_topics: []
 status: "ingested"
+priority: "0"
+last_read: ""
 enrichment_status: "enriched"
 tags:
   - "papers"
@@ -25,7 +27,7 @@ compares_to_unresolved:
 relations: []
 source: "alphaxiv-mcp"
 ---
-
+<!-- GENERATED:START -->
 # Summary
 INMS proposes a shared memory framework for LLM-based agents where agents generate, evaluate, retrieve, and reuse high-quality prompt-answer memories to improve collective performance on open-ended tasks.
 
@@ -51,3 +53,7 @@ The framework stores high-quality prompt-answer pairs in a shared memory pool, r
 - `builds_on` [[2023-MemGPT-Towards-LLMs-as-Operating-Systems]]
 - `compares_to_unresolved` Retrieval-Augmented Generation
 - `compares_to_unresolved` MemoryBank
+<!-- GENERATED:END -->
+
+## My Notes
+

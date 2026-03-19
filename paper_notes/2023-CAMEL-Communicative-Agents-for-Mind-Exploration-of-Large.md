@@ -8,6 +8,8 @@ paper_type: "system"
 primary_topic: "llm-multi-agent-systems"
 secondary_topics: []
 status: "ingested"
+priority: "0"
+last_read: ""
 enrichment_status: "enriched"
 tags:
   - "papers"
@@ -21,7 +23,7 @@ compares_to_unresolved: []
 relations: []
 source: "manual"
 ---
-
+<!-- GENERATED:START -->
 # Summary
 CAMEL studies role-playing communication between LLM agents as a way to coordinate multi-agent problem solving.
 
@@ -42,3 +44,7 @@ The framework pairs agents in defined roles, uses inception-style prompting to p
 # Connections
 - [[LLM-Multi-Agent-Systems]]
 - `evaluates` multi-agent cooperation
+<!-- GENERATED:END -->
+
+## My Notes
+

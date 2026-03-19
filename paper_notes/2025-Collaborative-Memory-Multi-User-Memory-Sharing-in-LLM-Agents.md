@@ -8,6 +8,8 @@ paper_type: "system"
 primary_topic: "memory-context"
 secondary_topics: []
 status: "ingested"
+priority: "0"
+last_read: ""
 enrichment_status: "enriched"
 tags:
   - "papers"
@@ -25,7 +27,7 @@ compares_to_unresolved:
 relations: []
 source: "alphaxiv-mcp"
 ---
-
+<!-- GENERATED:START -->
 # Summary
 Collaborative Memory proposes a multi-user, multi-agent memory framework with private and shared memory tiers governed by dynamic access control, enabling secure memory sharing under changing permissions.
 
@@ -51,3 +53,7 @@ The framework uses dynamic user-agent and agent-resource access graphs, read and
 - `builds_on` [[2023-MemGPT-Towards-LLMs-as-Operating-Systems]]
 - `compares_to_unresolved` Memory Sharing for Large Language Model based Agents
 - `compares_to_unresolved` MemTree
+<!-- GENERATED:END -->
+
+## My Notes
+

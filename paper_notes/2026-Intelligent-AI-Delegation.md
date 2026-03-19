@@ -8,6 +8,8 @@ paper_type: "position"
 primary_topic: "task-allocation"
 secondary_topics: []
 status: "ingested"
+priority: "0"
+last_read: ""
 enrichment_status: "enriched"
 tags:
   - "papers"
@@ -25,7 +27,7 @@ compares_to_unresolved: []
 relations: []
 source: "alphaxiv-mcp"
 ---
-
+<!-- GENERATED:START -->
 # Summary
 This position paper frames intelligent delegation as a core systems problem for the agentic web, extending task assignment to include authority, accountability, monitoring, trust, and verification.
 
@@ -51,3 +53,7 @@ The paper synthesizes ideas from multi-agent systems, hierarchical reinforcement
 - `evaluates` multi-agent accountability
 - `builds_on_unresolved` Contract Net Protocol
 - `builds_on_unresolved` hierarchical reinforcement learning
+<!-- GENERATED:END -->
+
+## My Notes
+

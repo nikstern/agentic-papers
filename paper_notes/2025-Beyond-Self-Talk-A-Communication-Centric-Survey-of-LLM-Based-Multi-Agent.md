@@ -8,6 +8,8 @@ paper_type: "survey"
 primary_topic: "llm-multi-agent-systems"
 secondary_topics: []
 status: "ingested"
+priority: "0"
+last_read: ""
 enrichment_status: "enriched"
 tags:
   - "papers"
@@ -26,7 +28,7 @@ compares_to_unresolved: []
 relations: []
 source: "alphaxiv-mcp"
 ---
-
+<!-- GENERATED:START -->
 # Summary
 This survey argues that communication is the core systems lens for understanding LLM-based multi-agent systems, and organizes the field by communication architecture, goals, protocols, strategies, paradigms, objects, and content.
 
@@ -53,3 +55,7 @@ The paper proposes a two-level communication-centric framework spanning macro sy
 - `builds_on` [[2023-MetaGPT-Meta-Programming-for-A-Multi-Agent-Collaborative-Framework]]
 - `builds_on_unresolved` Generative Agents
 - `builds_on_unresolved` EconAgent
+<!-- GENERATED:END -->
+
+## My Notes
+

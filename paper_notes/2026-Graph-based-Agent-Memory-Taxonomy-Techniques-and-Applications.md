@@ -8,6 +8,8 @@ paper_type: "survey"
 primary_topic: "memory-context"
 secondary_topics: []
 status: "ingested"
+priority: "0"
+last_read: ""
 enrichment_status: "enriched"
 tags:
   - "papers"
@@ -26,7 +28,7 @@ compares_to_unresolved: []
 relations: []
 source: "alphaxiv-mcp"
 ---
-
+<!-- GENERATED:START -->
 # Summary
 This survey studies graph-based agent memory as a structured memory paradigm for LLM agents, covering taxonomy, extraction, storage, retrieval, evolution, and applications.
 
@@ -53,3 +55,7 @@ The paper surveys graph memory forms such as knowledge, temporal, hierarchical, 
 - `builds_on` [[2025-A-MEM-Agentic-Memory-for-LLM-Agents]]
 - `builds_on_unresolved` Knowledge Graphs
 - `builds_on_unresolved` GraphRAG
+<!-- GENERATED:END -->
+
+## My Notes
+

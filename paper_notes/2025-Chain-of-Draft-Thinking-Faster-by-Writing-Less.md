@@ -8,6 +8,8 @@ paper_type: "application"
 primary_topic: "llm-multi-agent-systems"
 secondary_topics: []
 status: "ingested"
+priority: "0"
+last_read: ""
 enrichment_status: "enriched"
 tags:
   - "papers"
@@ -26,7 +28,7 @@ compares_to_unresolved:
 relations: []
 source: "alphaxiv-mcp"
 ---
-
+<!-- GENERATED:START -->
 # Summary
 Chain of Draft prompts LLMs to produce only minimal intermediate drafts during reasoning, preserving multi-step problem solving while sharply reducing verbosity.
 
@@ -53,3 +55,7 @@ The method uses a system prompt and few-shot examples to elicit very short inter
 - `builds_on_unresolved` Chain-of-Thought
 - `compares_to_unresolved` Concise Thoughts
 - `compares_to_unresolved` TALE
+<!-- GENERATED:END -->
+
+## My Notes
+

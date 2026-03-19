@@ -8,6 +8,8 @@ paper_type: "survey"
 primary_topic: "llm-multi-agent-systems"
 secondary_topics: []
 status: "ingested"
+priority: "0"
+last_read: ""
 enrichment_status: "enriched"
 tags:
   - "papers"
@@ -26,7 +28,7 @@ compares_to_unresolved: []
 relations: []
 source: "manual"
 ---
-
+<!-- GENERATED:START -->
 # Summary
 This survey organizes the progress of LLM-based multi-agent systems around agent environment interfaces, profiling choices, communication mechanisms, and capability acquisition strategies.
 
@@ -53,3 +55,7 @@ The paper surveys applications in problem solving and world simulation, proposes
 - `builds_on` [[2023-CAMEL-Communicative-Agents-for-Mind-Exploration-of-Large]]
 - `builds_on` [[2023-MetaGPT-Meta-Programming-for-A-Multi-Agent-Collaborative-Framework]]
 - `builds_on_unresolved` Generative Agents
+<!-- GENERATED:END -->
+
+## My Notes
+

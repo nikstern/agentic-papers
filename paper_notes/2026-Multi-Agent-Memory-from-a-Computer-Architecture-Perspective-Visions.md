@@ -8,6 +8,8 @@ paper_type: "position"
 primary_topic: "memory-context"
 secondary_topics: []
 status: "ingested"
+priority: "0"
+last_read: ""
 enrichment_status: "enriched"
 tags:
   - "papers"
@@ -26,7 +28,7 @@ compares_to_unresolved: []
 relations: []
 source: "alphaxiv-mcp"
 ---
-
+<!-- GENERATED:START -->
 # Summary
 This position paper argues that multi-agent memory should be treated as a computer architecture problem, with explicit memory hierarchies, access protocols, and consistency models for collaborating LLM agents.
 
@@ -53,3 +55,7 @@ The paper analyzes shared versus distributed memory paradigms for agents, propos
 - `builds_on_unresolved` shared memory
 - `builds_on_unresolved` distributed memory
 - `builds_on_unresolved` cache coherence
+<!-- GENERATED:END -->
+
+## My Notes
+

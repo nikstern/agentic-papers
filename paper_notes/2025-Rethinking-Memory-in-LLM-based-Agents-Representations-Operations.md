@@ -8,6 +8,8 @@ paper_type: "survey"
 primary_topic: "memory-context"
 secondary_topics: []
 status: "ingested"
+priority: "0"
+last_read: ""
 enrichment_status: "enriched"
 tags:
   - "papers"
@@ -22,7 +24,7 @@ compares_to_unresolved: []
 relations: []
 source: "alphaxiv-mcp"
 ---
-
+<!-- GENERATED:START -->
 # Summary
 This survey reframes memory in LLM-based agents around representations, operations, and emerging topics rather than only application-level memory usage.
 
@@ -44,3 +46,7 @@ The paper surveys memory representations, atomic memory operations, datasets, to
 - [[Memory-Context]]
 - `evaluates` agent memory research landscape
 - `builds_on` [[2024-A-Survey-on-the-Memory-Mechanism-of-Large]]
+<!-- GENERATED:END -->
+
+## My Notes
+

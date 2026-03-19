@@ -8,6 +8,8 @@ paper_type: "system"
 primary_topic: "llm-multi-agent-systems"
 secondary_topics: []
 status: "ingested"
+priority: "0"
+last_read: ""
 enrichment_status: "enriched"
 tags:
   - "papers"
@@ -27,7 +29,7 @@ compares_to_unresolved:
 relations: []
 source: "alphaxiv-mcp"
 ---
-
+<!-- GENERATED:START -->
 # Summary
 This paper revives the blackboard architecture for LLM multi-agent systems, using a shared workspace where dynamically selected agents contribute and refine problem-solving state.
 
@@ -55,3 +57,7 @@ The framework combines a blackboard, a control unit that selects agents based on
 - `compares_to_unresolved` GPTSwarm
 - `compares_to_unresolved` AFlow
 - `compares_to_unresolved` MaAS
+<!-- GENERATED:END -->
+
+## My Notes
+

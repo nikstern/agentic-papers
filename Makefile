@@ -16,6 +16,12 @@ import-enrichment:
 export-enrichment-input:
 	python3 scripts/export_enrichment_input.py
 
+rank-papers:
+	python3 scripts/rank_papers.py $(ARGS)
+
+email-reading-queue:
+	python3 scripts/email_reading_queue.py $(ARGS)
+
 mark-enrichment-failed:
 	@test -n "$(IDS)" || (echo "Usage: make mark-enrichment-failed IDS='1 2 3'" && exit 1)
 	python3 scripts/mark_enrichment_failed.py $(IDS)

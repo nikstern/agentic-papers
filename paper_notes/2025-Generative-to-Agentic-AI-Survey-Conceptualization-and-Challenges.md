@@ -8,6 +8,8 @@ paper_type: "survey"
 primary_topic: "llm-multi-agent-systems"
 secondary_topics: []
 status: "ingested"
+priority: "0"
+last_read: ""
 enrichment_status: "enriched"
 tags:
   - "papers"
@@ -23,7 +25,7 @@ compares_to_unresolved: []
 relations: []
 source: "alphaxiv-mcp"
 ---
-
+<!-- GENERATED:START -->
 # Summary
 This survey conceptualizes the transition from generative AI to agentic AI, emphasizing reasoning, memory, tool use, interaction, and autonomy as the main differentiators.
 
@@ -47,3 +49,7 @@ The paper conducts a survey-based synthesis of generative and agentic AI, compar
 - `evaluates` generative versus agentic ai
 - `evaluates` agent capabilities
 - `evaluates` agentic ai risks
+<!-- GENERATED:END -->
+
+## My Notes
+

@@ -8,6 +8,8 @@ paper_type: "survey"
 primary_topic: "llm-multi-agent-systems"
 secondary_topics: []
 status: "ingested"
+priority: "0"
+last_read: ""
 enrichment_status: "enriched"
 tags:
   - "papers"
@@ -23,7 +25,7 @@ compares_to_unresolved: []
 relations: []
 source: "alphaxiv-mcp"
 ---
-
+<!-- GENERATED:START -->
 # Summary
 This survey organizes LLM agents around construction, collaboration, and evolution, providing a broad methodology-focused map of the agent field.
 
@@ -47,3 +49,7 @@ The paper develops a build-collaborate-evolve taxonomy, surveys agent components
 - `evaluates` llm agent methodology
 - `evaluates` agent collaboration
 - `evaluates` agent evolution
+<!-- GENERATED:END -->
+
+## My Notes
+

@@ -8,6 +8,8 @@ paper_type: "system"
 primary_topic: "llm-multi-agent-systems"
 secondary_topics: []
 status: "ingested"
+priority: "0"
+last_read: ""
 enrichment_status: "enriched"
 tags:
   - "papers"
@@ -28,7 +30,7 @@ compares_to_unresolved:
 relations: []
 source: "manual"
 ---
-
+<!-- GENERATED:START -->
 # Summary
 MetaGPT frames software development as a structured multi-agent workflow in which specialized agents produce requirements, architecture, task decomposition, implementation, and review artifacts through standardized handoffs.
 
@@ -57,3 +59,7 @@ The system models a software company with roles such as product manager, archite
 - `builds_on_unresolved` ReAct
 - `compares_to_unresolved` AutoGPT
 - `compares_to_unresolved` LangChain
+<!-- GENERATED:END -->
+
+## My Notes
+

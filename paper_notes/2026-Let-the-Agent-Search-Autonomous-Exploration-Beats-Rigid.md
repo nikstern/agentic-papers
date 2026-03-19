@@ -8,6 +8,8 @@ paper_type: "system"
 primary_topic: "search-retrieval"
 secondary_topics: []
 status: "ingested"
+priority: "0"
+last_read: ""
 enrichment_status: "enriched"
 tags:
   - "papers"
@@ -24,7 +26,7 @@ compares_to_unresolved:
 relations: []
 source: "alphaxiv-mcp"
 ---
-
+<!-- GENERATED:START -->
 # Summary
 AT2QA treats temporal question answering as an autonomous search problem, letting an LLM agent iteratively explore a temporal knowledge graph instead of following a rigid retrieval workflow.
 
@@ -49,3 +51,7 @@ The system equips an off-the-shelf LLM with a temporal search tool, lets it iter
 - `evaluates` autonomous search
 - `evaluates` training-free retrieval agents
 - `compares_to_unresolved` Temp-R1
+<!-- GENERATED:END -->
+
+## My Notes
+

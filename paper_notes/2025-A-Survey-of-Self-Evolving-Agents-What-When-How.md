@@ -8,6 +8,8 @@ paper_type: "survey"
 primary_topic: "llm-multi-agent-systems"
 secondary_topics: []
 status: "ingested"
+priority: "0"
+last_read: ""
 enrichment_status: "enriched"
 tags:
   - "papers"
@@ -25,7 +27,7 @@ compares_to_unresolved: []
 relations: []
 source: "alphaxiv-mcp"
 ---
-
+<!-- GENERATED:START -->
 # Summary
 This survey organizes the field of self-evolving agents around what evolves, when it evolves, how it evolves, and where those mechanisms matter in practice.
 
@@ -51,3 +53,7 @@ The paper surveys self-evolution across models, context, tools, and architecture
 - `evaluates` agent lifecycle design
 - `builds_on_unresolved` lifelong learning
 - `builds_on_unresolved` curriculum learning
+<!-- GENERATED:END -->
+
+## My Notes
+

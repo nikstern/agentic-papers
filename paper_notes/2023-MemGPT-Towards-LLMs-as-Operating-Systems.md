@@ -7,7 +7,9 @@ url: "https://arxiv.org/abs/2310.08560"
 paper_type: "system"
 primary_topic: "memory-context"
 secondary_topics: []
-status: "ingested"
+status: "cited"
+priority: "0"
+last_read: ""
 enrichment_status: "enriched"
 tags:
   - "papers"
@@ -25,7 +27,7 @@ compares_to_unresolved: []
 relations: []
 source: "alphaxiv-mcp"
 ---
-
+<!-- GENERATED:START -->
 # Summary
 MemGPT treats the LLM context window as a managed memory hierarchy, letting the model move information between working context and external storage much like an operating system handles virtual memory.
 
@@ -51,3 +53,7 @@ The system divides memory into system instructions, working context, message his
 - `evaluates` memory-managed llm agents
 - `builds_on_unresolved` Retrieval-Augmented Generation
 - `builds_on_unresolved` virtual memory
+<!-- GENERATED:END -->
+
+## My Notes
+

@@ -8,6 +8,8 @@ paper_type: "survey"
 primary_topic: "llm-multi-agent-systems"
 secondary_topics: []
 status: "ingested"
+priority: "0"
+last_read: ""
 enrichment_status: "enriched"
 tags:
   - "papers"
@@ -32,7 +34,7 @@ compares_to_unresolved:
 relations: []
 source: "alphaxiv-mcp"
 ---
-
+<!-- GENERATED:START -->
 # Summary
 This survey frames AI agents as systems that couple a foundation model with memory, tools, verifiers, and an execution loop, then organizes the field around architectures, orchestration patterns, applications, and evaluation.
 
@@ -65,3 +67,7 @@ The paper is a survey that synthesizes agent architectures such as RAG, ReAct-st
 - `compares_to_unresolved` ToolBench
 - `compares_to_unresolved` SWE-bench
 - `compares_to_unresolved` GAIA
+<!-- GENERATED:END -->
+
+## My Notes
+

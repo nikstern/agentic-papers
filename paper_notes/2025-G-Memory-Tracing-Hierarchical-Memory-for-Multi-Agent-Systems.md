@@ -8,6 +8,8 @@ paper_type: "system"
 primary_topic: "memory-context"
 secondary_topics: []
 status: "ingested"
+priority: "0"
+last_read: ""
 enrichment_status: "enriched"
 tags:
   - "papers"
@@ -28,7 +30,7 @@ compares_to_unresolved: []
 relations: []
 source: "alphaxiv-mcp"
 ---
-
+<!-- GENERATED:START -->
 # Summary
 G-Memory introduces a hierarchical memory architecture for multi-agent systems with interaction graphs, query graphs, and insight graphs to support self-evolving collaboration over time.
 
@@ -57,3 +59,7 @@ G-Memory retrieves relevant historical queries, traverses upward to abstract ins
 - `builds_on_unresolved` MemoryBank
 - `builds_on_unresolved` Generative Agents
 - `builds_on_unresolved` Voyager
+<!-- GENERATED:END -->
+
+## My Notes
+

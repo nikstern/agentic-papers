@@ -8,6 +8,8 @@ paper_type: "system"
 primary_topic: "software-agents"
 secondary_topics: []
 status: "ingested"
+priority: "0"
+last_read: ""
 enrichment_status: "enriched"
 tags:
   - "papers"
@@ -27,7 +29,7 @@ compares_to_unresolved:
 relations: []
 source: "manual"
 ---
-
+<!-- GENERATED:START -->
 # Summary
 ChatDev casts software development as a chat chain in which specialized LLM agents collaborate across design, coding, and testing through multi-turn dialogue and communicative dehallucination.
 
@@ -55,3 +57,7 @@ The framework organizes a software company around specialized roles, uses phase-
 - `builds_on` [[2023-MetaGPT-Meta-Programming-for-A-Multi-Agent-Collaborative-Framework]]
 - `compares_to` [[2023-MetaGPT-Meta-Programming-for-A-Multi-Agent-Collaborative-Framework]]
 - `compares_to_unresolved` GPT-Engineer
+<!-- GENERATED:END -->
+
+## My Notes
+

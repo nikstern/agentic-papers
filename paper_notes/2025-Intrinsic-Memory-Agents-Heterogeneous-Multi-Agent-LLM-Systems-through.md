@@ -8,6 +8,8 @@ paper_type: "system"
 primary_topic: "memory-context"
 secondary_topics: []
 status: "ingested"
+priority: "0"
+last_read: ""
 enrichment_status: "enriched"
 tags:
   - "papers"
@@ -25,7 +27,7 @@ compares_to_unresolved: []
 relations: []
 source: "alphaxiv-mcp"
 ---
-
+<!-- GENERATED:START -->
 # Summary
 Intrinsic Memory Agents equips each agent in a multi-agent LLM system with its own structured, role-specific memory that is updated from its own outputs to preserve perspective and procedural consistency.
 
@@ -51,3 +53,7 @@ The method defines role-specific JSON memory templates, injects those memories i
 - `builds_on` [[2023-MemGPT-Towards-LLMs-as-Operating-Systems]]
 - `compares_to` [[2025-G-Memory-Tracing-Hierarchical-Memory-for-Multi-Agent-Systems]]
 - `builds_on_unresolved` Retrieval-Augmented Generation
+<!-- GENERATED:END -->
+
+## My Notes
+

@@ -7,7 +7,9 @@ url: "https://arxiv.org/abs/2601.05111"
 paper_type: "survey"
 primary_topic: "agent-evaluation"
 secondary_topics: []
-status: "ingested"
+status: "discarded"
+priority: "0"
+last_read: ""
 enrichment_status: "enriched"
 tags:
   - "papers"
@@ -27,7 +29,7 @@ compares_to_unresolved: []
 relations: []
 source: "alphaxiv-mcp"
 ---
-
+<!-- GENERATED:START -->
 # Summary
 This survey traces the shift from LLM-as-a-judge to Agent-as-a-Judge, where evaluation systems use planning, tools, memory, and multi-agent collaboration to produce more robust judgments.
 
@@ -55,3 +57,6 @@ The paper proposes a developmental taxonomy from procedural to reactive to self-
 - `builds_on_unresolved` G-Eval
 - `builds_on_unresolved` Prometheus
 - `builds_on_unresolved` JudgeLM
+<!-- GENERATED:END -->
+
+## My Notes
