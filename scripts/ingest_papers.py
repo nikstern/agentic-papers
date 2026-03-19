@@ -27,13 +27,13 @@ REQUIRED_COLUMNS = [
 ]
 
 ALLOWED_TOPICS = {
-    "llm-multi-agent-systems": "LLM Multi-Agent Systems.md",
-    "agent-evaluation": "Agent Evaluation.md",
-    "agent-harnesses": "Agent Harnesses.md",
-    "task-allocation": "Task Allocation.md",
-    "search-retrieval": "Search Retrieval.md",
-    "software-agents": "Software Agents.md",
-    "memory-context": "Memory Context.md",
+    "llm-multi-agent-systems": "LLM-Multi-Agent-Systems.md",
+    "agent-evaluation": "Agent-Evaluation.md",
+    "agent-harnesses": "Agent-Harnesses.md",
+    "task-allocation": "Task-Allocation.md",
+    "search-retrieval": "Search-Retrieval.md",
+    "software-agents": "Software-Agents.md",
+    "memory-context": "Memory-Context.md",
 }
 
 ALLOWED_TYPES = {"survey", "benchmark", "system", "position", "application"}
@@ -69,12 +69,12 @@ def slug_title(title: str) -> str:
     cleaned = re.sub(r"[^\w\s-]", "", title).strip()
     cleaned = re.sub(r"\s+", " ", cleaned)
     words = cleaned.split()
-    short = " ".join(words[:8]).strip()
+    short = "-".join(words[:8]).strip("-")
     return short or "Untitled"
 
 
 def note_name(year: str, title: str) -> str:
-    return f"{year} - {slug_title(title)}.md"
+    return f"{year}-{slug_title(title)}.md"
 
 
 def topic_link(topic_id: str) -> str:
