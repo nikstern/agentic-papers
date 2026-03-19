@@ -1,60 +1,29 @@
 # Paper Inbox Schema
 
-This folder is the deterministic source for paper ingestion.
+This folder is the deterministic source layer for paper ingestion and enrichment state.
 
-## File
+Workflow details live in [docs/workflow.md](/Users/nikstern/Documents/Agentic/docs/workflow.md). This file only documents the source schema, contracts, and rules for `paper_inbox/`.
 
-`papers.csv`
+## Primary Source Files
 
-## MCP Import
+- `papers.csv`: authoritative paper metadata and lifecycle state
+- `enrichment/*.json`: structured extracted metadata keyed by `paper_id`
+- `mcp_candidates.example.json`: candidate import contract
+- `enrichment.example.json`: enrichment import contract
 
-When papers are gathered through alphaXiv MCP, first write them to a JSON array
-matching `mcp_candidates.example.json`, then import them with:
+## Generated Workflow Artifacts
 
-```bash
-make import-candidates FILE=paper_inbox/mcp_candidates.example.json
-```
+- `last_import.json`: records assigned IDs for the most recent candidate import
+- `approved_for_enrichment.json`: deterministic export payload for pending enrichment work
 
-Imported MCP results are stored as `candidate` rows with source
-`alphaxiv-mcp`.
+## Note Data Model
 
-Each import also writes `last_import.json`, which records the exact assigned
-`paper_id` values for newly imported rows and any skipped duplicates.
-
-## Enrichment Import
-
-Approved papers should enter the vault immediately. Enrichment then runs as a
-second phase and rerenders notes after the fact.
-
-After approved papers are analyzed with `answer_pdf_queries` or, when needed,
-`get_paper_content`, save the results as a JSON array matching
-`enrichment.example.json`, then import them with:
-
-```bash
-make import-enrichment FILE=paper_inbox/enrichment.example.json
-```
-
-Imported enrichment is stored per paper under `paper_inbox/enrichment/` and is
-used by `make ingest` when rendering notes.
-
-Generate the deterministic input payload for this step with:
-
-```bash
-make export-enrichment-input
-```
-
-This writes `approved_for_enrichment.json` with the paper IDs, URLs, and fixed
-query set to use for background enrichment. Only papers with active reading
-state and `enrichment_status = pending` are exported.
-
-## Note Schema
-
-Notes keep only flat, Obsidian-safe properties in frontmatter.
+Generated notes keep only flat, Obsidian-safe properties in frontmatter.
 
 - stable metadata lives in `papers.csv`
 - richer extracted metadata lives in `paper_inbox/enrichment/*.json`
-- unresolved references stay as plain title lists
-- `make ingest` resolves those titles into local links when possible
+- unresolved references stay as plain title lists until they can be resolved deterministically
+- `make ingest` resolves matching titles into local links when possible
 
 ## Required Columns
 
@@ -106,17 +75,18 @@ Notes keep only flat, Obsidian-safe properties in frontmatter.
 ## Rules
 
 1. One paper per CSV row.
-2. Do not add extra columns unless the script is updated first.
-3. Use `YEAR - Short Title.md` for generated note filenames.
-4. `paper_id` must be unique and numeric.
-5. Title and URL duplicates are rejected by the scripts.
-6. Search results should enter as `candidate`.
-7. Only `approved` papers are ingested into notes.
-8. Approved papers are ingested immediately; enrichment is a follow-up step.
-9. Every row must carry an authoritative `enrichment_status`.
-10. Enrichment should be minimal and fixed-schema by default.
-11. The preferred enrichment path is `answer_pdf_queries`, with `get_paper_content` as fallback.
-12. Successful enrichment import sets `enrichment_status = enriched`.
-13. Failed extraction attempts should be recorded as `enrichment_status = failed`.
-14. The ingestion script only accepts the controlled vocabularies above.
-15. Topic links are derived from `candidate_topic`, not handwritten per note.
+2. Do not add extra columns unless the scripts are updated first.
+3. Generated paper note filenames use the form `YEAR-Short-Title.md`.
+4. Topic map filenames use hyphenated names such as `Memory-Context.md`.
+5. `paper_id` must be unique and numeric.
+6. Title and URL duplicates are rejected by the scripts.
+7. Search results should enter as `candidate`.
+8. Only `approved` papers are ingested into notes.
+9. Approved papers are ingested immediately; enrichment is a follow-up step.
+10. Every row must carry an authoritative `enrichment_status`.
+11. Enrichment should be minimal and fixed-schema by default.
+12. The preferred enrichment path is `answer_pdf_queries`, with `get_paper_content` as fallback.
+13. Successful enrichment import sets `enrichment_status = enriched`.
+14. Failed extraction attempts should be recorded as `enrichment_status = failed`.
+15. The ingestion script only accepts the controlled vocabularies above.
+16. Topic links are derived from `candidate_topic`, not handwritten per note.
