@@ -1,0 +1,22 @@
+{
+  "paper_id": "30",
+  "summary": "This position paper proposes Structured Agentic Software Engineering, reframing software engineering around human agent coaches, autonomous software agents, and version-controlled collaboration artifacts.",
+  "why_it_matters": "It is a strong roadmap paper for thinking beyond agentic coding toward disciplined, trustworthy agentic software engineering at team scale.",
+  "method_setup": "The paper proposes a dual human-and-agent view of software engineering, introduces workbenches such as ACE and AEE, and defines artifacts and processes like BriefingScript, MentorScript, Consultation Request Packs, and Merge-Readiness Packs.",
+  "key_claims": [
+    "Agentic software engineering needs structured processes, not just better prompts.",
+    "Humans should increasingly act as agent coaches and orchestrators rather than direct code producers.",
+    "Trustworthy agentic development depends on durable artifacts, review loops, and explicit governance."
+  ],
+  "limitations": [
+    "It is a conceptual roadmap rather than a validated end-to-end engineering platform.",
+    "Many proposed artifacts and workflows still need empirical testing in real organizations."
+  ],
+  "evaluates": [
+    "agentic software engineering",
+    "human-agent collaboration",
+    "engineering process design"
+  ],
+  "builds_on_unresolved": [],
+  "compares_to_unresolved": []
+}

@@ -1,0 +1,26 @@
+{
+  "paper_id": "6",
+  "summary": "This survey studies collaboration mechanisms in LLM-based multi-agent systems through the lenses of collaboration type, organizational structure, strategy, and coordination protocol.",
+  "why_it_matters": "It is directly useful for the vault because it treats collaboration itself as the object of study, making it easier to compare design choices across agent systems.",
+  "method_setup": "The paper surveys cooperative, competitive, and coopetitive systems, analyzes centralized, decentralized, and hierarchical structures, and reviews communication and handoff mechanisms across application domains.",
+  "key_claims": [
+    "Collaboration design is a first-class systems variable for multi-agent performance.",
+    "Different task settings call for different collaboration structures and strategies.",
+    "Evaluation of multi-agent systems needs to account for coordination behavior, not just final outputs."
+  ],
+  "limitations": [
+    "The paper is broad and therefore higher level than domain-specific system analyses.",
+    "It emphasizes conceptual organization over benchmarked empirical comparison."
+  ],
+  "evaluates": [
+    "collaboration mechanisms",
+    "coordination protocols",
+    "multi-agent organizational structures"
+  ],
+  "builds_on_unresolved": [
+    "MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework",
+    "CAMEL: Communicative Agents for \"Mind\" Exploration of Large Scale Language Model Society",
+    "AutoGen"
+  ],
+  "compares_to_unresolved": []
+}

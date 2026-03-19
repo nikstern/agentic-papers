@@ -1,0 +1,26 @@
+{
+  "paper_id": "22",
+  "summary": "This position paper argues that multi-agent memory should be treated as a computer architecture problem, with explicit memory hierarchies, access protocols, and consistency models for collaborating LLM agents.",
+  "why_it_matters": "It offers a rare systems-level framing of multi-agent memory, shifting the discussion from prompts and retrieval tricks toward architecture, coherence, and data movement.",
+  "method_setup": "The paper analyzes shared versus distributed memory paradigms for agents, proposes an I/O-cache-memory hierarchy, and identifies missing protocols for cache sharing, memory access, and semantic consistency.",
+  "key_claims": [
+    "Memory, not just reasoning quality, is becoming a bottleneck in multi-agent systems.",
+    "Shared and distributed memory trade-offs in agent systems resemble classical architecture trade-offs.",
+    "Explicit protocols for visibility, versioning, and conflict resolution are necessary for robust multi-agent memory."
+  ],
+  "limitations": [
+    "It is a conceptual paper rather than an implemented architecture.",
+    "Its claims are architectural and forward-looking rather than benchmark-validated."
+  ],
+  "evaluates": [
+    "multi-agent memory architecture",
+    "memory hierarchy",
+    "consistency protocols"
+  ],
+  "builds_on_unresolved": [
+    "shared memory",
+    "distributed memory",
+    "cache coherence"
+  ],
+  "compares_to_unresolved": []
+}

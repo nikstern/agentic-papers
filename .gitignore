@@ -9,3 +9,4 @@ __pycache__/
 # Generated workflow artifacts
 paper_inbox/last_import.json
 paper_inbox/approved_for_enrichment.json
+paper_inbox/enrich_pending_batch_*.json

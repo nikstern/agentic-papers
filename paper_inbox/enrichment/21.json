@@ -1,0 +1,26 @@
+{
+  "paper_id": "21",
+  "summary": "Enhancing Reasoning with Collaboration and Memory compares collaboration patterns and memory-retrieval strategies to test when external exemplars help reasoning and when random context can outperform similarity-based retrieval.",
+  "why_it_matters": "It is a useful bridge between the vault's memory and reasoning threads because it tests retrieval and collaboration choices directly instead of assuming similarity-based memory is optimal.",
+  "method_setup": "The study evaluates single-agent prompting, self-consistency, varied-context prompting, and summarizer-agent collaboration across reasoning tasks, and compares frozen versus learned memory banks with random and similarity-based retrieval.",
+  "key_claims": [
+    "Randomly varied exemplars can outperform similarity-based memory retrieval in some reasoning settings.",
+    "Frozen memory can be as effective as incrementally learned memory while being cheaper to maintain.",
+    "Reasoning, collaboration, and memory design interact in non-obvious ways."
+  ],
+  "limitations": [
+    "The experiments cover a limited set of models and reasoning tasks.",
+    "The gains from more elaborate collaboration strategies are sensitive to base model quality."
+  ],
+  "evaluates": [
+    "reasoning with memory",
+    "self-consistency",
+    "multi-agent reasoning"
+  ],
+  "builds_on_unresolved": [
+    "Chain-of-Thought",
+    "Analogical Prompting",
+    "self-consistency"
+  ],
+  "compares_to_unresolved": []
+}

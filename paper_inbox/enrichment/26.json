@@ -19,7 +19,7 @@
     "planning efficiency"
   ],
   "builds_on_unresolved": [
-    "MemGPT",
+    "MemGPT: Towards LLMs as Operating Systems",
     "Voyager"
   ],
   "compares_to_unresolved": [

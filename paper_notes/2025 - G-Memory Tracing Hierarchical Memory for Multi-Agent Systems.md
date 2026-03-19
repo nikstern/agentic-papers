@@ -17,14 +17,14 @@ evaluates:
   - "embodied action"
   - "game tasks"
 builds_on: []
-compares_to: []
+compares_to:
+  - "[[2023 - MetaGPT Meta Programming for A Multi-Agent Collaborative Framework]]"
+  - "[[2023 - ChatDev Communicative Agents for Software Development]]"
 builds_on_unresolved:
   - "MemoryBank"
   - "Generative Agents"
   - "Voyager"
-compares_to_unresolved:
-  - "MetaGPT"
-  - "ChatDev"
+compares_to_unresolved: []
 relations: []
 source: "alphaxiv-mcp"
 ---
@@ -52,8 +52,8 @@ G-Memory retrieves relevant historical queries, traverses upward to abstract ins
 - `evaluates` multi-agent reasoning
 - `evaluates` embodied action
 - `evaluates` game tasks
+- `compares_to` [[2023 - MetaGPT Meta Programming for A Multi-Agent Collaborative Framework]]
+- `compares_to` [[2023 - ChatDev Communicative Agents for Software Development]]
 - `builds_on_unresolved` MemoryBank
 - `builds_on_unresolved` Generative Agents
 - `builds_on_unresolved` Voyager
-- `compares_to_unresolved` MetaGPT
-- `compares_to_unresolved` ChatDev

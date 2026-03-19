@@ -18,9 +18,9 @@
   ],
   "builds_on_unresolved": [],
   "compares_to_unresolved": [
-    "MemGPT",
+    "MemGPT: Towards LLMs as Operating Systems",
     "MemoryBank",
-    "ReadAgent",
+    "A Human-Inspired Reading Agent with Gist Memory of Very Long Contexts",
     "LoCoMo"
   ]
 }

@@ -1,0 +1,28 @@
+{
+  "paper_id": "34",
+  "summary": "Buffer of Thoughts equips LLMs with a meta-buffer of distilled thought templates that can be retrieved and adapted for new reasoning problems.",
+  "why_it_matters": "It is a useful memory-reasoning bridge paper because it treats reusable reasoning structures as a memory object, not just a prompt artifact.",
+  "method_setup": "The framework distills high-level thought templates from solved problems, stores them in a meta-buffer, retrieves relevant templates for new tasks, and updates the buffer over time through a buffer manager.",
+  "key_claims": [
+    "Reusable thought templates improve accuracy, efficiency, and robustness on reasoning tasks.",
+    "Smaller models can approach or exceed larger-model performance when paired with a strong thought buffer.",
+    "Problem distillation and memory of reasoning patterns are both critical components."
+  ],
+  "limitations": [
+    "The system depends on the quality of distilled templates and retrieval.",
+    "Creative or poorly structured tasks may benefit less than structured reasoning benchmarks."
+  ],
+  "evaluates": [
+    "reasoning templates",
+    "memory-augmented reasoning",
+    "reasoning efficiency"
+  ],
+  "builds_on_unresolved": [
+    "Chain-of-Thought",
+    "Tree of Thoughts"
+  ],
+  "compares_to_unresolved": [
+    "Graph of Thoughts",
+    "Meta Prompting"
+  ]
+}

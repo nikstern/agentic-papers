@@ -1,0 +1,26 @@
+{
+  "paper_id": "14",
+  "summary": "This survey studies graph-based agent memory as a structured memory paradigm for LLM agents, covering taxonomy, extraction, storage, retrieval, evolution, and applications.",
+  "why_it_matters": "It is a useful anchor for the structured-memory branch of the vault because it treats graphs as the key representation for relational, hierarchical, and evolving agent memory.",
+  "method_setup": "The paper surveys graph memory forms such as knowledge, temporal, hierarchical, and hybrid graphs, then analyzes graph-oriented retrieval and evolution methods across the memory lifecycle.",
+  "key_claims": [
+    "Graph-based memory offers a strong unifying representation for relational agent memory.",
+    "Structured memory is increasingly necessary for long-horizon reasoning and self-improvement.",
+    "Future progress depends on better graph quality, scalability, and trustworthy memory operations."
+  ],
+  "limitations": [
+    "The survey catalogs many graph techniques but does not validate a single new system.",
+    "The implementation burden of graph memory can be high in practice."
+  ],
+  "evaluates": [
+    "graph-based memory",
+    "structured retrieval",
+    "memory evolution mechanisms"
+  ],
+  "builds_on_unresolved": [
+    "Knowledge Graphs",
+    "GraphRAG",
+    "A-MEM: Agentic Memory for LLM Agents"
+  ],
+  "compares_to_unresolved": []
+}

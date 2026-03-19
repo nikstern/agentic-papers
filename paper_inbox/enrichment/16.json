@@ -1,0 +1,25 @@
+{
+  "paper_id": "16",
+  "summary": "ReadAgent is a human-inspired reading system that builds gist memory for long documents and then selectively looks up raw passages when more detail is needed.",
+  "why_it_matters": "It offers a practical memory-and-retrieval design for long-context reading that is more agentic than simple chunk retrieval and more efficient than feeding whole documents repeatedly.",
+  "method_setup": "The method paginates documents into natural episodes, compresses them into gist summaries, and lets an LLM iteratively retrieve raw pages from the source text while answering long-context questions.",
+  "key_claims": [
+    "Gist memory plus targeted lookup can outperform both direct long-context prompting and standard retrieval baselines.",
+    "LLM-guided retrieval is better aligned with long-document reasoning than simple chunk similarity.",
+    "Interactive long-context reading can be implemented without model fine-tuning."
+  ],
+  "limitations": [
+    "Compression can increase hallucination risk if the model over-trusts gist summaries.",
+    "Performance still depends on the underlying model\u2019s reading and retrieval judgment."
+  ],
+  "evaluates": [
+    "long-document reading",
+    "gist memory",
+    "interactive retrieval"
+  ],
+  "builds_on_unresolved": [],
+  "compares_to_unresolved": [
+    "NarrativeQA",
+    "QuALITY"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "paper_id": "13",
+  "summary": "This large survey maps agent memory through a forms-functions-dynamics taxonomy, distinguishing factual, experiential, and working memory as well as token-level, parametric, and latent representations.",
+  "why_it_matters": "It is one of the broadest memory surveys in the vault and useful as a reference map for comparing memory systems across representation, purpose, and lifecycle.",
+  "method_setup": "The paper formalizes agent memory relative to LLM memory and RAG, surveys memory forms and lifecycle operations, and compiles benchmarks and open-source frameworks for memory-augmented agents.",
+  "key_claims": [
+    "Memory should be treated as a first-class primitive of agent design.",
+    "Different memory forms align with different functional roles and dynamics.",
+    "Future agent memory research needs stronger support for multimodal, shared, and trustworthy memory."
+  ],
+  "limitations": [
+    "The scope is extremely broad, so many systems are described at a high level.",
+    "The survey is stronger as a field map than as an empirical comparison of competing memory designs."
+  ],
+  "evaluates": [
+    "agent memory forms",
+    "memory functions",
+    "memory lifecycle operations"
+  ],
+  "builds_on_unresolved": [
+    "MemGPT: Towards LLMs as Operating Systems",
+    "A Human-Inspired Reading Agent with Gist Memory of Very Long Contexts",
+    "Reflexion",
+    "HippoRAG"
+  ],
+  "compares_to_unresolved": [
+    "MemBench",
+    "LoCoMo",
+    "LongBench"
+  ]
+}

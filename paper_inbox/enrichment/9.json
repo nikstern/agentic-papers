@@ -1,0 +1,30 @@
+{
+  "paper_id": "9",
+  "summary": "This survey reviews memory mechanisms in LLM-based agents, organizing the area around memory forms, functions, and dynamics rather than a simple short-term versus long-term split.",
+  "why_it_matters": "It is a strong reference point for the vault\u2019s memory line because it treats agent memory as an evolving systems problem rather than a single retrieval trick.",
+  "method_setup": "The paper formalizes agent memory, distinguishes it from generic RAG and context engineering, and surveys token-level, parametric, and latent memory forms together with formation, retrieval, and evolution processes.",
+  "key_claims": [
+    "Agent memory should be analyzed by representational form, cognitive function, and lifecycle dynamics together.",
+    "Memory is a core module for long-horizon, adaptive agent behavior.",
+    "Future work needs better multimodal, trustworthy, and shared memory systems."
+  ],
+  "limitations": [
+    "As a survey, it synthesizes the field but does not validate a new memory mechanism itself.",
+    "The area is moving quickly, so concrete implementations may age faster than the conceptual taxonomy."
+  ],
+  "evaluates": [
+    "agent memory taxonomies",
+    "memory dynamics",
+    "memory system design"
+  ],
+  "builds_on_unresolved": [
+    "MemGPT: Towards LLMs as Operating Systems",
+    "Reflexion",
+    "RAG",
+    "Generative Agents"
+  ],
+  "compares_to_unresolved": [
+    "MemBench",
+    "LoCoMo"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "paper_id": "36",
+  "summary": "This survey conceptualizes the transition from generative AI to agentic AI, emphasizing reasoning, memory, tool use, interaction, and autonomy as the main differentiators.",
+  "why_it_matters": "It is a broad framing paper that is useful for situating the vault\u2019s transition from model-centric work toward agent-centric systems and their risks.",
+  "method_setup": "The paper conducts a survey-based synthesis of generative and agentic AI, compares their capabilities, and discusses challenges around control, alignment, interpretability, and deployment.",
+  "key_claims": [
+    "Agentic AI should be understood as an evolutionary step beyond generative AI.",
+    "Reasoning, memory, tools, and interaction are the core mechanisms that make systems agentic.",
+    "Agentic systems raise new risks around error accumulation, control, and value alignment."
+  ],
+  "limitations": [
+    "The paper is conceptual and survey-oriented rather than a system or benchmark contribution.",
+    "Its broad framing necessarily abstracts away from implementation details."
+  ],
+  "evaluates": [
+    "generative versus agentic ai",
+    "agent capabilities",
+    "agentic ai risks"
+  ],
+  "builds_on_unresolved": [],
+  "compares_to_unresolved": []
+}

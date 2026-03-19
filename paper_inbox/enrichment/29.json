@@ -1,0 +1,24 @@
+{
+  "paper_id": "29",
+  "summary": "AT2QA treats temporal question answering as an autonomous search problem, letting an LLM agent iteratively explore a temporal knowledge graph instead of following a rigid retrieval workflow.",
+  "why_it_matters": "It is a strong example of agentic retrieval beating workflow-heavy pipelines, and it supports the vault\u2019s broader interest in autonomous search over fixed orchestration.",
+  "method_setup": "The system equips an off-the-shelf LLM with a temporal search tool, lets it iteratively plan, retrieve, self-correct, and self-validate, and augments it with a training-free experience library distilled from successful trajectories.",
+  "key_claims": [
+    "Autonomous exploration can outperform both rigid workflows and heavy fine-tuning in temporal QA.",
+    "LLMs already contain strong latent temporal reasoning abilities that better interfaces can unlock.",
+    "Self-correction and explicit evidence retrieval are especially important for complex multi-hop temporal questions."
+  ],
+  "limitations": [
+    "The setting is specialized to temporal knowledge graph question answering.",
+    "Autonomous exploration can still be slower and less predictable than fixed pipelines."
+  ],
+  "evaluates": [
+    "temporal question answering",
+    "autonomous search",
+    "training-free retrieval agents"
+  ],
+  "builds_on_unresolved": [],
+  "compares_to_unresolved": [
+    "Temp-R1"
+  ]
+}

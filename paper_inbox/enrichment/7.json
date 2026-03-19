@@ -1,0 +1,26 @@
+{
+  "paper_id": "7",
+  "summary": "This survey argues that communication is the core systems lens for understanding LLM-based multi-agent systems, and organizes the field by communication architecture, goals, protocols, strategies, paradigms, objects, and content.",
+  "why_it_matters": "It gives a sharper framework than generic agent surveys for analyzing how multi-agent systems actually coordinate, deliberate, and share state.",
+  "method_setup": "The paper proposes a two-level communication-centric framework spanning macro system-level design and micro interaction-level mechanisms, then surveys representative systems and identifies communication-specific challenges.",
+  "key_claims": [
+    "Communication is the central organizing principle of LLM multi-agent systems.",
+    "System-level and interaction-level communication choices jointly determine coordination behavior.",
+    "Future progress requires better protocols, efficiency, security, and multimodal communication support."
+  ],
+  "limitations": [
+    "The framework is analytic rather than a directly validated benchmark protocol.",
+    "Because it is communication-centric, other systems dimensions receive less emphasis."
+  ],
+  "evaluates": [
+    "communication architectures",
+    "multi-agent coordination",
+    "protocol design"
+  ],
+  "builds_on_unresolved": [
+    "MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework",
+    "Generative Agents",
+    "EconAgent"
+  ],
+  "compares_to_unresolved": []
+}

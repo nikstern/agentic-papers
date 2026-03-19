@@ -1,0 +1,26 @@
+{
+  "paper_id": "5",
+  "summary": "This survey organizes the progress of LLM-based multi-agent systems around agent environment interfaces, profiling choices, communication mechanisms, and capability acquisition strategies.",
+  "why_it_matters": "It is a useful early field map for positioning systems, surveys, and applications in the broader multi-agent literature before the taxonomy space became crowded.",
+  "method_setup": "The paper surveys applications in problem solving and world simulation, proposes a general architectural schema, and compares systems by environment, profiling, communication, feedback, and adaptation mechanisms.",
+  "key_claims": [
+    "LLM multi-agent systems should be analyzed through architecture, communication, and adaptation together.",
+    "The field splits naturally into problem-solving systems and world-simulation systems.",
+    "Specialization and interaction are the main reasons to use multiple agents instead of one."
+  ],
+  "limitations": [
+    "As an early survey, some later architectural patterns and benchmarks are not covered.",
+    "It offers synthesis rather than direct empirical validation of any new system."
+  ],
+  "evaluates": [
+    "llm multi-agent architectures",
+    "communication mechanisms",
+    "agent applications"
+  ],
+  "builds_on_unresolved": [
+    "CAMEL: Communicative Agents for \"Mind\" Exploration of Large Scale Language Model Society",
+    "MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework",
+    "Generative Agents"
+  ],
+  "compares_to_unresolved": []
+}

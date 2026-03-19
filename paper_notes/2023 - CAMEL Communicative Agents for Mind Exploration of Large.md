@@ -26,10 +26,10 @@ source: "manual"
 CAMEL studies role-playing communication between LLM agents as a way to coordinate multi-agent problem solving.
 
 # Why It Matters
-It is one of the foundational papers for LLM multi-agent collaboration workflows.
+It is one of the earliest papers to treat role-conditioned inter-agent dialogue as a core design primitive for LLM multi-agent collaboration.
 
 # Method / Setup
-The paper uses role-conditioned agent communication and evaluates task completion quality across collaborative settings.
+The framework pairs agents in defined roles, uses inception-style prompting to preserve those roles, and measures whether the resulting dialogues can complete cooperative tasks.
 
 # Key Claims
 - Role-playing prompts can scaffold multi-agent cooperation.

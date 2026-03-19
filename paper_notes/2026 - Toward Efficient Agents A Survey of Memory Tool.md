@@ -17,12 +17,12 @@ evaluates:
   - "memory efficiency"
   - "tool-learning efficiency"
   - "planning efficiency"
-builds_on: []
+builds_on:
+  - "[[2023 - MemGPT Towards LLMs as Operating Systems]]"
 compares_to:
   - "[[2024 - A Survey on the Memory Mechanism of Large]]"
   - "[[2025 - Rethinking Memory in LLM based Agents Representations Operations]]"
 builds_on_unresolved:
-  - "MemGPT"
   - "Voyager"
 compares_to_unresolved: []
 relations: []
@@ -53,7 +53,7 @@ The paper reviews efficiency techniques across memory construction and access, t
 - `evaluates` memory efficiency
 - `evaluates` tool-learning efficiency
 - `evaluates` planning efficiency
+- `builds_on` [[2023 - MemGPT Towards LLMs as Operating Systems]]
 - `compares_to` [[2024 - A Survey on the Memory Mechanism of Large]]
 - `compares_to` [[2025 - Rethinking Memory in LLM based Agents Representations Operations]]
-- `builds_on_unresolved` MemGPT
 - `builds_on_unresolved` Voyager

@@ -1,0 +1,28 @@
+{
+  "paper_id": "3",
+  "summary": "ChatDev casts software development as a chat chain in which specialized LLM agents collaborate across design, coding, and testing through multi-turn dialogue and communicative dehallucination.",
+  "why_it_matters": "It is an early influential multi-agent software engineering system that made communication patterns, role prompting, and iterative debugging central design variables rather than implementation details.",
+  "method_setup": "The framework organizes a software company around specialized roles, uses phase-specific chat chains, adds communicative dehallucination for clarification and debugging, and evaluates outputs on a software requirement dataset against single-agent and multi-agent baselines.",
+  "key_claims": [
+    "Role-specialized multi-agent chat improves end-to-end software development quality.",
+    "Communicative dehallucination reduces common coding mistakes and missing details.",
+    "Structured multi-phase collaboration outperforms both single-agent coding and more rigid multi-agent baselines."
+  ],
+  "limitations": [
+    "The framework is still most credible for prototype-level software rather than production systems.",
+    "Multi-agent coordination raises token and latency costs relative to single-agent approaches."
+  ],
+  "evaluates": [
+    "software prototyping",
+    "code executability",
+    "multi-agent communication quality"
+  ],
+  "builds_on_unresolved": [
+    "CAMEL: Communicative Agents for \"Mind\" Exploration of Large Scale Language Model Society",
+    "MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework"
+  ],
+  "compares_to_unresolved": [
+    "GPT-Engineer",
+    "MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework"
+  ]
+}

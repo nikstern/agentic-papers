@@ -1,0 +1,22 @@
+{
+  "paper_id": "32",
+  "summary": "This survey organizes LLM agents around construction, collaboration, and evolution, providing a broad methodology-focused map of the agent field.",
+  "why_it_matters": "It is a useful general anchor for the vault because it connects agent profile design, memory, planning, action, collaboration, and evolution in one framework.",
+  "method_setup": "The paper develops a build-collaborate-evolve taxonomy, surveys agent components and collaboration paradigms, and reviews applications together with security, privacy, and ethics challenges.",
+  "key_claims": [
+    "LLM agents should be analyzed through methodology and architecture, not only by application area.",
+    "Construction, collaboration, and evolution are the key dimensions for organizing agent systems.",
+    "Real-world deployment requires stronger treatment of safety, privacy, and reliability."
+  ],
+  "limitations": [
+    "The survey is broad and therefore less detailed on any one subfield.",
+    "Its taxonomy is descriptive rather than experimentally benchmarked."
+  ],
+  "evaluates": [
+    "llm agent methodology",
+    "agent collaboration",
+    "agent evolution"
+  ],
+  "builds_on_unresolved": [],
+  "compares_to_unresolved": []
+}

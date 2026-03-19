@@ -1,0 +1,27 @@
+{
+  "paper_id": "35",
+  "summary": "Chain of Draft prompts LLMs to produce only minimal intermediate drafts during reasoning, preserving multi-step problem solving while sharply reducing verbosity.",
+  "why_it_matters": "It is a practical efficiency paper for the vault because it shows that reasoning quality and token cost do not need to move together if intermediate traces are constrained well.",
+  "method_setup": "The method uses a system prompt and few-shot examples to elicit very short intermediate reasoning steps, then compares that style with direct prompting and chain-of-thought across arithmetic, commonsense, and symbolic tasks.",
+  "key_claims": [
+    "Minimal draft-style reasoning can retain most of CoT\u2019s benefits at much lower token cost.",
+    "Latency and inference cost can drop dramatically without fully abandoning explicit reasoning.",
+    "The main gains are strongest on capable models and with well-chosen examples."
+  ],
+  "limitations": [
+    "Performance drops more on smaller models and in zero-shot settings.",
+    "The method still relies on carefully designed few-shot demonstrations."
+  ],
+  "evaluates": [
+    "reasoning efficiency",
+    "prompt compression",
+    "multi-step reasoning"
+  ],
+  "builds_on_unresolved": [
+    "Chain-of-Thought"
+  ],
+  "compares_to_unresolved": [
+    "Concise Thoughts",
+    "TALE"
+  ]
+}

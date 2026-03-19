@@ -1,0 +1,28 @@
+{
+  "paper_id": "23",
+  "summary": "This paper revives the blackboard architecture for LLM multi-agent systems, using a shared workspace where dynamically selected agents contribute and refine problem-solving state.",
+  "why_it_matters": "It shows a concrete alternative to fixed-role chat workflows and training-heavy autonomous systems by making shared state and dynamic coordination the center of the design.",
+  "method_setup": "The framework combines a blackboard, a control unit that selects agents based on current state, dynamically generated experts, and predefined roles such as planner, critic, cleaner, and decider, then evaluates the system on reasoning and math benchmarks.",
+  "key_claims": [
+    "Blackboard-style shared state enables flexible and effective multi-agent collaboration.",
+    "Dynamic agent selection can outperform fixed workflows while remaining token-efficient.",
+    "Classical AI coordination architectures remain relevant when paired with strong LLMs."
+  ],
+  "limitations": [
+    "The initial implementation uses a limited set of predefined agent roles and benchmark tasks.",
+    "The framework still depends on careful blackboard management to avoid clutter and drift."
+  ],
+  "evaluates": [
+    "dynamic multi-agent coordination",
+    "shared blackboard reasoning",
+    "reasoning and math tasks"
+  ],
+  "builds_on_unresolved": [
+    "blackboard architecture"
+  ],
+  "compares_to_unresolved": [
+    "GPTSwarm",
+    "AFlow",
+    "MaAS"
+  ]
+}

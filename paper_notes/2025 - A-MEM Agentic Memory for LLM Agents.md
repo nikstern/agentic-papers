@@ -16,12 +16,12 @@ evaluates:
   - "long-term conversational memory"
   - "multi-hop reasoning"
 builds_on: []
-compares_to: []
+compares_to:
+  - "[[2023 - MemGPT Towards LLMs as Operating Systems]]"
+  - "[[2024 - A Human-Inspired Reading Agent with Gist Memory of]]"
 builds_on_unresolved: []
 compares_to_unresolved:
-  - "MemGPT"
   - "MemoryBank"
-  - "ReadAgent"
   - "LoCoMo"
 relations: []
 source: "alphaxiv-mcp"
@@ -49,7 +49,7 @@ The system constructs structured notes, retrieves top-k related memories, uses L
 - [[Memory Context]]
 - `evaluates` long-term conversational memory
 - `evaluates` multi-hop reasoning
-- `compares_to_unresolved` MemGPT
+- `compares_to` [[2023 - MemGPT Towards LLMs as Operating Systems]]
+- `compares_to` [[2024 - A Human-Inspired Reading Agent with Gist Memory of]]
 - `compares_to_unresolved` MemoryBank
-- `compares_to_unresolved` ReadAgent
 - `compares_to_unresolved` LoCoMo

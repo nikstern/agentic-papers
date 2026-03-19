@@ -1,0 +1,29 @@
+{
+  "paper_id": "2",
+  "summary": "MetaGPT frames software development as a structured multi-agent workflow in which specialized agents produce requirements, architecture, task decomposition, implementation, and review artifacts through standardized handoffs.",
+  "why_it_matters": "It is a foundational systems paper for agentic software engineering because it shows how role specialization and explicit process structure can make multi-agent coding materially more reliable than ad hoc prompting.",
+  "method_setup": "The system models a software company with roles such as product manager, architect, project manager, engineer, and QA engineer, uses structured artifacts instead of free-form dialogue, and evaluates performance on HumanEval, MBPP, and a SoftwareDev benchmark with executable feedback loops.",
+  "key_claims": [
+    "Structured operating procedures improve multi-agent software generation.",
+    "Role-specialized agents outperform looser agent collaboration baselines on coding tasks.",
+    "Executable feedback materially improves code quality and task completion."
+  ],
+  "limitations": [
+    "The framework is tailored mainly to software engineering workflows.",
+    "Its gains depend on careful workflow design and a strong underlying model."
+  ],
+  "evaluates": [
+    "software generation",
+    "multi-agent software engineering",
+    "code benchmark performance"
+  ],
+  "builds_on_unresolved": [
+    "Chain-of-Thought",
+    "ReAct"
+  ],
+  "compares_to_unresolved": [
+    "ChatDev: Communicative Agents for Software Development",
+    "AutoGPT",
+    "LangChain"
+  ]
+}
