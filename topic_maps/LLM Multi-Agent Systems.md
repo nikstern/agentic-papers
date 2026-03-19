@@ -20,3 +20,6 @@ Systems where multiple LLM-based agents coordinate through explicit roles, messa
 - [[2026 - AI Agent Systems Architectures Applications and Evaluation]]
 - [[2026 - Toward Efficient Agents A Survey of Memory Tool]]
 - [[2025 - A Survey of Self-Evolving Agents What When How]]
+- [[2025 - Large Language Model Agent A Survey on Methodology]]
+- [[2025 - Chain of Draft Thinking Faster by Writing Less]]
+- [[2025 - Generative to Agentic AI Survey Conceptualization and Challenges]]

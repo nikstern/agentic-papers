@@ -12,3 +12,4 @@ Agent systems focused on code generation, software engineering workflows, debugg
 ## Included Papers
 
 - [[2023 - ChatDev Communicative Agents for Software Development]]
+- [[2025 - Agentic Software Engineering Foundational Pillars and a Research]]

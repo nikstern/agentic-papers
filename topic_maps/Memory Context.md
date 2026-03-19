@@ -27,3 +27,4 @@ Work on persistent memory, retrieval, summarization, and context construction fo
 - [[2025 - Enhancing Reasoning with Collaboration and Memory]]
 - [[2026 - Multi-Agent Memory from a Computer Architecture Perspective Visions]]
 - [[2026 - Memory for Autonomous LLM Agents Mechanisms Evaluation and]]
+- [[2024 - Buffer of Thoughts Thought-Augmented Reasoning with Large Language]]

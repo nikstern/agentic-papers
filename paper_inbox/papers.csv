@@ -27,3 +27,11 @@ paper_id,title,url,year,authors,candidate_topic,source,paper_type,status
 26,"Toward Efficient Agents: A Survey of Memory, Tool learning, and Planning",https://arxiv.org/abs/2601.14192,2026,Yang et al.,llm-multi-agent-systems,alphaxiv-mcp,survey,ingested
 27,"A Survey of Self-Evolving Agents: What, When, How, and Where to Evolve on the Path to Artificial Super Intelligence",https://arxiv.org/abs/2507.21046,2025,Xu et al.,llm-multi-agent-systems,alphaxiv-mcp,survey,ingested
 28,"Memory for Autonomous LLM Agents: Mechanisms, Evaluation, and Emerging Frontiers",https://arxiv.org/abs/2603.07670,2026,Du,memory-context,alphaxiv-mcp,survey,ingested
+29,Let the Agent Search: Autonomous Exploration Beats Rigid Workflows in Temporal Question Answering,https://arxiv.org/abs/2603.01853,2026,Lv et al.,search-retrieval,alphaxiv-mcp,system,ingested
+30,Agentic Software Engineering: Foundational Pillars and a Research Roadmap,https://arxiv.org/abs/2509.06216,2025,Hassan et al.,software-agents,alphaxiv-mcp,position,ingested
+31,Intelligent AI Delegation,https://arxiv.org/abs/2602.11865,2026,Tomasev et al.,task-allocation,alphaxiv-mcp,position,ingested
+32,"Large Language Model Agent: A Survey on Methodology, Applications and Challenges",https://arxiv.org/abs/2503.21460,2025,Luo et al.,llm-multi-agent-systems,alphaxiv-mcp,survey,ingested
+33,Chain-of-Symbol Prompting Elicits Planning in Large Langauge Models,https://arxiv.org/abs/2305.10276,2023,Hu et al.,task-allocation,alphaxiv-mcp,application,ingested
+34,Buffer of Thoughts: Thought-Augmented Reasoning with Large Language Models,https://arxiv.org/abs/2406.04271,2024,Yang et al.,memory-context,alphaxiv-mcp,system,ingested
+35,Chain of Draft: Thinking Faster by Writing Less,https://arxiv.org/abs/2502.18600,2025,Xu et al.,llm-multi-agent-systems,alphaxiv-mcp,application,ingested
+36,"Generative to Agentic AI: Survey, Conceptualization, and Challenges",https://arxiv.org/abs/2504.18875,2025,Schneider,llm-multi-agent-systems,alphaxiv-mcp,survey,ingested

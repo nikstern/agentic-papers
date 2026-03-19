@@ -10,3 +10,6 @@ tags: [topic-map]
 Methods for decomposition, delegation, role assignment, and workload distribution across agents or tools.
 
 ## Included Papers
+
+- [[2026 - Intelligent AI Delegation]]
+- [[2023 - Chain-of-Symbol Prompting Elicits Planning in Large Langauge Models]]
