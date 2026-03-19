@@ -1,26 +1,28 @@
 ---
 paper_id: 20
-title: Intrinsic Memory Agents: Heterogeneous Multi-Agent LLM Systems through Structured Contextual Memory
+title: "Intrinsic Memory Agents: Heterogeneous Multi-Agent LLM Systems through Structured Contextual Memory"
 year: 2025
-authors: Yuen et al.
-url: https://arxiv.org/abs/2508.08997
-paper_type: system
-primary_topic: memory-context
+authors: "Yuen et al."
+url: "https://arxiv.org/abs/2508.08997"
+paper_type: "system"
+primary_topic: "memory-context"
 secondary_topics: []
-status: ingested
-tags: [papers, memory-context]
+status: "ingested"
+tags:
+  - "papers"
+  - "memory-context"
 evaluates:
-  - structured planning
-  - collaborative system design
+  - "structured planning"
+  - "collaborative system design"
 builds_on:
-  - [[2023 - MemGPT Towards LLMs as Operating Systems]]
+  - "[[2023 - MemGPT Towards LLMs as Operating Systems]]"
 compares_to:
-  - [[2025 - G-Memory Tracing Hierarchical Memory for Multi-Agent Systems]]
+  - "[[2025 - G-Memory Tracing Hierarchical Memory for Multi-Agent Systems]]"
 builds_on_unresolved:
-  - Retrieval-Augmented Generation
+  - "Retrieval-Augmented Generation"
 compares_to_unresolved: []
 relations: []
-source: alphaxiv-mcp
+source: "alphaxiv-mcp"
 ---
 
 # Summary

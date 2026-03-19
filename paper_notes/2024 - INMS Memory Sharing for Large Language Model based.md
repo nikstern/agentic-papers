@@ -1,26 +1,28 @@
 ---
 paper_id: 17
-title: INMS: Memory Sharing for Large Language Model based Agents
+title: "INMS: Memory Sharing for Large Language Model based Agents"
 year: 2024
-authors: Gao and Zhang
-url: https://arxiv.org/abs/2404.09982
-paper_type: system
-primary_topic: memory-context
+authors: "Gao and Zhang"
+url: "https://arxiv.org/abs/2404.09982"
+paper_type: "system"
+primary_topic: "memory-context"
 secondary_topics: []
-status: ingested
-tags: [papers, memory-context]
+status: "ingested"
+tags:
+  - "papers"
+  - "memory-context"
 evaluates:
-  - open-ended question answering
-  - shared memory for multi-agent learning
+  - "open-ended question answering"
+  - "shared memory for multi-agent learning"
 builds_on:
-  - [[2023 - MemGPT Towards LLMs as Operating Systems]]
+  - "[[2023 - MemGPT Towards LLMs as Operating Systems]]"
 compares_to: []
 builds_on_unresolved: []
 compares_to_unresolved:
-  - Retrieval-Augmented Generation
-  - MemoryBank
+  - "Retrieval-Augmented Generation"
+  - "MemoryBank"
 relations: []
-source: alphaxiv-mcp
+source: "alphaxiv-mcp"
 ---
 
 # Summary

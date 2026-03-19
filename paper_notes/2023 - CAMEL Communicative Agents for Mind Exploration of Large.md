@@ -1,22 +1,24 @@
 ---
 paper_id: 1
-title: CAMEL: Communicative Agents for "Mind" Exploration of Large Scale Language Model Society
+title: "CAMEL: Communicative Agents for \"Mind\" Exploration of Large Scale Language Model Society"
 year: 2023
-authors: Li et al.
-url: https://arxiv.org/abs/2303.17760
-paper_type: system
-primary_topic: llm-multi-agent-systems
+authors: "Li et al."
+url: "https://arxiv.org/abs/2303.17760"
+paper_type: "system"
+primary_topic: "llm-multi-agent-systems"
 secondary_topics: []
-status: ingested
-tags: [papers, llm-multi-agent-systems]
+status: "ingested"
+tags:
+  - "papers"
+  - "llm-multi-agent-systems"
 evaluates:
-  - multi-agent cooperation
+  - "multi-agent cooperation"
 builds_on: []
 compares_to: []
 builds_on_unresolved: []
 compares_to_unresolved: []
 relations: []
-source: manual
+source: "manual"
 ---
 
 # Summary

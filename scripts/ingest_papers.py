@@ -89,8 +89,12 @@ def yaml_list_block(items: list[str]) -> str:
         return " []"
     lines = [""] 
     for item in items:
-        lines.append(f"  - {item}")
+        lines.append(f"  - {yaml_string(item)}")
     return "\n".join(lines)
+
+
+def yaml_string(value: str) -> str:
+    return json.dumps(value)
 
 
 def bullet_list(items: list[str]) -> str:
@@ -154,22 +158,24 @@ def render_note(row: dict, title_index: dict[str, str]) -> str:
             connections.append(f"- `{relation_type}` {value}")
     return f"""---
 paper_id: {row["paper_id"]}
-title: {row["title"]}
+title: {yaml_string(row["title"])}
 year: {row["year"]}
-authors: {row["authors"]}
-url: {row["url"]}
-paper_type: {row["paper_type"]}
-primary_topic: {row["candidate_topic"]}
+authors: {yaml_string(row["authors"])}
+url: {yaml_string(row["url"])}
+paper_type: {yaml_string(row["paper_type"])}
+primary_topic: {yaml_string(row["candidate_topic"])}
 secondary_topics: []
-status: {row["status"]}
-tags: [papers, {row["candidate_topic"]}]
+status: {yaml_string(row["status"])}
+tags:
+  - "papers"
+  - {yaml_string(row["candidate_topic"])}
 evaluates:{yaml_list_block(enrichment["evaluates"])}
 builds_on:{yaml_list_block(builds_on)}
 compares_to:{yaml_list_block(compares_to)}
 builds_on_unresolved:{yaml_list_block(builds_on_unresolved)}
 compares_to_unresolved:{yaml_list_block(compares_to_unresolved)}
 relations: []
-source: {row["source"]}
+source: {yaml_string(row["source"])}
 ---
 
 # Summary

@@ -1,27 +1,29 @@
 ---
 paper_id: 8
-title: A-MEM: Agentic Memory for LLM Agents
+title: "A-MEM: Agentic Memory for LLM Agents"
 year: 2025
-authors: Xu et al.
-url: https://arxiv.org/abs/2502.12110
-paper_type: system
-primary_topic: memory-context
+authors: "Xu et al."
+url: "https://arxiv.org/abs/2502.12110"
+paper_type: "system"
+primary_topic: "memory-context"
 secondary_topics: []
-status: ingested
-tags: [papers, memory-context]
+status: "ingested"
+tags:
+  - "papers"
+  - "memory-context"
 evaluates:
-  - long-term conversational memory
-  - multi-hop reasoning
+  - "long-term conversational memory"
+  - "multi-hop reasoning"
 builds_on: []
 compares_to: []
 builds_on_unresolved: []
 compares_to_unresolved:
-  - MemGPT
-  - MemoryBank
-  - ReadAgent
-  - LoCoMo
+  - "MemGPT"
+  - "MemoryBank"
+  - "ReadAgent"
+  - "LoCoMo"
 relations: []
-source: alphaxiv-mcp
+source: "alphaxiv-mcp"
 ---
 
 # Summary

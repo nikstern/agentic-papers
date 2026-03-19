@@ -1,26 +1,28 @@
 ---
 paper_id: 19
-title: Collaborative Memory: Multi-User Memory Sharing in LLM Agents with Dynamic Access Control
+title: "Collaborative Memory: Multi-User Memory Sharing in LLM Agents with Dynamic Access Control"
 year: 2025
-authors: Rezazadeh et al.
-url: https://arxiv.org/abs/2505.18279
-paper_type: system
-primary_topic: memory-context
+authors: "Rezazadeh et al."
+url: "https://arxiv.org/abs/2505.18279"
+paper_type: "system"
+primary_topic: "memory-context"
 secondary_topics: []
-status: ingested
-tags: [papers, memory-context]
+status: "ingested"
+tags:
+  - "papers"
+  - "memory-context"
 evaluates:
-  - multi-user collaborative memory
-  - dynamic access-controlled sharing
+  - "multi-user collaborative memory"
+  - "dynamic access-controlled sharing"
 builds_on:
-  - [[2023 - MemGPT Towards LLMs as Operating Systems]]
+  - "[[2023 - MemGPT Towards LLMs as Operating Systems]]"
 compares_to: []
 builds_on_unresolved: []
 compares_to_unresolved:
-  - Memory Sharing for Large Language Model based Agents
-  - MemTree
+  - "Memory Sharing for Large Language Model based Agents"
+  - "MemTree"
 relations: []
-source: alphaxiv-mcp
+source: "alphaxiv-mcp"
 ---
 
 # Summary

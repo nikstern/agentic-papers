@@ -1,21 +1,23 @@
 ---
 paper_id: 9
-title: A Survey on the Memory Mechanism of Large Language Model based Agents
+title: "A Survey on the Memory Mechanism of Large Language Model based Agents"
 year: 2024
-authors: Zhang et al.
-url: https://arxiv.org/abs/2404.13501
-paper_type: survey
-primary_topic: memory-context
+authors: "Zhang et al."
+url: "https://arxiv.org/abs/2404.13501"
+paper_type: "survey"
+primary_topic: "memory-context"
 secondary_topics: []
-status: ingested
-tags: [papers, memory-context]
+status: "ingested"
+tags:
+  - "papers"
+  - "memory-context"
 evaluates: []
 builds_on: []
 compares_to: []
 builds_on_unresolved: []
 compares_to_unresolved: []
 relations: []
-source: alphaxiv-mcp
+source: "alphaxiv-mcp"
 ---
 
 # Summary

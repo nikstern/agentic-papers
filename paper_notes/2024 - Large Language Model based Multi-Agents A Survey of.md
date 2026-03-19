@@ -1,21 +1,23 @@
 ---
 paper_id: 5
-title: Large Language Model based Multi-Agents: A Survey of Progress and Challenges
+title: "Large Language Model based Multi-Agents: A Survey of Progress and Challenges"
 year: 2024
-authors: Guo et al.
-url: https://arxiv.org/abs/2402.01680
-paper_type: survey
-primary_topic: llm-multi-agent-systems
+authors: "Guo et al."
+url: "https://arxiv.org/abs/2402.01680"
+paper_type: "survey"
+primary_topic: "llm-multi-agent-systems"
 secondary_topics: []
-status: ingested
-tags: [papers, llm-multi-agent-systems]
+status: "ingested"
+tags:
+  - "papers"
+  - "llm-multi-agent-systems"
 evaluates: []
 builds_on: []
 compares_to: []
 builds_on_unresolved: []
 compares_to_unresolved: []
 relations: []
-source: manual
+source: "manual"
 ---
 
 # Summary

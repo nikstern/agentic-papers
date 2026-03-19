@@ -1,21 +1,23 @@
 ---
 paper_id: 2
-title: MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework
+title: "MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework"
 year: 2023
-authors: Hong et al.
-url: https://arxiv.org/abs/2308.00352
-paper_type: system
-primary_topic: llm-multi-agent-systems
+authors: "Hong et al."
+url: "https://arxiv.org/abs/2308.00352"
+paper_type: "system"
+primary_topic: "llm-multi-agent-systems"
 secondary_topics: []
-status: ingested
-tags: [papers, llm-multi-agent-systems]
+status: "ingested"
+tags:
+  - "papers"
+  - "llm-multi-agent-systems"
 evaluates: []
 builds_on: []
 compares_to: []
 builds_on_unresolved: []
 compares_to_unresolved: []
 relations: []
-source: manual
+source: "manual"
 ---
 
 # Summary

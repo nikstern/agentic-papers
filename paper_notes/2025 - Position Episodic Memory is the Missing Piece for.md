@@ -1,21 +1,23 @@
 ---
 paper_id: 11
-title: Position: Episodic Memory is the Missing Piece for Long-Term LLM Agents
+title: "Position: Episodic Memory is the Missing Piece for Long-Term LLM Agents"
 year: 2025
-authors: Pink et al.
-url: https://arxiv.org/abs/2502.06975
-paper_type: position
-primary_topic: memory-context
+authors: "Pink et al."
+url: "https://arxiv.org/abs/2502.06975"
+paper_type: "position"
+primary_topic: "memory-context"
 secondary_topics: []
-status: ingested
-tags: [papers, memory-context]
+status: "ingested"
+tags:
+  - "papers"
+  - "memory-context"
 evaluates: []
 builds_on: []
 compares_to: []
 builds_on_unresolved: []
 compares_to_unresolved: []
 relations: []
-source: alphaxiv-mcp
+source: "alphaxiv-mcp"
 ---
 
 # Summary

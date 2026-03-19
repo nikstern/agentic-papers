@@ -1,21 +1,23 @@
 ---
 paper_id: 23
-title: Exploring Advanced LLM Multi-Agent Systems Based on Blackboard Architecture
+title: "Exploring Advanced LLM Multi-Agent Systems Based on Blackboard Architecture"
 year: 2025
-authors: Han and Zhang
-url: https://arxiv.org/abs/2507.01701
-paper_type: system
-primary_topic: llm-multi-agent-systems
+authors: "Han and Zhang"
+url: "https://arxiv.org/abs/2507.01701"
+paper_type: "system"
+primary_topic: "llm-multi-agent-systems"
 secondary_topics: []
-status: ingested
-tags: [papers, llm-multi-agent-systems]
+status: "ingested"
+tags:
+  - "papers"
+  - "llm-multi-agent-systems"
 evaluates: []
 builds_on: []
 compares_to: []
 builds_on_unresolved: []
 compares_to_unresolved: []
 relations: []
-source: alphaxiv-mcp
+source: "alphaxiv-mcp"
 ---
 
 # Summary

@@ -1,21 +1,23 @@
 ---
 paper_id: 15
-title: MemGPT: Towards LLMs as Operating Systems
+title: "MemGPT: Towards LLMs as Operating Systems"
 year: 2023
-authors: Packer et al.
-url: https://arxiv.org/abs/2310.08560
-paper_type: system
-primary_topic: memory-context
+authors: "Packer et al."
+url: "https://arxiv.org/abs/2310.08560"
+paper_type: "system"
+primary_topic: "memory-context"
 secondary_topics: []
-status: ingested
-tags: [papers, memory-context]
+status: "ingested"
+tags:
+  - "papers"
+  - "memory-context"
 evaluates: []
 builds_on: []
 compares_to: []
 builds_on_unresolved: []
 compares_to_unresolved: []
 relations: []
-source: alphaxiv-mcp
+source: "alphaxiv-mcp"
 ---
 
 # Summary

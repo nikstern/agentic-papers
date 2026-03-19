@@ -1,33 +1,35 @@
 ---
 paper_id: 24
-title: AI Agent Systems: Architectures, Applications, and Evaluation
+title: "AI Agent Systems: Architectures, Applications, and Evaluation"
 year: 2026
-authors: Xu et al.
-url: https://arxiv.org/abs/2601.01743
-paper_type: survey
-primary_topic: llm-multi-agent-systems
+authors: "Xu et al."
+url: "https://arxiv.org/abs/2601.01743"
+paper_type: "survey"
+primary_topic: "llm-multi-agent-systems"
 secondary_topics: []
-status: ingested
-tags: [papers, llm-multi-agent-systems]
+status: "ingested"
+tags:
+  - "papers"
+  - "llm-multi-agent-systems"
 evaluates:
-  - ai agent architectures
-  - agent evaluation frameworks
-  - tool-use and planning systems
+  - "ai agent architectures"
+  - "agent evaluation frameworks"
+  - "tool-use and planning systems"
 builds_on: []
 compares_to: []
 builds_on_unresolved:
-  - ReAct
-  - MRKL
-  - Tree of Thoughts
-  - Toolformer
+  - "ReAct"
+  - "MRKL"
+  - "Tree of Thoughts"
+  - "Toolformer"
 compares_to_unresolved:
-  - AgentBench
-  - WebArena
-  - ToolBench
-  - SWE-bench
-  - GAIA
+  - "AgentBench"
+  - "WebArena"
+  - "ToolBench"
+  - "SWE-bench"
+  - "GAIA"
 relations: []
-source: alphaxiv-mcp
+source: "alphaxiv-mcp"
 ---
 
 # Summary

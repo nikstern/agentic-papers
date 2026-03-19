@@ -1,29 +1,31 @@
 ---
 paper_id: 26
-title: Toward Efficient Agents: A Survey of Memory, Tool learning, and Planning
+title: "Toward Efficient Agents: A Survey of Memory, Tool learning, and Planning"
 year: 2026
-authors: Yang et al.
-url: https://arxiv.org/abs/2601.14192
-paper_type: survey
-primary_topic: llm-multi-agent-systems
+authors: "Yang et al."
+url: "https://arxiv.org/abs/2601.14192"
+paper_type: "survey"
+primary_topic: "llm-multi-agent-systems"
 secondary_topics: []
-status: ingested
-tags: [papers, llm-multi-agent-systems]
+status: "ingested"
+tags:
+  - "papers"
+  - "llm-multi-agent-systems"
 evaluates:
-  - efficient agent design
-  - memory efficiency
-  - tool-learning efficiency
-  - planning efficiency
+  - "efficient agent design"
+  - "memory efficiency"
+  - "tool-learning efficiency"
+  - "planning efficiency"
 builds_on: []
 compares_to:
-  - [[2024 - A Survey on the Memory Mechanism of Large]]
-  - [[2025 - Rethinking Memory in LLM based Agents Representations Operations]]
+  - "[[2024 - A Survey on the Memory Mechanism of Large]]"
+  - "[[2025 - Rethinking Memory in LLM based Agents Representations Operations]]"
 builds_on_unresolved:
-  - MemGPT
-  - Voyager
+  - "MemGPT"
+  - "Voyager"
 compares_to_unresolved: []
 relations: []
-source: alphaxiv-mcp
+source: "alphaxiv-mcp"
 ---
 
 # Summary

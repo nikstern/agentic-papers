@@ -1,29 +1,31 @@
 ---
 paper_id: 18
-title: G-Memory: Tracing Hierarchical Memory for Multi-Agent Systems
+title: "G-Memory: Tracing Hierarchical Memory for Multi-Agent Systems"
 year: 2025
-authors: Zhang et al.
-url: https://arxiv.org/abs/2506.07398
-paper_type: system
-primary_topic: memory-context
+authors: "Zhang et al."
+url: "https://arxiv.org/abs/2506.07398"
+paper_type: "system"
+primary_topic: "memory-context"
 secondary_topics: []
-status: ingested
-tags: [papers, memory-context]
+status: "ingested"
+tags:
+  - "papers"
+  - "memory-context"
 evaluates:
-  - multi-agent reasoning
-  - embodied action
-  - game tasks
+  - "multi-agent reasoning"
+  - "embodied action"
+  - "game tasks"
 builds_on: []
 compares_to: []
 builds_on_unresolved:
-  - MemoryBank
-  - Generative Agents
-  - Voyager
+  - "MemoryBank"
+  - "Generative Agents"
+  - "Voyager"
 compares_to_unresolved:
-  - MetaGPT
-  - ChatDev
+  - "MetaGPT"
+  - "ChatDev"
 relations: []
-source: alphaxiv-mcp
+source: "alphaxiv-mcp"
 ---
 
 # Summary

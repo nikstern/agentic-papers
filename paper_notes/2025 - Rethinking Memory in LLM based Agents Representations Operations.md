@@ -1,23 +1,25 @@
 ---
 paper_id: 10
-title: Rethinking Memory in LLM based Agents: Representations, Operations, and Emerging Topics
+title: "Rethinking Memory in LLM based Agents: Representations, Operations, and Emerging Topics"
 year: 2025
-authors: Du et al.
-url: https://arxiv.org/abs/2505.00675
-paper_type: survey
-primary_topic: memory-context
+authors: "Du et al."
+url: "https://arxiv.org/abs/2505.00675"
+paper_type: "survey"
+primary_topic: "memory-context"
 secondary_topics: []
-status: ingested
-tags: [papers, memory-context]
+status: "ingested"
+tags:
+  - "papers"
+  - "memory-context"
 evaluates:
-  - agent memory research landscape
+  - "agent memory research landscape"
 builds_on:
-  - [[2024 - A Survey on the Memory Mechanism of Large]]
+  - "[[2024 - A Survey on the Memory Mechanism of Large]]"
 compares_to: []
 builds_on_unresolved: []
 compares_to_unresolved: []
 relations: []
-source: alphaxiv-mcp
+source: "alphaxiv-mcp"
 ---
 
 # Summary

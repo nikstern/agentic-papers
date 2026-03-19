@@ -1,38 +1,40 @@
 ---
 paper_id: 28
-title: Memory for Autonomous LLM Agents: Mechanisms, Evaluation, and Emerging Frontiers
+title: "Memory for Autonomous LLM Agents: Mechanisms, Evaluation, and Emerging Frontiers"
 year: 2026
-authors: Du
-url: https://arxiv.org/abs/2603.07670
-paper_type: survey
-primary_topic: memory-context
+authors: "Du"
+url: "https://arxiv.org/abs/2603.07670"
+paper_type: "survey"
+primary_topic: "memory-context"
 secondary_topics: []
-status: ingested
-tags: [papers, memory-context]
+status: "ingested"
+tags:
+  - "papers"
+  - "memory-context"
 evaluates:
-  - agent memory mechanisms
-  - memory evaluation
-  - memory engineering trade-offs
+  - "agent memory mechanisms"
+  - "memory evaluation"
+  - "memory engineering trade-offs"
 builds_on: []
 compares_to: []
 builds_on_unresolved:
-  - ReAct
-  - Reflexion
-  - Generative Agents
-  - Memory Networks
-  - Neural Turing Machines
-  - Differentiable Neural Computers
-  - RAG
-  - RETRO
-  - Voyager
+  - "ReAct"
+  - "Reflexion"
+  - "Generative Agents"
+  - "Memory Networks"
+  - "Neural Turing Machines"
+  - "Differentiable Neural Computers"
+  - "RAG"
+  - "RETRO"
+  - "Voyager"
 compares_to_unresolved:
-  - MemBench
-  - MemoryAgentBench
-  - MemoryArena
-  - LoCoMo
-  - Agentic Memory
+  - "MemBench"
+  - "MemoryAgentBench"
+  - "MemoryArena"
+  - "LoCoMo"
+  - "Agentic Memory"
 relations: []
-source: alphaxiv-mcp
+source: "alphaxiv-mcp"
 ---
 
 # Summary
