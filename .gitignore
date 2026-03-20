@@ -10,3 +10,14 @@ __pycache__/
 paper_inbox/last_import.json
 paper_inbox/approved_for_enrichment.json
 paper_inbox/enrich_pending_batch_*.json
+
+# Local search environment
+.venv/
+search/.qdrant/
+search/.env
+
+# Local environment files
+.env
+.env.local
+.env.*
+!.env.example

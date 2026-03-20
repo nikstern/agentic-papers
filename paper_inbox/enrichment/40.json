@@ -1,0 +1,27 @@
+{
+  "paper_id": "40",
+  "summary": "This paper introduces LOCOMO, a benchmark and evaluation framework for very long-term conversational memory in LLM agents, covering multi-session dialogue, event summarization, and multimodal response generation.",
+  "why_it_matters": "It is a foundational evaluation asset for the vault because later memory papers such as Mem0 and SimpleMem use LoCoMo to argue that their systems actually improve long-horizon conversational memory.",
+  "method_setup": "The paper builds persona-driven, multi-session dialogues grounded in event graphs, evaluates models on question answering, event summarization, and multimodal dialogue generation, and compares long-context and retrieval-augmented approaches using raw dialogue history, observations, and summaries.",
+  "key_claims": [
+    "Existing LLM agents remain far from human-level performance on very long-term conversational memory.",
+    "Observation-based retrieval works better than retrieving raw dialogue history for long-horizon memory tasks.",
+    "Temporal reasoning and adversarial questions remain particularly difficult for current memory-augmented systems."
+  ],
+  "limitations": [
+    "Longer context windows alone do not solve long-term conversational memory.",
+    "Current models still hallucinate and struggle with temporally grounded reasoning over many sessions.",
+    "Standard text-generation metrics are insufficient for fully capturing conversational memory quality."
+  ],
+  "evaluates": [
+    "very long-term conversational memory",
+    "event summarization",
+    "multimodal dialogue generation"
+  ],
+  "builds_on_unresolved": [
+    "Conversation Chronicles: Towards Diverse Temporal and Relational Dynamics in Multi-Session Conversations",
+    "Beyond Goldfish Memory: Long-Term Open-Domain Conversation",
+    "Generative Agents: Interactive Simulacra of Human Behavior"
+  ],
+  "compares_to_unresolved": []
+}

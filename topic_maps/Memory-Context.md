@@ -28,3 +28,6 @@ Work on persistent memory, retrieval, summarization, and context construction fo
 - [[2026-Multi-Agent-Memory-from-a-Computer-Architecture-Perspective-Visions]]
 - [[2026-Memory-for-Autonomous-LLM-Agents-Mechanisms-Evaluation-and]]
 - [[2024-Buffer-of-Thoughts-Thought-Augmented-Reasoning-with-Large-Language]]
+- [[2025-Mem0-Building-Production-Ready-AI-Agents-with-Scalable-Long-Term]]
+- [[2025-Zep-A-Temporal-Knowledge-Graph-Architecture-for-Agent]]
+- [[2026-SimpleMem-Efficient-Lifelong-Memory-for-LLM-Agents]]

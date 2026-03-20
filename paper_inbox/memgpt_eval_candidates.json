@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory",
+    "url": "https://arxiv.org/abs/2504.19413",
+    "year": 2025,
+    "authors": "Chhikara et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "system"
+  },
+  {
+    "title": "Zep: A Temporal Knowledge Graph Architecture for Agent Memory",
+    "url": "https://arxiv.org/abs/2501.13956",
+    "year": 2025,
+    "authors": "Rasmussen et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "system"
+  },
+  {
+    "title": "SimpleMem: Efficient Lifelong Memory for LLM Agents",
+    "url": "https://arxiv.org/abs/2601.02553",
+    "year": 2026,
+    "authors": "Liu et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "system"
+  },
+  {
+    "title": "Evaluating Very Long-Term Conversational Memory of LLM Agents",
+    "url": "https://arxiv.org/abs/2402.17753",
+    "year": 2024,
+    "authors": "Maharana et al.",
+    "candidate_topic": "agent-evaluation",
+    "paper_type": "benchmark"
+  }
+]

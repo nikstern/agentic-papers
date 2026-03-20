@@ -15,6 +15,9 @@ The repository is designed around a deterministic paper-ingestion workflow:
 - richer extracted metadata lives in `paper_inbox/enrichment/*.json`
 - notes are generated, not manually maintained as primary source state
 - local paper-to-paper links are resolved during ingest when titles match existing vault papers
+- each ingest refreshes `paper_inbox/approved_for_enrichment.json` so pending enrichment work is queued automatically
+- semantic search in `search/` is refreshed after ingest when `.venv` and the Qdrant search stack are available
+- optional automatic enrichment can be run through `scripts/run_enrichment.py` when `OPENAI_API_KEY` is configured
 
 ## Key Docs
 

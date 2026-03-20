@@ -1,0 +1,34 @@
+{
+  "paper_id": "37",
+  "summary": "Mem0 introduces production-oriented long-term memory architectures for LLM agents that extract salient facts from conversations and update memory incrementally instead of relying on full context or raw-history retrieval.",
+  "why_it_matters": "It is a strong practical baseline for the vault because it emphasizes deployment trade-offs such as latency, token cost, and scalable retrieval while directly comparing against MemGPT-era memory systems.",
+  "method_setup": "The paper presents Mem0 and a graph-based variant Mem0g, uses LLM-based extraction and memory update operations over external memory stores, and evaluates them on the LOCOMO benchmark across single-hop, multi-hop, temporal, and open-domain question types against multiple memory baselines.",
+  "key_claims": [
+    "Selective memory extraction and updating can outperform raw-history and many retrieval baselines for long-term conversational memory.",
+    "Mem0 delivers strong accuracy with substantially lower latency and token cost than full-context approaches.",
+    "Graph-based memory improves some relational and temporal tasks but increases storage and system overhead."
+  ],
+  "limitations": [
+    "The full-context setting still achieves the highest overall score, showing that external memory does not fully eliminate information loss.",
+    "The graph-based variant roughly doubles memory footprint and can introduce substantial operational overhead compared with the simpler natural-language memory.",
+    "Performance varies by question type, with some advantages narrowing on open-domain settings."
+  ],
+  "evaluates": [
+    "long-term conversational memory",
+    "memory latency and token efficiency",
+    "multi-hop and temporal memory retrieval"
+  ],
+  "builds_on_unresolved": [
+    "MemGPT: Towards LLMs as Operating Systems",
+    "Retrieval-Augmented Generation"
+  ],
+  "compares_to_unresolved": [
+    "LoCoMo",
+    "ReadAgent",
+    "MemoryBank",
+    "MemGPT: Towards LLMs as Operating Systems",
+    "A-MEM: Agentic Memory for LLM Agents",
+    "LangMem",
+    "Zep: A Temporal Knowledge Graph Architecture for Agent Memory"
+  ]
+}

@@ -1,0 +1,127 @@
+[
+  {
+    "paper_id": 37,
+    "summary": "Mem0 introduces production-oriented long-term memory architectures for LLM agents that extract salient facts from conversations and update memory incrementally instead of relying on full context or raw-history retrieval.",
+    "why_it_matters": "It is a strong practical baseline for the vault because it emphasizes deployment trade-offs such as latency, token cost, and scalable retrieval while directly comparing against MemGPT-era memory systems.",
+    "method_setup": "The paper presents Mem0 and a graph-based variant Mem0g, uses LLM-based extraction and memory update operations over external memory stores, and evaluates them on the LOCOMO benchmark across single-hop, multi-hop, temporal, and open-domain question types against multiple memory baselines.",
+    "key_claims": [
+      "Selective memory extraction and updating can outperform raw-history and many retrieval baselines for long-term conversational memory.",
+      "Mem0 delivers strong accuracy with substantially lower latency and token cost than full-context approaches.",
+      "Graph-based memory improves some relational and temporal tasks but increases storage and system overhead."
+    ],
+    "limitations": [
+      "The full-context setting still achieves the highest overall score, showing that external memory does not fully eliminate information loss.",
+      "The graph-based variant roughly doubles memory footprint and can introduce substantial operational overhead compared with the simpler natural-language memory.",
+      "Performance varies by question type, with some advantages narrowing on open-domain settings."
+    ],
+    "evaluates": [
+      "long-term conversational memory",
+      "memory latency and token efficiency",
+      "multi-hop and temporal memory retrieval"
+    ],
+    "builds_on_unresolved": [
+      "MemGPT: Towards LLMs as Operating Systems",
+      "Retrieval-Augmented Generation"
+    ],
+    "compares_to_unresolved": [
+      "LoCoMo",
+      "ReadAgent",
+      "MemoryBank",
+      "MemGPT: Towards LLMs as Operating Systems",
+      "A-MEM: Agentic Memory for LLM Agents",
+      "LangMem",
+      "Zep: A Temporal Knowledge Graph Architecture for Agent Memory"
+    ]
+  },
+  {
+    "paper_id": 38,
+    "summary": "Zep introduces a temporally-aware knowledge graph memory layer for AI agents that fuses conversational and structured data, improving memory retrieval and temporal reasoning over prior memory systems.",
+    "why_it_matters": "It is a strong graph-memory systems paper for the vault because it explicitly positions itself against MemGPT and argues that temporal, structured memory can outperform flatter memory mechanisms on realistic retrieval tasks.",
+    "method_setup": "The system builds and updates a temporal knowledge graph through Graphiti, retrieves context using semantic, keyword, and graph traversal signals, and evaluates on the Deep Memory Retrieval benchmark and LongMemEval against MemGPT, full-conversation context, and session-summary baselines.",
+    "key_claims": [
+      "Temporal knowledge graphs can outperform MemGPT on deep memory retrieval tasks.",
+      "Structured graph memory improves complex, enterprise-style long-term reasoning while reducing response latency.",
+      "Combining semantic similarity, keyword search, and graph traversal yields stronger memory retrieval than flatter memory stores."
+    ],
+    "limitations": [
+      "The DMR benchmark is limited by small scale and single-turn fact retrieval, so it does not fully represent enterprise use cases.",
+      "The system depends on substantial graph construction and retrieval infrastructure, which can raise deployment complexity.",
+      "Performance on some LongMemEval settings remains model-sensitive and leaves room for further tuning."
+    ],
+    "evaluates": [
+      "deep memory retrieval",
+      "long-term interactive memory",
+      "temporal knowledge graph memory"
+    ],
+    "builds_on_unresolved": [
+      "MemGPT: Towards LLMs as Operating Systems",
+      "GraphRAG",
+      "Retrieval-Augmented Generation"
+    ],
+    "compares_to_unresolved": [
+      "MemGPT: Towards LLMs as Operating Systems",
+      "full-conversation context",
+      "session summaries"
+    ]
+  },
+  {
+    "paper_id": 39,
+    "summary": "SimpleMem proposes an efficient lifelong memory framework for LLM agents that compresses, normalizes, consolidates, and adaptively retrieves conversational memory rather than storing raw history or relying on repeated planning loops.",
+    "why_it_matters": "It is a high-value follow-on systems paper because it directly compares against MemGPT, Mem0, and A-MEM while making a stronger efficiency argument around semantic compression and adaptive retrieval.",
+    "method_setup": "The framework combines entropy-aware filtering, structured memory unit normalization, recursive consolidation, and query-aware retrieval, and evaluates on the LoCoMo benchmark across multiple reasoning types and model backbones against LoCoMo, ReadAgent, MemoryBank, MemGPT, A-MEM, LightMem, and Mem0.",
+    "key_claims": [
+      "Semantic compression can greatly reduce token and latency costs without sacrificing long-term memory quality.",
+      "SimpleMem outperforms strong baselines such as Mem0 and MemGPT on LoCoMo-style long-horizon conversational tasks.",
+      "Structured normalization and consolidation are especially helpful for temporal and multi-hop reasoning."
+    ],
+    "limitations": [
+      "The evaluation is centered on dialogue-heavy long-term memory settings rather than broader tool-using or multimodal agent environments.",
+      "The method depends on multiple coordinated stages, which increases systems complexity relative to simpler memory stores.",
+      "The reported gains are strongest on benchmarked conversational workloads, so broader real-world generalization still needs validation."
+    ],
+    "evaluates": [
+      "lifelong conversational memory",
+      "memory efficiency",
+      "temporal and multi-hop reasoning"
+    ],
+    "builds_on_unresolved": [
+      "Complementary Learning Systems"
+    ],
+    "compares_to_unresolved": [
+      "LoCoMo",
+      "ReadAgent",
+      "MemoryBank",
+      "MemGPT: Towards LLMs as Operating Systems",
+      "A-MEM: Agentic Memory for LLM Agents",
+      "LightMem",
+      "Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory"
+    ]
+  },
+  {
+    "paper_id": 40,
+    "summary": "This paper introduces LOCOMO, a benchmark and evaluation framework for very long-term conversational memory in LLM agents, covering multi-session dialogue, event summarization, and multimodal response generation.",
+    "why_it_matters": "It is a foundational evaluation asset for the vault because later memory papers such as Mem0 and SimpleMem use LoCoMo to argue that their systems actually improve long-horizon conversational memory.",
+    "method_setup": "The paper builds persona-driven, multi-session dialogues grounded in event graphs, evaluates models on question answering, event summarization, and multimodal dialogue generation, and compares long-context and retrieval-augmented approaches using raw dialogue history, observations, and summaries.",
+    "key_claims": [
+      "Existing LLM agents remain far from human-level performance on very long-term conversational memory.",
+      "Observation-based retrieval works better than retrieving raw dialogue history for long-horizon memory tasks.",
+      "Temporal reasoning and adversarial questions remain particularly difficult for current memory-augmented systems."
+    ],
+    "limitations": [
+      "Longer context windows alone do not solve long-term conversational memory.",
+      "Current models still hallucinate and struggle with temporally grounded reasoning over many sessions.",
+      "Standard text-generation metrics are insufficient for fully capturing conversational memory quality."
+    ],
+    "evaluates": [
+      "very long-term conversational memory",
+      "event summarization",
+      "multimodal dialogue generation"
+    ],
+    "builds_on_unresolved": [
+      "Conversation Chronicles: Towards Diverse Temporal and Relational Dynamics in Multi-Session Conversations",
+      "Beyond Goldfish Memory: Long-Term Open-Domain Conversation",
+      "Generative Agents: Interactive Simulacra of Human Behavior"
+    ],
+    "compares_to_unresolved": []
+  }
+]

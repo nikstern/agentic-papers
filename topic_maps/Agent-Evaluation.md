@@ -12,3 +12,4 @@ Benchmarks, harnesses, and analysis methods for measuring agent performance beyo
 ## Included Papers
 
 - [[2025-MultiAgentBench-Evaluating-the-Collaboration-and-Competition-of-LLM]]
+- [[2024-Evaluating-Very-Long-Term-Conversational-Memory-of-LLM-Agents]]

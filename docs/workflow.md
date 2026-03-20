@@ -9,12 +9,13 @@ This repository uses a deterministic paper workflow so papers can be discovered,
 3. Wait for explicit approval.
 4. Import approved papers as flat metadata.
 5. Ingest approved papers immediately so notes appear in the vault without blocking on enrichment latency.
-6. Mark enrichment as pending and run minimal enrichment in the background.
+6. Mark enrichment as pending and queue enrichment input automatically during ingest.
 7. Store enrichment outside notes under `paper_inbox/enrichment/`.
 8. Record enrichment as `enriched` or `failed` in `papers.csv`.
 9. Rerender notes from metadata plus enrichment when enrichment completes.
-10. Resolve unresolved relation titles into local links on every ingest or rerender.
-11. Keep unmatched references as unresolved text for future reconciliation.
+10. Refresh the semantic search index after ingest when the local search environment is available.
+11. Resolve unresolved relation titles into local links on every ingest or rerender.
+12. Keep unmatched references as unresolved text for future reconciliation.
 
 ## Command Flow
 
@@ -23,15 +24,16 @@ This repository uses a deterministic paper workflow so papers can be discovered,
 3. Import candidates with `make import-candidates FILE=...`.
 4. Read assigned IDs from `paper_inbox/last_import.json` or the import output.
 5. Approve papers by `paper_id` with `make approve IDS='1 2 3'`.
-6. Run `make ingest` so approved papers appear immediately in `paper_notes/` and `topic_maps/`.
-7. Run `make export-enrichment-input` to emit the papers and fixed query set for background enrichment.
-8. Use `answer_pdf_queries` when it is usable enough; fall back to `get_paper_content` when needed.
+6. Run `make ingest` so approved papers appear immediately in `paper_notes/` and `topic_maps/`; this also refreshes `approved_for_enrichment.json` and the semantic search index.
+7. Use `paper_inbox/approved_for_enrichment.json` as the deterministic pending-enrichment queue for background enrichment.
+8. Run `make enrich-pending` for a local automatic enrichment pass when `OPENAI_API_KEY` is configured, or use the MCP/manual enrichment path when higher-fidelity extraction is needed.
 9. Save enrichment results in the JSON shape shown by `paper_inbox/enrichment.example.json`.
-10. Import enrichment with `make import-enrichment FILE=...`.
-11. If enrichment fails after fallback, mark the paper with `make mark-enrichment-failed IDS='...'`.
-12. Run `make ingest` again to rerender enriched notes and resolve links.
-13. Review generated notes in `paper_notes/`.
-14. Write synthesis in `topic_maps/` and `drafts/`.
+10. Import enrichment with `make import-enrichment FILE=...` when importing a manual or external enrichment payload.
+11. `make import-enrichment` rerenders notes and refreshes the search index automatically.
+12. `make ingest-and-enrich` runs the full local loop: ingest, queue export, automatic enrichment, rerender, and reindex.
+13. If enrichment fails after fallback, mark the paper with `make mark-enrichment-failed IDS='...'`.
+14. Review generated notes in `paper_notes/`.
+15. Write synthesis in `topic_maps/` and `drafts/`.
 
 ## Deterministic Guarantees
 
