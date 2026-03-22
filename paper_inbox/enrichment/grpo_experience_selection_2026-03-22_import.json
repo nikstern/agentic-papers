@@ -1,0 +1,171 @@
+[
+  {
+    "paper_id": 89,
+    "summary": "ExGRPO improves reinforcement learning from verifiable rewards by replaying and prioritizing valuable reasoning experiences instead of discarding rollouts after a single update.",
+    "why_it_matters": "It is the cleanest match for the GRPO-plus-experience-selection theme because it explicitly studies which reasoning experiences are worth replaying and bakes that into GRPO-style training.",
+    "method_setup": "The method analyzes reasoning trajectories by question difficulty and token-level entropy, stores successful experiences in a replay buffer, prioritizes medium-difficulty questions and low-entropy trajectories, and combines replayed experience with on-policy GRPO updates through a mixed-policy objective.",
+    "key_claims": [
+      "Reasoning experiences are not equally valuable: medium-difficulty questions and low-entropy successful trajectories provide the strongest learning signal.",
+      "Principled replay of selected reasoning experiences improves both sample efficiency and training stability over pure on-policy RLVR.",
+      "Experience management is a key ingredient for scaling reinforcement learning in large reasoning models."
+    ],
+    "limitations": [
+      "The framework focuses on verifiable-reward reasoning settings and may need adaptation for noisier, less objectively graded agent environments.",
+      "Its replay strategy depends on heuristics such as entropy and correctness-rate bucketing rather than a formally optimal value metric."
+    ],
+    "evaluates": [
+      "AIME",
+      "AMC",
+      "MATH-500",
+      "Minerva",
+      "OlympiadBench",
+      "ARC-c",
+      "GPQA",
+      "MMLU-Pro"
+    ],
+    "builds_on_unresolved": [
+      "GRPO",
+      "reinforcement learning from verifiable rewards",
+      "experience replay"
+    ],
+    "compares_to_unresolved": [
+      "on-policy RLVR",
+      "standard GRPO"
+    ]
+  },
+  {
+    "paper_id": 90,
+    "summary": "Memory-R1 trains an LLM-based memory manager and answer agent with reinforcement learning so the system learns both how to update its memory bank and how to distill retrieved memories for downstream reasoning.",
+    "why_it_matters": "It is directly relevant because it treats memory operation selection and memory utilization as learned RL problems rather than heuristic retrieval and CRUD rules.",
+    "method_setup": "The framework uses a Memory Manager to perform ADD, UPDATE, DELETE, and NOOP operations over an evolving memory bank and an Answer Agent to distill retrieved memories, with both agents optimized using PPO or GRPO against downstream QA rewards.",
+    "key_claims": [
+      "Reinforcement learning can teach LLM agents when to remember, update, or discard information more effectively than static memory heuristics.",
+      "Learning to distill retrieved memories before answering improves long-horizon QA over naive retrieval pipelines.",
+      "Outcome-driven RL can produce strong memory behavior with surprisingly little supervised data."
+    ],
+    "limitations": [
+      "The framework is evaluated mainly in multi-session dialogue and QA settings rather than broad open-ended agent environments.",
+      "It relies on an external memory bank and multi-component architecture, which adds system complexity."
+    ],
+    "evaluates": [
+      "LoCoMo",
+      "MSC",
+      "LongMemEval"
+    ],
+    "builds_on_unresolved": [
+      "retrieval-augmented generation",
+      "A-MEM",
+      "Mem0",
+      "MemoryOS",
+      "GRPO",
+      "PPO"
+    ],
+    "compares_to_unresolved": [
+      "LoCoMo",
+      "A-MEM",
+      "Mem0",
+      "MemoryOS",
+      "Memory-SFT"
+    ]
+  },
+  {
+    "paper_id": 91,
+    "summary": "SkillRL converts raw agent experiences into compact reusable skills, organizes them in a hierarchical skill library, and recursively evolves that library during reinforcement learning.",
+    "why_it_matters": "It is a strong paper for the experience-selection thread because it argues that agents should distill reusable strategic skills from trajectories rather than retrieve raw experiences directly.",
+    "method_setup": "The framework distills successful and failed trajectories into general and task-specific skills using a teacher model, initializes the agent with skill-aware supervised fine-tuning, and then uses GRPO while recursively expanding the skill bank from validation failures.",
+    "key_claims": [
+      "Abstract skills are more useful than raw trajectory memories for improving LLM agents.",
+      "A hierarchical skill library reduces context footprint while improving generalization and robustness.",
+      "The skill library should co-evolve with the policy during reinforcement learning rather than remain static."
+    ],
+    "limitations": [
+      "The system depends on a strong teacher model for skill distillation and refinement.",
+      "Maintaining and evolving a hierarchical skill bank adds substantial pipeline complexity."
+    ],
+    "evaluates": [
+      "ALFWorld",
+      "WebShop",
+      "search-augmented QA"
+    ],
+    "builds_on_unresolved": [
+      "GRPO",
+      "ReAct",
+      "Reflexion",
+      "Mem0",
+      "ExpeL"
+    ],
+    "compares_to_unresolved": [
+      "GRPO",
+      "RLOO",
+      "MemRL",
+      "Mem0",
+      "SimpleMem",
+      "EvolveR"
+    ]
+  },
+  {
+    "paper_id": 92,
+    "summary": "This paper studies retrieval-augmented LLM agents that learn from prior trajectories, showing that retrieval becomes much more effective when it is integrated directly into fine-tuning rather than used only at inference time.",
+    "why_it_matters": "It is important for the current thread because it gives a concrete training recipe for episodic trajectory retrieval and shows when retrieval-augmented experience actually helps generalization.",
+    "method_setup": "The approach builds an episodic experience bank from prior trajectories, retrieves top-k relevant trajectories into the prompt, and compares plain retrieval, standard LoRA fine-tuning, and retrieval-augmented fine-tuning (ExpRAG-LoRA) in ALFWorld and ScienceWorld.",
+    "key_claims": [
+      "Inference-only trajectory retrieval helps, but retrieval-augmented training is stronger for out-of-distribution generalization.",
+      "Agents trained to use retrieved experiences generalize better than agents fine-tuned without retrieval context.",
+      "Simple read-only episodic retrieval is a strong baseline for agent memory and should be benchmarked before more elaborate memory systems."
+    ],
+    "limitations": [
+      "The method depends on having a useful trajectory index, and performance degrades when the retrieved experience bank is mismatched or empty.",
+      "It uses a fixed read-only experience bank rather than online memory writing, compression, or learned memory editing."
+    ],
+    "evaluates": [
+      "ALFWorld",
+      "ScienceWorld"
+    ],
+    "builds_on_unresolved": [
+      "retrieval-augmented generation",
+      "LoRA",
+      "episodic memory"
+    ],
+    "compares_to_unresolved": [
+      "LoRA",
+      "training-free ExpRAG",
+      "ExpRAG-LoRA"
+    ]
+  },
+  {
+    "paper_id": 93,
+    "summary": "This paper introduces multi-turn variants of PPO and GRPO that use turn-level intermediate rewards to train LLM agents more effectively in long-horizon interactive settings.",
+    "why_it_matters": "It is relevant because it addresses a core weakness of agent RL, namely poor credit assignment when only final outcome rewards are used, and it provides a cleaner route to shaping experience at the turn level.",
+    "method_setup": "The work formulates multi-turn interaction as a turn-level MDP, adds intermediate and outcome rewards to MT-PPO and MT-GRPO, and evaluates the approach on reasoning-augmented search agents with both verifiable rewards and LLM-as-judge rewards.",
+    "key_claims": [
+      "Turn-level rewards substantially improve training stability and convergence over trajectory-level outcome rewards.",
+      "Fine-grained intermediate supervision helps agents learn tool use, retrieval behavior, and structured multi-turn reasoning.",
+      "Multi-turn PPO with turn-level rewards outperforms trajectory-level PPO and GRPO baselines on search-style QA tasks."
+    ],
+    "limitations": [
+      "The strongest experiments focus on reasoning-augmented search agents, so broader transfer to other tool-using agent settings remains to be shown.",
+      "Designing good turn-level rewards still requires environment-specific reward engineering."
+    ],
+    "evaluates": [
+      "NQ",
+      "TriviaQA",
+      "PopQA",
+      "HotpotQA",
+      "2WikiMultiHopQA",
+      "Musique"
+    ],
+    "builds_on_unresolved": [
+      "PPO",
+      "GRPO",
+      "Chain-of-Thought",
+      "reasoning-augmented search"
+    ],
+    "compares_to_unresolved": [
+      "PPO-OR",
+      "PPO-MR",
+      "GRPO-OR",
+      "GRPO-MR",
+      "StepSearch"
+    ]
+  }
+]

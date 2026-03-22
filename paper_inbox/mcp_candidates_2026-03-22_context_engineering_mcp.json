@@ -1,0 +1,50 @@
+[
+  {
+    "title": "A Survey of Context Engineering for Large Language Models",
+    "url": "https://arxiv.org/abs/2507.13334",
+    "year": 2025,
+    "authors": "Mei et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "survey"
+  },
+  {
+    "title": "Scaling Long-Horizon LLM Agent via Context-Folding",
+    "url": "https://arxiv.org/abs/2510.11967",
+    "year": 2025,
+    "authors": "Sun et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "system"
+  },
+  {
+    "title": "ACON: Optimizing Context Compression for Long-horizon LLM Agents",
+    "url": "https://arxiv.org/abs/2510.00615",
+    "year": 2025,
+    "authors": "Kang et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "system"
+  },
+  {
+    "title": "ARC: Active and Reflection-driven Context Management for Long-Horizon Information Seeking Agents",
+    "url": "https://arxiv.org/abs/2601.12030",
+    "year": 2026,
+    "authors": "Yao et al.",
+    "candidate_topic": "search-retrieval",
+    "paper_type": "system"
+  },
+  {
+    "title": "PAACE: A Plan-Aware Automated Agent Context Engineering Framework",
+    "url": "https://arxiv.org/abs/2512.16970",
+    "year": 2025,
+    "authors": "Yuksel",
+    "candidate_topic": "memory-context",
+    "paper_type": "system"
+  },
+  {
+    "title": "MemInsight: Autonomous Memory Augmentation for LLM Agents",
+    "url": "https://arxiv.org/abs/2503.21760",
+    "year": 2025,
+    "authors": "Salama et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "system"
+  }
+]

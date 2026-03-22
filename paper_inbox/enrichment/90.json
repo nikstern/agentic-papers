@@ -1,0 +1,35 @@
+{
+  "paper_id": "90",
+  "summary": "Memory-R1 trains an LLM-based memory manager and answer agent with reinforcement learning so the system learns both how to update its memory bank and how to distill retrieved memories for downstream reasoning.",
+  "why_it_matters": "It is directly relevant because it treats memory operation selection and memory utilization as learned RL problems rather than heuristic retrieval and CRUD rules.",
+  "method_setup": "The framework uses a Memory Manager to perform ADD, UPDATE, DELETE, and NOOP operations over an evolving memory bank and an Answer Agent to distill retrieved memories, with both agents optimized using PPO or GRPO against downstream QA rewards.",
+  "key_claims": [
+    "Reinforcement learning can teach LLM agents when to remember, update, or discard information more effectively than static memory heuristics.",
+    "Learning to distill retrieved memories before answering improves long-horizon QA over naive retrieval pipelines.",
+    "Outcome-driven RL can produce strong memory behavior with surprisingly little supervised data."
+  ],
+  "limitations": [
+    "The framework is evaluated mainly in multi-session dialogue and QA settings rather than broad open-ended agent environments.",
+    "It relies on an external memory bank and multi-component architecture, which adds system complexity."
+  ],
+  "evaluates": [
+    "LoCoMo",
+    "MSC",
+    "LongMemEval"
+  ],
+  "builds_on_unresolved": [
+    "retrieval-augmented generation",
+    "A-MEM",
+    "Mem0",
+    "MemoryOS",
+    "GRPO",
+    "PPO"
+  ],
+  "compares_to_unresolved": [
+    "LoCoMo",
+    "A-MEM",
+    "Mem0",
+    "MemoryOS",
+    "Memory-SFT"
+  ]
+}

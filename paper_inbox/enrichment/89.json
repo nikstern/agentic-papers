@@ -1,0 +1,34 @@
+{
+  "paper_id": "89",
+  "summary": "ExGRPO improves reinforcement learning from verifiable rewards by replaying and prioritizing valuable reasoning experiences instead of discarding rollouts after a single update.",
+  "why_it_matters": "It is the cleanest match for the GRPO-plus-experience-selection theme because it explicitly studies which reasoning experiences are worth replaying and bakes that into GRPO-style training.",
+  "method_setup": "The method analyzes reasoning trajectories by question difficulty and token-level entropy, stores successful experiences in a replay buffer, prioritizes medium-difficulty questions and low-entropy trajectories, and combines replayed experience with on-policy GRPO updates through a mixed-policy objective.",
+  "key_claims": [
+    "Reasoning experiences are not equally valuable: medium-difficulty questions and low-entropy successful trajectories provide the strongest learning signal.",
+    "Principled replay of selected reasoning experiences improves both sample efficiency and training stability over pure on-policy RLVR.",
+    "Experience management is a key ingredient for scaling reinforcement learning in large reasoning models."
+  ],
+  "limitations": [
+    "The framework focuses on verifiable-reward reasoning settings and may need adaptation for noisier, less objectively graded agent environments.",
+    "Its replay strategy depends on heuristics such as entropy and correctness-rate bucketing rather than a formally optimal value metric."
+  ],
+  "evaluates": [
+    "AIME",
+    "AMC",
+    "MATH-500",
+    "Minerva",
+    "OlympiadBench",
+    "ARC-c",
+    "GPQA",
+    "MMLU-Pro"
+  ],
+  "builds_on_unresolved": [
+    "GRPO",
+    "reinforcement learning from verifiable rewards",
+    "experience replay"
+  ],
+  "compares_to_unresolved": [
+    "on-policy RLVR",
+    "standard GRPO"
+  ]
+}

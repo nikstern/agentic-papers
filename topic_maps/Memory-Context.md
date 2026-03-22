@@ -9,6 +9,12 @@ tags: [topic-map]
 
 Work on persistent memory, retrieval, summarization, and context construction for agent behavior.
 
+## Related Hubs
+
+- [[Context-Engineering]]
+- [[Graph-Memory]]
+- [[Memory-Evaluation]]
+
 ## Included Papers
 
 - [[2025-A-MEM-Agentic-Memory-for-LLM-Agents]]
@@ -42,3 +48,10 @@ Work on persistent memory, retrieval, summarization, and context construction fo
 - [[2025-MemoTime-Memory-Augmented-Temporal-Knowledge-Graph-Enhanced-Large-Language]]
 - [[2025-LiCoMemory-Lightweight-and-Cognitive-Agentic-Memory-for-Efficient]]
 - [[2025-FLEX-Continuous-Agent-Evolution-via-Forward-Learning-from]]
+- [[2025-A-Survey-of-Context-Engineering-for-Large-Language]]
+- [[2025-Scaling-Long-Horizon-LLM-Agent-via-Context-Folding]]
+- [[2025-ACON-Optimizing-Context-Compression-for-Long-horizon-LLM-Agents]]
+- [[2025-PAACE-A-Plan-Aware-Automated-Agent-Context-Engineering-Framework]]
+- [[2025-MemInsight-Autonomous-Memory-Augmentation-for-LLM-Agents]]
+- [[2025-Memory-R1-Enhancing-Large-Language-Model-Agents-to-Manage]]
+- [[2026-SkillRL-Evolving-Agents-via-Recursive-Skill-Augmented-Reinforcement-Learning]]

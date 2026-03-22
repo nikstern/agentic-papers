@@ -1,0 +1,31 @@
+{
+  "paper_id": "85",
+  "summary": "ACON proposes a unified framework for compressing both interaction histories and observations in long-horizon LLM agents by optimizing natural-language compression guidelines and then distilling the compressor into smaller models.",
+  "why_it_matters": "It is a strong context-engineering paper because it treats compression quality as an optimizable policy learned from task failures rather than a static summarization prompt.",
+  "method_setup": "ACON alternates between utility-maximizing and compression-maximizing prompt optimization for a compressor LLM, then distills the optimized compressor into smaller models and evaluates the system on AppWorld, OfficeBench, and 8-objective QA.",
+  "key_claims": [
+    "Natural-language compression guidelines can be optimized to preserve task performance while sharply reducing context load.",
+    "Smaller LLM agents benefit substantially when long histories are compressed into more relevant state representations.",
+    "A distilled compressor can retain most of the teacher compressor's gains at much lower cost."
+  ],
+  "limitations": [
+    "Total API cost does not always decrease because compression itself can add inference overhead, especially for history compression.",
+    "The approach relies on LLM-based prompt optimization and evaluation rather than formal guarantees about semantic preservation."
+  ],
+  "evaluates": [
+    "AppWorld",
+    "OfficeBench",
+    "8-objective QA"
+  ],
+  "builds_on_unresolved": [
+    "LLMLingua",
+    "retrieval-augmented generation",
+    "dialogue memory summarization"
+  ],
+  "compares_to_unresolved": [
+    "FIFO",
+    "Retrieval",
+    "LLMLingua",
+    "naive prompting"
+  ]
+}

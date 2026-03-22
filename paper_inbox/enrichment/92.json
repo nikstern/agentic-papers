@@ -1,0 +1,29 @@
+{
+  "paper_id": "92",
+  "summary": "This paper studies retrieval-augmented LLM agents that learn from prior trajectories, showing that retrieval becomes much more effective when it is integrated directly into fine-tuning rather than used only at inference time.",
+  "why_it_matters": "It is important for the current thread because it gives a concrete training recipe for episodic trajectory retrieval and shows when retrieval-augmented experience actually helps generalization.",
+  "method_setup": "The approach builds an episodic experience bank from prior trajectories, retrieves top-k relevant trajectories into the prompt, and compares plain retrieval, standard LoRA fine-tuning, and retrieval-augmented fine-tuning (ExpRAG-LoRA) in ALFWorld and ScienceWorld.",
+  "key_claims": [
+    "Inference-only trajectory retrieval helps, but retrieval-augmented training is stronger for out-of-distribution generalization.",
+    "Agents trained to use retrieved experiences generalize better than agents fine-tuned without retrieval context.",
+    "Simple read-only episodic retrieval is a strong baseline for agent memory and should be benchmarked before more elaborate memory systems."
+  ],
+  "limitations": [
+    "The method depends on having a useful trajectory index, and performance degrades when the retrieved experience bank is mismatched or empty.",
+    "It uses a fixed read-only experience bank rather than online memory writing, compression, or learned memory editing."
+  ],
+  "evaluates": [
+    "ALFWorld",
+    "ScienceWorld"
+  ],
+  "builds_on_unresolved": [
+    "retrieval-augmented generation",
+    "LoRA",
+    "episodic memory"
+  ],
+  "compares_to_unresolved": [
+    "LoRA",
+    "training-free ExpRAG",
+    "ExpRAG-LoRA"
+  ]
+}

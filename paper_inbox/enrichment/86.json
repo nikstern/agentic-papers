@@ -1,0 +1,33 @@
+{
+  "paper_id": "86",
+  "summary": "ARC introduces active, reflection-driven context management for long-horizon information-seeking agents by treating context as a dynamic internal reasoning state that can be monitored, reorganized, and repaired.",
+  "why_it_matters": "It is directly relevant because it pushes beyond passive summarization and shows that context engineering can include explicit reflection over the agent's own internal state.",
+  "method_setup": "ARC separates an actor from a trainable context manager that maintains a checklist, interaction memory, and previous interaction, then uses incremental summarization and selective reflection to revise memory during long-horizon search tasks.",
+  "key_claims": [
+    "Long-horizon agents need active context repair, not just compression, to avoid context rot.",
+    "Jointly revising the interaction memory and checklist outperforms raw-history and passive-summarization baselines.",
+    "Context management is a learnable module that can be trained separately from the main actor."
+  ],
+  "limitations": [
+    "The approach adds a dedicated context-manager component and extra training complexity.",
+    "The results are concentrated on information-seeking benchmarks, so generalization to other agent settings still needs testing."
+  ],
+  "evaluates": [
+    "HotpotQA",
+    "GAIA",
+    "xBench-DeepSearch",
+    "BrowseComp",
+    "BrowseComp-ZH"
+  ],
+  "builds_on_unresolved": [
+    "ReAct",
+    "ReSum",
+    "Reflexion",
+    "MemGPT",
+    "MemoryBank"
+  ],
+  "compares_to_unresolved": [
+    "ReAct",
+    "ReSum"
+  ]
+}

@@ -23,6 +23,7 @@ Index of the vault's topic maps and cross-cutting synthesis hubs.
 ## Cross-Cutting Topic Maps
 
 - [[Benchmarks]]
+- [[Context-Engineering]]
 - [[Repository-SWE-Agents]]
 - [[Graph-Memory]]
 - [[Memory-Evaluation]]
@@ -33,6 +34,7 @@ Index of the vault's topic maps and cross-cutting synthesis hubs.
 ### Memory
 
 - [[Memory-Context]]
+- [[Context-Engineering]]
 - [[Graph-Memory]]
 - [[Memory-Evaluation]]
 
@@ -46,6 +48,7 @@ Index of the vault's topic maps and cross-cutting synthesis hubs.
 
 - [[Hallucination-Factuality]]
 - [[Search-Retrieval]]
+- [[Context-Engineering]]
 - [[Benchmarks]]
 
 ### Agent systems

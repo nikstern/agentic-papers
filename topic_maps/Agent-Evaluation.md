@@ -19,3 +19,4 @@ Benchmarks, harnesses, and analysis methods for measuring agent performance beyo
 - [[2021-MuSiQue-Multihop-Questions-via-Single-hop-Question-Composition]]
 - [[2023-Large-Language-Models-Cannot-Self-Correct-Reasoning-Yet]]
 - [[2024-Mind-the-Gap-Examining-the-Self-Improvement-Capabilities-of]]
+- [[2026-Large-Language-Model-Agents-Are-Not-Always-Faithful]]

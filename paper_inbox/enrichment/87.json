@@ -1,0 +1,35 @@
+{
+  "paper_id": "87",
+  "summary": "PAACE frames context engineering as a plan-aware optimization problem, learning to compress, rewrite, and reshape evolving agent state by conditioning on future plan steps and workflow structure.",
+  "why_it_matters": "It is one of the most explicit papers in the vault for plan-aware context engineering, making it useful for separating generic memory systems from workflow-conditioned context shaping.",
+  "method_setup": "PAACE uses a teacher LLM to perform next-k-step-aware compression over multi-step workflows, evolves compression prompts using outcome-level feedback, generates synthetic supervision with PAACE-Syn, and distills the behavior into compact PAACE-FT compressors.",
+  "key_claims": [
+    "Plan-aware next-k conditioning improves long-horizon agent correctness and reduces context cost better than generic compression baselines.",
+    "Synthetic workflow supervision can train compact context compressors that retain most of the teacher's performance.",
+    "Compression can regularize long-horizon reasoning by removing stale or distracting context rather than only saving tokens."
+  ],
+  "limitations": [
+    "The method learns environment- and workflow-specific compression policies, so cross-domain generalization remains open.",
+    "Its evaluation relies on outcome-level agreement and LLM judging rather than formal guarantees of semantic preservation."
+  ],
+  "evaluates": [
+    "AppWorld",
+    "OfficeBench",
+    "8-objective QA"
+  ],
+  "builds_on_unresolved": [
+    "ReAct",
+    "Toolformer",
+    "Self-RAG",
+    "LLMLingua",
+    "ACON"
+  ],
+  "compares_to_unresolved": [
+    "No Compression",
+    "FIFO",
+    "Retrieval",
+    "LLMLingua",
+    "Prompting",
+    "ACON"
+  ]
+}

@@ -7,7 +7,7 @@ url: "https://arxiv.org/abs/2603.01853"
 paper_type: "system"
 primary_topic: "search-retrieval"
 secondary_topics: []
-status: "ingested"
+status: "cited"
 priority: "0"
 last_read: ""
 enrichment_status: "enriched"

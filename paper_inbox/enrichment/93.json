@@ -1,0 +1,36 @@
+{
+  "paper_id": "93",
+  "summary": "This paper introduces multi-turn variants of PPO and GRPO that use turn-level intermediate rewards to train LLM agents more effectively in long-horizon interactive settings.",
+  "why_it_matters": "It is relevant because it addresses a core weakness of agent RL, namely poor credit assignment when only final outcome rewards are used, and it provides a cleaner route to shaping experience at the turn level.",
+  "method_setup": "The work formulates multi-turn interaction as a turn-level MDP, adds intermediate and outcome rewards to MT-PPO and MT-GRPO, and evaluates the approach on reasoning-augmented search agents with both verifiable rewards and LLM-as-judge rewards.",
+  "key_claims": [
+    "Turn-level rewards substantially improve training stability and convergence over trajectory-level outcome rewards.",
+    "Fine-grained intermediate supervision helps agents learn tool use, retrieval behavior, and structured multi-turn reasoning.",
+    "Multi-turn PPO with turn-level rewards outperforms trajectory-level PPO and GRPO baselines on search-style QA tasks."
+  ],
+  "limitations": [
+    "The strongest experiments focus on reasoning-augmented search agents, so broader transfer to other tool-using agent settings remains to be shown.",
+    "Designing good turn-level rewards still requires environment-specific reward engineering."
+  ],
+  "evaluates": [
+    "NQ",
+    "TriviaQA",
+    "PopQA",
+    "HotpotQA",
+    "2WikiMultiHopQA",
+    "Musique"
+  ],
+  "builds_on_unresolved": [
+    "PPO",
+    "GRPO",
+    "Chain-of-Thought",
+    "reasoning-augmented search"
+  ],
+  "compares_to_unresolved": [
+    "PPO-OR",
+    "PPO-MR",
+    "GRPO-OR",
+    "GRPO-MR",
+    "StepSearch"
+  ]
+}

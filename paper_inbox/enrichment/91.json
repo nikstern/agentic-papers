@@ -1,0 +1,35 @@
+{
+  "paper_id": "91",
+  "summary": "SkillRL converts raw agent experiences into compact reusable skills, organizes them in a hierarchical skill library, and recursively evolves that library during reinforcement learning.",
+  "why_it_matters": "It is a strong paper for the experience-selection thread because it argues that agents should distill reusable strategic skills from trajectories rather than retrieve raw experiences directly.",
+  "method_setup": "The framework distills successful and failed trajectories into general and task-specific skills using a teacher model, initializes the agent with skill-aware supervised fine-tuning, and then uses GRPO while recursively expanding the skill bank from validation failures.",
+  "key_claims": [
+    "Abstract skills are more useful than raw trajectory memories for improving LLM agents.",
+    "A hierarchical skill library reduces context footprint while improving generalization and robustness.",
+    "The skill library should co-evolve with the policy during reinforcement learning rather than remain static."
+  ],
+  "limitations": [
+    "The system depends on a strong teacher model for skill distillation and refinement.",
+    "Maintaining and evolving a hierarchical skill bank adds substantial pipeline complexity."
+  ],
+  "evaluates": [
+    "ALFWorld",
+    "WebShop",
+    "search-augmented QA"
+  ],
+  "builds_on_unresolved": [
+    "GRPO",
+    "ReAct",
+    "Reflexion",
+    "Mem0",
+    "ExpeL"
+  ],
+  "compares_to_unresolved": [
+    "GRPO",
+    "RLOO",
+    "MemRL",
+    "Mem0",
+    "SimpleMem",
+    "EvolveR"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "paper_id": "84",
+  "summary": "Context-Folding trains an LLM agent to actively manage its own context by branching into temporary sub-trajectories and folding them back into compact summaries, rather than passively accumulating long histories.",
+  "why_it_matters": "It is one of the strongest papers in the current set for treating context management as a learnable agent skill rather than a fixed summarization heuristic.",
+  "method_setup": "The framework introduces `branch` and `return` actions for temporary sub-contexts, organizes execution in a plan-execution loop, and trains the policy with FoldGRPO using dense process rewards on BrowseComp-Plus and SWE-Bench Verified.",
+  "key_claims": [
+    "Agents can learn active context management as an intrinsic cognitive skill through reinforcement learning.",
+    "Context folding can match or outperform long-context ReAct baselines while using a much smaller active context.",
+    "Specialized process rewards are important for teaching agents when to branch, summarize, and keep the main thread compact."
+  ],
+  "limitations": [
+    "The method depends on reinforcement learning and custom process rewards, which adds training complexity.",
+    "Its gains are demonstrated on specific long-horizon research and software-engineering benchmarks rather than across all agent domains."
+  ],
+  "evaluates": [
+    "BrowseComp-Plus",
+    "SWE-Bench Verified",
+    "long-horizon agent context management"
+  ],
+  "builds_on_unresolved": [
+    "ReAct",
+    "summarization-based context management",
+    "multi-agent systems",
+    "GRPO"
+  ],
+  "compares_to_unresolved": [
+    "ReAct",
+    "summarization-based context management",
+    "standard GRPO"
+  ]
+}

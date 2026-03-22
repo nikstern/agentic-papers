@@ -1,0 +1,28 @@
+{
+  "paper_id": "83",
+  "summary": "This survey formalizes context engineering as a distinct discipline for optimizing the information payloads given to LLMs, moving beyond ad hoc prompt design toward a unified systems view.",
+  "why_it_matters": "It is the most direct survey anchor for the context-engineering line in the vault because it unifies prompt engineering, RAG, memory, tool use, and multi-agent systems under one framing.",
+  "method_setup": "The paper surveys more than 1400 works and organizes the area into foundational components for context retrieval, processing, and management plus system implementations such as RAG, memory systems, tool-integrated reasoning, and multi-agent systems.",
+  "key_claims": [
+    "Context engineering should be treated as a formal discipline rather than a loose collection of prompting tricks.",
+    "A unified taxonomy clarifies the links between prompting, retrieval, memory, tool use, and multi-agent coordination.",
+    "A major open problem is the gap between LLMs' ability to understand rich context and their weaker ability to generate equally sophisticated long-form outputs."
+  ],
+  "limitations": [
+    "As a survey, it does not validate a new context-engineering mechanism empirically.",
+    "The field is fragmented and moving quickly, so parts of the synthesis may age rapidly as systems and benchmarks evolve."
+  ],
+  "evaluates": [
+    "context engineering methods",
+    "evaluation frameworks",
+    "benchmark datasets"
+  ],
+  "builds_on_unresolved": [
+    "prompt engineering",
+    "retrieval-augmented generation",
+    "memory systems",
+    "tool-integrated reasoning",
+    "multi-agent systems"
+  ],
+  "compares_to_unresolved": []
+}

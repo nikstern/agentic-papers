@@ -10,6 +10,7 @@ from pathlib import Path
 from rank_papers import (
     ACTIVE_READING_STATUSES,
     compute_scores,
+    load_enrichment,
     load_rows,
     load_topic_weights,
 )
@@ -57,10 +58,13 @@ def format_text(ranked: list[dict]) -> str:
     ]
     for index, item in enumerate(ranked, start=1):
         reasons = describe_reasons(item)
-        lines.append(f"{index}. {item['title']} ({item['year']})")
+        enrichment = enrichment_snippets(item)
+        lines.append(f"{index}. [Vault ID {item['paper_id']}] {item['title']} ({item['year']})")
         lines.append(f"   {display_label(item)}")
         for reason in reasons:
             lines.append(f"   - {reason}")
+        for snippet in enrichment:
+            lines.append(f"   - {snippet}")
         lines.append("")
     return "\n".join(lines).strip() + "\n"
 
@@ -69,15 +73,21 @@ def format_html(ranked: list[dict]) -> str:
     items = []
     for item in ranked:
         reasons = describe_reasons(item)
+        enrichment = enrichment_snippets(item)
         title = html.escape(item["title"])
         url = html.escape(item["url"])
         label = html.escape(display_label(item))
+        vault_id = html.escape(str(item["paper_id"]))
         reason_items = "".join(f"<li>{html.escape(reason)}</li>" for reason in reasons)
+        enrichment_items = "".join(
+            f"<li>{html.escape(snippet)}</li>" for snippet in enrichment
+        )
         items.append(
             "<li>"
-            f"<p><a href=\"{url}\"><strong>{title}</strong></a> ({item['year']})</p>"
+            f"<p><strong>Vault ID {vault_id}</strong><br>"
+            f"<a href=\"{url}\"><strong>{title}</strong></a> ({item['year']})</p>"
             f"<p>{label}</p>"
-            f"<ul>{reason_items}</ul>"
+            f"<ul>{reason_items}{enrichment_items}</ul>"
             "</li>"
         )
     return (
@@ -137,6 +147,36 @@ def describe_reasons(item: dict) -> list[str]:
     if not reasons:
         reasons.append("ranked highly by the current reading model")
     return reasons[:3]
+
+
+def compact_sentence(value: str, limit: int = 220) -> str:
+    compact = " ".join(str(value).split())
+    if len(compact) <= limit:
+        return compact
+    return compact[: limit - 3] + "..."
+
+
+def enrichment_snippets(item: dict) -> list[str]:
+    enrichment = load_enrichment(str(item["paper_id"]))
+    snippets: list[str] = []
+
+    why = str(enrichment.get("why_it_matters", "")).strip()
+    if why:
+        snippets.append(f"Why it matters: {compact_sentence(why)}")
+
+    key_claims = enrichment.get("key_claims", [])
+    if isinstance(key_claims, list) and key_claims:
+        snippets.append(f"Key claim: {compact_sentence(str(key_claims[0]))}")
+    else:
+        setup = str(enrichment.get("method_setup", "")).strip()
+        if setup:
+            snippets.append(f"Setup: {compact_sentence(setup)}")
+
+    limitations = enrichment.get("limitations", [])
+    if isinstance(limitations, list) and limitations:
+        snippets.append(f"Limitation: {compact_sentence(str(limitations[0]))}")
+
+    return snippets[:3]
 
 
 def send_email(subject: str, text_body: str, html_body: str) -> None:

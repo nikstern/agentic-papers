@@ -2,8 +2,8 @@ paper_id,title,url,year,authors,candidate_topic,source,paper_type,status,enrichm
 1,"CAMEL: Communicative Agents for ""Mind"" Exploration of Large Scale Language Model Society",https://arxiv.org/abs/2303.17760,2023,Li et al.,llm-multi-agent-systems,manual,system,ingested,enriched
 2,MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework,https://arxiv.org/abs/2308.00352,2023,Hong et al.,llm-multi-agent-systems,manual,system,ingested,enriched
 3,ChatDev: Communicative Agents for Software Development,https://arxiv.org/abs/2307.07924,2023,Qian et al.,software-agents,manual,system,ingested,enriched
-4,MultiAgentBench: Evaluating the Collaboration and Competition of LLM Agents,https://arxiv.org/abs/2503.01935,2025,Zhu et al.,agent-evaluation,manual,benchmark,ingested,enriched
-5,Large Language Model based Multi-Agents: A Survey of Progress and Challenges,https://arxiv.org/abs/2402.01680,2024,Guo et al.,llm-multi-agent-systems,manual,survey,ingested,enriched
+4,MultiAgentBench: Evaluating the Collaboration and Competition of LLM Agents,https://arxiv.org/abs/2503.01935,2025,Zhu et al.,agent-evaluation,manual,benchmark,skimmed,enriched
+5,Large Language Model based Multi-Agents: A Survey of Progress and Challenges,https://arxiv.org/abs/2402.01680,2024,Guo et al.,llm-multi-agent-systems,manual,survey,skimmed,enriched
 6,Multi-Agent Collaboration Mechanisms: A Survey of LLMs,https://arxiv.org/abs/2501.06322,2025,Tran et al.,llm-multi-agent-systems,alphaxiv-mcp,survey,ingested,enriched
 7,Beyond Self-Talk: A Communication-Centric Survey of LLM-Based Multi-Agent Systems,https://arxiv.org/abs/2502.14321,2025,Yan et al.,llm-multi-agent-systems,alphaxiv-mcp,survey,ingested,enriched
 8,A-MEM: Agentic Memory for LLM Agents,https://arxiv.org/abs/2502.12110,2025,Xu et al.,memory-context,alphaxiv-mcp,system,cited,enriched
@@ -12,9 +12,9 @@ paper_id,title,url,year,authors,candidate_topic,source,paper_type,status,enrichm
 11,Position: Episodic Memory is the Missing Piece for Long-Term LLM Agents,https://arxiv.org/abs/2502.06975,2025,Pink et al.,memory-context,alphaxiv-mcp,position,ingested,enriched
 12,How Memory Management Impacts LLM Agents: An Empirical Study of Experience-Following Behavior,https://arxiv.org/abs/2505.16067,2025,Xiong et al.,memory-context,alphaxiv-mcp,application,ingested,enriched
 13,Memory in the Age of AI Agents,https://arxiv.org/abs/2512.13564,2025,Hu et al.,memory-context,alphaxiv-mcp,survey,ingested,enriched
-14,"Graph-based Agent Memory: Taxonomy, Techniques, and Applications",https://arxiv.org/abs/2602.05665,2026,Yang et al.,memory-context,alphaxiv-mcp,survey,ingested,enriched
+14,"Graph-based Agent Memory: Taxonomy, Techniques, and Applications",https://arxiv.org/abs/2602.05665,2026,Yang et al.,memory-context,alphaxiv-mcp,survey,deep_read,enriched
 15,MemGPT: Towards LLMs as Operating Systems,https://arxiv.org/abs/2310.08560,2023,Packer et al.,memory-context,alphaxiv-mcp,system,cited,enriched
-16,A Human-Inspired Reading Agent with Gist Memory of Very Long Contexts,https://arxiv.org/abs/2402.09727,2024,Lee et al.,memory-context,alphaxiv-mcp,system,ingested,enriched
+16,A Human-Inspired Reading Agent with Gist Memory of Very Long Contexts,https://arxiv.org/abs/2402.09727,2024,Lee et al.,memory-context,alphaxiv-mcp,system,skimmed,enriched
 17,INMS: Memory Sharing for Large Language Model based Agents,https://arxiv.org/abs/2404.09982,2024,Gao and Zhang,memory-context,alphaxiv-mcp,system,ingested,enriched
 18,G-Memory: Tracing Hierarchical Memory for Multi-Agent Systems,https://arxiv.org/abs/2506.07398,2025,Zhang et al.,memory-context,alphaxiv-mcp,system,ingested,enriched
 19,Collaborative Memory: Multi-User Memory Sharing in LLM Agents with Dynamic Access Control,https://arxiv.org/abs/2505.18279,2025,Rezazadeh et al.,memory-context,alphaxiv-mcp,system,ingested,enriched
@@ -27,7 +27,7 @@ paper_id,title,url,year,authors,candidate_topic,source,paper_type,status,enrichm
 26,"Toward Efficient Agents: A Survey of Memory, Tool learning, and Planning",https://arxiv.org/abs/2601.14192,2026,Yang et al.,llm-multi-agent-systems,alphaxiv-mcp,survey,ingested,enriched
 27,"A Survey of Self-Evolving Agents: What, When, How, and Where to Evolve on the Path to Artificial Super Intelligence",https://arxiv.org/abs/2507.21046,2025,Xu et al.,llm-multi-agent-systems,alphaxiv-mcp,survey,ingested,enriched
 28,"Memory for Autonomous LLM Agents: Mechanisms, Evaluation, and Emerging Frontiers",https://arxiv.org/abs/2603.07670,2026,Du,memory-context,alphaxiv-mcp,survey,ingested,enriched
-29,Let the Agent Search: Autonomous Exploration Beats Rigid Workflows in Temporal Question Answering,https://arxiv.org/abs/2603.01853,2026,Lv et al.,search-retrieval,alphaxiv-mcp,system,ingested,enriched
+29,Let the Agent Search: Autonomous Exploration Beats Rigid Workflows in Temporal Question Answering,https://arxiv.org/abs/2603.01853,2026,Lv et al.,search-retrieval,alphaxiv-mcp,system,cited,enriched
 30,Agentic Software Engineering: Foundational Pillars and a Research Roadmap,https://arxiv.org/abs/2509.06216,2025,Hassan et al.,software-agents,alphaxiv-mcp,position,ingested,enriched
 31,Intelligent AI Delegation,https://arxiv.org/abs/2602.11865,2026,Tomasev et al.,task-allocation,alphaxiv-mcp,position,ingested,enriched
 32,"Large Language Model Agent: A Survey on Methodology, Applications and Challenges",https://arxiv.org/abs/2503.21460,2025,Luo et al.,llm-multi-agent-systems,alphaxiv-mcp,survey,ingested,enriched
@@ -81,3 +81,15 @@ paper_id,title,url,year,authors,candidate_topic,source,paper_type,status,enrichm
 80,Large Language Models Cannot Self-Correct Reasoning Yet,https://arxiv.org/abs/2310.01798,2023,"Jie Huang, Xinyun Chen, Swaroop Mishra, Huaixiu Steven Zheng, Adams Wei Yu, Xinying Song, Denny Zhou",agent-evaluation,alphaxiv-mcp,benchmark,ingested,enriched
 81,Mind the Gap: Examining the Self-Improvement Capabilities of Large Language Models,https://arxiv.org/abs/2412.02674,2024,"Yuda Song, Hanlin Zhang, Carson Eisenach, Sham M. Kakade, Dean Foster, Udaya Ghai",agent-evaluation,alphaxiv-mcp,application,ingested,enriched
 82,SELF: Self-Evolution with Language Feedback,https://arxiv.org/abs/2310.00533,2023,"Jianqiao Lu, Wanjun Zhong, Wenyong Huang, Yufei Wang, Qi Zhu, Fei Mi, Baojun Wang, Weichao Wang, Xingshan Zeng, Lifeng Shang, Xin Jiang, Qun Liu",llm-multi-agent-systems,alphaxiv-mcp,system,ingested,enriched
+83,A Survey of Context Engineering for Large Language Models,https://arxiv.org/abs/2507.13334,2025,Mei et al.,memory-context,alphaxiv-mcp,survey,ingested,enriched
+84,Scaling Long-Horizon LLM Agent via Context-Folding,https://arxiv.org/abs/2510.11967,2025,Sun et al.,memory-context,alphaxiv-mcp,system,ingested,enriched
+85,ACON: Optimizing Context Compression for Long-horizon LLM Agents,https://arxiv.org/abs/2510.00615,2025,Kang et al.,memory-context,alphaxiv-mcp,system,ingested,enriched
+86,ARC: Active and Reflection-driven Context Management for Long-Horizon Information Seeking Agents,https://arxiv.org/abs/2601.12030,2026,Yao et al.,search-retrieval,alphaxiv-mcp,system,ingested,enriched
+87,PAACE: A Plan-Aware Automated Agent Context Engineering Framework,https://arxiv.org/abs/2512.16970,2025,Yuksel,memory-context,alphaxiv-mcp,system,ingested,enriched
+88,MemInsight: Autonomous Memory Augmentation for LLM Agents,https://arxiv.org/abs/2503.21760,2025,Salama et al.,memory-context,alphaxiv-mcp,system,ingested,enriched
+89,ExGRPO: Learning to Reason from Experience,https://arxiv.org/abs/2510.02245,2025,Zhan et al.,agent-harnesses,alphaxiv-mcp,system,ingested,pending
+90,Memory-R1: Enhancing Large Language Model Agents to Manage and Utilize Memories via Reinforcement Learning,https://arxiv.org/abs/2508.19828,2025,Unknown et al.,memory-context,alphaxiv-mcp,system,ingested,pending
+91,SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning,https://arxiv.org/abs/2602.08234,2026,Xia et al.,memory-context,alphaxiv-mcp,system,ingested,pending
+92,Retrieval-Augmented LLM Agents: Learning to Learn from Experience,https://arxiv.org/abs/2603.18272,2026,Ferraz et al.,search-retrieval,alphaxiv-mcp,system,ingested,pending
+93,Reinforcing Multi-Turn Reasoning in LLM Agents via Turn-Level Reward Design,https://arxiv.org/abs/2505.11821,2025,Wei et al.,agent-harnesses,alphaxiv-mcp,system,ingested,pending
+94,Large Language Model Agents Are Not Always Faithful Self-Evolvers,https://arxiv.org/abs/2601.22436,2026,Zhao et al.,agent-evaluation,alphaxiv-mcp,benchmark,ingested,enriched

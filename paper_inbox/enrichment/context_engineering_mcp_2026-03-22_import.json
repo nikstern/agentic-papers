@@ -1,0 +1,192 @@
+[
+  {
+    "paper_id": 83,
+    "summary": "This survey formalizes context engineering as a distinct discipline for optimizing the information payloads given to LLMs, moving beyond ad hoc prompt design toward a unified systems view.",
+    "why_it_matters": "It is the most direct survey anchor for the context-engineering line in the vault because it unifies prompt engineering, RAG, memory, tool use, and multi-agent systems under one framing.",
+    "method_setup": "The paper surveys more than 1400 works and organizes the area into foundational components for context retrieval, processing, and management plus system implementations such as RAG, memory systems, tool-integrated reasoning, and multi-agent systems.",
+    "key_claims": [
+      "Context engineering should be treated as a formal discipline rather than a loose collection of prompting tricks.",
+      "A unified taxonomy clarifies the links between prompting, retrieval, memory, tool use, and multi-agent coordination.",
+      "A major open problem is the gap between LLMs' ability to understand rich context and their weaker ability to generate equally sophisticated long-form outputs."
+    ],
+    "limitations": [
+      "As a survey, it does not validate a new context-engineering mechanism empirically.",
+      "The field is fragmented and moving quickly, so parts of the synthesis may age rapidly as systems and benchmarks evolve."
+    ],
+    "evaluates": [
+      "context engineering methods",
+      "evaluation frameworks",
+      "benchmark datasets"
+    ],
+    "builds_on_unresolved": [
+      "prompt engineering",
+      "retrieval-augmented generation",
+      "memory systems",
+      "tool-integrated reasoning",
+      "multi-agent systems"
+    ],
+    "compares_to_unresolved": []
+  },
+  {
+    "paper_id": 84,
+    "summary": "Context-Folding trains an LLM agent to actively manage its own context by branching into temporary sub-trajectories and folding them back into compact summaries, rather than passively accumulating long histories.",
+    "why_it_matters": "It is one of the strongest papers in the current set for treating context management as a learnable agent skill rather than a fixed summarization heuristic.",
+    "method_setup": "The framework introduces `branch` and `return` actions for temporary sub-contexts, organizes execution in a plan-execution loop, and trains the policy with FoldGRPO using dense process rewards on BrowseComp-Plus and SWE-Bench Verified.",
+    "key_claims": [
+      "Agents can learn active context management as an intrinsic cognitive skill through reinforcement learning.",
+      "Context folding can match or outperform long-context ReAct baselines while using a much smaller active context.",
+      "Specialized process rewards are important for teaching agents when to branch, summarize, and keep the main thread compact."
+    ],
+    "limitations": [
+      "The method depends on reinforcement learning and custom process rewards, which adds training complexity.",
+      "Its gains are demonstrated on specific long-horizon research and software-engineering benchmarks rather than across all agent domains."
+    ],
+    "evaluates": [
+      "BrowseComp-Plus",
+      "SWE-Bench Verified",
+      "long-horizon agent context management"
+    ],
+    "builds_on_unresolved": [
+      "ReAct",
+      "summarization-based context management",
+      "multi-agent systems",
+      "GRPO"
+    ],
+    "compares_to_unresolved": [
+      "ReAct",
+      "summarization-based context management",
+      "standard GRPO"
+    ]
+  },
+  {
+    "paper_id": 85,
+    "summary": "ACON proposes a unified framework for compressing both interaction histories and observations in long-horizon LLM agents by optimizing natural-language compression guidelines and then distilling the compressor into smaller models.",
+    "why_it_matters": "It is a strong context-engineering paper because it treats compression quality as an optimizable policy learned from task failures rather than a static summarization prompt.",
+    "method_setup": "ACON alternates between utility-maximizing and compression-maximizing prompt optimization for a compressor LLM, then distills the optimized compressor into smaller models and evaluates the system on AppWorld, OfficeBench, and 8-objective QA.",
+    "key_claims": [
+      "Natural-language compression guidelines can be optimized to preserve task performance while sharply reducing context load.",
+      "Smaller LLM agents benefit substantially when long histories are compressed into more relevant state representations.",
+      "A distilled compressor can retain most of the teacher compressor's gains at much lower cost."
+    ],
+    "limitations": [
+      "Total API cost does not always decrease because compression itself can add inference overhead, especially for history compression.",
+      "The approach relies on LLM-based prompt optimization and evaluation rather than formal guarantees about semantic preservation."
+    ],
+    "evaluates": [
+      "AppWorld",
+      "OfficeBench",
+      "8-objective QA"
+    ],
+    "builds_on_unresolved": [
+      "LLMLingua",
+      "retrieval-augmented generation",
+      "dialogue memory summarization"
+    ],
+    "compares_to_unresolved": [
+      "FIFO",
+      "Retrieval",
+      "LLMLingua",
+      "naive prompting"
+    ]
+  },
+  {
+    "paper_id": 86,
+    "summary": "ARC introduces active, reflection-driven context management for long-horizon information-seeking agents by treating context as a dynamic internal reasoning state that can be monitored, reorganized, and repaired.",
+    "why_it_matters": "It is directly relevant because it pushes beyond passive summarization and shows that context engineering can include explicit reflection over the agent's own internal state.",
+    "method_setup": "ARC separates an actor from a trainable context manager that maintains a checklist, interaction memory, and previous interaction, then uses incremental summarization and selective reflection to revise memory during long-horizon search tasks.",
+    "key_claims": [
+      "Long-horizon agents need active context repair, not just compression, to avoid context rot.",
+      "Jointly revising the interaction memory and checklist outperforms raw-history and passive-summarization baselines.",
+      "Context management is a learnable module that can be trained separately from the main actor."
+    ],
+    "limitations": [
+      "The approach adds a dedicated context-manager component and extra training complexity.",
+      "The results are concentrated on information-seeking benchmarks, so generalization to other agent settings still needs testing."
+    ],
+    "evaluates": [
+      "HotpotQA",
+      "GAIA",
+      "xBench-DeepSearch",
+      "BrowseComp",
+      "BrowseComp-ZH"
+    ],
+    "builds_on_unresolved": [
+      "ReAct",
+      "ReSum",
+      "Reflexion",
+      "MemGPT",
+      "MemoryBank"
+    ],
+    "compares_to_unresolved": [
+      "ReAct",
+      "ReSum"
+    ]
+  },
+  {
+    "paper_id": 87,
+    "summary": "PAACE frames context engineering as a plan-aware optimization problem, learning to compress, rewrite, and reshape evolving agent state by conditioning on future plan steps and workflow structure.",
+    "why_it_matters": "It is one of the most explicit papers in the vault for plan-aware context engineering, making it useful for separating generic memory systems from workflow-conditioned context shaping.",
+    "method_setup": "PAACE uses a teacher LLM to perform next-k-step-aware compression over multi-step workflows, evolves compression prompts using outcome-level feedback, generates synthetic supervision with PAACE-Syn, and distills the behavior into compact PAACE-FT compressors.",
+    "key_claims": [
+      "Plan-aware next-k conditioning improves long-horizon agent correctness and reduces context cost better than generic compression baselines.",
+      "Synthetic workflow supervision can train compact context compressors that retain most of the teacher's performance.",
+      "Compression can regularize long-horizon reasoning by removing stale or distracting context rather than only saving tokens."
+    ],
+    "limitations": [
+      "The method learns environment- and workflow-specific compression policies, so cross-domain generalization remains open.",
+      "Its evaluation relies on outcome-level agreement and LLM judging rather than formal guarantees of semantic preservation."
+    ],
+    "evaluates": [
+      "AppWorld",
+      "OfficeBench",
+      "8-objective QA"
+    ],
+    "builds_on_unresolved": [
+      "ReAct",
+      "Toolformer",
+      "Self-RAG",
+      "LLMLingua",
+      "ACON"
+    ],
+    "compares_to_unresolved": [
+      "No Compression",
+      "FIFO",
+      "Retrieval",
+      "LLMLingua",
+      "Prompting",
+      "ACON"
+    ]
+  },
+  {
+    "paper_id": 88,
+    "summary": "MemInsight augments LLM-agent memory by autonomously extracting semantic attributes from past interactions and using those structured augmentations to improve memory retrieval.",
+    "why_it_matters": "It adds a useful semantic-structure angle to the context-engineering set by showing how memory can be reorganized around automatically mined attributes rather than raw interaction text alone.",
+    "method_setup": "The system mines entity-centric and conversation-centric attributes from memory, annotates memory entries with those attributes, and retrieves relevant history through attribute-based or embedding-based search on tasks including LoCoMo and LLM-REDIAL.",
+    "key_claims": [
+      "Autonomous semantic augmentation improves long-term memory retrieval over raw-history baselines.",
+      "Priority-ordered augmentations help recover multi-hop and temporally dispersed information more reliably.",
+      "Structured memory can improve both question answering and recommendation quality for LLM agents."
+    ],
+    "limitations": [
+      "The quality of augmentation depends heavily on the backbone LLM used to mine attributes.",
+      "Some generated attributes can be generic, and the approach still requires extra retrieval and annotation machinery."
+    ],
+    "evaluates": [
+      "LoCoMo",
+      "LLM-REDIAL",
+      "event summarization"
+    ],
+    "builds_on_unresolved": [
+      "dense passage retrieval",
+      "retrieval-augmented generation",
+      "A-MEM",
+      "Mem0"
+    ],
+    "compares_to_unresolved": [
+      "Dense Passage Retrieval",
+      "MemoryBank",
+      "ReadAgent",
+      "LoCoMo"
+    ]
+  }
+]

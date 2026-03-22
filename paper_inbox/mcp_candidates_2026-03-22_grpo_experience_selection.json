@@ -1,0 +1,42 @@
+[
+  {
+    "title": "ExGRPO: Learning to Reason from Experience",
+    "url": "https://arxiv.org/abs/2510.02245",
+    "year": 2025,
+    "authors": "Zhan et al.",
+    "candidate_topic": "agent-harnesses",
+    "paper_type": "system"
+  },
+  {
+    "title": "Memory-R1: Enhancing Large Language Model Agents to Manage and Utilize Memories via Reinforcement Learning",
+    "url": "https://arxiv.org/abs/2508.19828",
+    "year": 2025,
+    "authors": "Unknown et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "system"
+  },
+  {
+    "title": "SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning",
+    "url": "https://arxiv.org/abs/2602.08234",
+    "year": 2026,
+    "authors": "Xia et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "system"
+  },
+  {
+    "title": "Retrieval-Augmented LLM Agents: Learning to Learn from Experience",
+    "url": "https://arxiv.org/abs/2603.18272",
+    "year": 2026,
+    "authors": "Ferraz et al.",
+    "candidate_topic": "search-retrieval",
+    "paper_type": "system"
+  },
+  {
+    "title": "Reinforcing Multi-Turn Reasoning in LLM Agents via Turn-Level Reward Design",
+    "url": "https://arxiv.org/abs/2505.11821",
+    "year": 2025,
+    "authors": "Wei et al.",
+    "candidate_topic": "agent-harnesses",
+    "paper_type": "system"
+  }
+]
