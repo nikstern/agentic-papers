@@ -7,7 +7,7 @@ url: "https://arxiv.org/abs/2402.01680"
 paper_type: "survey"
 primary_topic: "llm-multi-agent-systems"
 secondary_topics: []
-status: "ingested"
+status: "deep_read"
 priority: "0"
 last_read: ""
 enrichment_status: "enriched"
@@ -58,4 +58,13 @@ The paper surveys applications in problem solving and world simulation, proposes
 <!-- GENERATED:END -->
 
 ## My Notes
+Useful survey for where things were at in 2023 and points in some useful other directions, but the field has likely advanced since then.
 
+Signals importance of:
+- [[2023-MetaGPT-Meta-Programming-for-A-Multi-Agent-Collaborative-Framework]]
+- [[2023-CAMEL-Communicative-Agents-for-Mind-Exploration-of-Large]]
+- [[2023-AgentBench-Evaluating-LLMs-as-Agents]]
+- [[2023-Building-Cooperative-Embodied-Agents-Modularly-with-Large-Language]]
+- [[2024-Scalable-Multi-Robot-Collaboration-with-Large-Language-Models-Centralized]]
+- [[2023-RoCo-Dialectic-Multi-Robot-Collaboration-with-Large-Language-Models]]
+- [[2023-A-Dynamic-LLM-Powered-Agent-Network-for-Task-Oriented-Agent]]

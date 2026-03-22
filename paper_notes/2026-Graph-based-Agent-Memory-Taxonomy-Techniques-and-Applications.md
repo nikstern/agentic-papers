@@ -7,7 +7,7 @@ url: "https://arxiv.org/abs/2602.05665"
 paper_type: "survey"
 primary_topic: "memory-context"
 secondary_topics: []
-status: "ingested"
+status: "deep_read"
 priority: "0"
 last_read: ""
 enrichment_status: "enriched"
@@ -59,3 +59,11 @@ The paper surveys graph memory forms such as knowledge, temporal, hierarchical, 
 
 ## My Notes
 
+Recent additions linked from this survey:
+
+- [[2025-MemoTime-Memory-Augmented-Temporal-Knowledge-Graph-Enhanced-Large-Language]]
+- [[2025-LiCoMemory-Lightweight-and-Cognitive-Agentic-Memory-for-Efficient]]
+- [[2025-FLEX-Continuous-Agent-Evolution-via-Forward-Learning-from]]
+- [[2021-MuSiQue-Multihop-Questions-via-Single-hop-Question-Composition]]
+- [[2025-REPOAUDIT-An-Autonomous-LLM-Agent-for-Repository-Level-Code-Auditing]]
+- [[2025-TALM-Dynamic-Tree-Structured-Multi-Agent-Framework-with-Long-Term-Memory]]

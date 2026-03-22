@@ -7,7 +7,7 @@ url: "https://arxiv.org/abs/2503.01935"
 paper_type: "benchmark"
 primary_topic: "agent-evaluation"
 secondary_topics: []
-status: "ingested"
+status: "skimmed"
 priority: "0"
 last_read: ""
 enrichment_status: "enriched"
@@ -56,4 +56,4 @@ The paper introduces the MARBLE framework, evaluates multiple coordination topol
 <!-- GENERATED:END -->
 
 ## My Notes
-
+Too focused on social and game-simulation style evaluation to be very useful for my work.
