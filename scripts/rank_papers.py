@@ -32,6 +32,7 @@ TOPIC_WEIGHTS = {
     "agent-evaluation": 3.0,
     "task-allocation": 2.5,
     "search-retrieval": 2.5,
+    "hallucination-factuality": 2.5,
     "software-agents": 2.0,
     "agent-harnesses": 2.0,
 }

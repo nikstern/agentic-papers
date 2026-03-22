@@ -36,6 +36,7 @@ ALLOWED_TOPICS = {
     "agent-harnesses",
     "task-allocation",
     "search-retrieval",
+    "hallucination-factuality",
     "software-agents",
     "memory-context",
 }

@@ -39,6 +39,7 @@ ALLOWED_TOPICS = {
     "agent-harnesses": "Agent-Harnesses.md",
     "task-allocation": "Task-Allocation.md",
     "search-retrieval": "Search-Retrieval.md",
+    "hallucination-factuality": "Hallucination-Factuality.md",
     "software-agents": "Software-Agents.md",
     "memory-context": "Memory-Context.md",
 }
