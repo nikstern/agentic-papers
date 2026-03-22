@@ -1,0 +1,58 @@
+[
+  {
+    "title": "Recursive Language Models",
+    "url": "https://arxiv.org/abs/2512.24601",
+    "year": 2025,
+    "authors": "Zhang et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "system"
+  },
+  {
+    "title": "Recursive Models for Long-Horizon Reasoning",
+    "url": "https://arxiv.org/abs/2603.02112",
+    "year": 2026,
+    "authors": "Yang et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "system"
+  },
+  {
+    "title": "Thinking Deeper with Recursive Spawning",
+    "url": "https://arxiv.org/abs/2405.17402",
+    "year": 2024,
+    "authors": "Schroeder et al.",
+    "candidate_topic": "llm-multi-agent-systems",
+    "paper_type": "system"
+  },
+  {
+    "title": "Recursive Introspection: Teaching Language Model Agents How to Self-Improve",
+    "url": "https://arxiv.org/abs/2407.18219",
+    "year": 2024,
+    "authors": "Qu et al.",
+    "candidate_topic": "llm-multi-agent-systems",
+    "paper_type": "system"
+  },
+  {
+    "title": "Scaling up Test-Time Compute with Latent Reasoning: A Recurrent Depth Approach",
+    "url": "https://arxiv.org/abs/2502.05171",
+    "year": 2025,
+    "authors": "Geiping et al.",
+    "candidate_topic": "llm-multi-agent-systems",
+    "paper_type": "system"
+  },
+  {
+    "title": "Pushdown Layers: Encoding Recursive Structure in Transformer Language Models",
+    "url": "https://arxiv.org/abs/2310.19089",
+    "year": 2023,
+    "authors": "Murty et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "system"
+  },
+  {
+    "title": "Transformer-Based Models Are Not Yet Perfect At Learning to Emulate Structural Recursion",
+    "url": "https://arxiv.org/abs/2401.12947",
+    "year": 2024,
+    "authors": "Zhang et al.",
+    "candidate_topic": "agent-evaluation",
+    "paper_type": "benchmark"
+  }
+]

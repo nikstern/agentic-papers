@@ -1,0 +1,31 @@
+{
+  "paper_id": "76",
+  "summary": "FLEX proposes a gradient-free learning paradigm where LLM agents evolve through an external experience library instead of parameter updates. The system accumulates, organizes, and reuses successful and failed reasoning traces to improve future performance and enable inheritance across agents.",
+  "why_it_matters": "It is relevant if you care about memory as an evolving experience substrate for continual agent improvement rather than just retrieval over stored context.",
+  "method_setup": "System built around forward learning from experience, combining exploration trajectories, critic-generated semantic feedback, a hierarchical experience library with success and warning zones, and experience retrieval during future reasoning.",
+  "key_claims": [
+    "Agents can improve continuously through experience-library evolution without gradient-based fine-tuning.",
+    "Performance scales predictably with accumulated experience, suggesting a scaling law of experience.",
+    "Experience libraries can be inherited across agents, allowing knowledge transfer without parameter sharing."
+  ],
+  "limitations": [
+    "The method depends on sustained exploration, reflection, and library maintenance, which adds inference-time complexity.",
+    "It is broader than memory retrieval alone and may be less directly applicable if the goal is lightweight task-specific memory rather than continual evolution."
+  ],
+  "evaluates": [
+    "AIME25",
+    "GSM8k",
+    "USPTO50k",
+    "ProteinGym"
+  ],
+  "builds_on_unresolved": [
+    "ReAct",
+    "Reflexion",
+    "Self-Refine"
+  ],
+  "compares_to_unresolved": [
+    "ReAct",
+    "In-Context Learning",
+    "Vanilla LLM"
+  ]
+}

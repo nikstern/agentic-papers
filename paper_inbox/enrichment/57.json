@@ -1,0 +1,26 @@
+{
+  "paper_id": "57",
+  "summary": "Recursive Introspection trains language model agents to improve their own answers over multiple turns through iterative self-critique and correction.",
+  "why_it_matters": "It is a strong adjacent recursion paper for agents because it focuses on recursive self-improvement rather than recursive prompt processing.",
+  "method_setup": "RISE frames single-turn tasks as multi-turn MDPs, collects on-policy rollouts with self-distillation or teacher distillation, and fine-tunes models with reward-weighted regression on math reasoning tasks.",
+  "key_claims": [
+    "Iterative fine-tuning can teach LLMs to improve answers over multiple turns.",
+    "The self-improvement behavior generalizes beyond the training distribution.",
+    "Sequential self-correction can outperform parallel first-turn sampling."
+  ],
+  "limitations": [
+    "The evidence is concentrated on math-style reasoning tasks.",
+    "Self-distillation can require multiple iterations to become strong.",
+    "Scaling the full training loop can be computationally expensive."
+  ],
+  "evaluates": [
+    "recursive self-improvement",
+    "multi-turn reasoning",
+    "math reasoning"
+  ],
+  "builds_on_unresolved": [],
+  "compares_to_unresolved": [
+    "Self-Refine",
+    "single-turn prompting"
+  ]
+}

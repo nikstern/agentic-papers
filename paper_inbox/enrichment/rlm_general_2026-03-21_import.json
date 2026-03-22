@@ -1,0 +1,184 @@
+[
+  {
+    "paper_id": 54,
+    "summary": "Recursive Language Models proposes an inference-time framework in which an LLM treats long prompts as an external environment and recursively calls itself over prompt fragments.",
+    "why_it_matters": "It is the core exact-RLM paper and a direct attempt to scale effective context and reasoning depth without retraining the base model for longer context windows.",
+    "method_setup": "The method places the prompt inside a REPL environment, lets the LLM write code to inspect and transform prompt slices, and supports recursive self-calls over subproblems; it is evaluated on long-context tasks such as BrowseComp-Plus, OOLONG, and LongBench-v2 CodeQA.",
+    "key_claims": [
+      "RLMs can process inputs far beyond the base model context window.",
+      "Programmatic prompt access plus recursive sub-calls outperform common long-context scaffolds on several tasks.",
+      "Inference-time recursion is a viable scaling axis for long-horizon reasoning."
+    ],
+    "limitations": [
+      "Inference cost can vary substantially depending on trajectory length.",
+      "Base models can still be preferable on smaller-context tasks.",
+      "Performance and behavior depend on the underlying model used inside the scaffold."
+    ],
+    "evaluates": [
+      "long-context reasoning",
+      "recursive prompt processing",
+      "LongBench-v2 CodeQA"
+    ],
+    "builds_on_unresolved": [],
+    "compares_to_unresolved": [
+      "CodeAct",
+      "summary agent"
+    ]
+  },
+  {
+    "paper_id": 55,
+    "summary": "This paper gives a formal account of recursive models for long-horizon reasoning and argues that deep recursion is the key mechanism for overcoming bounded active context.",
+    "why_it_matters": "It provides the theoretical backbone for the exact RLM direction and clarifies why deep recursion can be exponentially more powerful than shallow context-management strategies.",
+    "method_setup": "The paper formalizes recursive models with call and return operations over a context stack, analyzes their computational power relative to autoregressive and summarization-based systems, and validates the approach on SAT with a recursively trained 3B model.",
+    "key_claims": [
+      "Deep recursion can reduce active-context requirements exponentially for some problems.",
+      "Constant-depth recursion offers little advantage over summarization-style context management.",
+      "Minimal recursive models are already optimally powerful within a broad recursive agentic framework."
+    ],
+    "limitations": [
+      "The main contribution is theoretical rather than broad application benchmarking.",
+      "Naive recursive simulation can be computationally expensive.",
+      "The abstractions do not map perfectly onto all practical LLM system details."
+    ],
+    "evaluates": [
+      "long-horizon reasoning theory",
+      "recursive computation",
+      "SAT solving"
+    ],
+    "builds_on_unresolved": [],
+    "compares_to_unresolved": [
+      "summarization",
+      "single-context autoregressive models"
+    ]
+  },
+  {
+    "paper_id": 56,
+    "summary": "THREAD treats LLM generation as an execution thread that can recursively spawn child threads for subproblems and then rejoin with compact results.",
+    "why_it_matters": "It is an important adjacent systems paper because it operationalizes recursive decomposition for practical agent tasks and question answering.",
+    "method_setup": "The framework uses recursive spawning with parent-child information flow functions and evaluates on agent and grounded QA benchmarks such as ALFWorld, WebShop, TextCraft, DataCommons QA, and MIMIC-III ICU QA.",
+    "key_claims": [
+      "Recursive spawning allows more adaptive intermediate work than single-context generation.",
+      "THREAD improves performance on several agent and QA tasks across both large and small models.",
+      "A unified recursive scaffold can replace more rigid planner-executor patterns in some settings."
+    ],
+    "limitations": [
+      "The system relies heavily on prompt design rather than learned control policies.",
+      "Error handling remains mostly implicit rather than explicitly modeled.",
+      "Parent-child communication can be lossy depending on what context is passed."
+    ],
+    "evaluates": [
+      "recursive agent decomposition",
+      "agent tasks",
+      "grounded question answering"
+    ],
+    "builds_on_unresolved": [],
+    "compares_to_unresolved": [
+      "RAP",
+      "Reflexion"
+    ]
+  },
+  {
+    "paper_id": 57,
+    "summary": "Recursive Introspection trains language model agents to improve their own answers over multiple turns through iterative self-critique and correction.",
+    "why_it_matters": "It is a strong adjacent recursion paper for agents because it focuses on recursive self-improvement rather than recursive prompt processing.",
+    "method_setup": "RISE frames single-turn tasks as multi-turn MDPs, collects on-policy rollouts with self-distillation or teacher distillation, and fine-tunes models with reward-weighted regression on math reasoning tasks.",
+    "key_claims": [
+      "Iterative fine-tuning can teach LLMs to improve answers over multiple turns.",
+      "The self-improvement behavior generalizes beyond the training distribution.",
+      "Sequential self-correction can outperform parallel first-turn sampling."
+    ],
+    "limitations": [
+      "The evidence is concentrated on math-style reasoning tasks.",
+      "Self-distillation can require multiple iterations to become strong.",
+      "Scaling the full training loop can be computationally expensive."
+    ],
+    "evaluates": [
+      "recursive self-improvement",
+      "multi-turn reasoning",
+      "math reasoning"
+    ],
+    "builds_on_unresolved": [],
+    "compares_to_unresolved": [
+      "Self-Refine",
+      "single-turn prompting"
+    ]
+  },
+  {
+    "paper_id": 58,
+    "summary": "This paper introduces a recurrent-depth language model that scales reasoning by iterating a latent recurrent block at test time rather than relying on explicit chain-of-thought.",
+    "why_it_matters": "It is a major adjacent paper for the broader recursion/recurrence cluster because it proposes test-time compute scaling through latent recurrence.",
+    "method_setup": "The architecture has a prelude, recurrent core, and coda, is trained from scratch with randomized iteration counts and truncated backpropagation, and is evaluated on general, math, and coding benchmarks.",
+    "key_claims": [
+      "Increasing recurrent depth at test time improves reasoning performance.",
+      "Latent recurrence can act as a third scaling axis besides parameter count and explicit CoT.",
+      "Recurrent-depth models show useful emergent behaviors such as adaptive compute."
+    ],
+    "limitations": [
+      "The method requires specialized architecture and large-scale training.",
+      "It is recurrence in latent space rather than exact recursive language modeling.",
+      "The systems work is substantial and may be difficult to reproduce."
+    ],
+    "evaluates": [
+      "latent reasoning",
+      "recurrent depth",
+      "math and coding benchmarks"
+    ],
+    "builds_on_unresolved": [],
+    "compares_to_unresolved": [
+      "Chain-of-Thought",
+      "fixed-depth transformers"
+    ]
+  },
+  {
+    "paper_id": 59,
+    "summary": "Pushdown Layers adds an explicit stack-like mechanism to Transformer self-attention to better capture recursive syntactic structure.",
+    "why_it_matters": "It is a useful foundational recursion paper because it shows one way to encode recursive state explicitly inside Transformer language modeling.",
+    "method_setup": "The method augments self-attention with a stack tape tracking estimated token depths in an incremental parse and evaluates on Dyck strings, syntactic generalization benchmarks, and GPT-2 fine-tuning experiments.",
+    "key_claims": [
+      "Explicit stack-style state improves recursive syntactic generalization.",
+      "Pushdown Layers are more sample-efficient than standard self-attention on several recursion-sensitive tasks.",
+      "A soft structural bias can improve recursive modeling without hard attention constraints."
+    ],
+    "limitations": [
+      "The approach depends on parse supervision or silver parses.",
+      "It is focused mainly on syntactic recursion rather than general long-horizon agent reasoning.",
+      "Applicability outside parse-structured language settings is limited."
+    ],
+    "evaluates": [
+      "recursive structure modeling",
+      "syntactic generalization",
+      "Dyck languages"
+    ],
+    "builds_on_unresolved": [],
+    "compares_to_unresolved": [
+      "Transformer Grammars",
+      "standard Transformer LM"
+    ]
+  },
+  {
+    "paper_id": 60,
+    "summary": "This paper studies whether transformer-based models truly learn structural recursion or instead rely on brittle non-recursive shortcuts.",
+    "why_it_matters": "It is an important negative and diagnostic paper that helps calibrate claims about recursion in current language models.",
+    "method_setup": "The authors define a framework for structural recursion, test small Transformers, pre-trained models, and frontier LLMs on recursive tasks such as binary successor and tree traversals, and use mechanistic analysis to inspect learned strategies.",
+    "key_claims": [
+      "Transformers often solve recursive tasks through shortcuts rather than true recursive generalization.",
+      "Edge cases and increased depth expose systematic failures in learned heuristics.",
+      "Current prompting and pretraining are not enough to reliably induce structural recursion."
+    ],
+    "limitations": [
+      "The tasks are stylized and do not cover all real-world recursion demands.",
+      "The paper is more diagnostic than constructive.",
+      "Some conclusions are based on targeted synthetic tasks rather than broad naturalistic benchmarks."
+    ],
+    "evaluates": [
+      "structural recursion evaluation",
+      "mechanistic analysis of recursion",
+      "tree traversal tasks"
+    ],
+    "builds_on_unresolved": [],
+    "compares_to_unresolved": [
+      "standard Transformer models",
+      "pre-trained LLMs"
+    ]
+  }
+]

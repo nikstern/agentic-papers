@@ -1,0 +1,26 @@
+{
+  "paper_id": "56",
+  "summary": "THREAD treats LLM generation as an execution thread that can recursively spawn child threads for subproblems and then rejoin with compact results.",
+  "why_it_matters": "It is an important adjacent systems paper because it operationalizes recursive decomposition for practical agent tasks and question answering.",
+  "method_setup": "The framework uses recursive spawning with parent-child information flow functions and evaluates on agent and grounded QA benchmarks such as ALFWorld, WebShop, TextCraft, DataCommons QA, and MIMIC-III ICU QA.",
+  "key_claims": [
+    "Recursive spawning allows more adaptive intermediate work than single-context generation.",
+    "THREAD improves performance on several agent and QA tasks across both large and small models.",
+    "A unified recursive scaffold can replace more rigid planner-executor patterns in some settings."
+  ],
+  "limitations": [
+    "The system relies heavily on prompt design rather than learned control policies.",
+    "Error handling remains mostly implicit rather than explicitly modeled.",
+    "Parent-child communication can be lossy depending on what context is passed."
+  ],
+  "evaluates": [
+    "recursive agent decomposition",
+    "agent tasks",
+    "grounded question answering"
+  ],
+  "builds_on_unresolved": [],
+  "compares_to_unresolved": [
+    "RAP",
+    "Reflexion"
+  ]
+}

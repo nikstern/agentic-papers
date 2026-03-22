@@ -1,0 +1,28 @@
+{
+  "paper_id": "74",
+  "summary": "MemoTime augments LLM reasoning over temporal knowledge graphs with hierarchical temporal decomposition, toolkit-guided retrieval, and a reusable experience memory. It is designed to answer complex temporal questions involving multiple entities, operators, and evolving event sequences more faithfully.",
+  "why_it_matters": "It is relevant if you care about memory as a support for temporally grounded reasoning rather than only conversational recall.",
+  "method_setup": "System for temporal knowledge graph QA that combines temporal grounding, a Tree-of-Time hierarchical controller, hybrid graph-plus-embedding temporal retrieval, temporal pruning, and an adaptive experience pool for reuse of successful reasoning traces.",
+  "key_claims": [
+    "Structured temporal decomposition and monotonic reasoning improve faithfulness on multi-hop temporal question answering.",
+    "Experience memory helps stabilize toolkit selection and reuse successful temporal reasoning traces over time.",
+    "The framework improves temporal QA performance across multiple LLM backbones without requiring fine-tuning."
+  ],
+  "limitations": [
+    "The method is specialized to temporal knowledge graph reasoning rather than general long-term agent memory.",
+    "Its runtime still depends on a fairly involved retrieval and recursive reasoning pipeline."
+  ],
+  "evaluates": [
+    "MultiTQ",
+    "TimeQuestions",
+    "temporal knowledge graph question answering"
+  ],
+  "builds_on_unresolved": [
+    "Paths-over-graph: Knowledge graph empowered large language model reasoning"
+  ],
+  "compares_to_unresolved": [
+    "TempAgent",
+    "GenTKGQA",
+    "TimeR4"
+  ]
+}

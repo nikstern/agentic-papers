@@ -1,0 +1,27 @@
+{
+  "paper_id": "53",
+  "summary": "CTIM-Rover adds episodic memory to a software engineering agent through cross-task-instance memory, then studies whether that improves repository-level issue resolution.",
+  "why_it_matters": "It is a useful counterexample because it shows that naive episodic memory can make SWE agents worse rather than better.",
+  "method_setup": "The paper extends AutoCodeRover with a memory layer distilled from prior successful trajectories and evaluates on a subset of SWE-bench Verified.",
+  "key_claims": [
+    "The proposed episodic memory degrades performance rather than improving it.",
+    "Noisy or weakly relevant memory items can interfere with SWE reasoning.",
+    "Experience-learning methods from simpler domains may not transfer cleanly to real software engineering."
+  ],
+  "limitations": [
+    "The evaluation covers only a subset of SWE-bench Verified.",
+    "The negative result may partly reflect the specific retrieval and filtering design rather than the full idea space.",
+    "Environment setup issues reduced usable benchmark coverage."
+  ],
+  "evaluates": [
+    "episodic memory for software agents",
+    "repository-level issue resolution",
+    "SWE-bench Verified subset"
+  ],
+  "builds_on_unresolved": [
+    "AutoCodeRover"
+  ],
+  "compares_to_unresolved": [
+    "AutoCodeRover"
+  ]
+}

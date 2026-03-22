@@ -1,0 +1,34 @@
+{
+  "paper_id": "65",
+  "summary": "CoELA is a modular cognitive-inspired framework that uses large language models for planning and communication in decentralized cooperative embodied tasks with costly natural-language interaction.",
+  "why_it_matters": "It is a key embodied multi-agent paper because it tests whether LLMs can support real cooperation under partial observability and communication costs rather than unrestricted chat.",
+  "method_setup": "The framework combines perception, memory, communication, planning, and execution modules and is evaluated on the TDW-MAT and C-WAH environments for AI-AI and human-AI cooperation.",
+  "key_claims": [
+    "LLMs can drive effective decentralized embodied cooperation when embedded in a modular architecture.",
+    "Natural-language communication improves trust and effectiveness in human-AI cooperation.",
+    "Open models can approach stronger proprietary-model performance after targeted fine-tuning."
+  ],
+  "limitations": [
+    "Current LLMs still struggle with robust 3D spatial reasoning and low-level embodied control reasoning.",
+    "Communication among AI agents is not yet consistently strong enough to always yield large gains over non-communicating planners.",
+    "The framework remains dependent on external perception and procedural modules rather than end-to-end embodied reasoning."
+  ],
+  "evaluates": [
+    "cooperative embodied agents",
+    "decentralized multi-agent cooperation",
+    "human-ai cooperation",
+    "TDW-MAT",
+    "C-WAH"
+  ],
+  "builds_on_unresolved": [
+    "VirtualHome",
+    "ThreeDWorld",
+    "DEC-POMDP"
+  ],
+  "compares_to_unresolved": [
+    "Rule-based Hierarchical Planner",
+    "MCTS-based Hierarchical Planner",
+    "Multi-Agent Transformer",
+    "LLAMA-2"
+  ]
+}

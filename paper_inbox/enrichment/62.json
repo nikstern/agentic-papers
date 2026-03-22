@@ -1,0 +1,36 @@
+{
+  "paper_id": "62",
+  "summary": "DyLAN frames multi-agent LLM collaboration as a dynamic agent network where agents are selected, ranked, and re-formed during inference instead of being fixed from the start.",
+  "why_it_matters": "It is an important systems paper for adaptive multi-agent coordination because it treats team composition itself as an optimization problem rather than a static design choice.",
+  "method_setup": "The method models collaboration as temporal feed-forward networks, introduces an unsupervised agent-importance score for team optimization, and evaluates performance on code generation, decision making, general reasoning, and arithmetic reasoning tasks.",
+  "key_claims": [
+    "Task-oriented agent selection improves multi-agent performance over static teams.",
+    "Dynamic team reformation can improve both accuracy and efficiency by filtering weak contributors during inference.",
+    "A small optimized team can outperform a larger unfiltered team."
+  ],
+  "limitations": [
+    "The method depends on the quality of agent ranking and importance estimation.",
+    "The evaluation focuses on text-based reasoning and coding tasks rather than embodied settings.",
+    "Its dynamic orchestration adds coordination overhead compared with simpler fixed-agent baselines."
+  ],
+  "evaluates": [
+    "multi-agent collaboration",
+    "code generation",
+    "decision making",
+    "general reasoning",
+    "arithmetic reasoning"
+  ],
+  "builds_on_unresolved": [
+    "CAMEL",
+    "AgentVerse",
+    "LLM Debate"
+  ],
+  "compares_to_unresolved": [
+    "CAMEL",
+    "AgentVerse",
+    "LATS",
+    "Reflexion",
+    "BOLAA",
+    "LLM-Blender"
+  ]
+}

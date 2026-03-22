@@ -1,0 +1,37 @@
+[
+  {
+    "paper_id": 66,
+    "summary": "This paper studies the scalability of LLM-based multi-robot planning by comparing centralized, decentralized, and hybrid communication frameworks for cooperative task planning.",
+    "why_it_matters": "It is one of the clearest systems papers on the architecture tradeoff between centralized and decentralized LLM coordination in multi-robot settings, with an explicit focus on token efficiency and scaling.",
+    "method_setup": "The authors evaluate four LLM planning frameworks across multiple warehouse-style 2D environments and a 3D manipulation setting, measuring task success, plan efficiency, API usage, and token consumption.",
+    "key_claims": [
+      "Hybrid centralized-decentralized planning scales better than fully decentralized dialogue or fully centralized planning alone.",
+      "State-action history is more useful than full dialogue history for preserving planning quality under token constraints.",
+      "Stronger underlying LLMs materially improve multi-robot coordination performance."
+    ],
+    "limitations": [
+      "The study is still limited to simulated tasks rather than real-world large-scale robot deployments.",
+      "Performance depends on prompt design, verifier structure, and the quality of the underlying LLM.",
+      "The framework focuses on iterative task planning and does not solve low-level control or perception end to end."
+    ],
+    "evaluates": [
+      "multi-robot task planning",
+      "centralized vs decentralized coordination",
+      "warehouse-style coordination tasks",
+      "3d multi-robot manipulation"
+    ],
+    "builds_on_unresolved": [
+      "Task and Motion Planning with Large Language Models for Object Rearrangement",
+      "LLM-based multi-robot planning",
+      "iterative re-prompting with state feedback"
+    ],
+    "compares_to_unresolved": [
+      "decentralized multi-agent system",
+      "centralized multi-agent system",
+      "hybrid multi-agent system 1",
+      "hybrid multi-agent system 2",
+      "GPT-3.5",
+      "GPT-4"
+    ]
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "title": "REPOAUDIT: An Autonomous LLM-Agent for Repository-Level Code Auditing",
+    "url": "https://arxiv.org/abs/2501.18160",
+    "year": 2025,
+    "authors": "Guo et al.",
+    "candidate_topic": "software-agents",
+    "paper_type": "system"
+  },
+  {
+    "title": "TALM: Dynamic Tree-Structured Multi-Agent Framework with Long-Term Memory for Scalable Code Generation",
+    "url": "https://arxiv.org/abs/2510.23010",
+    "year": 2025,
+    "authors": "Shen and Joung",
+    "candidate_topic": "software-agents",
+    "paper_type": "system"
+  }
+]

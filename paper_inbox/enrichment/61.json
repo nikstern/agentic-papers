@@ -1,0 +1,32 @@
+{
+  "paper_id": "61",
+  "summary": "RoCo proposes a large-language-model-driven framework for multi-robot collaboration in which agents coordinate through dialogue, generate subtask plans with waypoint hints, and hand off execution to motion planning.",
+  "why_it_matters": "It is an early embodied multi-agent systems paper that grounds LLM coordination in real robot collaboration constraints rather than only text-based interaction.",
+  "method_setup": "The paper introduces the RoCo framework and the RoCoBench benchmark, evaluates robot-robot and human-robot collaboration tasks, and compares dialogue-guided planning and waypoint generation against simpler planning baselines.",
+  "key_claims": [
+    "LLM-mediated dialogue can support flexible multi-robot coordination without task-specific training.",
+    "LLM-generated waypoint suggestions can improve planning for complex placement and collision-heavy manipulation steps.",
+    "The framework adapts across task semantics, workspace overlap, and heterogeneous agent capabilities."
+  ],
+  "limitations": [
+    "Performance depends on perception quality and can break down when object detection is wrong.",
+    "The system has only been demonstrated with small teams and limited task families.",
+    "LLM spatial reasoning can still generate implausible or suboptimal paths in harder scenarios."
+  ],
+  "evaluates": [
+    "multi-robot collaboration",
+    "human-robot collaboration",
+    "embodied task planning",
+    "RoCoBench"
+  ],
+  "builds_on_unresolved": [
+    "SayCan",
+    "Inner Monologue",
+    "task and motion planning"
+  ],
+  "compares_to_unresolved": [
+    "oracle planner",
+    "direct waypoints",
+    "hard-coded waypoints"
+  ]
+}

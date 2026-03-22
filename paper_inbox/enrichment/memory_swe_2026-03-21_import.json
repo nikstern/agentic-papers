@@ -1,0 +1,196 @@
+[
+  {
+    "paper_id": 47,
+    "summary": "EXPEREPAIR introduces a repository-level program repair system that continuously learns from prior repair trajectories through a dual-memory design.",
+    "why_it_matters": "It is one of the most directly relevant papers for memory in code investigation because it shows concrete gains from reusing past repair experience on SWE tasks.",
+    "method_setup": "The system combines episodic demonstrations and semantic repair insights, injects them into test generation and patch generation, and evaluates on SWE-Bench Lite against strong open-source repair baselines.",
+    "key_claims": [
+      "Dual-memory experience reuse improves repository-level bug repair.",
+      "Episodic demonstrations contribute more than semantic insights, but both help.",
+      "The approach reaches state-of-the-art open-source performance with favorable cost efficiency."
+    ],
+    "limitations": [
+      "Evidence is concentrated on SWE-Bench Lite rather than a broader suite of repositories and languages.",
+      "The approach depends on the quality of stored successful trajectories.",
+      "The system still relies on strong base agents for localization and patch generation."
+    ],
+    "evaluates": [
+      "repository-level program repair",
+      "experience-driven bug fixing",
+      "SWE-Bench Lite"
+    ],
+    "builds_on_unresolved": [
+      "SWE-Agent",
+      "ReAct"
+    ],
+    "compares_to_unresolved": [
+      "PatchPilot",
+      "OpenHands",
+      "Agentless"
+    ]
+  },
+  {
+    "paper_id": 48,
+    "summary": "SWE-Exp turns software issue resolution into an experience-driven search process by storing distilled comprehension and modification experiences from prior trajectories.",
+    "why_it_matters": "It is a strong direct hit for code investigation because it shows memory-guided issue resolution gains on a real SWE benchmark rather than only on generic long-horizon tasks.",
+    "method_setup": "The framework builds an experience bank from past successful and failed trajectories, retrieves stage-relevant experiences during MCTS-style issue resolution, and evaluates on SWE-bench Verified.",
+    "key_claims": [
+      "Experience-guided issue resolution outperforms strong same-model baselines on SWE-bench Verified.",
+      "Comprehension experiences are especially important for strategic guidance.",
+      "A small amount of high-quality retrieved experience works better than retrieving many memories."
+    ],
+    "limitations": [
+      "Performance depends on the quality of extracted and reranked experiences.",
+      "The reported evidence focuses on one major benchmark setting.",
+      "Too many retrieved experiences can hurt performance."
+    ],
+    "evaluates": [
+      "software issue resolution",
+      "experience-guided reasoning",
+      "SWE-bench Verified"
+    ],
+    "builds_on_unresolved": [
+      "SWE-Search",
+      "SWE-Agent"
+    ],
+    "compares_to_unresolved": [
+      "SWE-Agent",
+      "AutoCodeRover",
+      "CodeAct"
+    ]
+  },
+  {
+    "paper_id": 49,
+    "summary": "This paper argues that SWE-agent memory should be stored and retrieved at the subtask level rather than as coarse whole-instance episodes.",
+    "why_it_matters": "It is one of the cleanest empirical papers showing that better memory granularity materially improves software engineering agents on long-horizon tasks.",
+    "method_setup": "The method segments work into analyze, reproduce, edit, and verify subtasks, stores structured subtask experiences, retrieves memories by category and semantic intent, and evaluates on SWE-bench Verified across multiple LLM backbones.",
+    "key_claims": [
+      "Subtask-level memory consistently improves Pass@1 over vanilla agents.",
+      "Fine-grained memory reduces reasoning interference seen in instance-level memory.",
+      "Benefits grow on harder, longer-horizon software engineering tasks."
+    ],
+    "limitations": [
+      "The method has a cold-start period before enough useful memory accumulates.",
+      "The task decomposition scheme is hand-designed around a fixed set of subtasks.",
+      "Results are centered on SWE-bench Verified rather than diverse engineering workflows."
+    ],
+    "evaluates": [
+      "software engineering agent memory",
+      "subtask-level retrieval",
+      "SWE-bench Verified"
+    ],
+    "builds_on_unresolved": [
+      "SWE-Agent"
+    ],
+    "compares_to_unresolved": [
+      "Reasoning-Bank",
+      "vanilla agent"
+    ]
+  },
+  {
+    "paper_id": 50,
+    "summary": "RepoMem augments code localization agents with repository memory built from commit history, combining episodic memory of past commits with semantic memory of active code functionality.",
+    "why_it_matters": "It is directly relevant to code investigation because it improves the localization stage of repository-level bug fixing by giving agents prior repository knowledge.",
+    "method_setup": "The system constructs commit-history memory and file-summary memory, exposes them through retrieval tools, integrates them into LocAgent, and evaluates on SWE-bench-verified and SWE-bench-live.",
+    "key_claims": [
+      "Repository memory improves code localization accuracy over LocAgent.",
+      "Episodic and semantic memory provide complementary gains.",
+      "Memory shifts agent behavior from exhaustive exploration toward hypothesis-driven investigation."
+    ],
+    "limitations": [
+      "Benefits depend heavily on the richness and relevance of repository commit history.",
+      "Sparse or noisy repository memory can distract the agent and reduce performance.",
+      "The paper focuses on localization rather than full end-to-end repair."
+    ],
+    "evaluates": [
+      "code localization",
+      "repository memory",
+      "SWE-bench-verified"
+    ],
+    "builds_on_unresolved": [
+      "LocAgent"
+    ],
+    "compares_to_unresolved": [
+      "LocAgent",
+      "Agentless"
+    ]
+  },
+  {
+    "paper_id": 51,
+    "summary": "Context as a Tool treats context management itself as an explicit tool that an SWE agent can invoke to compress and organize long interaction histories.",
+    "why_it_matters": "It is highly relevant to code-problem investigation because long-horizon SWE failures often come from context explosion and semantic drift rather than lack of raw model capability.",
+    "method_setup": "CAT defines a structured workspace with fixed task semantics, long-term compressed memory, and short-term interaction state, trains a context-aware SWE-Compressor with trajectory-level supervision, and evaluates on SWE-Bench-Verified.",
+    "key_claims": [
+      "Tool-based context management outperforms append-only and static compression baselines.",
+      "The method sustains long-horizon SWE reasoning under bounded context budgets.",
+      "Performance gains are larger on harder tasks with longer trajectories."
+    ],
+    "limitations": [
+      "The evidence is concentrated on SWE-Bench-Verified.",
+      "The training pipeline adds complexity through retrospective trajectory reconstruction.",
+      "Inference-time overhead from active context operations is not deeply analyzed."
+    ],
+    "evaluates": [
+      "long-horizon SWE agents",
+      "context management",
+      "SWE-Bench-Verified"
+    ],
+    "builds_on_unresolved": [
+      "ReAct"
+    ],
+    "compares_to_unresolved": [
+      "ReAct Agent",
+      "Threshold-Compression Agent"
+    ]
+  },
+  {
+    "paper_id": 52,
+    "summary": "CodeMEM introduces AST-guided adaptive memory for repository-level iterative code generation, maintaining both evolving code context and session-level interaction memory.",
+    "why_it_matters": "It is relevant because it shows that code-aware memory representations outperform generic text-style memory for iterative repository work.",
+    "method_setup": "The system uses a Code Context Memory and a Code Session Memory driven by AST-based analysis and LLM operations, and evaluates on CodeIF-Bench and CoderEval.",
+    "key_claims": [
+      "AST-guided memory improves instruction following and session-level consistency.",
+      "The method reduces interaction rounds compared with baselines.",
+      "Code-structured memory is more effective than natural-language-centric memory for iterative coding."
+    ],
+    "limitations": [
+      "The evaluation is oriented toward iterative code generation rather than bug investigation specifically.",
+      "The method still depends on LLM judgment for filtering and updates.",
+      "Broader validation on more complex repositories is still limited."
+    ],
+    "evaluates": [
+      "repository-level iterative code generation",
+      "AST-guided memory",
+      "instruction following"
+    ],
+    "builds_on_unresolved": [],
+    "compares_to_unresolved": []
+  },
+  {
+    "paper_id": 53,
+    "summary": "CTIM-Rover adds episodic memory to a software engineering agent through cross-task-instance memory, then studies whether that improves repository-level issue resolution.",
+    "why_it_matters": "It is a useful counterexample because it shows that naive episodic memory can make SWE agents worse rather than better.",
+    "method_setup": "The paper extends AutoCodeRover with a memory layer distilled from prior successful trajectories and evaluates on a subset of SWE-bench Verified.",
+    "key_claims": [
+      "The proposed episodic memory degrades performance rather than improving it.",
+      "Noisy or weakly relevant memory items can interfere with SWE reasoning.",
+      "Experience-learning methods from simpler domains may not transfer cleanly to real software engineering."
+    ],
+    "limitations": [
+      "The evaluation covers only a subset of SWE-bench Verified.",
+      "The negative result may partly reflect the specific retrieval and filtering design rather than the full idea space.",
+      "Environment setup issues reduced usable benchmark coverage."
+    ],
+    "evaluates": [
+      "episodic memory for software agents",
+      "repository-level issue resolution",
+      "SWE-bench Verified subset"
+    ],
+    "builds_on_unresolved": [
+      "AutoCodeRover"
+    ],
+    "compares_to_unresolved": [
+      "AutoCodeRover"
+    ]
+  }
+]

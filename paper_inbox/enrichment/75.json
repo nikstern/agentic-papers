@@ -1,0 +1,33 @@
+{
+  "paper_id": "75",
+  "summary": "LiCoMemory introduces CogniGraph, a lightweight hierarchical memory graph for long-term LLM reasoning that separates session summaries, entity-relation structure, and source chunks. It aims to support real-time updates, low-latency retrieval, and temporally aware reasoning across long conversational histories.",
+  "why_it_matters": "It is directly relevant to efficient external memory design because it focuses on lightweight structure, retrieval coherence, and real-time memory operations.",
+  "method_setup": "Agent memory framework with a three-layer CogniGraph over session summaries, entity-relation nodes, and dialogue chunks, combined with hierarchical retrieval and unified reranking over semantic relevance and temporal recency.",
+  "key_claims": [
+    "Decoupling semantic storage from graph structure reduces redundancy and makes graph-based memory updates much cheaper.",
+    "Hierarchical retrieval over summaries, triples, and source chunks improves long-term reasoning coherence compared with flatter memory systems.",
+    "Temporal-aware reranking materially helps on multi-session and temporal reasoning tasks."
+  ],
+  "limitations": [
+    "The current system is limited to text-based conversational memory rather than multimodal memory.",
+    "Graph construction and refinement still rely on LLM calls, which can become costly as memory grows."
+  ],
+  "evaluates": [
+    "LongMemEval",
+    "LoCoMo",
+    "multi-session reasoning",
+    "temporal reasoning"
+  ],
+  "builds_on_unresolved": [
+    "Zep",
+    "Mem0",
+    "A-Mem"
+  ],
+  "compares_to_unresolved": [
+    "Zep",
+    "Mem0",
+    "MemOS",
+    "A-Mem",
+    "MemoryBank"
+  ]
+}

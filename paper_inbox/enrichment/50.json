@@ -1,0 +1,28 @@
+{
+  "paper_id": "50",
+  "summary": "RepoMem augments code localization agents with repository memory built from commit history, combining episodic memory of past commits with semantic memory of active code functionality.",
+  "why_it_matters": "It is directly relevant to code investigation because it improves the localization stage of repository-level bug fixing by giving agents prior repository knowledge.",
+  "method_setup": "The system constructs commit-history memory and file-summary memory, exposes them through retrieval tools, integrates them into LocAgent, and evaluates on SWE-bench-verified and SWE-bench-live.",
+  "key_claims": [
+    "Repository memory improves code localization accuracy over LocAgent.",
+    "Episodic and semantic memory provide complementary gains.",
+    "Memory shifts agent behavior from exhaustive exploration toward hypothesis-driven investigation."
+  ],
+  "limitations": [
+    "Benefits depend heavily on the richness and relevance of repository commit history.",
+    "Sparse or noisy repository memory can distract the agent and reduce performance.",
+    "The paper focuses on localization rather than full end-to-end repair."
+  ],
+  "evaluates": [
+    "code localization",
+    "repository memory",
+    "SWE-bench-verified"
+  ],
+  "builds_on_unresolved": [
+    "LocAgent"
+  ],
+  "compares_to_unresolved": [
+    "LocAgent",
+    "Agentless"
+  ]
+}

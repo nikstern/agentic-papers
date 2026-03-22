@@ -1,0 +1,94 @@
+[
+  {
+    "paper_id": 74,
+    "summary": "MemoTime augments LLM reasoning over temporal knowledge graphs with hierarchical temporal decomposition, toolkit-guided retrieval, and a reusable experience memory. It is designed to answer complex temporal questions involving multiple entities, operators, and evolving event sequences more faithfully.",
+    "why_it_matters": "It is relevant if you care about memory as a support for temporally grounded reasoning rather than only conversational recall.",
+    "method_setup": "System for temporal knowledge graph QA that combines temporal grounding, a Tree-of-Time hierarchical controller, hybrid graph-plus-embedding temporal retrieval, temporal pruning, and an adaptive experience pool for reuse of successful reasoning traces.",
+    "key_claims": [
+      "Structured temporal decomposition and monotonic reasoning improve faithfulness on multi-hop temporal question answering.",
+      "Experience memory helps stabilize toolkit selection and reuse successful temporal reasoning traces over time.",
+      "The framework improves temporal QA performance across multiple LLM backbones without requiring fine-tuning."
+    ],
+    "limitations": [
+      "The method is specialized to temporal knowledge graph reasoning rather than general long-term agent memory.",
+      "Its runtime still depends on a fairly involved retrieval and recursive reasoning pipeline."
+    ],
+    "evaluates": [
+      "MultiTQ",
+      "TimeQuestions",
+      "temporal knowledge graph question answering"
+    ],
+    "builds_on_unresolved": [
+      "Paths-over-graph: Knowledge graph empowered large language model reasoning"
+    ],
+    "compares_to_unresolved": [
+      "TempAgent",
+      "GenTKGQA",
+      "TimeR4"
+    ]
+  },
+  {
+    "paper_id": 75,
+    "summary": "LiCoMemory introduces CogniGraph, a lightweight hierarchical memory graph for long-term LLM reasoning that separates session summaries, entity-relation structure, and source chunks. It aims to support real-time updates, low-latency retrieval, and temporally aware reasoning across long conversational histories.",
+    "why_it_matters": "It is directly relevant to efficient external memory design because it focuses on lightweight structure, retrieval coherence, and real-time memory operations.",
+    "method_setup": "Agent memory framework with a three-layer CogniGraph over session summaries, entity-relation nodes, and dialogue chunks, combined with hierarchical retrieval and unified reranking over semantic relevance and temporal recency.",
+    "key_claims": [
+      "Decoupling semantic storage from graph structure reduces redundancy and makes graph-based memory updates much cheaper.",
+      "Hierarchical retrieval over summaries, triples, and source chunks improves long-term reasoning coherence compared with flatter memory systems.",
+      "Temporal-aware reranking materially helps on multi-session and temporal reasoning tasks."
+    ],
+    "limitations": [
+      "The current system is limited to text-based conversational memory rather than multimodal memory.",
+      "Graph construction and refinement still rely on LLM calls, which can become costly as memory grows."
+    ],
+    "evaluates": [
+      "LongMemEval",
+      "LoCoMo",
+      "multi-session reasoning",
+      "temporal reasoning"
+    ],
+    "builds_on_unresolved": [
+      "Zep",
+      "Mem0",
+      "A-Mem"
+    ],
+    "compares_to_unresolved": [
+      "Zep",
+      "Mem0",
+      "MemOS",
+      "A-Mem",
+      "MemoryBank"
+    ]
+  },
+  {
+    "paper_id": 76,
+    "summary": "FLEX proposes a gradient-free learning paradigm where LLM agents evolve through an external experience library instead of parameter updates. The system accumulates, organizes, and reuses successful and failed reasoning traces to improve future performance and enable inheritance across agents.",
+    "why_it_matters": "It is relevant if you care about memory as an evolving experience substrate for continual agent improvement rather than just retrieval over stored context.",
+    "method_setup": "System built around forward learning from experience, combining exploration trajectories, critic-generated semantic feedback, a hierarchical experience library with success and warning zones, and experience retrieval during future reasoning.",
+    "key_claims": [
+      "Agents can improve continuously through experience-library evolution without gradient-based fine-tuning.",
+      "Performance scales predictably with accumulated experience, suggesting a scaling law of experience.",
+      "Experience libraries can be inherited across agents, allowing knowledge transfer without parameter sharing."
+    ],
+    "limitations": [
+      "The method depends on sustained exploration, reflection, and library maintenance, which adds inference-time complexity.",
+      "It is broader than memory retrieval alone and may be less directly applicable if the goal is lightweight task-specific memory rather than continual evolution."
+    ],
+    "evaluates": [
+      "AIME25",
+      "GSM8k",
+      "USPTO50k",
+      "ProteinGym"
+    ],
+    "builds_on_unresolved": [
+      "ReAct",
+      "Reflexion",
+      "Self-Refine"
+    ],
+    "compares_to_unresolved": [
+      "ReAct",
+      "In-Context Learning",
+      "Vanilla LLM"
+    ]
+  }
+]

@@ -1,0 +1,33 @@
+{
+  "paper_id": "43",
+  "summary": "CompassMem organizes agent memory as event units linked by logical relations and lets the agent actively traverse that graph to retrieve evidence for reasoning.",
+  "why_it_matters": "It advances context engineering by showing that memory structure and retrieval path matter as much as storing more context.",
+  "method_setup": "The framework segments experience into events, extracts temporal and causal relations into an event graph, and uses planner and explorer modules for multi-path memory search; evaluation is on LoCoMo and NarrativeQA.",
+  "key_claims": [
+    "Event-centric memory graphs outperform flat retrieval and weaker graph memories on multi-hop and temporal reasoning.",
+    "Logic-aware navigation turns memory into an active reasoning map rather than a passive store.",
+    "Topic-aware localization and query refinement improve evidence discovery for long-context tasks."
+  ],
+  "limitations": [
+    "The pipeline depends on LLM-based event segmentation and relation extraction, which can introduce noise.",
+    "The multi-agent search process increases token use relative to simpler retrieval systems.",
+    "Results are concentrated on narrative and conversational reasoning settings."
+  ],
+  "evaluates": [
+    "event-structured agent memory",
+    "multi-hop and temporal reasoning",
+    "logic-aware memory retrieval"
+  ],
+  "builds_on_unresolved": [
+    "Event Segmentation Theory",
+    "A-MEM: Agentic Memory for LLM Agents",
+    "HippoRAG",
+    "CAM"
+  ],
+  "compares_to_unresolved": [
+    "HippoRAG",
+    "A-MEM: Agentic Memory for LLM Agents",
+    "CAM",
+    "Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory"
+  ]
+}

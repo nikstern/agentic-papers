@@ -1,0 +1,32 @@
+{
+  "paper_id": "79",
+  "summary": "TALM is a dynamic tree-structured multi-agent code generation framework with localized re-reasoning and long-term memory. It decomposes tasks hierarchically, validates child outputs, and reuses prior experiences to improve scalable code generation.",
+  "why_it_matters": "It is relevant to software-agent work because it combines structured multi-agent decomposition with long-term memory and selective error recovery for code generation.",
+  "method_setup": "Tree-structured multi-agent framework for code generation with specialized code and validation agents, localized re-reasoning, and a vector-backed long-term memory module, evaluated on HumanEval, BigCodeBench, and ClassEval.",
+  "key_claims": [
+    "Dynamic tree-structured collaboration is more flexible than rigid multi-agent pipelines for complex code generation tasks.",
+    "Localized re-reasoning improves robustness and avoids expensive full restarts when decomposition errors occur.",
+    "Long-term memory helps performance most on harder long-context coding benchmarks by enabling reuse of successful strategies."
+  ],
+  "limitations": [
+    "The framework introduces orchestration complexity and more moving parts than simpler prompting-based coding systems.",
+    "Its effectiveness still depends on tuned tree-shape hyperparameters and was evaluated on a limited benchmark suite."
+  ],
+  "evaluates": [
+    "HumanEval",
+    "BigCodeBench",
+    "ClassEval",
+    "code generation"
+  ],
+  "builds_on_unresolved": [
+    "MapCoder",
+    "ChatDev",
+    "MetaGPT"
+  ],
+  "compares_to_unresolved": [
+    "MapCoder",
+    "Reflexion",
+    "Self-Planning",
+    "Chain-of-Thought"
+  ]
+}

@@ -1,0 +1,200 @@
+[
+  {
+    "paper_id": 41,
+    "summary": "AgeMem turns long-term and short-term memory management into explicit tool actions that are optimized together inside the agent policy rather than bolted on as separate heuristics.",
+    "why_it_matters": "It is one of the clearest 2026 papers treating context engineering as an end-to-end control problem, not just a retrieval module.",
+    "method_setup": "The paper exposes memory operations such as add, update, delete, retrieve, summarize, and filter as agent tools and trains the policy with a three-stage reinforcement learning setup across long-horizon benchmarks including ALFWorld, SciWorld, PDDL, BabyAI, and HotpotQA.",
+    "key_claims": [
+      "Unified management of long-term and short-term memory improves long-horizon agent performance over systems that optimize the two separately.",
+      "Reinforcement learning can teach an agent when to store, retrieve, summarize, or discard context rather than relying on fixed rules.",
+      "The learned policy improves both answer quality and memory quality across diverse tasks."
+    ],
+    "limitations": [
+      "The method depends on multi-stage reinforcement learning, which increases training cost and implementation complexity.",
+      "The evaluation emphasizes benchmarked long-horizon tasks rather than broad real-world deployments.",
+      "Interpretability and governance of learned forgetting or deletion decisions remain limited."
+    ],
+    "evaluates": [
+      "long-horizon agent memory management",
+      "reinforcement-learned context control",
+      "memory quality and task performance"
+    ],
+    "builds_on_unresolved": [
+      "A-MEM: Agentic Memory for LLM Agents",
+      "LangMem",
+      "Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory",
+      "Zep: A Temporal Knowledge Graph Architecture for Agent Memory"
+    ],
+    "compares_to_unresolved": [
+      "No-Memory",
+      "LangMem",
+      "A-MEM: Agentic Memory for LLM Agents",
+      "Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory",
+      "Mem0g"
+    ]
+  },
+  {
+    "paper_id": 42,
+    "summary": "EverMemOS proposes a memory operating system that converts interaction traces into structured memory cells, consolidates them into higher-level scenes, and reconstructs task-specific context at retrieval time.",
+    "why_it_matters": "It is a strong context-engineering paper because it frames memory as lifecycle management and consolidation rather than flat storage plus top-k search.",
+    "method_setup": "The system builds MemCells with episodes, atomic facts, foresight, and metadata, clusters them into MemScenes, and uses reconstructive retrieval with sufficiency checks; it is evaluated on LoCoMo, LongMemEval, and PersonaMem-v2.",
+    "key_claims": [
+      "Lifecycle-based consolidation produces better long-horizon reasoning than fragmented memory stores.",
+      "Structured memory scenes improve multi-hop and temporal reasoning by integrating evidence before retrieval.",
+      "Profile-style consolidation helps preserve user traits and temporary states more reliably than episode-only memory."
+    ],
+    "limitations": [
+      "The system has multiple LLM-mediated stages, which adds latency and engineering overhead.",
+      "Most evidence comes from conversational and memory-augmented reasoning benchmarks rather than multimodal or tool-heavy settings.",
+      "The approach still relies on the quality of segmentation and consolidation prompts."
+    ],
+    "evaluates": [
+      "memory-augmented reasoning",
+      "long-horizon conversational memory",
+      "profile consistency and temporal reasoning"
+    ],
+    "builds_on_unresolved": [
+      "MemGPT: Towards LLMs as Operating Systems",
+      "Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory",
+      "Zep: A Temporal Knowledge Graph Architecture for Agent Memory",
+      "Generative Agents"
+    ],
+    "compares_to_unresolved": [
+      "Zep: A Temporal Knowledge Graph Architecture for Agent Memory",
+      "MemOS",
+      "MemGPT: Towards LLMs as Operating Systems",
+      "Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory"
+    ]
+  },
+  {
+    "paper_id": 43,
+    "summary": "CompassMem organizes agent memory as event units linked by logical relations and lets the agent actively traverse that graph to retrieve evidence for reasoning.",
+    "why_it_matters": "It advances context engineering by showing that memory structure and retrieval path matter as much as storing more context.",
+    "method_setup": "The framework segments experience into events, extracts temporal and causal relations into an event graph, and uses planner and explorer modules for multi-path memory search; evaluation is on LoCoMo and NarrativeQA.",
+    "key_claims": [
+      "Event-centric memory graphs outperform flat retrieval and weaker graph memories on multi-hop and temporal reasoning.",
+      "Logic-aware navigation turns memory into an active reasoning map rather than a passive store.",
+      "Topic-aware localization and query refinement improve evidence discovery for long-context tasks."
+    ],
+    "limitations": [
+      "The pipeline depends on LLM-based event segmentation and relation extraction, which can introduce noise.",
+      "The multi-agent search process increases token use relative to simpler retrieval systems.",
+      "Results are concentrated on narrative and conversational reasoning settings."
+    ],
+    "evaluates": [
+      "event-structured agent memory",
+      "multi-hop and temporal reasoning",
+      "logic-aware memory retrieval"
+    ],
+    "builds_on_unresolved": [
+      "Event Segmentation Theory",
+      "A-MEM: Agentic Memory for LLM Agents",
+      "HippoRAG",
+      "CAM"
+    ],
+    "compares_to_unresolved": [
+      "HippoRAG",
+      "A-MEM: Agentic Memory for LLM Agents",
+      "CAM",
+      "Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory"
+    ]
+  },
+  {
+    "paper_id": 44,
+    "summary": "xMemory argues that standard RAG is the wrong retrieval abstraction for agent memory and replaces it with hierarchical memory construction plus adaptive evidence aggregation.",
+    "why_it_matters": "This is one of the most directly relevant 2026 papers for context engineering because it focuses on how to assemble compact, non-redundant context from long interaction histories.",
+    "method_setup": "The method builds a hierarchy of messages, episodes, semantic units, and themes, then performs representative selection and uncertainty-gated expansion during retrieval; it is evaluated on LoCoMo and PerLTQA with multiple LLM backbones.",
+    "key_claims": [
+      "Agent memory retrieval should optimize for anti-redundancy and evidence integrity rather than reuse standard top-k RAG.",
+      "Hierarchical decoupling and aggregation improve answer quality while reducing token usage.",
+      "Adaptive uncertainty-based expansion yields denser, more answer-sufficient context than naive retrieval or generic pruning."
+    ],
+    "limitations": [
+      "The hierarchy and adaptive retrieval strategy introduce more system complexity than simple vector-store pipelines.",
+      "The method is evaluated mainly on conversational and personal-memory benchmarks.",
+      "Application-level privacy and memory governance are left to downstream systems."
+    ],
+    "evaluates": [
+      "agent memory retrieval",
+      "context redundancy reduction",
+      "token-efficient long-horizon QA"
+    ],
+    "builds_on_unresolved": [
+      "Retrieval-Augmented Generation",
+      "MemGPT: Towards LLMs as Operating Systems",
+      "MemoryOS",
+      "A-MEM: Agentic Memory for LLM Agents"
+    ],
+    "compares_to_unresolved": [
+      "Naive RAG",
+      "MemoryOS",
+      "A-MEM: Agentic Memory for LLM Agents",
+      "LightMem",
+      "Nemori"
+    ]
+  },
+  {
+    "paper_id": 45,
+    "summary": "MemWeaver combines graph memory, experience memory, and passage memory so agents can retrieve structured facts, abstractions, and raw evidence together for long-horizon reasoning.",
+    "why_it_matters": "It is a strong hybrid-memory paper for context engineering because it focuses on traceable, compositional, and temporally grounded context assembly.",
+    "method_setup": "The system writes temporally grounded relations into graph memory, induces reusable abstractions into experience memory, preserves raw passages for evidence, and retrieves through dual structured and textual channels; evaluation is on LoCoMo across several backbone models.",
+    "key_claims": [
+      "Hybrid memory layers produce better long-term reasoning than relying on a single memory representation.",
+      "Temporal grounding and graph structure are especially important for multi-hop and temporal questions.",
+      "Dual-channel retrieval can improve reasoning quality while keeping inference context short."
+    ],
+    "limitations": [
+      "Memory construction quality still depends on LLM extraction quality for entities, relations, and abstractions.",
+      "The current framework is primarily text-centric rather than multimodal.",
+      "The architecture is more elaborate than simpler flat retrieval systems."
+    ],
+    "evaluates": [
+      "traceable long-horizon reasoning",
+      "hybrid memory retrieval",
+      "temporal and compositional QA"
+    ],
+    "builds_on_unresolved": [
+      "A-MEM: Agentic Memory for LLM Agents",
+      "MemoryBank",
+      "ReadAgent",
+      "knowledge graph memory"
+    ],
+    "compares_to_unresolved": [
+      "LoCoMo",
+      "MemoryBank",
+      "ReadAgent",
+      "A-MEM: Agentic Memory for LLM Agents"
+    ]
+  },
+  {
+    "paper_id": 46,
+    "summary": "StructMemEval introduces benchmark tasks that test whether an LLM agent can organize memory into useful structures rather than merely retrieve isolated facts.",
+    "why_it_matters": "It matters for context engineering because it changes the evaluation target from recall alone to memory organization quality, which is central to durable context systems.",
+    "method_setup": "The benchmark contains tree-structured, state-tracking, and counting problems and evaluates retrieval baselines plus memory-agent frameworks with and without explicit organization hints.",
+    "key_claims": [
+      "Many existing memory evaluations are too easy for simple retrieval and do not discriminate complex memory structures well.",
+      "Current memory agents often fail not because they cannot execute structured reasoning, but because they do not spontaneously organize memory correctly.",
+      "Providing memory-organization hints reveals a large gap between structure recognition and structure execution."
+    ],
+    "limitations": [
+      "The benchmark is synthetic and explicitly marked as work in progress.",
+      "It focuses on structured organization tasks rather than broad real-world assistant behavior.",
+      "Results may shift as the benchmark suite is expanded."
+    ],
+    "evaluates": [
+      "memory structure evaluation",
+      "state tracking",
+      "tree reasoning and counting over long-term memory"
+    ],
+    "builds_on_unresolved": [
+      "LoCoMo",
+      "LongMemEval",
+      "Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory"
+    ],
+    "compares_to_unresolved": [
+      "retrieval-augmented LLM",
+      "Mem-agent",
+      "Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory"
+    ]
+  }
+]

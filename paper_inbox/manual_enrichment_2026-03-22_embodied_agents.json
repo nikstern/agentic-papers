@@ -1,0 +1,167 @@
+[
+  {
+    "paper_id": 61,
+    "summary": "RoCo proposes a large-language-model-driven framework for multi-robot collaboration in which agents coordinate through dialogue, generate subtask plans with waypoint hints, and hand off execution to motion planning.",
+    "why_it_matters": "It is an early embodied multi-agent systems paper that grounds LLM coordination in real robot collaboration constraints rather than only text-based interaction.",
+    "method_setup": "The paper introduces the RoCo framework and the RoCoBench benchmark, evaluates robot-robot and human-robot collaboration tasks, and compares dialogue-guided planning and waypoint generation against simpler planning baselines.",
+    "key_claims": [
+      "LLM-mediated dialogue can support flexible multi-robot coordination without task-specific training.",
+      "LLM-generated waypoint suggestions can improve planning for complex placement and collision-heavy manipulation steps.",
+      "The framework adapts across task semantics, workspace overlap, and heterogeneous agent capabilities."
+    ],
+    "limitations": [
+      "Performance depends on perception quality and can break down when object detection is wrong.",
+      "The system has only been demonstrated with small teams and limited task families.",
+      "LLM spatial reasoning can still generate implausible or suboptimal paths in harder scenarios."
+    ],
+    "evaluates": [
+      "multi-robot collaboration",
+      "human-robot collaboration",
+      "embodied task planning",
+      "RoCoBench"
+    ],
+    "builds_on_unresolved": [
+      "SayCan",
+      "Inner Monologue",
+      "task and motion planning"
+    ],
+    "compares_to_unresolved": [
+      "oracle planner",
+      "direct waypoints",
+      "hard-coded waypoints"
+    ]
+  },
+  {
+    "paper_id": 62,
+    "summary": "DyLAN frames multi-agent LLM collaboration as a dynamic agent network where agents are selected, ranked, and re-formed during inference instead of being fixed from the start.",
+    "why_it_matters": "It is an important systems paper for adaptive multi-agent coordination because it treats team composition itself as an optimization problem rather than a static design choice.",
+    "method_setup": "The method models collaboration as temporal feed-forward networks, introduces an unsupervised agent-importance score for team optimization, and evaluates performance on code generation, decision making, general reasoning, and arithmetic reasoning tasks.",
+    "key_claims": [
+      "Task-oriented agent selection improves multi-agent performance over static teams.",
+      "Dynamic team reformation can improve both accuracy and efficiency by filtering weak contributors during inference.",
+      "A small optimized team can outperform a larger unfiltered team."
+    ],
+    "limitations": [
+      "The method depends on the quality of agent ranking and importance estimation.",
+      "The evaluation focuses on text-based reasoning and coding tasks rather than embodied settings.",
+      "Its dynamic orchestration adds coordination overhead compared with simpler fixed-agent baselines."
+    ],
+    "evaluates": [
+      "multi-agent collaboration",
+      "code generation",
+      "decision making",
+      "general reasoning",
+      "arithmetic reasoning"
+    ],
+    "builds_on_unresolved": [
+      "CAMEL",
+      "AgentVerse",
+      "LLM Debate"
+    ],
+    "compares_to_unresolved": [
+      "CAMEL",
+      "AgentVerse",
+      "LATS",
+      "Reflexion",
+      "BOLAA",
+      "LLM-Blender"
+    ]
+  },
+  {
+    "paper_id": 63,
+    "summary": "AgentBench introduces a standardized benchmark for evaluating large language models as agents across interactive operating system, database, knowledge graph, game, and web environments.",
+    "why_it_matters": "It is a foundational benchmark paper for agent evaluation because it shifts measurement from static QA-style tasks to interactive, environment-grounded execution.",
+    "method_setup": "The benchmark evaluates 29 LLMs with a consistent Chain-of-Thought/ReAct-style setup over eight environments spanning code-grounded, game-grounded, and web-grounded tasks.",
+    "key_claims": [
+      "LLM agents should be evaluated in interactive environments rather than only on static benchmarks.",
+      "Top proprietary models substantially outperform open models on agentic tasks.",
+      "Long-horizon reasoning, instruction following, and repetitive failure loops are major current bottlenecks for LLM agents."
+    ],
+    "limitations": [
+      "The benchmark is limited to text-oriented interaction and does not cover full multimodal or physical embodiment.",
+      "Its prompting setup intentionally uses simple reasoning strategies rather than stronger search or reflection scaffolds.",
+      "Benchmark coverage is broad but still not exhaustive relative to real-world agent deployment."
+    ],
+    "evaluates": [
+      "llms as agents",
+      "interactive agent evaluation",
+      "operating system tasks",
+      "database tasks",
+      "knowledge graph tasks",
+      "web shopping",
+      "web browsing",
+      "house-holding"
+    ],
+    "builds_on_unresolved": [
+      "ALFWorld",
+      "WebShop",
+      "Mind2Web"
+    ],
+    "compares_to_unresolved": []
+  },
+  {
+    "paper_id": 64,
+    "summary": "This paper combines large language model commonsense with task and motion planning to generate semantically valid and physically executable object rearrangement plans from underspecified natural-language requests.",
+    "why_it_matters": "It is a strong embodied systems paper because it shows how LLM commonsense can be grounded into precise geometric placements and robot planning rather than only high-level action lists.",
+    "method_setup": "The method queries an LLM for symbolic and geometric object relations, filters candidate arrangements for logical and physical consistency, and then uses task-motion planning to optimize execution in object rearrangement tasks.",
+    "key_claims": [
+      "LLMs can provide useful commonsense priors for underspecified object arrangement tasks.",
+      "Combining LLM-derived semantic structure with task-motion planning improves both arrangement quality and execution efficiency.",
+      "The approach can produce human-preferred arrangements in embodied rearrangement settings."
+    ],
+    "limitations": [
+      "The method depends on LLM outputs that can be inconsistent without additional logical filtering.",
+      "It focuses on a constrained family of rearrangement tasks rather than general embodied manipulation.",
+      "Physical success still depends on downstream perception and planning robustness."
+    ],
+    "evaluates": [
+      "object rearrangement",
+      "task and motion planning",
+      "table-setting tasks",
+      "human preference over arrangements"
+    ],
+    "builds_on_unresolved": [
+      "GROP",
+      "Task and Motion Planning"
+    ],
+    "compares_to_unresolved": [
+      "Task Planning with Random Arrangement",
+      "LLM-based Arrangement and Task Planning",
+      "GROP"
+    ]
+  },
+  {
+    "paper_id": 65,
+    "summary": "CoELA is a modular cognitive-inspired framework that uses large language models for planning and communication in decentralized cooperative embodied tasks with costly natural-language interaction.",
+    "why_it_matters": "It is a key embodied multi-agent paper because it tests whether LLMs can support real cooperation under partial observability and communication costs rather than unrestricted chat.",
+    "method_setup": "The framework combines perception, memory, communication, planning, and execution modules and is evaluated on the TDW-MAT and C-WAH environments for AI-AI and human-AI cooperation.",
+    "key_claims": [
+      "LLMs can drive effective decentralized embodied cooperation when embedded in a modular architecture.",
+      "Natural-language communication improves trust and effectiveness in human-AI cooperation.",
+      "Open models can approach stronger proprietary-model performance after targeted fine-tuning."
+    ],
+    "limitations": [
+      "Current LLMs still struggle with robust 3D spatial reasoning and low-level embodied control reasoning.",
+      "Communication among AI agents is not yet consistently strong enough to always yield large gains over non-communicating planners.",
+      "The framework remains dependent on external perception and procedural modules rather than end-to-end embodied reasoning."
+    ],
+    "evaluates": [
+      "cooperative embodied agents",
+      "decentralized multi-agent cooperation",
+      "human-ai cooperation",
+      "TDW-MAT",
+      "C-WAH"
+    ],
+    "builds_on_unresolved": [
+      "VirtualHome",
+      "ThreeDWorld",
+      "DEC-POMDP"
+    ],
+    "compares_to_unresolved": [
+      "Rule-based Hierarchical Planner",
+      "MCTS-based Hierarchical Planner",
+      "Multi-Agent Transformer",
+      "LLAMA-2"
+    ]
+  }
+]

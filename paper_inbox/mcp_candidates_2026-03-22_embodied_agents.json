@@ -1,0 +1,42 @@
+[
+  {
+    "title": "RoCo: Dialectic Multi-Robot Collaboration with Large Language Models",
+    "url": "https://arxiv.org/abs/2307.04738",
+    "year": 2023,
+    "authors": "Mandi et al.",
+    "candidate_topic": "llm-multi-agent-systems",
+    "paper_type": "system"
+  },
+  {
+    "title": "A Dynamic LLM-Powered Agent Network for Task-Oriented Agent Collaboration",
+    "url": "https://arxiv.org/abs/2310.02170",
+    "year": 2023,
+    "authors": "Liu et al.",
+    "candidate_topic": "llm-multi-agent-systems",
+    "paper_type": "system"
+  },
+  {
+    "title": "AgentBench: Evaluating LLMs as Agents",
+    "url": "https://arxiv.org/abs/2308.03688",
+    "year": 2023,
+    "authors": "Liu et al.",
+    "candidate_topic": "agent-evaluation",
+    "paper_type": "benchmark"
+  },
+  {
+    "title": "Task and Motion Planning with Large Language Models for Object Rearrangement",
+    "url": "https://arxiv.org/abs/2303.06247",
+    "year": 2023,
+    "authors": "Ding et al.",
+    "candidate_topic": "software-agents",
+    "paper_type": "system"
+  },
+  {
+    "title": "Building Cooperative Embodied Agents Modularly with Large Language Models",
+    "url": "https://arxiv.org/abs/2307.02485",
+    "year": 2023,
+    "authors": "Zhang et al.",
+    "candidate_topic": "llm-multi-agent-systems",
+    "paper_type": "system"
+  }
+]

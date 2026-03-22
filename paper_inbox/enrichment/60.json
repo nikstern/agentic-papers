@@ -1,0 +1,26 @@
+{
+  "paper_id": "60",
+  "summary": "This paper studies whether transformer-based models truly learn structural recursion or instead rely on brittle non-recursive shortcuts.",
+  "why_it_matters": "It is an important negative and diagnostic paper that helps calibrate claims about recursion in current language models.",
+  "method_setup": "The authors define a framework for structural recursion, test small Transformers, pre-trained models, and frontier LLMs on recursive tasks such as binary successor and tree traversals, and use mechanistic analysis to inspect learned strategies.",
+  "key_claims": [
+    "Transformers often solve recursive tasks through shortcuts rather than true recursive generalization.",
+    "Edge cases and increased depth expose systematic failures in learned heuristics.",
+    "Current prompting and pretraining are not enough to reliably induce structural recursion."
+  ],
+  "limitations": [
+    "The tasks are stylized and do not cover all real-world recursion demands.",
+    "The paper is more diagnostic than constructive.",
+    "Some conclusions are based on targeted synthetic tasks rather than broad naturalistic benchmarks."
+  ],
+  "evaluates": [
+    "structural recursion evaluation",
+    "mechanistic analysis of recursion",
+    "tree traversal tasks"
+  ],
+  "builds_on_unresolved": [],
+  "compares_to_unresolved": [
+    "standard Transformer models",
+    "pre-trained LLMs"
+  ]
+}

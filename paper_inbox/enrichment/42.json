@@ -1,0 +1,33 @@
+{
+  "paper_id": "42",
+  "summary": "EverMemOS proposes a memory operating system that converts interaction traces into structured memory cells, consolidates them into higher-level scenes, and reconstructs task-specific context at retrieval time.",
+  "why_it_matters": "It is a strong context-engineering paper because it frames memory as lifecycle management and consolidation rather than flat storage plus top-k search.",
+  "method_setup": "The system builds MemCells with episodes, atomic facts, foresight, and metadata, clusters them into MemScenes, and uses reconstructive retrieval with sufficiency checks; it is evaluated on LoCoMo, LongMemEval, and PersonaMem-v2.",
+  "key_claims": [
+    "Lifecycle-based consolidation produces better long-horizon reasoning than fragmented memory stores.",
+    "Structured memory scenes improve multi-hop and temporal reasoning by integrating evidence before retrieval.",
+    "Profile-style consolidation helps preserve user traits and temporary states more reliably than episode-only memory."
+  ],
+  "limitations": [
+    "The system has multiple LLM-mediated stages, which adds latency and engineering overhead.",
+    "Most evidence comes from conversational and memory-augmented reasoning benchmarks rather than multimodal or tool-heavy settings.",
+    "The approach still relies on the quality of segmentation and consolidation prompts."
+  ],
+  "evaluates": [
+    "memory-augmented reasoning",
+    "long-horizon conversational memory",
+    "profile consistency and temporal reasoning"
+  ],
+  "builds_on_unresolved": [
+    "MemGPT: Towards LLMs as Operating Systems",
+    "Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory",
+    "Zep: A Temporal Knowledge Graph Architecture for Agent Memory",
+    "Generative Agents"
+  ],
+  "compares_to_unresolved": [
+    "Zep: A Temporal Knowledge Graph Architecture for Agent Memory",
+    "MemOS",
+    "MemGPT: Towards LLMs as Operating Systems",
+    "Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory"
+  ]
+}

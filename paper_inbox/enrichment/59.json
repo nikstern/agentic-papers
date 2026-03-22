@@ -1,0 +1,26 @@
+{
+  "paper_id": "59",
+  "summary": "Pushdown Layers adds an explicit stack-like mechanism to Transformer self-attention to better capture recursive syntactic structure.",
+  "why_it_matters": "It is a useful foundational recursion paper because it shows one way to encode recursive state explicitly inside Transformer language modeling.",
+  "method_setup": "The method augments self-attention with a stack tape tracking estimated token depths in an incremental parse and evaluates on Dyck strings, syntactic generalization benchmarks, and GPT-2 fine-tuning experiments.",
+  "key_claims": [
+    "Explicit stack-style state improves recursive syntactic generalization.",
+    "Pushdown Layers are more sample-efficient than standard self-attention on several recursion-sensitive tasks.",
+    "A soft structural bias can improve recursive modeling without hard attention constraints."
+  ],
+  "limitations": [
+    "The approach depends on parse supervision or silver parses.",
+    "It is focused mainly on syntactic recursion rather than general long-horizon agent reasoning.",
+    "Applicability outside parse-structured language settings is limited."
+  ],
+  "evaluates": [
+    "recursive structure modeling",
+    "syntactic generalization",
+    "Dyck languages"
+  ],
+  "builds_on_unresolved": [],
+  "compares_to_unresolved": [
+    "Transformer Grammars",
+    "standard Transformer LM"
+  ]
+}

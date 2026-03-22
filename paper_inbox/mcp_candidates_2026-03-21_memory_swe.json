@@ -1,0 +1,58 @@
+[
+  {
+    "title": "EXPEREPAIR: Dual-Memory Enhanced LLM-based Repository-Level Program Repair",
+    "url": "https://arxiv.org/abs/2506.10484",
+    "year": 2025,
+    "authors": "Mu et al.",
+    "candidate_topic": "software-agents",
+    "paper_type": "system"
+  },
+  {
+    "title": "SWE-Exp: Experience-Driven Software Issue Resolution",
+    "url": "https://arxiv.org/abs/2507.23361",
+    "year": 2025,
+    "authors": "Chen et al.",
+    "candidate_topic": "software-agents",
+    "paper_type": "system"
+  },
+  {
+    "title": "Structurally Aligned Subtask-Level Memory for Software Engineering Agents",
+    "url": "https://arxiv.org/abs/2602.21611",
+    "year": 2026,
+    "authors": "Shen et al.",
+    "candidate_topic": "software-agents",
+    "paper_type": "system"
+  },
+  {
+    "title": "Improving Code Localization with Repository Memory",
+    "url": "https://arxiv.org/abs/2510.01003",
+    "year": 2025,
+    "authors": "Wang et al.",
+    "candidate_topic": "software-agents",
+    "paper_type": "system"
+  },
+  {
+    "title": "Context as a Tool: Context Management for Long-Horizon SWE-Agents",
+    "url": "https://arxiv.org/abs/2512.22087",
+    "year": 2025,
+    "authors": "Liu et al.",
+    "candidate_topic": "software-agents",
+    "paper_type": "system"
+  },
+  {
+    "title": "CodeMEM: AST-Guided Adaptive Memory for Repository-Level Iterative Code Generation",
+    "url": "https://arxiv.org/abs/2601.02868",
+    "year": 2026,
+    "authors": "Wang et al.",
+    "candidate_topic": "software-agents",
+    "paper_type": "system"
+  },
+  {
+    "title": "From Knowledge to Noise: CTIM-Rover and the Pitfalls of Episodic Memory in Software Engineering Agents",
+    "url": "https://arxiv.org/abs/2505.23422",
+    "year": 2025,
+    "authors": "Lindenbauer et al.",
+    "candidate_topic": "software-agents",
+    "paper_type": "system"
+  }
+]

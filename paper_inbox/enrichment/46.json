@@ -1,0 +1,31 @@
+{
+  "paper_id": "46",
+  "summary": "StructMemEval introduces benchmark tasks that test whether an LLM agent can organize memory into useful structures rather than merely retrieve isolated facts.",
+  "why_it_matters": "It matters for context engineering because it changes the evaluation target from recall alone to memory organization quality, which is central to durable context systems.",
+  "method_setup": "The benchmark contains tree-structured, state-tracking, and counting problems and evaluates retrieval baselines plus memory-agent frameworks with and without explicit organization hints.",
+  "key_claims": [
+    "Many existing memory evaluations are too easy for simple retrieval and do not discriminate complex memory structures well.",
+    "Current memory agents often fail not because they cannot execute structured reasoning, but because they do not spontaneously organize memory correctly.",
+    "Providing memory-organization hints reveals a large gap between structure recognition and structure execution."
+  ],
+  "limitations": [
+    "The benchmark is synthetic and explicitly marked as work in progress.",
+    "It focuses on structured organization tasks rather than broad real-world assistant behavior.",
+    "Results may shift as the benchmark suite is expanded."
+  ],
+  "evaluates": [
+    "memory structure evaluation",
+    "state tracking",
+    "tree reasoning and counting over long-term memory"
+  ],
+  "builds_on_unresolved": [
+    "LoCoMo",
+    "LongMemEval",
+    "Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory"
+  ],
+  "compares_to_unresolved": [
+    "retrieval-augmented LLM",
+    "Mem-agent",
+    "Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory"
+  ]
+}

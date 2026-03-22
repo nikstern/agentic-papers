@@ -1,0 +1,29 @@
+{
+  "paper_id": "71",
+  "summary": "This paper proposes Chain-of-Verification, a prompting pipeline where an LLM drafts an answer, plans verification questions, answers them, and then revises the response using those checks. It shows that structured self-verification reduces hallucinated facts across list QA, closed-book QA, and long-form generation.",
+  "why_it_matters": "It is one of the clearest empirical demonstrations that explicit self-verification can materially reduce factual hallucination at inference time.",
+  "method_setup": "Inference-time prompting pipeline evaluated on Wikidata list questions, Wiki-Category list generation, MultiSpanQA, and long-form biography generation, comparing standard prompting against several verification variants including factored and factor-plus-revise execution.",
+  "key_claims": [
+    "Separating verification from the original draft and answering verification questions independently reduces factual hallucination substantially.",
+    "The model is often better at answering short verification questions correctly than at stating the same facts accurately in an unconstrained long-form draft.",
+    "Chain-of-Verification improves precision and factuality on QA and biography generation, outperforming strong baseline prompting setups."
+  ],
+  "limitations": [
+    "The method increases inference cost because it requires multiple extra generations for planning, checking, and revising.",
+    "It targets factual inaccuracies and does not eliminate other failure modes such as broader reasoning or opinion errors."
+  ],
+  "evaluates": [
+    "Wikidata list QA",
+    "Wiki-Category list generation",
+    "MultiSpanQA",
+    "biography generation"
+  ],
+  "builds_on_unresolved": [
+    "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models"
+  ],
+  "compares_to_unresolved": [
+    "Llama 2 Chat",
+    "ChatGPT",
+    "PerplexityAI"
+  ]
+}

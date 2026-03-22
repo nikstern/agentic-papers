@@ -1,0 +1,29 @@
+{
+  "paper_id": "67",
+  "summary": "This survey organizes LLM hallucinations into factuality and faithfulness failures, then reviews causes, detection methods, benchmarks, and mitigation strategies. It also analyzes where retrieval-augmented systems still fail to eliminate hallucinations.",
+  "why_it_matters": "It is a strong general reference for the hallucination landscape and gives the vault a clear taxonomy plus a cause-to-mitigation framing.",
+  "method_setup": "Survey paper synthesizing prior work on hallucination taxonomy, causes across data/training/inference stages, detection methods, benchmarks, mitigation methods, and retrieval-augmented generation failure modes.",
+  "key_claims": [
+    "LLM hallucinations are better understood through a split between factuality hallucination and faithfulness hallucination.",
+    "Hallucinations arise from interacting causes across data quality, training procedures, and inference-time decoding or reasoning failures.",
+    "Retrieval augmentation helps but still fails through retrieval errors, noisy context, and weak contextual alignment during generation."
+  ],
+  "limitations": [
+    "As a survey, it synthesizes prior results rather than introducing a new empirical mitigation method.",
+    "The coverage is strongest for text LLMs and earlier retrieval-augmented systems rather than every newer application setting."
+  ],
+  "evaluates": [
+    "hallucination taxonomies",
+    "hallucination detection methods",
+    "hallucination mitigation strategies",
+    "retrieval-augmented generation failure modes"
+  ],
+  "builds_on_unresolved": [
+    "Survey of Hallucination in Natural Language Generation",
+    "Siren's Song in the AI Ocean: A Survey on Hallucination in Large Language Models"
+  ],
+  "compares_to_unresolved": [
+    "Survey of Hallucination in Natural Language Generation",
+    "Siren's Song in the AI Ocean: A Survey on Hallucination in Large Language Models"
+  ]
+}

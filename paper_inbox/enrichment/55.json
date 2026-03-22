@@ -1,0 +1,26 @@
+{
+  "paper_id": "55",
+  "summary": "This paper gives a formal account of recursive models for long-horizon reasoning and argues that deep recursion is the key mechanism for overcoming bounded active context.",
+  "why_it_matters": "It provides the theoretical backbone for the exact RLM direction and clarifies why deep recursion can be exponentially more powerful than shallow context-management strategies.",
+  "method_setup": "The paper formalizes recursive models with call and return operations over a context stack, analyzes their computational power relative to autoregressive and summarization-based systems, and validates the approach on SAT with a recursively trained 3B model.",
+  "key_claims": [
+    "Deep recursion can reduce active-context requirements exponentially for some problems.",
+    "Constant-depth recursion offers little advantage over summarization-style context management.",
+    "Minimal recursive models are already optimally powerful within a broad recursive agentic framework."
+  ],
+  "limitations": [
+    "The main contribution is theoretical rather than broad application benchmarking.",
+    "Naive recursive simulation can be computationally expensive.",
+    "The abstractions do not map perfectly onto all practical LLM system details."
+  ],
+  "evaluates": [
+    "long-horizon reasoning theory",
+    "recursive computation",
+    "SAT solving"
+  ],
+  "builds_on_unresolved": [],
+  "compares_to_unresolved": [
+    "summarization",
+    "single-context autoregressive models"
+  ]
+}

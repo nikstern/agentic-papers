@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Agentic Memory: Learning Unified Long-Term and Short-Term Memory Management for Large Language Model Agents",
+    "url": "https://arxiv.org/abs/2601.01885",
+    "year": 2026,
+    "authors": "Yu et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "system"
+  },
+  {
+    "title": "EverMemOS: A Self-Organizing Memory Operating System for Structured Long-Horizon Reasoning",
+    "url": "https://arxiv.org/abs/2601.02163",
+    "year": 2026,
+    "authors": "Hu et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "system"
+  },
+  {
+    "title": "Memory Matters More: Event-Centric Memory as a Logic Map for Agent Searching and Reasoning",
+    "url": "https://arxiv.org/abs/2601.04726",
+    "year": 2026,
+    "authors": "Hu et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "system"
+  },
+  {
+    "title": "Beyond RAG for Agent Memory: Retrieval by Decoupling and Aggregation",
+    "url": "https://arxiv.org/abs/2602.02007",
+    "year": 2026,
+    "authors": "Hu et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "system"
+  },
+  {
+    "title": "MemWeaver: Weaving Hybrid Memories for Traceable Long-Horizon Agentic Reasoning",
+    "url": "https://arxiv.org/abs/2601.18204",
+    "year": 2026,
+    "authors": "Ye et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "system"
+  },
+  {
+    "title": "Evaluating Memory Structure in LLM Agents",
+    "url": "https://arxiv.org/abs/2602.11243",
+    "year": 2026,
+    "authors": "Shutova et al.",
+    "candidate_topic": "agent-evaluation",
+    "paper_type": "benchmark"
+  }
+]

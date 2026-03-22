@@ -1,0 +1,32 @@
+[
+  {
+    "paper_id": 77,
+    "summary": "MuSiQue is a multihop question answering benchmark built by composing single-hop questions in a way that explicitly enforces connected reasoning. It is designed to reduce shortcut solutions and make multihop QA evaluation more faithful.",
+    "why_it_matters": "It is a useful benchmark paper for reasoning evaluation because it focuses on eliminating disconnected reasoning and dataset artifacts rather than only scaling benchmark size.",
+    "method_setup": "Benchmark construction pipeline that composes single-hop QA pairs into multihop questions, filters disconnected reasoning with model-based checks, minimizes train-test leakage, adds hard distractors, and includes unanswerable counterparts in MuSiQue-Full.",
+    "key_claims": [
+      "Existing multihop QA benchmarks allow too many shortcut solutions through disconnected reasoning and dataset artifacts.",
+      "Bottom-up composition from single-hop questions makes it possible to enforce genuine multihop dependencies by construction.",
+      "MuSiQue creates a larger human-model gap and is substantially harder to game with artifact-based baselines than earlier benchmarks."
+    ],
+    "limitations": [
+      "The benchmark is specialized to multihop QA over Wikipedia-style sources rather than general agentic reasoning in open environments.",
+      "Its construction pipeline is comparatively elaborate and depends on careful filtering and crowdsourcing."
+    ],
+    "evaluates": [
+      "multihop question answering",
+      "MuSiQue-Ans",
+      "MuSiQue-Full",
+      "connected reasoning"
+    ],
+    "builds_on_unresolved": [
+      "HotpotQA",
+      "2WikiMultihopQA",
+      "Is multihop QA in DiRe condition? Measuring and reducing disconnected reasoning"
+    ],
+    "compares_to_unresolved": [
+      "HotpotQA",
+      "2WikiMultihopQA"
+    ]
+  }
+]

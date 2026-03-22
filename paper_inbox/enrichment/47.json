@@ -1,0 +1,30 @@
+{
+  "paper_id": "47",
+  "summary": "EXPEREPAIR introduces a repository-level program repair system that continuously learns from prior repair trajectories through a dual-memory design.",
+  "why_it_matters": "It is one of the most directly relevant papers for memory in code investigation because it shows concrete gains from reusing past repair experience on SWE tasks.",
+  "method_setup": "The system combines episodic demonstrations and semantic repair insights, injects them into test generation and patch generation, and evaluates on SWE-Bench Lite against strong open-source repair baselines.",
+  "key_claims": [
+    "Dual-memory experience reuse improves repository-level bug repair.",
+    "Episodic demonstrations contribute more than semantic insights, but both help.",
+    "The approach reaches state-of-the-art open-source performance with favorable cost efficiency."
+  ],
+  "limitations": [
+    "Evidence is concentrated on SWE-Bench Lite rather than a broader suite of repositories and languages.",
+    "The approach depends on the quality of stored successful trajectories.",
+    "The system still relies on strong base agents for localization and patch generation."
+  ],
+  "evaluates": [
+    "repository-level program repair",
+    "experience-driven bug fixing",
+    "SWE-Bench Lite"
+  ],
+  "builds_on_unresolved": [
+    "SWE-Agent",
+    "ReAct"
+  ],
+  "compares_to_unresolved": [
+    "PatchPilot",
+    "OpenHands",
+    "Agentless"
+  ]
+}

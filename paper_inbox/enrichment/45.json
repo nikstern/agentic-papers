@@ -1,0 +1,33 @@
+{
+  "paper_id": "45",
+  "summary": "MemWeaver combines graph memory, experience memory, and passage memory so agents can retrieve structured facts, abstractions, and raw evidence together for long-horizon reasoning.",
+  "why_it_matters": "It is a strong hybrid-memory paper for context engineering because it focuses on traceable, compositional, and temporally grounded context assembly.",
+  "method_setup": "The system writes temporally grounded relations into graph memory, induces reusable abstractions into experience memory, preserves raw passages for evidence, and retrieves through dual structured and textual channels; evaluation is on LoCoMo across several backbone models.",
+  "key_claims": [
+    "Hybrid memory layers produce better long-term reasoning than relying on a single memory representation.",
+    "Temporal grounding and graph structure are especially important for multi-hop and temporal questions.",
+    "Dual-channel retrieval can improve reasoning quality while keeping inference context short."
+  ],
+  "limitations": [
+    "Memory construction quality still depends on LLM extraction quality for entities, relations, and abstractions.",
+    "The current framework is primarily text-centric rather than multimodal.",
+    "The architecture is more elaborate than simpler flat retrieval systems."
+  ],
+  "evaluates": [
+    "traceable long-horizon reasoning",
+    "hybrid memory retrieval",
+    "temporal and compositional QA"
+  ],
+  "builds_on_unresolved": [
+    "A-MEM: Agentic Memory for LLM Agents",
+    "MemoryBank",
+    "ReadAgent",
+    "knowledge graph memory"
+  ],
+  "compares_to_unresolved": [
+    "LoCoMo",
+    "MemoryBank",
+    "ReadAgent",
+    "A-MEM: Agentic Memory for LLM Agents"
+  ]
+}

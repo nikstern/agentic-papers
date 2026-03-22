@@ -1,0 +1,35 @@
+{
+  "paper_id": "70",
+  "summary": "This paper is an empirical study of factuality hallucination in LLMs that analyzes detection, sources, and mitigation across domains, training stages, and inference choices. It introduces HaluEval 2.0 and studies how pre-training data, fine-tuning, decoding, retrieval, and self-reflection affect hallucination rates.",
+  "why_it_matters": "It is a strong empirical anchor paper because it studies where hallucinations come from and how much common interventions help under different conditions.",
+  "method_setup": "Empirical evaluation on HaluEval 2.0 with 8,770 questions across biomedicine, finance, science, education, and open-domain settings, using GPT-4-based fact extraction and fact judgment together with micro and macro hallucination rates.",
+  "key_claims": [
+    "Increasing pre-training scale alone only marginally reduces hallucinations, while domain-relevant data composition matters much more.",
+    "Supervised fine-tuning, retrieval augmentation, and self-reflection can reduce hallucinations, but their effectiveness depends strongly on domain and model size.",
+    "Decoding choices create different hallucination tradeoffs, with diversity-oriented decoding often hurting professional domains and greedy decoding hurting open-ended settings."
+  ],
+  "limitations": [
+    "The authors note limited visibility into proprietary training details and constrained ability to fully analyze pre-training and supervised fine-tuning choices.",
+    "The paper studies mitigation empirically but does not introduce a fundamentally new mitigation method."
+  ],
+  "evaluates": [
+    "HaluEval 2.0",
+    "biomedicine QA",
+    "finance QA",
+    "science QA",
+    "education QA",
+    "open-domain QA"
+  ],
+  "builds_on_unresolved": [
+    "HaluEval: A Large-Scale Hallucination Evaluation Benchmark for Large Language Models",
+    "A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions"
+  ],
+  "compares_to_unresolved": [
+    "Alpaca",
+    "Vicuna",
+    "Llama 2-Chat",
+    "ChatGPT",
+    "Claude",
+    "Claude 2"
+  ]
+}

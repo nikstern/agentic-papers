@@ -1,0 +1,23 @@
+{
+  "paper_id": "52",
+  "summary": "CodeMEM introduces AST-guided adaptive memory for repository-level iterative code generation, maintaining both evolving code context and session-level interaction memory.",
+  "why_it_matters": "It is relevant because it shows that code-aware memory representations outperform generic text-style memory for iterative repository work.",
+  "method_setup": "The system uses a Code Context Memory and a Code Session Memory driven by AST-based analysis and LLM operations, and evaluates on CodeIF-Bench and CoderEval.",
+  "key_claims": [
+    "AST-guided memory improves instruction following and session-level consistency.",
+    "The method reduces interaction rounds compared with baselines.",
+    "Code-structured memory is more effective than natural-language-centric memory for iterative coding."
+  ],
+  "limitations": [
+    "The evaluation is oriented toward iterative code generation rather than bug investigation specifically.",
+    "The method still depends on LLM judgment for filtering and updates.",
+    "Broader validation on more complex repositories is still limited."
+  ],
+  "evaluates": [
+    "repository-level iterative code generation",
+    "AST-guided memory",
+    "instruction following"
+  ],
+  "builds_on_unresolved": [],
+  "compares_to_unresolved": []
+}

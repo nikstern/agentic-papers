@@ -1,0 +1,200 @@
+[
+  {
+    "paper_id": 67,
+    "summary": "This survey organizes LLM hallucinations into factuality and faithfulness failures, then reviews causes, detection methods, benchmarks, and mitigation strategies. It also analyzes where retrieval-augmented systems still fail to eliminate hallucinations.",
+    "why_it_matters": "It is a strong general reference for the hallucination landscape and gives the vault a clear taxonomy plus a cause-to-mitigation framing.",
+    "method_setup": "Survey paper synthesizing prior work on hallucination taxonomy, causes across data/training/inference stages, detection methods, benchmarks, mitigation methods, and retrieval-augmented generation failure modes.",
+    "key_claims": [
+      "LLM hallucinations are better understood through a split between factuality hallucination and faithfulness hallucination.",
+      "Hallucinations arise from interacting causes across data quality, training procedures, and inference-time decoding or reasoning failures.",
+      "Retrieval augmentation helps but still fails through retrieval errors, noisy context, and weak contextual alignment during generation."
+    ],
+    "limitations": [
+      "As a survey, it synthesizes prior results rather than introducing a new empirical mitigation method.",
+      "The coverage is strongest for text LLMs and earlier retrieval-augmented systems rather than every newer application setting."
+    ],
+    "evaluates": [
+      "hallucination taxonomies",
+      "hallucination detection methods",
+      "hallucination mitigation strategies",
+      "retrieval-augmented generation failure modes"
+    ],
+    "builds_on_unresolved": [
+      "Survey of Hallucination in Natural Language Generation",
+      "Siren's Song in the AI Ocean: A Survey on Hallucination in Large Language Models"
+    ],
+    "compares_to_unresolved": [
+      "Survey of Hallucination in Natural Language Generation",
+      "Siren's Song in the AI Ocean: A Survey on Hallucination in Large Language Models"
+    ]
+  },
+  {
+    "paper_id": 68,
+    "summary": "This survey categorizes LLM hallucination mitigation methods across prompt engineering, retrieval augmentation, self-refinement, decoding, knowledge-graph grounding, faithfulness-aware objectives, and supervised fine-tuning. It emphasizes practical mitigation choices and the tradeoffs that limit current systems.",
+    "why_it_matters": "It gives the vault a mitigation-focused overview rather than a general hallucination survey, which is useful for intervention design.",
+    "method_setup": "Survey of more than thirty hallucination mitigation techniques, organized into prompt engineering and model-development approaches with task settings, datasets, metrics, evaluated models, and reported limitations.",
+    "key_claims": [
+      "Retrieval-augmented generation is a dominant mitigation family, but its effectiveness depends heavily on retrieval quality and grounding fidelity.",
+      "Self-refinement and verification-style prompting can reduce hallucinations without retraining the base model.",
+      "No single mitigation approach is sufficient across tasks, and cost, domain dependence, and evaluation difficulty remain major bottlenecks."
+    ],
+    "limitations": [
+      "It is a survey rather than a head-to-head empirical benchmark under one unified experimental protocol.",
+      "Many reviewed methods increase inference cost or depend on external resources, which the paper identifies as an unresolved practical constraint."
+    ],
+    "evaluates": [
+      "hallucination mitigation techniques",
+      "retrieval-augmented generation",
+      "self-refinement and verification methods",
+      "fine-tuning and decoding interventions"
+    ],
+    "builds_on_unresolved": [
+      "Survey of Hallucination in Natural Language Generation"
+    ],
+    "compares_to_unresolved": []
+  },
+  {
+    "paper_id": 69,
+    "summary": "This survey studies factuality in LLMs through knowledge, retrieval, and domain-specific reliability, separating factuality issues from broader hallucination framing while reviewing evaluation, causes, and enhancement methods. It covers both standalone LLMs and retrieval-augmented systems.",
+    "why_it_matters": "It complements hallucination surveys by centering factual reliability and domain-grounded evaluation, especially for high-stakes use cases.",
+    "method_setup": "Survey paper reviewing factuality definitions, evaluation metrics and benchmarks, causes of factual errors at model, retrieval, and inference levels, and methods to improve factuality in standalone, retrieval-augmented, and domain-specific LLMs.",
+    "key_claims": [
+      "Factuality problems in LLMs stem from model knowledge gaps, retrieval failures, and inference-time error propagation rather than a single failure source.",
+      "Reliable factuality evaluation requires broader metrics and domain-specific benchmarks, not just generic generation scores.",
+      "Improving factuality often requires combining retrieval, adaptation, and domain-specific training rather than relying on prompting alone."
+    ],
+    "limitations": [
+      "It is broad and synthetic, so it does not provide a single unified empirical comparison of factuality interventions.",
+      "Its emphasis is on factuality as a broader reliability problem, which means some pure hallucination-detection threads are only one part of the coverage."
+    ],
+    "evaluates": [
+      "factuality evaluation metrics",
+      "factuality benchmarks",
+      "retrieval-augmented generation",
+      "domain-specific factuality"
+    ],
+    "builds_on_unresolved": [
+      "A Survey of Large Language Models"
+    ],
+    "compares_to_unresolved": []
+  },
+  {
+    "paper_id": 70,
+    "summary": "This paper is an empirical study of factuality hallucination in LLMs that analyzes detection, sources, and mitigation across domains, training stages, and inference choices. It introduces HaluEval 2.0 and studies how pre-training data, fine-tuning, decoding, retrieval, and self-reflection affect hallucination rates.",
+    "why_it_matters": "It is a strong empirical anchor paper because it studies where hallucinations come from and how much common interventions help under different conditions.",
+    "method_setup": "Empirical evaluation on HaluEval 2.0 with 8,770 questions across biomedicine, finance, science, education, and open-domain settings, using GPT-4-based fact extraction and fact judgment together with micro and macro hallucination rates.",
+    "key_claims": [
+      "Increasing pre-training scale alone only marginally reduces hallucinations, while domain-relevant data composition matters much more.",
+      "Supervised fine-tuning, retrieval augmentation, and self-reflection can reduce hallucinations, but their effectiveness depends strongly on domain and model size.",
+      "Decoding choices create different hallucination tradeoffs, with diversity-oriented decoding often hurting professional domains and greedy decoding hurting open-ended settings."
+    ],
+    "limitations": [
+      "The authors note limited visibility into proprietary training details and constrained ability to fully analyze pre-training and supervised fine-tuning choices.",
+      "The paper studies mitigation empirically but does not introduce a fundamentally new mitigation method."
+    ],
+    "evaluates": [
+      "HaluEval 2.0",
+      "biomedicine QA",
+      "finance QA",
+      "science QA",
+      "education QA",
+      "open-domain QA"
+    ],
+    "builds_on_unresolved": [
+      "HaluEval: A Large-Scale Hallucination Evaluation Benchmark for Large Language Models",
+      "A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions"
+    ],
+    "compares_to_unresolved": [
+      "Alpaca",
+      "Vicuna",
+      "Llama 2-Chat",
+      "ChatGPT",
+      "Claude",
+      "Claude 2"
+    ]
+  },
+  {
+    "paper_id": 71,
+    "summary": "This paper proposes Chain-of-Verification, a prompting pipeline where an LLM drafts an answer, plans verification questions, answers them, and then revises the response using those checks. It shows that structured self-verification reduces hallucinated facts across list QA, closed-book QA, and long-form generation.",
+    "why_it_matters": "It is one of the clearest empirical demonstrations that explicit self-verification can materially reduce factual hallucination at inference time.",
+    "method_setup": "Inference-time prompting pipeline evaluated on Wikidata list questions, Wiki-Category list generation, MultiSpanQA, and long-form biography generation, comparing standard prompting against several verification variants including factored and factor-plus-revise execution.",
+    "key_claims": [
+      "Separating verification from the original draft and answering verification questions independently reduces factual hallucination substantially.",
+      "The model is often better at answering short verification questions correctly than at stating the same facts accurately in an unconstrained long-form draft.",
+      "Chain-of-Verification improves precision and factuality on QA and biography generation, outperforming strong baseline prompting setups."
+    ],
+    "limitations": [
+      "The method increases inference cost because it requires multiple extra generations for planning, checking, and revising.",
+      "It targets factual inaccuracies and does not eliminate other failure modes such as broader reasoning or opinion errors."
+    ],
+    "evaluates": [
+      "Wikidata list QA",
+      "Wiki-Category list generation",
+      "MultiSpanQA",
+      "biography generation"
+    ],
+    "builds_on_unresolved": [
+      "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models"
+    ],
+    "compares_to_unresolved": [
+      "Llama 2 Chat",
+      "ChatGPT",
+      "PerplexityAI"
+    ]
+  },
+  {
+    "paper_id": 72,
+    "summary": "This paper proposes Semantic Entropy Probes, a cheap hallucination detector that predicts semantic uncertainty directly from LLM hidden states rather than sampling many generations. It aims to keep the robustness of semantic-entropy-style uncertainty signals while cutting inference cost substantially.",
+    "why_it_matters": "It is a strong empirical detection paper because it shows a practical uncertainty-based detector with better cross-domain generalization than simpler probing baselines.",
+    "method_setup": "Linear probes trained on hidden states to predict binarized semantic entropy, evaluated for hallucination detection across BioASQ, TriviaQA, Natural Questions Open, and SQuAD on models including Llama-2, Llama-3, Mistral, and Phi-3.",
+    "key_claims": [
+      "Hidden states encode semantic uncertainty strongly enough for simple probes to detect likely hallucinations.",
+      "Semantic Entropy Probes generalize better across datasets than direct accuracy probes.",
+      "Useful hallucination signals can be extracted before generation or from late hidden states with a single forward pass."
+    ],
+    "limitations": [
+      "The method still underperforms full multi-sample semantic entropy and requires semantic-entropy labels for probe training.",
+      "The evaluation is centered on question answering rather than broader tasks like summarization or open-ended generation."
+    ],
+    "evaluates": [
+      "BioASQ",
+      "TriviaQA",
+      "Natural Questions Open",
+      "SQuAD"
+    ],
+    "builds_on_unresolved": [
+      "Detecting Hallucinations in Large Language Models Using Semantic Entropy",
+      "Language Models (Mostly) Know What They Know"
+    ],
+    "compares_to_unresolved": [
+      "Detecting Hallucinations in Large Language Models Using Semantic Entropy",
+      "Language Models (Mostly) Know What They Know"
+    ]
+  },
+  {
+    "paper_id": 73,
+    "summary": "This paper studies black-box hallucination detection and argues that self-consistency methods are near their performance ceiling unless they are augmented with verifier models. It introduces a budget-aware two-stage method that selectively uses cross-model verification when the target model appears uncertain.",
+    "why_it_matters": "It is a useful recent empirical paper because it reframes hallucination detection as a cost-aware verification problem rather than only a self-consistency problem.",
+    "method_setup": "Black-box hallucination detection study across SQuAD, TriviaQA, and Natural Questions using self-consistency and cross-model consistency, with AUROC and AURAC evaluation plus a budget-aware two-stage algorithm that queries a verifier only for uncertain cases.",
+    "key_claims": [
+      "Existing self-consistency methods are already close to their standalone performance ceiling.",
+      "Cross-model consistency substantially improves black-box hallucination detection over self-consistency alone.",
+      "A two-stage verify-when-uncertain policy captures most of the performance gain while cutting verifier cost."
+    ],
+    "limitations": [
+      "The method still depends on access to an additional verifier model, so it adds cost and system complexity.",
+      "The empirical focus is on black-box QA-style settings rather than every generation task where hallucinations appear."
+    ],
+    "evaluates": [
+      "SQuAD",
+      "TriviaQA",
+      "Natural Questions"
+    ],
+    "builds_on_unresolved": [
+      "Detecting Hallucinations in Large Language Models Using Semantic Entropy"
+    ],
+    "compares_to_unresolved": [
+      "Detecting Hallucinations in Large Language Models Using Semantic Entropy"
+    ]
+  }
+]

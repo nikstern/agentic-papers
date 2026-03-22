@@ -1,0 +1,10 @@
+[
+  {
+    "title": "MuSiQue: Multihop Questions via Single-hop Question Composition",
+    "url": "https://arxiv.org/abs/2108.00573",
+    "year": 2021,
+    "authors": "Trivedi et al.",
+    "candidate_topic": "agent-evaluation",
+    "paper_type": "benchmark"
+  }
+]

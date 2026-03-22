@@ -1,0 +1,58 @@
+[
+  {
+    "title": "A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions",
+    "url": "https://arxiv.org/abs/2311.05232",
+    "year": 2023,
+    "authors": "Huang et al.",
+    "candidate_topic": "hallucination-factuality",
+    "paper_type": "survey"
+  },
+  {
+    "title": "A Comprehensive Survey of Hallucination Mitigation Techniques in Large Language Models",
+    "url": "https://arxiv.org/abs/2401.01313",
+    "year": 2024,
+    "authors": "Tonmoy et al.",
+    "candidate_topic": "hallucination-factuality",
+    "paper_type": "survey"
+  },
+  {
+    "title": "Survey on Factuality in Large Language Models: Knowledge, Retrieval and Domain-Specificity",
+    "url": "https://arxiv.org/abs/2310.07521",
+    "year": 2023,
+    "authors": "Wang et al.",
+    "candidate_topic": "hallucination-factuality",
+    "paper_type": "survey"
+  },
+  {
+    "title": "The Dawn After the Dark: An Empirical Study on Factuality Hallucination in Large Language Models",
+    "url": "https://arxiv.org/abs/2401.03205",
+    "year": 2024,
+    "authors": "Li et al.",
+    "candidate_topic": "hallucination-factuality",
+    "paper_type": "application"
+  },
+  {
+    "title": "Chain-of-Verification Reduces Hallucination in Large Language Models",
+    "url": "https://arxiv.org/abs/2309.11495",
+    "year": 2023,
+    "authors": "Dhuliawala et al.",
+    "candidate_topic": "hallucination-factuality",
+    "paper_type": "application"
+  },
+  {
+    "title": "Semantic Entropy Probes: Robust and Cheap Hallucination Detection in LLMs",
+    "url": "https://arxiv.org/abs/2406.15927",
+    "year": 2024,
+    "authors": "Farquhar et al.",
+    "candidate_topic": "hallucination-factuality",
+    "paper_type": "application"
+  },
+  {
+    "title": "Verify when Uncertain: Beyond Self-Consistency in Black Box Hallucination Detection",
+    "url": "https://arxiv.org/abs/2502.15845",
+    "year": 2025,
+    "authors": "Xue et al.",
+    "candidate_topic": "hallucination-factuality",
+    "paper_type": "application"
+  }
+]

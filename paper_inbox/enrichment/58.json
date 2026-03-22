@@ -1,0 +1,26 @@
+{
+  "paper_id": "58",
+  "summary": "This paper introduces a recurrent-depth language model that scales reasoning by iterating a latent recurrent block at test time rather than relying on explicit chain-of-thought.",
+  "why_it_matters": "It is a major adjacent paper for the broader recursion/recurrence cluster because it proposes test-time compute scaling through latent recurrence.",
+  "method_setup": "The architecture has a prelude, recurrent core, and coda, is trained from scratch with randomized iteration counts and truncated backpropagation, and is evaluated on general, math, and coding benchmarks.",
+  "key_claims": [
+    "Increasing recurrent depth at test time improves reasoning performance.",
+    "Latent recurrence can act as a third scaling axis besides parameter count and explicit CoT.",
+    "Recurrent-depth models show useful emergent behaviors such as adaptive compute."
+  ],
+  "limitations": [
+    "The method requires specialized architecture and large-scale training.",
+    "It is recurrence in latent space rather than exact recursive language modeling.",
+    "The systems work is substantial and may be difficult to reproduce."
+  ],
+  "evaluates": [
+    "latent reasoning",
+    "recurrent depth",
+    "math and coding benchmarks"
+  ],
+  "builds_on_unresolved": [],
+  "compares_to_unresolved": [
+    "Chain-of-Thought",
+    "fixed-depth transformers"
+  ]
+}
