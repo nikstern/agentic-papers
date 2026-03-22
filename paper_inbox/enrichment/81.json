@@ -1,0 +1,32 @@
+{
+  "paper_id": "81",
+  "summary": "Mind the Gap studies when large language models can improve themselves through generation, verification, and reweighting, introducing the generation-verification gap as a core metric for self-improvement. It finds that self-improvement depends strongly on model scale, task type, and verifier quality.",
+  "why_it_matters": "It is one of the clearest empirical analyses of self-improvement dynamics in the vault because it moves beyond anecdotes and formalizes a measurable signal for when self-verification can help. It is especially useful for situating positive self-evolution results against scaling limits and task-dependent failure modes.",
+  "method_setup": "The paper studies rejection-sampling style self-improvement across multiple model families, tasks, and verification mechanisms using metrics such as the generation-verification gap and relative generation-verification gap. It evaluates reasoning, factual recall, and procedural tasks and analyzes iterative self-improvement behavior over multiple rounds.",
+  "key_claims": [
+    "Relative self-improvement signal tends to scale upward with pre-training compute when verification is effective.",
+    "Some tasks are effectively unimprovable under self-verification, especially when verification is not meaningfully easier than generation.",
+    "Iterative self-improvement saturates quickly and can reduce useful generation diversity over time."
+  ],
+  "limitations": [
+    "The study emphasizes controlled self-improvement analysis rather than end-to-end agent behavior in realistic environments.",
+    "Its conclusions depend on the particular verification strategies and tasks that were included in the experiments.",
+    "The paper provides strong empirical regularities but does not by itself solve the design problem of sustained long-run self-improvement."
+  ],
+  "evaluates": [
+    "self-improvement scaling",
+    "generation-verification gap",
+    "verification mechanisms"
+  ],
+  "builds_on_unresolved": [
+    "rejection sampling",
+    "self-training",
+    "reward-guided verification"
+  ],
+  "compares_to_unresolved": [
+    "multiple choice verification",
+    "chain-of-thought verification",
+    "tournament verification",
+    "iterative self-improvement"
+  ]
+}

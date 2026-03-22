@@ -17,3 +17,5 @@ Benchmarks, harnesses, and analysis methods for measuring agent performance beyo
 - [[2024-Transformer-Based-Models-Are-Not-Yet-Perfect-At-Learning]]
 - [[2023-AgentBench-Evaluating-LLMs-as-Agents]]
 - [[2021-MuSiQue-Multihop-Questions-via-Single-hop-Question-Composition]]
+- [[2023-Large-Language-Models-Cannot-Self-Correct-Reasoning-Yet]]
+- [[2024-Mind-the-Gap-Examining-the-Self-Improvement-Capabilities-of]]

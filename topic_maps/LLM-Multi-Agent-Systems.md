@@ -30,3 +30,4 @@ Systems where multiple LLM-based agents coordinate through explicit roles, messa
 - [[2023-A-Dynamic-LLM-Powered-Agent-Network-for-Task-Oriented-Agent]]
 - [[2023-Building-Cooperative-Embodied-Agents-Modularly-with-Large-Language]]
 - [[2024-Scalable-Multi-Robot-Collaboration-with-Large-Language-Models-Centralized]]
+- [[2023-SELF-Self-Evolution-with-Language-Feedback]]

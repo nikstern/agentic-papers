@@ -1,0 +1,98 @@
+[
+  {
+    "paper_id": "80",
+    "summary": "This paper re-evaluates intrinsic self-correction in large language models and argues that current models generally fail to improve their own reasoning without external guidance. Across reasoning benchmarks, self-correction often degrades performance rather than fixing errors.",
+    "why_it_matters": "It is a strong negative-result anchor for the vault because it challenges optimistic claims about self-correction and clarifies the difference between oracle-guided improvement and genuine intrinsic revision. It is especially useful as a baseline contrast for later self-evolution and self-improvement papers.",
+    "method_setup": "The paper evaluates GPT-3.5, GPT-4, GPT-4-Turbo, and Llama-2 on GSM8K, CommonSenseQA, and HotpotQA using a generate-feedback-refine loop without external labels. It also compares multi-agent debate against self-consistency under matched inference cost and analyzes prompt-design confounds in prior self-correction work.",
+    "key_claims": [
+      "Intrinsic self-correction without external feedback usually reduces reasoning performance rather than improving it.",
+      "Many reported gains from self-correction come from oracle guidance, extra inference budget, or weak initial prompts rather than true self-repair.",
+      "For matched compute, simple self-consistency can outperform more elaborate debate-style correction schemes."
+    ],
+    "limitations": [
+      "The evaluation is centered on reasoning tasks and does not establish whether self-correction works better for preference alignment or stylistic revision.",
+      "The experiments focus on prompting-based correction rather than broader training-time self-improvement pipelines.",
+      "The study reflects the capabilities of the evaluated 2023-era model set and may not fully characterize later reasoning-optimized models."
+    ],
+    "evaluates": [
+      "intrinsic self-correction",
+      "reasoning robustness",
+      "self-consistency versus debate"
+    ],
+    "builds_on_unresolved": [
+      "Self-Refine",
+      "Reflexion",
+      "self-consistency"
+    ],
+    "compares_to_unresolved": [
+      "multi-agent debate",
+      "oracle-guided self-correction",
+      "standard prompting",
+      "self-consistency"
+    ]
+  },
+  {
+    "paper_id": "81",
+    "summary": "Mind the Gap studies when large language models can improve themselves through generation, verification, and reweighting, introducing the generation-verification gap as a core metric for self-improvement. It finds that self-improvement depends strongly on model scale, task type, and verifier quality.",
+    "why_it_matters": "It is one of the clearest empirical analyses of self-improvement dynamics in the vault because it moves beyond anecdotes and formalizes a measurable signal for when self-verification can help. It is especially useful for situating positive self-evolution results against scaling limits and task-dependent failure modes.",
+    "method_setup": "The paper studies rejection-sampling style self-improvement across multiple model families, tasks, and verification mechanisms using metrics such as the generation-verification gap and relative generation-verification gap. It evaluates reasoning, factual recall, and procedural tasks and analyzes iterative self-improvement behavior over multiple rounds.",
+    "key_claims": [
+      "Relative self-improvement signal tends to scale upward with pre-training compute when verification is effective.",
+      "Some tasks are effectively unimprovable under self-verification, especially when verification is not meaningfully easier than generation.",
+      "Iterative self-improvement saturates quickly and can reduce useful generation diversity over time."
+    ],
+    "limitations": [
+      "The study emphasizes controlled self-improvement analysis rather than end-to-end agent behavior in realistic environments.",
+      "Its conclusions depend on the particular verification strategies and tasks that were included in the experiments.",
+      "The paper provides strong empirical regularities but does not by itself solve the design problem of sustained long-run self-improvement."
+    ],
+    "evaluates": [
+      "self-improvement scaling",
+      "generation-verification gap",
+      "verification mechanisms"
+    ],
+    "builds_on_unresolved": [
+      "rejection sampling",
+      "self-training",
+      "reward-guided verification"
+    ],
+    "compares_to_unresolved": [
+      "multiple choice verification",
+      "chain-of-thought verification",
+      "tournament verification",
+      "iterative self-improvement"
+    ]
+  },
+  {
+    "paper_id": "82",
+    "summary": "SELF proposes a two-stage framework in which an LLM first learns meta-skills for self-feedback and self-refinement, then uses those skills to generate, filter, and train on its own improved data. The system aims to make continuous self-evolution possible without ongoing human supervision.",
+    "why_it_matters": "It is a canonical positive self-evolution paper for the vault because it treats natural-language feedback as a training signal and shows that smaller models can acquire usable self-refinement behavior. It provides a useful counterpoint to later papers that question how faithful or robust self-evolution really is.",
+    "method_setup": "The framework first builds a meta-skill corpus with a stronger external annotator, then fine-tunes the base model to produce self-feedback and refined answers. In the second phase, the model iteratively generates responses on unlabeled prompts, filters them using its own feedback, and fine-tunes on the retained refinements; evaluation is on math and general instruction benchmarks.",
+    "key_claims": [
+      "Natural-language self-feedback can support meaningful self-evolution beyond scalar-reward style supervision.",
+      "SELF can teach smaller language models to perform useful self-refinement at inference time.",
+      "Iterative self-generated data curation can improve both mathematical reasoning and general instruction-following quality."
+    ],
+    "limitations": [
+      "The method still depends on a strong external model to bootstrap the initial meta-skill corpus.",
+      "Performance gains are benchmark-based and do not establish robust autonomous improvement in open-world settings.",
+      "The iterative loop can inherit errors or drift if self-generated feedback quality is poor."
+    ],
+    "evaluates": [
+      "self-evolution with language feedback",
+      "self-refinement",
+      "iterative self-training"
+    ],
+    "builds_on_unresolved": [
+      "RLHF",
+      "Self-Refine",
+      "self-consistency"
+    ],
+    "compares_to_unresolved": [
+      "RLHF",
+      "pseudo-labeled fine-tuning",
+      "self-refinement at inference time",
+      "self-consistency"
+    ]
+  }
+]

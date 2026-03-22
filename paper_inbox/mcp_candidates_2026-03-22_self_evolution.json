@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Large Language Models Cannot Self-Correct Reasoning Yet",
+    "url": "https://arxiv.org/abs/2310.01798",
+    "year": 2023,
+    "authors": "Jie Huang, Xinyun Chen, Swaroop Mishra, Huaixiu Steven Zheng, Adams Wei Yu, Xinying Song, Denny Zhou",
+    "candidate_topic": "agent-evaluation",
+    "paper_type": "benchmark"
+  },
+  {
+    "title": "Mind the Gap: Examining the Self-Improvement Capabilities of Large Language Models",
+    "url": "https://arxiv.org/abs/2412.02674",
+    "year": 2024,
+    "authors": "Yuda Song, Hanlin Zhang, Carson Eisenach, Sham M. Kakade, Dean Foster, Udaya Ghai",
+    "candidate_topic": "agent-evaluation",
+    "paper_type": "application"
+  },
+  {
+    "title": "SELF: Self-Evolution with Language Feedback",
+    "url": "https://arxiv.org/abs/2310.00533",
+    "year": 2023,
+    "authors": "Jianqiao Lu, Wanjun Zhong, Wenyong Huang, Yufei Wang, Qi Zhu, Fei Mi, Baojun Wang, Weichao Wang, Xingshan Zeng, Lifeng Shang, Xin Jiang, Qun Liu",
+    "candidate_topic": "llm-multi-agent-systems",
+    "paper_type": "system"
+  }
+]
