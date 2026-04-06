@@ -1,0 +1,25 @@
+{
+  "paper_id": "116",
+  "summary": "This paper surveys opportunities and challenges in using large language models for robotics and includes a practical GPT-4V-based framework for embodied task planning. It examines how multimodal models can combine visual perception and language understanding for robotic manipulation.",
+  "why_it_matters": "It provides a useful map of the LLM-for-robotics space while also illustrating an early multimodal planning workflow with GPT-4V. The paper is a good entry point for the planning, manipulation, and reasoning perspectives on embodied robotics.",
+  "method_setup": "The paper discusses planning, manipulation, and reasoning applications of LLMs in robotics and evaluates a GPT-4V prompt-based planning framework on manipulation examples drawn from Google Open X-Embodiment style tasks.",
+  "key_claims": [
+    "Multimodal LLMs can better bridge natural-language instructions and embodied robot planning than text-only models.",
+    "Prompted GPT-4V can generate plausible task plans across diverse manipulation scenarios.",
+    "LLMs offer a flexible interface for planning, reasoning, and human-robot interaction."
+  ],
+  "limitations": [
+    "Current multimodal LLMs still have limited visual perception compared with specialized vision systems.",
+    "The framework lacks strong physical and temporal reasoning for dynamic scenes.",
+    "The evaluation emphasizes planning quality more than full closed-loop execution."
+  ],
+  "evaluates": [
+    "robotic manipulation tasks from Google Open X-Embodiment style data"
+  ],
+  "builds_on_unresolved": [
+    "Do As I Can, Not As I Say: Grounding Language in Robotic Affordances",
+    "Inner Monologue: Embodied Reasoning through Planning with Language Models",
+    "RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control"
+  ],
+  "compares_to_unresolved": []
+}

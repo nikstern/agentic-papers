@@ -1,0 +1,27 @@
+{
+  "paper_id": "105",
+  "summary": "This paper develops an agent-based model of site-constant foraging in which a forager first explores a landscape, then selects a foraging site, and finally makes repeated trips between that site and a home base. Using bumble bees in patchy crop and wildflower landscapes, it studies how exploration and site-choice mechanisms shape later harvesting outcomes.",
+  "why_it_matters": "It is the most directly relevant paper in the set because it explicitly models repeated trips from a central place and separates exploration, site selection, and exploitation in a central-place style foraging process.",
+  "method_setup": "The model compares two site-generation methods, random sampling and exploration-based looping forays, with four site-selection rules: random choice, distance from nest, local wildflower density, and net energy return. It evaluates resulting harvesting behavior, travel time, fitness-related outcomes, and crop pollination consequences in simulated agricultural landscapes.",
+  "key_claims": [
+    "Site-selection strategy has a strong effect on crop pollination services and the fraction of crop resources collected.",
+    "Site-generation strategy has a strong effect on trip time and the share of time spent harvesting versus traveling.",
+    "Patterns in downstream foraging outcomes can help infer how real organisms identify foraging sites."
+  ],
+  "limitations": [
+    "The model is calibrated around bumble bee foraging in agricultural landscapes, so its conclusions are not automatically general across taxa or environments.",
+    "The mechanism space is deliberately limited to a small set of site-generation and site-selection rules rather than a full behavioral repertoire."
+  ],
+  "evaluates": [
+    "site-constant foraging",
+    "central place foraging",
+    "bumble bee foraging",
+    "crop pollination"
+  ],
+  "builds_on_unresolved": [
+    "An economic model of the limits to foraging range in central place foragers with numerical solutions for bumblebees",
+    "Wild flower strip position matters for crop pollination",
+    "Bumble-BEEHAVE: A systems model for exploring multifactorial causes of bumblebee decline at individual, colony, population and community level"
+  ],
+  "compares_to_unresolved": []
+}

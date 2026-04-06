@@ -1,0 +1,82 @@
+[
+  {
+    "title": "Benchmarking the Computational and Representational Efficiency of State Space Models against Transformers on Long-Context Dyadic Sessions",
+    "url": "https://arxiv.org/abs/2601.01237",
+    "year": 2026,
+    "authors": "Koledoye et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "benchmark"
+  },
+  {
+    "title": "Mechanistic evaluation of Transformers and state space models",
+    "url": "https://arxiv.org/abs/2505.15105",
+    "year": 2025,
+    "authors": "Arora et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "benchmark"
+  },
+  {
+    "title": "An Empirical Study of Mamba-based Language Models",
+    "url": "https://arxiv.org/abs/2406.07887",
+    "year": 2024,
+    "authors": "Waleffe et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "benchmark"
+  },
+  {
+    "title": "TransMamba: A Sequence-Level Hybrid Transformer-Mamba Language Model",
+    "url": "https://arxiv.org/abs/2503.24067",
+    "year": 2025,
+    "authors": "Li et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "system"
+  },
+  {
+    "title": "Hybrid Architectures for Language Models: Systematic Analysis and Design Insights",
+    "url": "https://arxiv.org/abs/2510.04800",
+    "year": 2025,
+    "authors": "Bae et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "system"
+  },
+  {
+    "title": "Jamba: A Hybrid Transformer-Mamba Language Model",
+    "url": "https://arxiv.org/abs/2403.19887",
+    "year": 2024,
+    "authors": "Lieber et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "system"
+  },
+  {
+    "title": "Samba: Simple Hybrid State Space Models for Efficient Unlimited Context Language Modeling",
+    "url": "https://arxiv.org/abs/2406.07522",
+    "year": 2024,
+    "authors": "Ren et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "system"
+  },
+  {
+    "title": "Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality",
+    "url": "https://arxiv.org/abs/2405.21060",
+    "year": 2024,
+    "authors": "Dao and Gu",
+    "candidate_topic": "memory-context",
+    "paper_type": "position"
+  },
+  {
+    "title": "State Space Models are Provably Comparable to Transformers in Dynamic Token Selection",
+    "url": "https://arxiv.org/abs/2405.19036",
+    "year": 2024,
+    "authors": "Nishikawa and Suzuki",
+    "candidate_topic": "memory-context",
+    "paper_type": "position"
+  },
+  {
+    "title": "Generalization Error Analysis for Selective State-Space Models Through the Lens of Attention",
+    "url": "https://arxiv.org/abs/2502.01473",
+    "year": 2025,
+    "authors": "Honarpisheh et al.",
+    "candidate_topic": "memory-context",
+    "paper_type": "position"
+  }
+]

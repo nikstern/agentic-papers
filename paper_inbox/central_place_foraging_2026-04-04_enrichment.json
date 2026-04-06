@@ -1,0 +1,143 @@
+[
+  {
+    "paper_id": 105,
+    "summary": "This paper develops an agent-based model of site-constant foraging in which a forager first explores a landscape, then selects a foraging site, and finally makes repeated trips between that site and a home base. Using bumble bees in patchy crop and wildflower landscapes, it studies how exploration and site-choice mechanisms shape later harvesting outcomes.",
+    "why_it_matters": "It is the most directly relevant paper in the set because it explicitly models repeated trips from a central place and separates exploration, site selection, and exploitation in a central-place style foraging process.",
+    "method_setup": "The model compares two site-generation methods, random sampling and exploration-based looping forays, with four site-selection rules: random choice, distance from nest, local wildflower density, and net energy return. It evaluates resulting harvesting behavior, travel time, fitness-related outcomes, and crop pollination consequences in simulated agricultural landscapes.",
+    "key_claims": [
+      "Site-selection strategy has a strong effect on crop pollination services and the fraction of crop resources collected.",
+      "Site-generation strategy has a strong effect on trip time and the share of time spent harvesting versus traveling.",
+      "Patterns in downstream foraging outcomes can help infer how real organisms identify foraging sites."
+    ],
+    "limitations": [
+      "The model is calibrated around bumble bee foraging in agricultural landscapes, so its conclusions are not automatically general across taxa or environments.",
+      "The mechanism space is deliberately limited to a small set of site-generation and site-selection rules rather than a full behavioral repertoire."
+    ],
+    "evaluates": [
+      "site-constant foraging",
+      "central place foraging",
+      "bumble bee foraging",
+      "crop pollination"
+    ],
+    "builds_on_unresolved": [
+      "An economic model of the limits to foraging range in central place foragers with numerical solutions for bumblebees",
+      "Wild flower strip position matters for crop pollination",
+      "Bumble-BEEHAVE: A systems model for exploring multifactorial causes of bumblebee decline at individual, colony, population and community level"
+    ],
+    "compares_to_unresolved": []
+  },
+  {
+    "paper_id": 106,
+    "summary": "This paper studies how stochastic resetting to a fixed location changes the critical habitat size needed for population persistence. It frames resetting as a model of homing, refuge-seeking, return to essential resources, and central-place foraging, and derives analytical results backed by agent-based simulations.",
+    "why_it_matters": "It provides a clean mathematical abstraction of central-place style return behavior and shows how repeated relocation to a home or refuge can either help or hurt persistence depending on rate, position, and environmental hostility.",
+    "method_setup": "The authors analyze one-dimensional reaction-diffusion models with stochastic resetting under both totally hostile and partially hostile environments, then validate the theory with agent-based simulations. They study how reset rate and reset position change the critical patch size for survival.",
+    "key_claims": [
+      "Stochastic resetting can either increase or decrease critical habitat size depending on reset rate, reset position, and environmental hostility.",
+      "For some reset positions there is a core region where resetting consistently reduces habitat requirements, while for others it can worsen survival thresholds.",
+      "Analytical predictions for the critical patch size and long-time population growth match agent-based simulations closely."
+    ],
+    "limitations": [
+      "The analysis is built around stylized one-dimensional reaction-diffusion models rather than realistic animal movement trajectories.",
+      "Resetting captures return-to-home behavior abstractly but does not model richer sensory, memory, or social mechanisms of central-place foraging."
+    ],
+    "evaluates": [
+      "stochastic resetting",
+      "critical patch size",
+      "homing models",
+      "central place foraging theory"
+    ],
+    "builds_on_unresolved": [
+      "Diffusion with stochastic resetting",
+      "Diffusion with optimal resetting",
+      "Central place foraging"
+    ],
+    "compares_to_unresolved": []
+  },
+  {
+    "paper_id": 107,
+    "summary": "This paper links insect navigation and robot navigation through reinforcement learning, using bees and ants as prominent examples of central-place foragers. It compares spatial representation schemes across biology and robotics and proposes how insect brain structures such as the mushroom bodies and central complex could implement RL-like navigation.",
+    "why_it_matters": "It matters for central-place foraging because it treats repeated outbound and return navigation in bees and ants as a core biological case, and it offers a computational account of how central-place foragers may integrate path integration, vector memories, and view memories.",
+    "method_setup": "The paper is primarily conceptual and theoretical: it classifies spatial representations, reframes insect navigation in RL terms, and proposes a hierarchical RL account grounded in insect neuroanatomy. It synthesizes prior navigation models rather than introducing a single new empirical benchmark.",
+    "key_claims": [
+      "Reinforcement learning provides a useful unifying framework for relating insect navigation and robot navigation.",
+      "Insect navigation likely combines explicit vector-like representations with learned, latent directional cues instead of relying on a single map format.",
+      "A hierarchical model combining mushroom-body and central-complex functions could explain how insects learn flexible navigation policies."
+    ],
+    "limitations": [
+      "The paper is mostly a theoretical synthesis and hypothesis paper rather than a direct empirical test of central-place foraging behavior.",
+      "Its scope is broader than central-place foraging alone, so some claims concern general navigation rather than foraging-specific decisions."
+    ],
+    "evaluates": [
+      "insect navigation",
+      "reinforcement learning",
+      "central place foragers",
+      "spatial representations"
+    ],
+    "builds_on_unresolved": [
+      "The insect navigation base model",
+      "Path integration",
+      "Wystrach 2023 visual homing model"
+    ],
+    "compares_to_unresolved": [
+      "SLAM",
+      "deep reinforcement learning navigation"
+    ]
+  },
+  {
+    "paper_id": 108,
+    "summary": "This paper analyzes Brownian search with stochastic resetting to two sites instead of one, revealing new optimization behavior in mean first-passage time. It motivates the setup with foragers and other agents that repeatedly return to a small set of central places such as roosts, homes, or work sites.",
+    "why_it_matters": "It is relevant to central-place foraging because it models repeated returns to multiple central places and shows that adding a second return site qualitatively changes optimal search behavior.",
+    "method_setup": "The authors derive the mean first-passage time analytically for one-dimensional diffusion with resetting to two fixed sites and study the resulting optimal resetting rate across parameter regimes. They also map the model to an intermittent search problem with switching diffusion coefficients.",
+    "key_claims": [
+      "With two resetting points, the optimal resetting rate can undergo a discontinuous transition rather than varying smoothly.",
+      "The two-site resetting problem is equivalent to an intermittent search problem with switching diffusion modes and a shared central place.",
+      "Critical behavior appears only in specific parameter regimes, producing phase-diagram-like structure for optimal search."
+    ],
+    "limitations": [
+      "The model is a minimal one-dimensional stochastic search process rather than a biologically realistic animal foraging model.",
+      "Its relevance to central-place foraging is by abstraction and motivation, not by direct behavioral data."
+    ],
+    "evaluates": [
+      "stochastic resetting",
+      "search optimization",
+      "multiple central places",
+      "first-passage time"
+    ],
+    "builds_on_unresolved": [
+      "Diffusion with stochastic resetting",
+      "Diffusion with optimal resetting"
+    ],
+    "compares_to_unresolved": [
+      "single-site resetting"
+    ]
+  },
+  {
+    "paper_id": 109,
+    "summary": "This paper formulates non-destructive foraging as a reinforcement learning problem and shows that learned policies can outperform strong hand-designed random-search baselines such as Levy walks. It focuses on how search strategies can be learned, not only optimized analytically.",
+    "why_it_matters": "It is not explicitly a central-place foraging paper, but it is useful background because it provides a learning-based search baseline for comparison with more structured return-to-home or site-constant models.",
+    "method_setup": "The authors discretize random-walk foraging into an RL problem, prove that maximizing average reward is equivalent to maximizing search efficiency, and train projective-simulation agents in sparse-target environments. They compare learned strategies against Levy and bi-exponential benchmark policies.",
+    "key_claims": [
+      "The RL formulation gives a mechanistic learning model whose objective is exactly aligned with foraging efficiency.",
+      "Learned policies outperform Levy-walk baselines and in most tested environments also beat the best bi-exponential benchmarks.",
+      "The learned strategies often exhibit structured multi-scale behavior tied to environmental parameters such as cutoff length."
+    ],
+    "limitations": [
+      "The paper studies idealized non-destructive search rather than explicit central-place foraging with home returns.",
+      "Results are shown in stylized sparse-target environments with a specific RL algorithm rather than across richer ecological settings."
+    ],
+    "evaluates": [
+      "optimal foraging",
+      "reinforcement learning",
+      "random search strategies",
+      "levy-walk baselines"
+    ],
+    "builds_on_unresolved": [
+      "Levy walks",
+      "Projective simulation"
+    ],
+    "compares_to_unresolved": [
+      "Levy walks",
+      "bi-exponential policies"
+    ]
+  }
+]

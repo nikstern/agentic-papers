@@ -45,6 +45,7 @@ Generated notes keep only flat, Obsidian-safe properties in frontmatter.
 - `agent-harnesses`
 - `task-allocation`
 - `search-retrieval`
+- `central-place-foraging`
 - `hallucination-factuality`
 - `software-agents`
 - `memory-context`

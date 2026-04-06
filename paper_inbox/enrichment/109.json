@@ -1,0 +1,29 @@
+{
+  "paper_id": "109",
+  "summary": "This paper formulates non-destructive foraging as a reinforcement learning problem and shows that learned policies can outperform strong hand-designed random-search baselines such as Levy walks. It focuses on how search strategies can be learned, not only optimized analytically.",
+  "why_it_matters": "It is not explicitly a central-place foraging paper, but it is useful background because it provides a learning-based search baseline for comparison with more structured return-to-home or site-constant models.",
+  "method_setup": "The authors discretize random-walk foraging into an RL problem, prove that maximizing average reward is equivalent to maximizing search efficiency, and train projective-simulation agents in sparse-target environments. They compare learned strategies against Levy and bi-exponential benchmark policies.",
+  "key_claims": [
+    "The RL formulation gives a mechanistic learning model whose objective is exactly aligned with foraging efficiency.",
+    "Learned policies outperform Levy-walk baselines and in most tested environments also beat the best bi-exponential benchmarks.",
+    "The learned strategies often exhibit structured multi-scale behavior tied to environmental parameters such as cutoff length."
+  ],
+  "limitations": [
+    "The paper studies idealized non-destructive search rather than explicit central-place foraging with home returns.",
+    "Results are shown in stylized sparse-target environments with a specific RL algorithm rather than across richer ecological settings."
+  ],
+  "evaluates": [
+    "optimal foraging",
+    "reinforcement learning",
+    "random search strategies",
+    "levy-walk baselines"
+  ],
+  "builds_on_unresolved": [
+    "Levy walks",
+    "Projective simulation"
+  ],
+  "compares_to_unresolved": [
+    "Levy walks",
+    "bi-exponential policies"
+  ]
+}

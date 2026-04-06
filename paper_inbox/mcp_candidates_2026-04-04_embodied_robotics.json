@@ -1,0 +1,58 @@
+[
+  {
+    "title": "Inner Monologue: Embodied Reasoning through Planning with Language Models",
+    "url": "https://arxiv.org/abs/2207.05608",
+    "year": 2022,
+    "authors": "Huang et al.",
+    "candidate_topic": "software-agents",
+    "paper_type": "system"
+  },
+  {
+    "title": "Code as Policies: Language Model Programs for Embodied Control",
+    "url": "https://arxiv.org/abs/2209.07753",
+    "year": 2022,
+    "authors": "Liang et al.",
+    "candidate_topic": "software-agents",
+    "paper_type": "system"
+  },
+  {
+    "title": "PaLM-E: An Embodied Multimodal Language Model",
+    "url": "https://arxiv.org/abs/2303.03378",
+    "year": 2023,
+    "authors": "Driess et al.",
+    "candidate_topic": "software-agents",
+    "paper_type": "system"
+  },
+  {
+    "title": "LLM-Planner: Few-Shot Grounded Planning for Embodied Agents with Large Language Models",
+    "url": "https://arxiv.org/abs/2212.04088",
+    "year": 2023,
+    "authors": "Song et al.",
+    "candidate_topic": "software-agents",
+    "paper_type": "system"
+  },
+  {
+    "title": "SayPlan: Grounding Large Language Models using 3D Scene Graphs for Scalable Robot Task Planning",
+    "url": "https://arxiv.org/abs/2307.06135",
+    "year": 2023,
+    "authors": "Rana et al.",
+    "candidate_topic": "software-agents",
+    "paper_type": "system"
+  },
+  {
+    "title": "Look Before You Leap: Unveiling the Power of GPT-4V in Robotic Vision-Language Planning",
+    "url": "https://arxiv.org/abs/2311.17842",
+    "year": 2023,
+    "authors": "Hu et al.",
+    "candidate_topic": "software-agents",
+    "paper_type": "system"
+  },
+  {
+    "title": "Large Language Models for Robotics: Opportunities, Challenges, and Perspectives",
+    "url": "https://arxiv.org/abs/2401.04334",
+    "year": 2024,
+    "authors": "Wang et al.",
+    "candidate_topic": "software-agents",
+    "paper_type": "survey"
+  }
+]

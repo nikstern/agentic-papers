@@ -3,7 +3,7 @@ paper_id,title,url,year,authors,candidate_topic,source,paper_type,status,enrichm
 2,MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework,https://arxiv.org/abs/2308.00352,2023,Hong et al.,llm-multi-agent-systems,manual,system,ingested,enriched
 3,ChatDev: Communicative Agents for Software Development,https://arxiv.org/abs/2307.07924,2023,Qian et al.,software-agents,manual,system,ingested,enriched
 4,MultiAgentBench: Evaluating the Collaboration and Competition of LLM Agents,https://arxiv.org/abs/2503.01935,2025,Zhu et al.,agent-evaluation,manual,benchmark,skimmed,enriched
-5,Large Language Model based Multi-Agents: A Survey of Progress and Challenges,https://arxiv.org/abs/2402.01680,2024,Guo et al.,llm-multi-agent-systems,manual,survey,skimmed,enriched
+5,Large Language Model based Multi-Agents: A Survey of Progress and Challenges,https://arxiv.org/abs/2402.01680,2024,Guo et al.,llm-multi-agent-systems,manual,survey,deep_read,enriched
 6,Multi-Agent Collaboration Mechanisms: A Survey of LLMs,https://arxiv.org/abs/2501.06322,2025,Tran et al.,llm-multi-agent-systems,alphaxiv-mcp,survey,ingested,enriched
 7,Beyond Self-Talk: A Communication-Centric Survey of LLM-Based Multi-Agent Systems,https://arxiv.org/abs/2502.14321,2025,Yan et al.,llm-multi-agent-systems,alphaxiv-mcp,survey,ingested,enriched
 8,A-MEM: Agentic Memory for LLM Agents,https://arxiv.org/abs/2502.12110,2025,Xu et al.,memory-context,alphaxiv-mcp,system,cited,enriched
@@ -14,7 +14,7 @@ paper_id,title,url,year,authors,candidate_topic,source,paper_type,status,enrichm
 13,Memory in the Age of AI Agents,https://arxiv.org/abs/2512.13564,2025,Hu et al.,memory-context,alphaxiv-mcp,survey,ingested,enriched
 14,"Graph-based Agent Memory: Taxonomy, Techniques, and Applications",https://arxiv.org/abs/2602.05665,2026,Yang et al.,memory-context,alphaxiv-mcp,survey,deep_read,enriched
 15,MemGPT: Towards LLMs as Operating Systems,https://arxiv.org/abs/2310.08560,2023,Packer et al.,memory-context,alphaxiv-mcp,system,cited,enriched
-16,A Human-Inspired Reading Agent with Gist Memory of Very Long Contexts,https://arxiv.org/abs/2402.09727,2024,Lee et al.,memory-context,alphaxiv-mcp,system,skimmed,enriched
+16,A Human-Inspired Reading Agent with Gist Memory of Very Long Contexts,https://arxiv.org/abs/2402.09727,2024,Lee et al.,memory-context,alphaxiv-mcp,system,ingested,enriched
 17,INMS: Memory Sharing for Large Language Model based Agents,https://arxiv.org/abs/2404.09982,2024,Gao and Zhang,memory-context,alphaxiv-mcp,system,ingested,enriched
 18,G-Memory: Tracing Hierarchical Memory for Multi-Agent Systems,https://arxiv.org/abs/2506.07398,2025,Zhang et al.,memory-context,alphaxiv-mcp,system,ingested,enriched
 19,Collaborative Memory: Multi-User Memory Sharing in LLM Agents with Dynamic Access Control,https://arxiv.org/abs/2505.18279,2025,Rezazadeh et al.,memory-context,alphaxiv-mcp,system,ingested,enriched
@@ -93,3 +93,25 @@ paper_id,title,url,year,authors,candidate_topic,source,paper_type,status,enrichm
 92,Retrieval-Augmented LLM Agents: Learning to Learn from Experience,https://arxiv.org/abs/2603.18272,2026,Ferraz et al.,search-retrieval,alphaxiv-mcp,system,ingested,pending
 93,Reinforcing Multi-Turn Reasoning in LLM Agents via Turn-Level Reward Design,https://arxiv.org/abs/2505.11821,2025,Wei et al.,agent-harnesses,alphaxiv-mcp,system,ingested,pending
 94,Large Language Model Agents Are Not Always Faithful Self-Evolvers,https://arxiv.org/abs/2601.22436,2026,Zhao et al.,agent-evaluation,alphaxiv-mcp,benchmark,ingested,enriched
+95,Benchmarking the Computational and Representational Efficiency of State Space Models against Transformers on Long-Context Dyadic Sessions,https://arxiv.org/abs/2601.01237,2026,Koledoye et al.,memory-context,alphaxiv-mcp,benchmark,ingested,pending
+96,Mechanistic evaluation of Transformers and state space models,https://arxiv.org/abs/2505.15105,2025,Arora et al.,memory-context,alphaxiv-mcp,benchmark,ingested,pending
+97,An Empirical Study of Mamba-based Language Models,https://arxiv.org/abs/2406.07887,2024,Waleffe et al.,memory-context,alphaxiv-mcp,benchmark,ingested,pending
+98,TransMamba: A Sequence-Level Hybrid Transformer-Mamba Language Model,https://arxiv.org/abs/2503.24067,2025,Li et al.,memory-context,alphaxiv-mcp,system,ingested,pending
+99,Hybrid Architectures for Language Models: Systematic Analysis and Design Insights,https://arxiv.org/abs/2510.04800,2025,Bae et al.,memory-context,alphaxiv-mcp,system,ingested,pending
+100,Jamba: A Hybrid Transformer-Mamba Language Model,https://arxiv.org/abs/2403.19887,2024,Lieber et al.,memory-context,alphaxiv-mcp,system,ingested,pending
+101,Samba: Simple Hybrid State Space Models for Efficient Unlimited Context Language Modeling,https://arxiv.org/abs/2406.07522,2024,Ren et al.,memory-context,alphaxiv-mcp,system,ingested,pending
+102,Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality,https://arxiv.org/abs/2405.21060,2024,Dao and Gu,memory-context,alphaxiv-mcp,position,ingested,pending
+103,State Space Models are Provably Comparable to Transformers in Dynamic Token Selection,https://arxiv.org/abs/2405.19036,2024,Nishikawa and Suzuki,memory-context,alphaxiv-mcp,position,ingested,pending
+104,Generalization Error Analysis for Selective State-Space Models Through the Lens of Attention,https://arxiv.org/abs/2502.01473,2025,Honarpisheh et al.,memory-context,alphaxiv-mcp,position,ingested,pending
+105,The importance of exploration: Modelling site-constant foraging,https://arxiv.org/abs/2503.20086,2025,MacQueen et al.,central-place-foraging,alphaxiv-mcp,application,ingested,enriched
+106,Critical habitat size of organisms diffusing with stochastic resetting,https://arxiv.org/abs/2505.03727,2025,Menon Jr. et al.,central-place-foraging,alphaxiv-mcp,application,ingested,enriched
+107,Reinforcement Learning as a Robotics-Inspired Framework for Insect Navigation: From Spatial Representations to Neural Implementation,https://arxiv.org/abs/2406.01501,2024,Lochner et al.,central-place-foraging,alphaxiv-mcp,system,ingested,enriched
+108,Diffusion with two resetting points,https://arxiv.org/abs/2311.11897,2024,Julian-Salgado et al.,central-place-foraging,alphaxiv-mcp,application,ingested,enriched
+109,Optimal foraging strategies can be learned,https://arxiv.org/abs/2303.06050,2023,Munoz-Gil et al.,central-place-foraging,alphaxiv-mcp,application,ingested,enriched
+110,Inner Monologue: Embodied Reasoning through Planning with Language Models,https://arxiv.org/abs/2207.05608,2022,Huang et al.,software-agents,alphaxiv-mcp,system,ingested,enriched
+111,Code as Policies: Language Model Programs for Embodied Control,https://arxiv.org/abs/2209.07753,2022,Liang et al.,software-agents,alphaxiv-mcp,system,ingested,enriched
+112,PaLM-E: An Embodied Multimodal Language Model,https://arxiv.org/abs/2303.03378,2023,Driess et al.,software-agents,alphaxiv-mcp,system,ingested,enriched
+113,LLM-Planner: Few-Shot Grounded Planning for Embodied Agents with Large Language Models,https://arxiv.org/abs/2212.04088,2023,Song et al.,software-agents,alphaxiv-mcp,system,ingested,enriched
+114,SayPlan: Grounding Large Language Models using 3D Scene Graphs for Scalable Robot Task Planning,https://arxiv.org/abs/2307.06135,2023,Rana et al.,software-agents,alphaxiv-mcp,system,ingested,enriched
+115,Look Before You Leap: Unveiling the Power of GPT-4V in Robotic Vision-Language Planning,https://arxiv.org/abs/2311.17842,2023,Hu et al.,software-agents,alphaxiv-mcp,system,ingested,enriched
+116,"Large Language Models for Robotics: Opportunities, Challenges, and Perspectives",https://arxiv.org/abs/2401.04334,2024,Wang et al.,software-agents,alphaxiv-mcp,survey,ingested,enriched

@@ -1,0 +1,27 @@
+{
+  "paper_id": "106",
+  "summary": "This paper studies how stochastic resetting to a fixed location changes the critical habitat size needed for population persistence. It frames resetting as a model of homing, refuge-seeking, return to essential resources, and central-place foraging, and derives analytical results backed by agent-based simulations.",
+  "why_it_matters": "It provides a clean mathematical abstraction of central-place style return behavior and shows how repeated relocation to a home or refuge can either help or hurt persistence depending on rate, position, and environmental hostility.",
+  "method_setup": "The authors analyze one-dimensional reaction-diffusion models with stochastic resetting under both totally hostile and partially hostile environments, then validate the theory with agent-based simulations. They study how reset rate and reset position change the critical patch size for survival.",
+  "key_claims": [
+    "Stochastic resetting can either increase or decrease critical habitat size depending on reset rate, reset position, and environmental hostility.",
+    "For some reset positions there is a core region where resetting consistently reduces habitat requirements, while for others it can worsen survival thresholds.",
+    "Analytical predictions for the critical patch size and long-time population growth match agent-based simulations closely."
+  ],
+  "limitations": [
+    "The analysis is built around stylized one-dimensional reaction-diffusion models rather than realistic animal movement trajectories.",
+    "Resetting captures return-to-home behavior abstractly but does not model richer sensory, memory, or social mechanisms of central-place foraging."
+  ],
+  "evaluates": [
+    "stochastic resetting",
+    "critical patch size",
+    "homing models",
+    "central place foraging theory"
+  ],
+  "builds_on_unresolved": [
+    "Diffusion with stochastic resetting",
+    "Diffusion with optimal resetting",
+    "Central place foraging"
+  ],
+  "compares_to_unresolved": []
+}

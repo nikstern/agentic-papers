@@ -1,0 +1,30 @@
+{
+  "paper_id": "112",
+  "summary": "PaLM-E is an embodied multimodal language model that directly injects images and state observations into a large language model to support planning, visual question answering, and robot control. The model treats language and sensor inputs as a unified multimodal sentence.",
+  "why_it_matters": "It is one of the foundational papers for multimodal embodied language models in robotics. The work showed that co-training robotics with broader vision-language data can improve embodied performance and preserve strong language capabilities.",
+  "method_setup": "The authors train multimodal variants of PaLM with robot, visual question answering, captioning, and language data, then evaluate on tabletop manipulation, language-table style embodied tasks, and visual QA benchmarks such as OK-VQA.",
+  "key_claims": [
+    "A single multimodal LLM can jointly handle perception, language reasoning, and embodied planning.",
+    "Multi-task co-training improves robotic task success and cross-domain transfer.",
+    "Larger models retain language ability better during multimodal adaptation."
+  ],
+  "limitations": [
+    "The approach requires large-scale multimodal training and substantial compute.",
+    "Robotics performance still depends on downstream low-level skills and data quality.",
+    "Robustness to novel real-world conditions and out-of-distribution settings remains limited."
+  ],
+  "evaluates": [
+    "tabletop manipulation",
+    "visual question answering",
+    "language-table style robot tasks"
+  ],
+  "builds_on_unresolved": [
+    "PaLM: Scaling Language Modeling with Pathways",
+    "Do As I Can, Not As I Say: Grounding Language in Robotic Affordances",
+    "Interactive Language: Talking to Robots in Real Time"
+  ],
+  "compares_to_unresolved": [
+    "PaLI",
+    "SayCan"
+  ]
+}

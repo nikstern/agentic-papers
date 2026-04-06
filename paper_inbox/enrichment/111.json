@@ -1,0 +1,30 @@
+{
+  "paper_id": "111",
+  "summary": "This paper proposes using code-writing language models to synthesize executable robot policies directly from natural-language instructions. Instead of only producing high-level plans, the model generates Python programs that call perception and control APIs for embodied control.",
+  "why_it_matters": "It is a key paper for grounding LLM reasoning into executable embodied behavior with interpretable policy code. The work also showed that hierarchical code generation can improve both robotics-specific and general code generation.",
+  "method_setup": "The paper evaluates hierarchical code generation on the RoboCodeGen and HumanEval benchmarks and demonstrates real robot tasks including drawing, tabletop manipulation, navigation, and simple reactive control.",
+  "key_claims": [
+    "Language models can generate robot policy code that captures spatial reasoning and behavioral commonsense.",
+    "Hierarchical code generation improves performance on robotics and general code-generation benchmarks.",
+    "Generated code can ground language into perception-action loops without large robot-specific training datasets."
+  ],
+  "limitations": [
+    "Capabilities are constrained by the available perception APIs and low-level control primitives.",
+    "The approach cannot guarantee correctness or feasibility of generated code ahead of execution.",
+    "The abstraction level of instructions still needs to stay close to what the prompted APIs can support."
+  ],
+  "evaluates": [
+    "RoboCodeGen",
+    "HumanEval",
+    "real robot drawing and manipulation tasks"
+  ],
+  "builds_on_unresolved": [
+    "Inner Monologue: Embodied Reasoning through Planning with Language Models",
+    "Do As I Can, Not As I Say: Grounding Language in Robotic Affordances",
+    "Socratic Models"
+  ],
+  "compares_to_unresolved": [
+    "Chain-of-Thought Prompting",
+    "vanilla natural language prompting"
+  ]
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "title": "The importance of exploration: Modelling site-constant foraging",
+    "url": "https://arxiv.org/abs/2503.20086",
+    "year": 2025,
+    "authors": "MacQueen et al.",
+    "candidate_topic": "central-place-foraging",
+    "paper_type": "application"
+  },
+  {
+    "title": "Critical habitat size of organisms diffusing with stochastic resetting",
+    "url": "https://arxiv.org/abs/2505.03727",
+    "year": 2025,
+    "authors": "Menon Jr. et al.",
+    "candidate_topic": "central-place-foraging",
+    "paper_type": "application"
+  },
+  {
+    "title": "Reinforcement Learning as a Robotics-Inspired Framework for Insect Navigation: From Spatial Representations to Neural Implementation",
+    "url": "https://arxiv.org/abs/2406.01501",
+    "year": 2024,
+    "authors": "Lochner et al.",
+    "candidate_topic": "central-place-foraging",
+    "paper_type": "system"
+  },
+  {
+    "title": "Diffusion with two resetting points",
+    "url": "https://arxiv.org/abs/2311.11897",
+    "year": 2024,
+    "authors": "Julian-Salgado et al.",
+    "candidate_topic": "central-place-foraging",
+    "paper_type": "application"
+  },
+  {
+    "title": "Optimal foraging strategies can be learned",
+    "url": "https://arxiv.org/abs/2303.06050",
+    "year": 2023,
+    "authors": "Munoz-Gil et al.",
+    "candidate_topic": "central-place-foraging",
+    "paper_type": "application"
+  }
+]

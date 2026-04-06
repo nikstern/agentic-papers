@@ -1,0 +1,209 @@
+[
+  {
+    "paper_id": 110,
+    "summary": "This paper introduces a closed-loop LLM planning framework that feeds natural-language environment feedback back into the planner so robots can replan and recover during embodied tasks. The core idea is an \"inner monologue\" that combines high-level language reasoning with observations about success, objects, and task progress.",
+    "why_it_matters": "It is an early and influential paper on making LLM-based robot planning adaptive rather than open-loop. It showed that language feedback can materially improve robustness in real and simulated embodied settings.",
+    "method_setup": "The authors evaluate simulated tabletop rearrangement, real-world tabletop rearrangement, and real-world mobile manipulation, varying the types of feedback available to the LLM such as object descriptions, success signals, scene progress, and human answers.",
+    "key_claims": [
+      "Closed-loop language feedback improves long-horizon embodied planning over open-loop prompting.",
+      "Success and scene feedback help the planner recover from failed actions and environmental disturbances.",
+      "LLMs can exhibit emergent embodied behaviors such as replanning, clarifying questions, and adaptation to changed instructions when grounded with feedback."
+    ],
+    "limitations": [
+      "The framework depends on external perception, success detection, and low-level skills rather than end-to-end embodied control.",
+      "Performance is bottlenecked by the reliability of underlying robot policies and feedback modules.",
+      "Some emergent behaviors are inconsistent and not fully reliable."
+    ],
+    "evaluates": [
+      "simulated tabletop rearrangement",
+      "real-world tabletop rearrangement",
+      "real-world mobile manipulation"
+    ],
+    "builds_on_unresolved": [
+      "Do As I Can, Not As I Say: Grounding Language in Robotic Affordances",
+      "Language Models as Zero-Shot Planners"
+    ],
+    "compares_to_unresolved": [
+      "SayCan",
+      "CLIPort"
+    ]
+  },
+  {
+    "paper_id": 111,
+    "summary": "This paper proposes using code-writing language models to synthesize executable robot policies directly from natural-language instructions. Instead of only producing high-level plans, the model generates Python programs that call perception and control APIs for embodied control.",
+    "why_it_matters": "It is a key paper for grounding LLM reasoning into executable embodied behavior with interpretable policy code. The work also showed that hierarchical code generation can improve both robotics-specific and general code generation.",
+    "method_setup": "The paper evaluates hierarchical code generation on the RoboCodeGen and HumanEval benchmarks and demonstrates real robot tasks including drawing, tabletop manipulation, navigation, and simple reactive control.",
+    "key_claims": [
+      "Language models can generate robot policy code that captures spatial reasoning and behavioral commonsense.",
+      "Hierarchical code generation improves performance on robotics and general code-generation benchmarks.",
+      "Generated code can ground language into perception-action loops without large robot-specific training datasets."
+    ],
+    "limitations": [
+      "Capabilities are constrained by the available perception APIs and low-level control primitives.",
+      "The approach cannot guarantee correctness or feasibility of generated code ahead of execution.",
+      "The abstraction level of instructions still needs to stay close to what the prompted APIs can support."
+    ],
+    "evaluates": [
+      "RoboCodeGen",
+      "HumanEval",
+      "real robot drawing and manipulation tasks"
+    ],
+    "builds_on_unresolved": [
+      "Inner Monologue: Embodied Reasoning through Planning with Language Models",
+      "Do As I Can, Not As I Say: Grounding Language in Robotic Affordances",
+      "Socratic Models"
+    ],
+    "compares_to_unresolved": [
+      "Chain-of-Thought Prompting",
+      "vanilla natural language prompting"
+    ]
+  },
+  {
+    "paper_id": 112,
+    "summary": "PaLM-E is an embodied multimodal language model that directly injects images and state observations into a large language model to support planning, visual question answering, and robot control. The model treats language and sensor inputs as a unified multimodal sentence.",
+    "why_it_matters": "It is one of the foundational papers for multimodal embodied language models in robotics. The work showed that co-training robotics with broader vision-language data can improve embodied performance and preserve strong language capabilities.",
+    "method_setup": "The authors train multimodal variants of PaLM with robot, visual question answering, captioning, and language data, then evaluate on tabletop manipulation, language-table style embodied tasks, and visual QA benchmarks such as OK-VQA.",
+    "key_claims": [
+      "A single multimodal LLM can jointly handle perception, language reasoning, and embodied planning.",
+      "Multi-task co-training improves robotic task success and cross-domain transfer.",
+      "Larger models retain language ability better during multimodal adaptation."
+    ],
+    "limitations": [
+      "The approach requires large-scale multimodal training and substantial compute.",
+      "Robotics performance still depends on downstream low-level skills and data quality.",
+      "Robustness to novel real-world conditions and out-of-distribution settings remains limited."
+    ],
+    "evaluates": [
+      "tabletop manipulation",
+      "visual question answering",
+      "language-table style robot tasks"
+    ],
+    "builds_on_unresolved": [
+      "PaLM: Scaling Language Modeling with Pathways",
+      "Do As I Can, Not As I Say: Grounding Language in Robotic Affordances",
+      "Interactive Language: Talking to Robots in Real Time"
+    ],
+    "compares_to_unresolved": [
+      "PaLI",
+      "SayCan"
+    ]
+  },
+  {
+    "paper_id": 113,
+    "summary": "This paper presents a few-shot LLM-based high-level planner for embodied agents that dynamically replans using visible objects from the current environment. It uses in-context examples and grounded re-planning to generate subgoal sequences for long-horizon tasks.",
+    "why_it_matters": "It is a strong early result on sample-efficient LLM planning for embodied agents in partially observable environments. The paper showed competitive ALFRED performance with far less paired training data than standard embodied baselines.",
+    "method_setup": "The method is evaluated on ALFRED with a hierarchical setup that uses GPT-3 for high-level planning and HLSM components for perception and low-level control, comparing static and grounded re-planning under a strict few-shot regime.",
+    "key_claims": [
+      "LLMs can generate useful embodied high-level plans from very small numbers of demonstrations.",
+      "Grounded re-planning with current visible objects improves robustness over static plans.",
+      "Generative high-level planning can outperform adapted ranking-based baselines such as SayCan in ALFRED-like settings."
+    ],
+    "limitations": [
+      "End-to-end success is constrained by low-level planner and perception errors.",
+      "The method still depends on prompt design, retrieval quality, and object visibility.",
+      "High-level planning accuracy does not fully translate into task completion in difficult environments."
+    ],
+    "evaluates": [
+      "ALFRED"
+    ],
+    "builds_on_unresolved": [
+      "Do As I Can, Not As I Say: Grounding Language in Robotic Affordances",
+      "Language Models as Zero-Shot Planners",
+      "HLSM: Bridging Vision and Language with Hierarchical Semantic Maps"
+    ],
+    "compares_to_unresolved": [
+      "HLSM",
+      "FILM",
+      "HiTUT",
+      "E.T.",
+      "M-TRACK",
+      "SayCan"
+    ]
+  },
+  {
+    "paper_id": 114,
+    "summary": "SayPlan grounds LLM-based robot planning in large environments by combining 3D scene graphs, LLM-guided semantic search, and iterative plan verification. It uses a scene-graph simulator to verify plans and provide textual feedback for self-correction.",
+    "why_it_matters": "It is a key paper on scaling LLM robot planning beyond small rooms into multi-room and multi-floor environments. The work showed how structured world models can keep planning grounded and token-efficient.",
+    "method_setup": "The authors evaluate semantic search and causal planning in office and home environments represented as 3D scene graphs, with tasks of varying complexity and comparisons against direct LLM planning and LLM plus classical path-planning variants.",
+    "key_claims": [
+      "3D scene graphs let LLM planners scale to larger environments without overflowing context windows.",
+      "Iterative verification and replanning substantially improve executability of long-horizon robot plans.",
+      "Reducing the LLM planning horizon and delegating detailed navigation to classical planning improves reliability."
+    ],
+    "limitations": [
+      "The method assumes access to a high-quality prebuilt 3D scene graph and simulator API.",
+      "LLMs still struggle with some logical, numerical, and negation-style graph reasoning.",
+      "A small fraction of failures come from hallucinated nodes or insufficient replanning depth."
+    ],
+    "evaluates": [
+      "office 3D scene graph planning tasks",
+      "home 3D scene graph planning tasks"
+    ],
+    "builds_on_unresolved": [
+      "Do As I Can, Not As I Say: Grounding Language in Robotic Affordances",
+      "Inner Monologue: Embodied Reasoning through Planning with Language Models",
+      "LLM-Planner: Few-Shot Grounded Planning for Embodied Agents with Large Language Models"
+    ],
+    "compares_to_unresolved": [
+      "LLM-As-Planner",
+      "LLM+P"
+    ]
+  },
+  {
+    "paper_id": 115,
+    "summary": "This paper introduces ViLa, a robotic vision-language planning approach that uses GPT-4V directly as a grounded planner over images and language. The system replans in closed loop from visual feedback rather than depending on separate affordance models to mediate perception.",
+    "why_it_matters": "It is one of the clearest demonstrations that strong VLMs can outperform text-only LLM planners on embodied manipulation tasks by reasoning directly over visual context. The paper highlights the value of unified multimodal planning for spatial layouts, object attributes, and dynamic replanning.",
+    "method_setup": "The authors evaluate 16 real-world long-horizon manipulation tasks and 16 simulated RAVENS tabletop rearrangement tasks, comparing ViLa against SayCan, Grounded Decoding, CLIPort, and LLM-only planning baselines.",
+    "key_claims": [
+      "Direct vision-language planning improves grounded commonsense reasoning for robotics over text-only planners.",
+      "Closed-loop visual feedback materially improves recovery and robustness in dynamic environments.",
+      "VLMs support flexible multimodal goal specification such as images, drawings, pointing, and mixed image-plus-language prompts."
+    ],
+    "limitations": [
+      "The method still relies on existing primitive skills for actual execution.",
+      "The planner is a black-box VLM whose failures can be hard to analyze or verify.",
+      "Performance remains sensitive to prompt design and the quality of visual perception."
+    ],
+    "evaluates": [
+      "real-world long-horizon manipulation tasks",
+      "RAVENS tabletop rearrangement"
+    ],
+    "builds_on_unresolved": [
+      "Do As I Can, Not As I Say: Grounding Language in Robotic Affordances",
+      "Grounded Decoding",
+      "PaLM-E: An Embodied Multimodal Language Model"
+    ],
+    "compares_to_unresolved": [
+      "SayCan",
+      "Grounded Decoding",
+      "CLIPort",
+      "GPT-4",
+      "Llama 2"
+    ]
+  },
+  {
+    "paper_id": 116,
+    "summary": "This paper surveys opportunities and challenges in using large language models for robotics and includes a practical GPT-4V-based framework for embodied task planning. It examines how multimodal models can combine visual perception and language understanding for robotic manipulation.",
+    "why_it_matters": "It provides a useful map of the LLM-for-robotics space while also illustrating an early multimodal planning workflow with GPT-4V. The paper is a good entry point for the planning, manipulation, and reasoning perspectives on embodied robotics.",
+    "method_setup": "The paper discusses planning, manipulation, and reasoning applications of LLMs in robotics and evaluates a GPT-4V prompt-based planning framework on manipulation examples drawn from Google Open X-Embodiment style tasks.",
+    "key_claims": [
+      "Multimodal LLMs can better bridge natural-language instructions and embodied robot planning than text-only models.",
+      "Prompted GPT-4V can generate plausible task plans across diverse manipulation scenarios.",
+      "LLMs offer a flexible interface for planning, reasoning, and human-robot interaction."
+    ],
+    "limitations": [
+      "Current multimodal LLMs still have limited visual perception compared with specialized vision systems.",
+      "The framework lacks strong physical and temporal reasoning for dynamic scenes.",
+      "The evaluation emphasizes planning quality more than full closed-loop execution."
+    ],
+    "evaluates": [
+      "robotic manipulation tasks from Google Open X-Embodiment style data"
+    ],
+    "builds_on_unresolved": [
+      "Do As I Can, Not As I Say: Grounding Language in Robotic Affordances",
+      "Inner Monologue: Embodied Reasoning through Planning with Language Models",
+      "RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control"
+    ],
+    "compares_to_unresolved": []
+  }
+]
