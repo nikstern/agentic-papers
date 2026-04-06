@@ -1,6 +1,6 @@
 # Agentic Research Vault
 
-This repository is an Obsidian vault for agentic AI research, with a focus on single-agent systems, multi-agent systems, memory, evaluation, and related synthesis work.
+This repository is an Obsidian vault for summaries and metadata for agentic AI research papers, with a focus on single-agent systems, multi-agent systems, memory, evaluation, and related synthesis work. All papers are linked to their original sources. Copyright remains with the original authors and publishers.
 
 It stores:
 
