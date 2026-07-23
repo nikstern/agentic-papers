@@ -16,8 +16,9 @@ The repository is designed around a deterministic paper-ingestion workflow:
 - notes are generated, not manually maintained as primary source state
 - local paper-to-paper links are resolved during ingest when titles match existing vault papers
 - each ingest refreshes `paper_inbox/approved_for_enrichment.json` so pending enrichment work is queued automatically
-- semantic search in `search/` is refreshed after ingest when `.venv` and the Qdrant search stack are available
+- semantic search in `search/` uses local Ollama embeddings and is refreshed after ingest when `.venv`, Ollama, and Qdrant are available
 - optional automatic enrichment can be run through `scripts/run_enrichment.py` when `OPENAI_API_KEY` is configured
+- trusted Codex sessions can use the project-configured arXiv MCP server for paper discovery and reading
 
 ## Requirements
 
@@ -26,10 +27,13 @@ Base vault usage only requires:
 - Obsidian or another Markdown editor
 - `python3` for the local workflow scripts
 
+Codex-based paper discovery additionally requires `uvx`; the project-local `.codex/config.toml` launches `arxiv-mcp-server` on demand after the repository is trusted.
+
 Semantic search requires:
 
 - a local virtual environment at `.venv`
 - Python packages from `search/requirements.txt`
+- Ollama with the local `embeddinggemma:300m` model installed
 - local embedded Qdrant storage under `search/.qdrant/` or a remote Qdrant instance via `QDRANT_URL`
 
 Automatic enrichment additionally requires:
@@ -50,6 +54,7 @@ Create the virtual environment and install the search stack:
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r search/requirements.txt
+ollama pull embeddinggemma:300m
 ```
 
 Optional environment variables:
@@ -60,7 +65,10 @@ Optional environment variables:
 - `QDRANT_API_KEY`: API key for remote Qdrant
 - `QDRANT_COLLECTION`: overrides the default collection name
 - `QDRANT_LOCAL_PATH`: overrides the local embedded Qdrant path
-- `EMBEDDING_MODEL`: overrides the default FastEmbed model
+- `EMBEDDING_MODEL`: overrides the default Ollama embedding model (`embeddinggemma:300m`)
+- `OLLAMA_BASE_URL`: overrides the loopback Ollama URL (remote hosts are rejected)
+- `OLLAMA_BATCH_SIZE`: overrides the default embedding batch size (`32`)
+- `OLLAMA_TIMEOUT`: overrides the default Ollama request timeout in seconds (`30`)
 
 Common local commands:
 

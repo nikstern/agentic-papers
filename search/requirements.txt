@@ -1,2 +1,2 @@
-qdrant-client[fastembed]>=1.9.1
+qdrant-client>=1.9.1
 PyYAML>=6.0
