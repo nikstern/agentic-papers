@@ -20,3 +20,6 @@ Benchmarks, harnesses, and analysis methods for measuring agent performance beyo
 - [[2023-Large-Language-Models-Cannot-Self-Correct-Reasoning-Yet]]
 - [[2024-Mind-the-Gap-Examining-the-Self-Improvement-Capabilities-of]]
 - [[2026-Large-Language-Model-Agents-Are-Not-Always-Faithful]]
+- [[2022-Measuring-and-Narrowing-the-Compositionality-Gap-in-Language]]
+- [[2025-How-Do-Language-Models-Compose-Functions]]
+- [[2020-Compositional-Generalization-in-Semantic-Parsing-Pre-training-vs-Specialized]]

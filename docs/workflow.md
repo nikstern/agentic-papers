@@ -26,7 +26,7 @@ This repository uses a deterministic paper workflow so papers can be discovered,
 5. Approve papers by `paper_id` with `make approve IDS='1 2 3'`.
 6. Run `make ingest` so approved papers appear immediately in `paper_notes/` and `topic_maps/`; this also refreshes `approved_for_enrichment.json` and the semantic search index.
 7. Use `paper_inbox/approved_for_enrichment.json` as the deterministic pending-enrichment queue for background enrichment.
-8. Run `make enrich-pending` for a local automatic enrichment pass when `OPENAI_API_KEY` is configured, or use the MCP/manual enrichment path when higher-fidelity extraction is needed.
+8. Run `make enrich-pending` for an automatic enrichment pass when `OPENAI_API_KEY` is configured, or use the MCP/manual enrichment path when higher-fidelity extraction is needed. The command regenerates the queue before calling OpenAI.
 9. Save enrichment results in the JSON shape shown by `paper_inbox/enrichment.example.json`.
 10. Import enrichment with `make import-enrichment FILE=...` when importing a manual or external enrichment payload.
 11. `make import-enrichment` rerenders notes and refreshes the search index automatically.
@@ -46,6 +46,9 @@ This repository uses a deterministic paper workflow so papers can be discovered,
 - PDF enrichment imported through a strict JSON contract
 - approved papers can enter the vault before enrichment completes
 - enrichment lifecycle state is authoritative in `papers.csv`
+- existing per-paper enrichment files are never queued again and are reconciled to `enriched` during ingest
+- complete enrichment batches are validated before files or registry state are published
+- automatic enrichment uses strict schema output and bounded retries for transient failures
 - enrichment updates notes through deterministic rerendering, not manual note edits
 - unresolved paper references are reconciled on every ingest
 - topic maps are updated from CSV source state, not ad hoc linking

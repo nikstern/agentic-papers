@@ -92,3 +92,5 @@ Generated notes keep only flat, Obsidian-safe properties in frontmatter.
 14. Failed extraction attempts should be recorded as `enrichment_status = failed`.
 15. The ingestion script only accepts the controlled vocabularies above.
 16. Topic links are derived from `candidate_topic`, not handwritten per note.
+17. A per-paper enrichment file takes precedence over stale pending state; ingest reconciles that row to `enriched`.
+18. Import validates the complete batch before publishing atomically replaced files and registry state.

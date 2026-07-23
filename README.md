@@ -34,7 +34,8 @@ Semantic search requires:
 - a local virtual environment at `.venv`
 - Python packages from `search/requirements.txt`
 - Ollama with the local `embeddinggemma:300m` model installed
-- local embedded Qdrant storage under `search/.qdrant/` or a remote Qdrant instance via `QDRANT_URL`
+- the repository's localhost Qdrant server, started with `make search-server-up`
+- Docker with Colima or another compatible local runtime
 
 Automatic enrichment additionally requires:
 
@@ -55,16 +56,21 @@ python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r search/requirements.txt
 ollama pull embeddinggemma:300m
+make search-server-up
+make reindex-search
 ```
 
 Optional environment variables:
 
 - `OPENAI_API_KEY`: required for `make enrich-pending`
 - `OPENAI_MODEL`: overrides the default enrichment model
-- `QDRANT_URL`: use a remote Qdrant instance instead of local embedded storage
-- `QDRANT_API_KEY`: API key for remote Qdrant
+- `OPENAI_MAX_ATTEMPTS`: transient OpenAI request attempts before failure (defaults to `3`)
+- `QDRANT_MODE`: defaults to `server`; set to `embedded` for the explicit single-process fallback
+- `QDRANT_URL`: server base URL, defaulting to `http://127.0.0.1:6333`
+- `QDRANT_API_KEY`: optional API key for a server deployment
+- `QDRANT_TIMEOUT`: server request timeout in seconds, defaulting to `5`
 - `QDRANT_COLLECTION`: overrides the default collection name
-- `QDRANT_LOCAL_PATH`: overrides the local embedded Qdrant path
+- `QDRANT_LOCAL_PATH`: overrides the embedded fallback path
 - `EMBEDDING_MODEL`: overrides the default Ollama embedding model (`embeddinggemma:300m`)
 - `OLLAMA_BASE_URL`: overrides the loopback Ollama URL (remote hosts are rejected)
 - `OLLAMA_BATCH_SIZE`: overrides the default embedding batch size (`32`)
@@ -75,9 +81,18 @@ Common local commands:
 ```bash
 make ingest
 make enrich-pending
+make test
+make test-search
+make search-server-status
 python search/search_qdrant.py "shared memory coordination failures"
 python search/ask_corpus.py "Which papers build on MemGPT?"
 ```
+
+The Qdrant container binds only to localhost, stores data in the
+`agentic-papers-qdrant-data` Docker volume, and restarts when Colima starts at
+macOS login. See `search/README.md` for service operations and troubleshooting.
+
+`make enrich-pending` regenerates the pending queue, refuses to call the model when paper text cannot be fetched, requests strict schema-conforming output, and retries transient API failures. Enrichment remains remote: source text is sent to OpenAI when this command is run.
 
 ## Key Docs
 

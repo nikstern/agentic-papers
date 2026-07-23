@@ -391,7 +391,9 @@ def main() -> None:
         row["status"] = effective_row["status"]
         if row["status"] not in ACTIVE_NOTE_STATUS:
             continue
-        if not has_enrichment_file(row["paper_id"]) and row["enrichment_status"] != "failed":
+        if has_enrichment_file(row["paper_id"]):
+            row["enrichment_status"] = "enriched"
+        elif row["enrichment_status"] != "failed":
             row["enrichment_status"] = "pending"
         filename = note_name(row["year"], row["title"])
         path = NOTES_DIR / filename

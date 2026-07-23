@@ -39,7 +39,7 @@ class IndexReplacementTests(unittest.TestCase):
         section = SimpleNamespace(text="paper text")
 
         with (
-            mock.patch.object(index_qdrant, "get_client", return_value=client),
+            mock.patch.object(index_qdrant, "require_client", return_value=client),
             mock.patch.object(
                 index_qdrant,
                 "get_embedder",

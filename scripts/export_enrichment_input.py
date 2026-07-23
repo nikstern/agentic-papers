@@ -8,6 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 INBOX = ROOT / "paper_inbox" / "papers.csv"
 OUTPUT = ROOT / "paper_inbox" / "approved_for_enrichment.json"
+ENRICHMENT_DIR = ROOT / "paper_inbox" / "enrichment"
 ACTIVE_FOR_ENRICHMENT = {"ingested", "skimmed", "deep_read", "cited"}
 PENDING_ENRICHMENT = "pending"
 QUERY_SET = [
@@ -36,6 +37,7 @@ def main() -> None:
             for row in rows
             if row["status"] in ACTIVE_FOR_ENRICHMENT
             and row["enrichment_status"] == PENDING_ENRICHMENT
+            and not (ENRICHMENT_DIR / f"{row['paper_id']}.json").exists()
         ],
     }
 

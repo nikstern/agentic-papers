@@ -1,0 +1,34 @@
+[
+  {
+    "title": "The Interplay of Harness Design and Post-Training in LLM Agents",
+    "url": "https://arxiv.org/abs/2606.25447",
+    "year": 2026,
+    "authors": "Kim et al.",
+    "candidate_topic": "agent-harnesses",
+    "paper_type": "system"
+  },
+  {
+    "title": "Measuring and Narrowing the Compositionality Gap in Language Models",
+    "url": "https://arxiv.org/abs/2210.03350",
+    "year": 2022,
+    "authors": "Press et al.",
+    "candidate_topic": "agent-evaluation",
+    "paper_type": "benchmark"
+  },
+  {
+    "title": "How Do Language Models Compose Functions?",
+    "url": "https://arxiv.org/abs/2510.01685",
+    "year": 2025,
+    "authors": "Khandelwal and Pavlick",
+    "candidate_topic": "agent-evaluation",
+    "paper_type": "benchmark"
+  },
+  {
+    "title": "Compositional Generalization in Semantic Parsing: Pre-training vs. Specialized Architectures",
+    "url": "https://arxiv.org/abs/2007.08970",
+    "year": 2020,
+    "authors": "Furrer et al.",
+    "candidate_topic": "agent-evaluation",
+    "paper_type": "benchmark"
+  }
+]

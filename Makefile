@@ -1,3 +1,5 @@
+QDRANT_COMPOSE = docker compose -f search/qdrant.compose.yml
+
 ingest:
 	python3 scripts/ingest_papers.py
 	python3 scripts/export_enrichment_input.py
@@ -20,6 +22,7 @@ export-enrichment-input:
 	python3 scripts/export_enrichment_input.py
 
 enrich-pending:
+	$(MAKE) export-enrichment-input
 	python3 scripts/run_enrichment.py
 	$(MAKE) import-enrichment FILE=paper_inbox/auto_enrichment_output.json
 
@@ -36,3 +39,27 @@ email-reading-queue:
 mark-enrichment-failed:
 	@test -n "$(IDS)" || (echo "Usage: make mark-enrichment-failed IDS='1 2 3'" && exit 1)
 	python3 scripts/mark_enrichment_failed.py $(IDS)
+
+search-server-up:
+	$(QDRANT_COMPOSE) up -d
+	python3 scripts/qdrant_server.py wait
+
+search-server-status:
+	$(QDRANT_COMPOSE) ps
+	python3 scripts/qdrant_server.py status
+
+search-server-logs:
+	$(QDRANT_COMPOSE) logs --tail=100 qdrant
+
+search-server-stop:
+	$(QDRANT_COMPOSE) stop qdrant
+
+reindex-search:
+	python3 scripts/reindex_search.py
+
+test:
+	python3 -m unittest discover -s tests -p 'test_*.py' -v
+
+test-search:
+	.venv/bin/python -m unittest discover -s search -p 'test_*.py' -v
+	.venv/bin/python -m unittest discover -s search/tests -p 'test_*.py' -v
