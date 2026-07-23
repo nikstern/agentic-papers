@@ -10,7 +10,7 @@ secondary_topics: []
 status: "ingested"
 priority: "0"
 last_read: ""
-enrichment_status: "pending"
+enrichment_status: "enriched"
 tags:
   - "papers"
   - "agent-harnesses"

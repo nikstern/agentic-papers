@@ -87,11 +87,11 @@ paper_id,title,url,year,authors,candidate_topic,source,paper_type,status,enrichm
 86,ARC: Active and Reflection-driven Context Management for Long-Horizon Information Seeking Agents,https://arxiv.org/abs/2601.12030,2026,Yao et al.,search-retrieval,alphaxiv-mcp,system,ingested,enriched
 87,PAACE: A Plan-Aware Automated Agent Context Engineering Framework,https://arxiv.org/abs/2512.16970,2025,Yuksel,memory-context,alphaxiv-mcp,system,ingested,enriched
 88,MemInsight: Autonomous Memory Augmentation for LLM Agents,https://arxiv.org/abs/2503.21760,2025,Salama et al.,memory-context,alphaxiv-mcp,system,ingested,enriched
-89,ExGRPO: Learning to Reason from Experience,https://arxiv.org/abs/2510.02245,2025,Zhan et al.,agent-harnesses,alphaxiv-mcp,system,ingested,pending
-90,Memory-R1: Enhancing Large Language Model Agents to Manage and Utilize Memories via Reinforcement Learning,https://arxiv.org/abs/2508.19828,2025,Unknown et al.,memory-context,alphaxiv-mcp,system,ingested,pending
-91,SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning,https://arxiv.org/abs/2602.08234,2026,Xia et al.,memory-context,alphaxiv-mcp,system,ingested,pending
-92,Retrieval-Augmented LLM Agents: Learning to Learn from Experience,https://arxiv.org/abs/2603.18272,2026,Ferraz et al.,search-retrieval,alphaxiv-mcp,system,ingested,pending
-93,Reinforcing Multi-Turn Reasoning in LLM Agents via Turn-Level Reward Design,https://arxiv.org/abs/2505.11821,2025,Wei et al.,agent-harnesses,alphaxiv-mcp,system,ingested,pending
+89,ExGRPO: Learning to Reason from Experience,https://arxiv.org/abs/2510.02245,2025,Zhan et al.,agent-harnesses,alphaxiv-mcp,system,ingested,enriched
+90,Memory-R1: Enhancing Large Language Model Agents to Manage and Utilize Memories via Reinforcement Learning,https://arxiv.org/abs/2508.19828,2025,Unknown et al.,memory-context,alphaxiv-mcp,system,ingested,enriched
+91,SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning,https://arxiv.org/abs/2602.08234,2026,Xia et al.,memory-context,alphaxiv-mcp,system,ingested,enriched
+92,Retrieval-Augmented LLM Agents: Learning to Learn from Experience,https://arxiv.org/abs/2603.18272,2026,Ferraz et al.,search-retrieval,alphaxiv-mcp,system,ingested,enriched
+93,Reinforcing Multi-Turn Reasoning in LLM Agents via Turn-Level Reward Design,https://arxiv.org/abs/2505.11821,2025,Wei et al.,agent-harnesses,alphaxiv-mcp,system,ingested,enriched
 94,Large Language Model Agents Are Not Always Faithful Self-Evolvers,https://arxiv.org/abs/2601.22436,2026,Zhao et al.,agent-evaluation,alphaxiv-mcp,benchmark,ingested,enriched
 95,Benchmarking the Computational and Representational Efficiency of State Space Models against Transformers on Long-Context Dyadic Sessions,https://arxiv.org/abs/2601.01237,2026,Koledoye et al.,memory-context,alphaxiv-mcp,benchmark,ingested,pending
 96,Mechanistic evaluation of Transformers and state space models,https://arxiv.org/abs/2505.15105,2025,Arora et al.,memory-context,alphaxiv-mcp,benchmark,ingested,pending

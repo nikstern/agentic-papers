@@ -56,6 +56,7 @@ Optional environment variables:
 
 - `OPENAI_API_KEY`: required for `make enrich-pending`
 - `OPENAI_MODEL`: overrides the default enrichment model
+- `OPENAI_MAX_ATTEMPTS`: transient OpenAI request attempts before failure (defaults to `3`)
 - `QDRANT_URL`: use a remote Qdrant instance instead of local embedded storage
 - `QDRANT_API_KEY`: API key for remote Qdrant
 - `QDRANT_COLLECTION`: overrides the default collection name
@@ -67,9 +68,12 @@ Common local commands:
 ```bash
 make ingest
 make enrich-pending
+make test
 python search/search_qdrant.py "shared memory coordination failures"
 python search/ask_corpus.py "Which papers build on MemGPT?"
 ```
+
+`make enrich-pending` regenerates the pending queue, refuses to call the model when paper text cannot be fetched, requests strict schema-conforming output, and retries transient API failures. Enrichment remains remote: source text is sent to OpenAI when this command is run.
 
 ## Key Docs
 

@@ -73,7 +73,7 @@ Search workflow:
 Index maintenance:
 - `make ingest` rerenders notes, refreshes the pending enrichment queue, and refreshes the search index.
 - `make import-enrichment FILE=...` imports enrichment, rerenders notes, and refreshes the search index.
-- `make enrich-pending` runs the local automatic enrichment loop when `OPENAI_API_KEY` is configured.
+- `make enrich-pending` regenerates the queue and runs the automatic OpenAI enrichment loop when `OPENAI_API_KEY` is configured.
 - `make ingest-and-enrich` runs the full local loop: ingest, queue enrichment, enrich, rerender, and reindex.
 - Local embedded Qdrant is single-process; concurrent access should use a server deployment instead.
 

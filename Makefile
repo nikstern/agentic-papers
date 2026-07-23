@@ -20,6 +20,7 @@ export-enrichment-input:
 	python3 scripts/export_enrichment_input.py
 
 enrich-pending:
+	$(MAKE) export-enrichment-input
 	python3 scripts/run_enrichment.py
 	$(MAKE) import-enrichment FILE=paper_inbox/auto_enrichment_output.json
 
@@ -36,3 +37,6 @@ email-reading-queue:
 mark-enrichment-failed:
 	@test -n "$(IDS)" || (echo "Usage: make mark-enrichment-failed IDS='1 2 3'" && exit 1)
 	python3 scripts/mark_enrichment_failed.py $(IDS)
+
+test:
+	python3 -m unittest discover -s tests -p 'test_*.py' -v
