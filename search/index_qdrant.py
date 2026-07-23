@@ -12,18 +12,16 @@ def main() -> None:
     embedder = get_embedder()
     collection = get_collection_name()
 
-    vector_size = len(embedder.embed_query("dimension probe"))
-    if client.collection_exists(collection):
-        client.delete_collection(collection)
-    client.create_collection(
-        collection_name=collection,
-        vectors_config=VectorParams(size=vector_size, distance=Distance.COSINE),
-    )
-
     rows = load_rows()
     sections = list(iter_sections(rows))
     texts = [section.text for section in sections]
+    vector_size = len(embedder.embed_query("dimension probe"))
     vectors = embedder.embed_documents(texts)
+    if any(len(vector) != vector_size for vector in vectors):
+        raise RuntimeError(
+            "Ollama returned document embeddings that do not match the query "
+            f"embedding dimension ({vector_size})"
+        )
 
     points = []
     for section, vector in zip(sections, vectors, strict=True):
@@ -45,6 +43,12 @@ def main() -> None:
         }
         points.append(PointStruct(id=section.point_id, vector=vector, payload=payload))
 
+    if client.collection_exists(collection):
+        client.delete_collection(collection)
+    client.create_collection(
+        collection_name=collection,
+        vectors_config=VectorParams(size=vector_size, distance=Distance.COSINE),
+    )
     client.upsert(collection_name=collection, points=points)
     print(
         f"Indexed {len(points)} sections from {len(rows)} papers into '{collection}'."
