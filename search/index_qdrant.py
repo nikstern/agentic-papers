@@ -12,7 +12,7 @@ def main() -> None:
     embedder = get_embedder()
     collection = get_collection_name()
 
-    vector_size = next(embedder.embed(["dimension probe"])).shape[0]
+    vector_size = len(embedder.embed_query("dimension probe"))
     if client.collection_exists(collection):
         client.delete_collection(collection)
     client.create_collection(
@@ -23,7 +23,7 @@ def main() -> None:
     rows = load_rows()
     sections = list(iter_sections(rows))
     texts = [section.text for section in sections]
-    vectors = list(embedder.embed(texts))
+    vectors = embedder.embed_documents(texts)
 
     points = []
     for section, vector in zip(sections, vectors, strict=True):
@@ -43,7 +43,7 @@ def main() -> None:
             "text": section.text,
             "model": get_model_name(),
         }
-        points.append(PointStruct(id=section.point_id, vector=vector.tolist(), payload=payload))
+        points.append(PointStruct(id=section.point_id, vector=vector, payload=payload))
 
     client.upsert(collection_name=collection, points=points)
     print(

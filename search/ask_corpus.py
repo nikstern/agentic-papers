@@ -310,7 +310,7 @@ def main() -> None:
     client = get_client()
     embedder = get_embedder()
     collection = get_collection_name()
-    query_vector = next(embedder.embed([args.question])).tolist()
+    query_vector = embedder.embed_query(args.question)
 
     results = client.query_points(
         collection_name=collection,

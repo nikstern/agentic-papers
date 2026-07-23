@@ -2,7 +2,7 @@
 
 This folder adds a minimal semantic search layer for the vault.
 
-Default mode uses Qdrant local storage under `search/.qdrant/`, so you can experiment without running a separate server. The same scripts can later switch to a remote Qdrant instance by setting `QDRANT_URL` and `QDRANT_API_KEY`.
+Default mode uses Ollama for local embeddings and Qdrant local storage under `search/.qdrant/`. Paper text stays on the machine during embedding. The same scripts can later switch Qdrant storage to a remote instance by setting `QDRANT_URL` and `QDRANT_API_KEY`; embeddings remain loopback-only.
 
 Local mode is single-process. If you need concurrent queries or multiple clients at once, switch to a Qdrant server deployment.
 
@@ -12,6 +12,7 @@ Local mode is single-process. If you need concurrent queries or multiple clients
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r search/requirements.txt
+ollama pull embeddinggemma:300m
 python search/index_qdrant.py
 python search/search_qdrant.py "shared memory coordination failures"
 python search/ask_corpus.py "What are the strongest critiques of shared memory in multi-agent systems?"
@@ -23,7 +24,12 @@ python search/ask_corpus.py "What are the strongest critiques of shared memory i
 - `QDRANT_API_KEY`: API key for remote Qdrant.
 - `QDRANT_COLLECTION`: collection name. Defaults to `agentic-papers`.
 - `QDRANT_LOCAL_PATH`: local Qdrant storage path. Defaults to `search/.qdrant`.
-- `EMBEDDING_MODEL`: FastEmbed model name. Defaults to `BAAI/bge-small-en-v1.5`.
+- `EMBEDDING_MODEL`: installed Ollama model. Defaults to `embeddinggemma:300m`.
+- `OLLAMA_BASE_URL`: local Ollama URL. Defaults to `http://127.0.0.1:11434`; remote endpoints are rejected.
+- `OLLAMA_BATCH_SIZE`: embedding request batch size. Defaults to `32`.
+- `OLLAMA_TIMEOUT`: request timeout in seconds. Defaults to `30`.
+
+Changing `EMBEDDING_MODEL` requires rebuilding the collection with `python search/index_qdrant.py` (or `make ingest`). For longer sections, `qwen3-embedding:0.6b` is an optional long-context alternative.
 
 ## Indexed Content
 
