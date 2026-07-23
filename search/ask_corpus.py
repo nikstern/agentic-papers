@@ -5,16 +5,17 @@ from __future__ import annotations
 import argparse
 from collections import defaultdict
 import re
+import sys
 
 from qdrant_client.models import FieldCondition, Filter, MatchValue
 
 from common import (
-    get_client,
     get_collection_name,
     get_embedder,
     load_paper_records,
     normalize_text,
     record_aliases,
+    require_client,
 )
 
 
@@ -307,7 +308,7 @@ def main() -> None:
     intent = detect_intent(args.question)
     records = load_paper_records()
     relation_results = relation_candidates(args.question, records)
-    client = get_client()
+    client = require_client()
     embedder = get_embedder()
     collection = get_collection_name()
     query_vector = next(embedder.embed([args.question])).tolist()
@@ -419,4 +420,8 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except (RuntimeError, ValueError) as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        raise SystemExit(1)

@@ -20,6 +20,10 @@ NOTES_DIR = ROOT / "paper_notes"
 DEFAULT_COLLECTION = "agentic-papers"
 DEFAULT_MODEL = "BAAI/bge-small-en-v1.5"
 DEFAULT_LOCAL_PATH = ROOT / "search" / ".qdrant"
+DEFAULT_QDRANT_MODE = "server"
+DEFAULT_QDRANT_URL = "http://127.0.0.1:6333"
+DEFAULT_QDRANT_TIMEOUT = 5.0
+ALLOWED_QDRANT_MODES = {"server", "embedded"}
 SECTION_ORDER = {
     "summary": 1,
     "why_it_matters": 2,
@@ -79,12 +83,57 @@ def get_local_path() -> Path:
     return DEFAULT_LOCAL_PATH
 
 
+def get_backend_mode() -> str:
+    mode = os.environ.get("QDRANT_MODE", DEFAULT_QDRANT_MODE).strip().lower()
+    if mode not in ALLOWED_QDRANT_MODES:
+        allowed = ", ".join(sorted(ALLOWED_QDRANT_MODES))
+        raise ValueError(f"QDRANT_MODE must be one of: {allowed}")
+    return mode
+
+
+def get_server_url() -> str:
+    url = os.environ.get("QDRANT_URL", DEFAULT_QDRANT_URL).strip().rstrip("/")
+    if not url:
+        raise ValueError("QDRANT_URL cannot be empty in server mode")
+    return url
+
+
+def get_timeout() -> float:
+    raw = os.environ.get("QDRANT_TIMEOUT")
+    if raw is None:
+        return DEFAULT_QDRANT_TIMEOUT
+    try:
+        timeout = float(raw)
+    except ValueError as exc:
+        raise ValueError("QDRANT_TIMEOUT must be a positive number") from exc
+    if timeout <= 0:
+        raise ValueError("QDRANT_TIMEOUT must be a positive number")
+    return timeout
+
+
 def get_client() -> QdrantClient:
-    url = os.environ.get("QDRANT_URL")
-    api_key = os.environ.get("QDRANT_API_KEY")
-    if url:
-        return QdrantClient(url=url, api_key=api_key)
-    return QdrantClient(path=str(get_local_path()))
+    if get_backend_mode() == "embedded":
+        return QdrantClient(path=str(get_local_path()))
+    return QdrantClient(
+        url=get_server_url(),
+        api_key=os.environ.get("QDRANT_API_KEY"),
+        timeout=get_timeout(),
+    )
+
+
+def require_client() -> QdrantClient:
+    client = get_client()
+    try:
+        client.get_collections()
+    except Exception as exc:
+        if get_backend_mode() == "embedded":
+            raise
+        raise RuntimeError(
+            f"Qdrant server is unavailable at {get_server_url()}. "
+            "Start it with `make search-server-up`, or explicitly use "
+            "`QDRANT_MODE=embedded` for single-process local mode."
+        ) from exc
+    return client
 
 
 def get_embedder() -> TextEmbedding:

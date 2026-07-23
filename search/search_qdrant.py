@@ -3,10 +3,11 @@
 from __future__ import annotations
 
 import argparse
+import sys
 
 from qdrant_client.models import FieldCondition, Filter, MatchValue
 
-from common import get_client, get_collection_name, get_embedder
+from common import get_collection_name, get_embedder, require_client
 
 
 def parse_args() -> argparse.Namespace:
@@ -41,7 +42,7 @@ def build_filter(args: argparse.Namespace) -> Filter | None:
 
 def main() -> None:
     args = parse_args()
-    client = get_client()
+    client = require_client()
     embedder = get_embedder()
     collection = get_collection_name()
     query_vector = next(embedder.embed([args.query])).tolist()
@@ -76,4 +77,8 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except (RuntimeError, ValueError) as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        raise SystemExit(1)
