@@ -170,24 +170,24 @@ class AtomicPublishTests(unittest.TestCase):
         )
         self.assertNotIn("agentic-papers__build_bad", client.collections)
 
-    def test_first_publish_replaces_legacy_physical_collection(self) -> None:
+    def test_first_publish_preserves_legacy_physical_collection(self) -> None:
         client = FakeClient()
         client.collections.add("agentic-papers")
         client.counts["agentic-papers"] = 1
 
-        index_qdrant.publish_server_collection(
-            client,
-            "agentic-papers",
-            3,
-            [object()],
-            build_id="first",
-        )
+        with self.assertRaisesRegex(RuntimeError, "left untouched"):
+            index_qdrant.publish_server_collection(
+                client,
+                "agentic-papers",
+                3,
+                [object()],
+                build_id="first",
+            )
 
-        self.assertNotIn("agentic-papers", client.collections)
-        self.assertEqual(
-            client.aliases["agentic-papers"],
-            "agentic-papers__build_first",
-        )
+        self.assertIn("agentic-papers", client.collections)
+        self.assertEqual(client.counts["agentic-papers"], 1)
+        self.assertNotIn("agentic-papers__build_first", client.collections)
+        self.assertEqual(client.aliases, {})
 
 
 if __name__ == "__main__":

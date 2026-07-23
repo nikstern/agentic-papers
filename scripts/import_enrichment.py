@@ -4,6 +4,7 @@ import csv
 import io
 import json
 import os
+import stat
 import sys
 import tempfile
 from pathlib import Path
@@ -54,6 +55,7 @@ def load_items(path: Path) -> list[dict]:
 
 def atomic_write_text(path: Path, content: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
+    target_mode = stat.S_IMODE(path.stat().st_mode) if path.exists() else 0o644
     temporary_path: Path | None = None
     try:
         with tempfile.NamedTemporaryFile(
@@ -64,6 +66,7 @@ def atomic_write_text(path: Path, content: str) -> None:
             suffix=".tmp",
             delete=False,
         ) as handle:
+            os.fchmod(handle.fileno(), target_mode)
             handle.write(content)
             handle.flush()
             os.fsync(handle.fileno())

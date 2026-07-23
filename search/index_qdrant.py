@@ -61,6 +61,14 @@ def publish_server_collection(
     staging = f"{alias_name}__build_{suffix}"
     previous_target = alias_target(client, alias_name)
 
+    if previous_target is None and client.collection_exists(alias_name):
+        raise RuntimeError(
+            f"Cannot atomically publish alias '{alias_name}' because a physical "
+            "collection already uses that name. The existing collection was "
+            "left untouched. Delete it explicitly before reindexing, or set "
+            "QDRANT_COLLECTION to a new alias name."
+        )
+
     if client.collection_exists(staging):
         client.delete_collection(staging)
 
@@ -76,10 +84,6 @@ def publish_server_collection(
                     delete_alias=DeleteAlias(alias_name=alias_name)
                 )
             )
-        elif client.collection_exists(alias_name):
-            # First server migration from a physical collection to a stable alias.
-            client.delete_collection(alias_name)
-
         operations.append(
             CreateAliasOperation(
                 create_alias=CreateAlias(

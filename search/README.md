@@ -49,6 +49,12 @@ Server reindexing builds a new physical collection, validates its point count,
 and atomically switches the stable `QDRANT_COLLECTION` alias. Searches therefore
 see either the previous complete index or the new complete index.
 
+If upgrading from embedded or older server indexing leaves a physical collection
+with the same name as `QDRANT_COLLECTION`, reindexing stops without modifying it:
+Qdrant cannot atomically replace a physical collection with a same-named alias.
+Delete the legacy collection explicitly after confirming it can be rebuilt, or
+set `QDRANT_COLLECTION` to a new alias name before reindexing.
+
 ## Indexed Content
 
 Each indexed point represents one paper section with payload fields such as:

@@ -230,6 +230,20 @@ class ImportEnrichmentTests(unittest.TestCase):
             self.assertEqual(rows[0]["enrichment_status"], "enriched")
             self.assertEqual(list(root.rglob("*.tmp")), [])
 
+    def test_atomic_writes_preserve_existing_mode_and_default_new_files(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary_dir:
+            root = Path(temporary_dir)
+            existing = root / "existing.txt"
+            created = root / "created.txt"
+            existing.write_text("old", encoding="utf-8")
+            existing.chmod(0o640)
+
+            import_enrichment.atomic_write_text(existing, "updated")
+            import_enrichment.atomic_write_text(created, "new")
+
+            self.assertEqual(existing.stat().st_mode & 0o777, 0o640)
+            self.assertEqual(created.stat().st_mode & 0o777, 0o644)
+
     def test_publish_failure_rolls_back_prior_files(self) -> None:
         with tempfile.TemporaryDirectory() as temporary_dir:
             root = Path(temporary_dir)
