@@ -1,413 +1,139 @@
 [
   {
-    "paper_id": "95",
-    "summary": "This study benchmarks Mamba State Space Models (SSMs) against LLaMA Transformers on long-context dyadic therapy sessions, evaluating computational and representational efficiency across sequence lengths from 512 to 8,192 tokens. Empirical results demonstrate Mamba's superior linear scaling in memory and inference time, alongside richer context utilization and better dynamic shift detection.",
-    "why_it_matters": "Efficient long-context sequence modeling is critical for applications like clinical NLP, where processing extended interactions without truncation is necessary; understanding trade-offs between SSM and Transformer architectures guides optimal model choice for such domains.",
-    "method_setup": "Using synthetic dyadic therapy transcripts, both 50M-parameter Mamba SSM and LLaMA Transformer models were evaluated on identical inputs, measuring GPU memory, inference time, hidden state dynamics, attention patterns, and effective context utilization across multiple sequence lengths up to 8,192 tokens.",
+    "paper_id": "117",
+    "summary": "This paper investigates how the design of the harness—the wrapper scaffolding around tool-integrated large language model (LLM) agents—interacts with their post-training performance and robustness. By extending ALFWorld to treat the harness as a controllable design variable and supporting evaluations under in-distribution and out-of-distribution (OOD) shifts to tasks and tool environments, the authors empirically show that harness-aware post-training crucially improves in-distribution accuracy and enables robustness across shifts.",
+    "why_it_matters": "Harness design has traditionally been treated as a static engineering detail separate from LLM training, despite substantially affecting agent performance. This work reveals that optimal agent performance and robustness to environmental shifts require joint consideration of harness design and post-training, highlighting the necessity of harness-aware training regimes for practical deployment of tool-integrated LLM agents.",
+    "method_setup": "The authors extend the ALFWorld interactive planning environment to treat the harness as a design variable with three levels of informativeness and to model task and tool environment shifts. Two reinforcement learning algorithms (GRPO and GiGPO) post-train open-source LLM agents (Qwen2.5 variants) under all harness configurations across training and evaluation splits representing in-distribution and OOD scenarios. Evaluation is based on success rates across ALFWorld tasks grouped by difficulty and on robustness to tool schema updates.",
     "key_claims": [
-      "Mamba achieves up to 12.46\u00d7 memory efficiency and 10.67\u00d7 faster inference than LLaMA Transformers at 4,096 tokens.",
-      "SSMs scale linearly (O(N)) in computational resources, whereas Transformers scale quadratically (O(N\u00b2)), limiting Transformer's maximum context length due to memory constraints.",
-      "Mamba utilizes approximately 90.2% of the sequence context with a mean effective range of 892 tokens compared to Transformer\u2019s 12.7% and 235 tokens, demonstrating superior long-range context capture.",
-      "SSMs provide more stable hidden state dynamics and better detection of dynamic shifts in therapeutic sessions (AUC-ROC 0.7834 vs 0.7123).",
-      "Transformers offer interpretable token-level attention mechanisms and excel in associative recall tasks but struggle with long-context scalability."
+      "Harness informativeness monotonically improves zero-shot and post-trained agent success rates across multiple LLM sizes and RL algorithms.",
+      "Post-training with a harness in place yields significantly better results than applying the harness only after training (post-hoc).",
+      "Harness-aware post-training improves agents' robustness to tool environment shifts involving changes in tool invocation protocols.",
+      "Harness design enhances transferability of agents across different task distributions, boosting out-of-distribution generalization.",
+      "Agents trained under minimal harness design suffer catastrophic performance drops under strong tool environment shifts despite sophisticated RL algorithms."
     ],
     "limitations": [
-      "Evaluation uses synthetic therapy session data which may not fully capture real-world complexities.",
-      "Models were randomly initialized without pretraining, so results do not reflect downstream task performance or pretrained model behavior.",
-      "Transformer evaluation limited to 8,192 tokens due to hardware constraints, potentially biasing comparative results.",
-      "Study focuses on a single SSM variant (Mamba) and one Transformer architecture (LLaMA), limiting generalization to other models."
+      "Study is limited to a single environment (ALFWorld) and two open-source LLM models; broader validation is pending.",
+      "Only three harness configurations were explored, limiting understanding of finer-grained design trade-offs or automated harness optimization.",
+      "The cost of producing informative harnesses (expert design or costly exploration) is acknowledged but not quantitatively addressed.",
+      "The research focuses on offline post-training and evaluation; online adaptive methods are not examined.",
+      "Compute constraints prevented exploration of larger scale models and wider RL algorithms beyond those tested."
     ],
     "evaluates": [
-      "Mamba State Space Model (SSM) architecture",
-      "LLaMA Transformer architecture"
+      "harness design impact on zero-shot LLM agent performance",
+      "post-training effectiveness under distinct harness designs",
+      "robustness of post-trained agents to task distribution shifts (task shift)",
+      "robustness to changes in tool invocation protocols (tool environment shift)",
+      "effect of applying harness at training-time versus post-hoc"
     ],
     "builds_on_unresolved": [
-      "Jelassi et al. 2024 on representational trade-offs between SSMs and Transformers",
-      "Gu and Dao 2023 on Mamba architecture\u2019s efficiency",
-      "Waleffe et al. 2024 benchmarking SSMs and Transformers at scale"
+      "ALFWorld text-based planning environment extended for tool-integrated agentic tasks",
+      "Group-relative policy optimization (GRPO) for LLM agent post-training",
+      "Group-in-group policy optimization (GiGPO) enhancing credit assignment in multi-step LLM agent tasks",
+      "Prior work on harness design in training-free regimes for closed-source LLMs",
+      "Benchmarks assuming static tool environments and fixed harness"
     ],
     "compares_to_unresolved": [
-      "Transformer architectures with quadratic memory scaling (e.g., LLaMA)",
-      "State Space Models applied to long-context sequence modeling"
+      "Training-only harness design approaches without joint post-training analysis",
+      "Prior post-training methods assuming static, fixed harnesses",
+      "ToolQA-D and ProEvolve benchmarks evaluating environment shifts without harness design control",
+      "Meta-Harness automated harness search without evaluating post-training interactions",
+      "Existing RL algorithms lacking explicit handling of harness design as a variable"
     ]
   },
   {
-    "paper_id": "96",
-    "summary": "This paper analyzes how Transformers and various state space models (SSMs) solve synthetic retrieval tasks, notably Associative Recall (AR) and a novel hierarchical retrieval task, Associative Treecall (ATR). Using mechanistic interpretability methods such as causal interventions, the authors reveal differing internal solutions across architectures, going beyond mere behavioral accuracy.",
-    "why_it_matters": "Understanding the mechanistic underpinnings of retrieval solutions in sequence models informs better architecture design and interpretability, revealing that superficially similar performance can mask fundamentally different computational strategies with distinct generalization capabilities.",
-    "method_setup": "The authors train multiple architectures including Transformers, Based, Mamba, DeltaNet, H3, and Hyena on synthetic AR and ATR datasets, conducting causal interchange interventions at various model components to measure the extent and manner of key-value association and retrieval mechanisms, specifically focusing on induction vs direct retrieval.",
+    "paper_id": "118",
+    "summary": "This paper introduces the compositionality gap metric to quantify large language models' (LMs) limitations in compositional reasoning, demonstrating that despite improvements in single-hop factual recall with scale, multi-hop compositional performance lags behind. It introduces self-ask, an elicitive prompting technique that explicitly decomposes questions into sub-questions to narrow this gap, and shows further improvements when integrating a search engine.",
+    "why_it_matters": "Understanding and reducing the compositionality gap is crucial for building language models capable of multi-step reasoning beyond memorization, enabling more reliable and explainable AI systems that can handle complex queries requiring factual composition.",
+    "method_setup": "The authors constructed the Compositional Celebrities dataset consisting of 8.6k two-hop compositional questions unlikely to have appeared jointly in training, then measured model performance on single-hop sub-questions and full compositions using GPT-3 variants, comparing direct prompting, chain of thought, self-ask prompting, and self-ask combined with search engine retrieval.",
     "key_claims": [
-      "Transformers and Based SSMs implement associative recall via a two-layer induction mechanism storing key-value associations at the value token.",
-      "Other SSMs like Mamba and DeltaNet perform direct retrieval using a single layer, relying heavily on short convolution components for association.",
-      "Mamba actually performs induction-like mechanisms via short convolutions rather than the state space model itself.",
-      "The novel ATR task generalizes findings from AR, showing architectures learn similar mechanisms despite more complex hierarchical retrieval demands.",
-      "Mamba can learn attention-like two-layer induction on ATR if short convolutions are removed, exhibiting mechanistic flexibility.",
-      "Mechanistic evaluations reveal substantive differences between architectures that behavioral metrics do not capture.",
-      "Short convolutions are key architectural components enabling association mechanisms in some SSMs.",
-      "SSMs without short convolutions or with only one layer underperform on these retrieval tasks compared to architectures with proper induction mechanisms."
+      "The compositionality gap remains roughly constant (~40%) across GPT-3 model sizes, indicating scale alone does not improve compositional reasoning.",
+      "Elicitive prompts like chain of thought narrow the compositionality gap by enabling explicit intermediate reasoning steps.",
+      "Self-ask prompting outperforms chain of thought by explicitly producing and answering sub-questions before giving the final answer.",
+      "Integrating a search engine to answer sub-questions further improves accuracy, leveraging external up-to-date knowledge without model fine-tuning.",
+      "Self-ask is effective across multiple datasets including Compositional Celebrities, 2WikiMultiHopQA, Musique, and the manually constructed Bamboogle dataset."
     ],
     "limitations": [
-      "Analyses focus exclusively on synthetic tasks; real-world applicability remains to be investigated.",
-      "Behavioral metrics are still needed to contextualize mechanistic findings, implying mechanistic evaluations alone are insufficient.",
-      "Some architectures require specific hyperparameters or components (e.g., short convolution) to learn mechanisms effectively, limiting generality.",
-      "Position embeddings negatively impact most SSMs, limiting their performance in certain configurations.",
-      "Only small-scale models were trained, raising questions about scaling effects on mechanisms.",
-      "Certain tasks such as sibling queries in ATR are trivial for all architectures and thus not informative for mechanism comparison."
+      "Experiments are limited to 2-hop English question-answering datasets; generalization to other languages, reasoning types, or more hops remains untested.",
+      "Models larger than 175 billion parameters were not evaluated; future models might exhibit different compositional behaviors.",
+      "Evaluation relies on automatically and manually constructed datasets that may not capture all forms of compositional reasoning challenges.",
+      "Integration with search engines depends on the search quality and API availability, affecting reproducibility and applicability."
     ],
     "evaluates": [
-      "Associative Recall (AR) task for in-context retrieval capabilities across architectures.",
-      "Associative Treecall (ATR), a hierarchical retrieval task testing non-positional associations.",
-      "Effects of architectural components like short convolutions and number of layers on retrieval mechanisms.",
-      "Generalization on ATR with train-test splits testing out-of-distribution performance.",
-      "Impact of removing short convolutions on Mamba's mechanism.",
-      "Layer preference for executing retrieval mechanisms in multi-layer SSMs."
+      "GPT-3 family models (including InstructGPT) on multi-hop compositional question answering.",
+      "Direct prompting, chain of thought prompting, self-ask prompting, and self-ask plus search engine methods.",
+      "Performance on newly introduced Compositional Celebrities, Bamboogle, 2WikiMultiHopQA, and Musique datasets."
     ],
     "builds_on_unresolved": [
-      "Associative Recall (AR) synthetic retrieval task.",
-      "Induction mechanism as defined in prior Transformer interpretability work.",
-      "State Space Models (SSMs) as alternative architectures for sequence modeling.",
-      "Prior mechanistic interpretability methods using causal interventions on neural networks."
+      "Chain of thought prompting methods for eliciting reasoning in large language models.",
+      "Multi-hop question answering benchmarks like 2WikiMultiHopQA and Musique.",
+      "Prior works exploring decomposing complex tasks into simpler sub-tasks for question answering."
     ],
     "compares_to_unresolved": [
-      "Transformer architectures primarily using quadratic attention mechanisms.",
-      "Various SSM architectures like Based, Mamba, DeltaNet, H3, and Hyena.",
-      "Approaches relying on behavioral metrics alone for performance evaluation.",
-      "Prior work on architectural improvements informed by synthetic retrieval tasks."
+      "Least-to-most prompting method requiring multiple model passes to answer compositional queries.",
+      "Search engine retrieval alone and with LM postprocessing for open-domain question answering.",
+      "Other decompositional methods that require supervised models or fine-tuning versus self-ask's zero-shot/few-shot approach."
     ]
   },
   {
-    "paper_id": "97",
-    "summary": "This study compares 8B-parameter Mamba, Mamba-2, hybrid Mamba-2-Hybrid, and Transformer language models trained on up to 3.5T tokens, evaluating performance across 35 diverse NLP tasks to understand their strengths and weaknesses at large scale.",
-    "why_it_matters": "Results reveal that pure SSM-based models match or exceed Transformers on many tasks but underperform on in-context learning and copying tasks; hybrid models surpass Transformers in accuracy and enable faster inference, making them promising for efficient, high-quality language modeling.",
-    "method_setup": "Models with equivalent parameter counts and training data were implemented using Megatron-LM with tensor, sequence, and pipeline parallelism; evaluations included short-context, natural long-context, synthetic long-context, and copying tasks using open-source benchmarks in a rigorously controlled setting.",
+    "paper_id": "119",
+    "summary": "The paper investigates how feedforward large language models (LLMs) solve two-hop factual recall tasks represented compositionally as y=g(f(x)). It confirms the persistent 'compositionality gap' where solving components f(x) and g(z) individually does not guarantee solving the composition, and identifies two processing mechanisms: compositional and direct.",
+    "why_it_matters": "Understanding whether LLMs process tasks compositionally or directly informs theories of how these models achieve complex reasoning and their limitations, with implications for improving generalization and explainability in AI.",
+    "method_setup": "The study analyzes feedforward LLMs on two-hop factual recall tasks, decodes residual stream representations to distinguish compositional and direct mechanisms, and examines embedding space geometry's relation to the employed processing method.",
     "key_claims": [
-      "Pure Mamba and Mamba-2 models match or exceed Transformers on many standard NLP tasks when trained at scale.",
-      "Pure SSM models lag behind Transformers on tasks requiring strong in-context learning and copying, like 5-shot MMLU and Phonebook lookup.",
-      "Hybrid Mamba-2-Hybrid models combining SSM, self-attention, and MLP layers outperform Transformers on all evaluated standard tasks.",
-      "The hybrid model is predicted to be up to 8 times faster in token generation during inference compared to Transformers.",
-      "Hybrid models sustain or exceed Transformer accuracy on extended context lengths (16K, 32K, and 128K tokens).",
-      "Hybrid models show superior performance on synthetic long-context retrieval and aggregation tasks compared to Transformers.",
-      "Hybrid models sometimes underperform Transformers on multi-document QA tasks from LongBench but outperform on similar tasks using other datasets.",
-      "Pure SSM models appear to need more training data to grasp multiple-choice task formatting compared to Transformers.",
-      "Hybrid layer ratios significantly influence model performance, with optimal configurations found around 7-8% attention and 30-50% MLP layers.",
-      "Hybrid models benefit from global attention without requiring explicit position embeddings, improving long context generalization."
+      "LLMs still exhibit a compositionality gap despite improvements and model size increases.",
+      "LLMs utilize two distinct processing mechanisms: compositional (computing intermediate variables) and direct (bypassing intermediates).",
+      "Mechanism choice correlates with embedding space geometry: idiomatic (direct) mechanism dominates when tasks align with input-output translations in embedding spaces.",
+      "Both processing mechanisms are comparably effective in producing correct outputs."
     ],
     "limitations": [
-      "Pure SSM models struggle with tasks that demand information routing and copying from context.",
-      "Hybrid models underperform Transformers on certain multi-document QA tasks, possibly due to training data packing methods.",
-      "Hybrid models' performance can be sensitive to prompt formatting, more so than Transformers.",
-      "Training of pure Mamba models is slower than Mamba-2, limiting large-scale training experiments for pure Mamba at 3.5T tokens.",
-      "Current pretraining recipes for long context may confuse SSM layers in hybrid models when unrelated sequences are concatenated.",
-      "In-context learning benefits in the hybrid model are less pronounced compared to Transformers in few-shot settings.",
-      "Position embeddings like RoPE did not improve hybrid model long-context performance and were thus omitted, which may limit applicability in scenarios needing explicit position encoding.",
-      "Further analysis is required to understand hybrid models' reduced performance on multi-document question answering tasks and prompt robustness."
+      "Study focuses only on feedforward LLMs and two-hop factual recall tasks, limiting generalizability to other architectures and tasks.",
+      "Analysis relies on detectability of intermediate variable representations, which might miss subtler forms of compositional processing.",
+      "Exploration is preliminary and does not fully establish causality between embedding geometry and processing mechanism."
     ],
     "evaluates": [
-      "Standard short-context NLP tasks including WinoGrande, PIQA, HellaSwag, ARC-Easy, ARC-Challenge, MMLU, OpenBookQA, TruthfulQA, PubMedQA, RACE, Natural Questions, and SquadV2.",
-      "Natural long-context tasks including NarrativeQA, Qasper, QuALITY, MultiFieldQA-English, HotpotQA, 2WikiMQA, Musique, TREC, and TriviaQA.",
-      "Synthetic long-context tasks from the Phonebook task and RULER benchmark covering Needle in a Haystack tasks, Variable Tracking, Common Words Extraction, Keywords Extraction, and Question Answering variants.",
-      "In-context learning tasks like multi-shot MMLU and Phonebook lookup.",
-      "Model training efficiency via Model Flop Utilization on NVIDIA H100 GPUs.",
-      "Inference speed comparing hybrid models versus Transformers for different sequence lengths."
+      "Feedforward LLM performance on compositional two-hop factual recall tasks.",
+      "Residual stream representations to identify processing mechanisms."
     ],
     "builds_on_unresolved": [
-      "Mamba and Mamba-2 architectures as selective state-space models proposed by prior work.",
-      "NVIDIA Megatron-LM framework for large-scale model training and tensor-pipeline parallelism.",
-      "Recent studies highlighting limitations of pure Mamba models on in-context learning tasks.",
-      "Recent hybrid SSM-Transformer models like Jamba and Zamba that incorporate Mamba and attention layers for efficiency and quality improvements.",
-      "Techniques for extending Transformers and hybrids to long contexts using RoPE and dynamic NTK scaling.",
-      "Benchmarks and data setups from LM Evaluation Harness, LongBench, and RULER for reproducible language model evaluation."
+      "compositionality gap in language models",
+      "debates on compositional vs idiomatic cognitive processing mechanisms",
+      "embedding space geometry as a factor in model behavior"
     ],
     "compares_to_unresolved": [
-      "Standard Transformer-based large language models (e.g., GPT-3 style 8B-parameter Transformer).",
-      "Pure Mamba and Mamba-2 selective state-space models as alternatives to Transformers.",
-      "Hybrid models combining varying proportions of SSM, self-attention, and MLP layers.",
-      "Other hybrid architectures such as Griffin and related SSM plus attention combinations.",
-      "Performance of different positional embedding schemes on Transformers and hybrid models.",
-      "Prior small-scale experimental studies comparing SSM and Transformer models."
+      "prior claims that compositionality is necessary for compositional behavior",
+      "purely symbolic compositional models versus LLMs without explicit symbolic components"
     ]
   },
   {
-    "paper_id": "98",
-    "summary": "TransMamba is a novel language model framework that unifies Transformer and Mamba (a state space model) by sharing parameter matrices and dynamically switching between attention and SSM mechanisms at different token lengths and layers, enabled by a Memory Converter for lossless information flow and a TransPoint schedule for efficiency and performance trade-off.",
-    "why_it_matters": "It addresses the computational inefficiency of Transformers in long-sequence processing and the unstable contextual learning of Mamba by combining their complementary strengths, achieving superior training efficiency and performance for next-generation language modeling.",
-    "method_setup": "TransMamba uses shared QKV/CBx parameters between Transformer and Mamba, applies attention before a layer-specific token position called TransPoint, then switches to SSM after; a theoretical Memory Converter transforms attention outputs to SSM states without information loss, and flexible TransPoint scheduling balances effectiveness and efficiency across layers and sequence lengths.",
+    "paper_id": "120",
+    "summary": "This paper evaluates the effectiveness of masked language model (MLM) pre-training against specialized architectures for improving compositional generalization in semantic parsing tasks, using SCAN and CFQ datasets. Results reveal MLM pre-training significantly outperforms specialized architectures on complex compositional tasks, establishing a new state of the art on the CFQ benchmark.",
+    "why_it_matters": "Compositional generalization is critical for semantic parsing and natural language understanding, yet most methods struggle with it; this work highlights the superior impact of pre-training methods, influencing future model design.",
+    "method_setup": "The study compares performance of MLM-pre-trained models and architecture variants inspired by SCAN and algorithm learning on primitive and complex compositional splits of SCAN and CFQ datasets, measuring semantic parsing accuracy.",
     "key_claims": [
-      "Transformer and Mamba share a deeper mathematical consistency allowing unified parameterization.",
-      "Memory Converter enables lossless transition between attention and SSM mechanisms at TransPoints.",
-      "Flexible TransPoint scheduling across layers improves training efficiency and model performance.",
-      "TransMamba achieves better or comparable accuracy than Transformer, Mamba, and hybrid baselines on diverse tasks, including long-context benchmarks.",
-      "Training and inference TransPoint schedules can differ, allowing flexible inference strategies without major performance loss."
+      "MLM pre-training rivals SCAN-inspired architectures on primitive holdout datasets.",
+      "On complex compositional tasks, MLM pre-training significantly improves performance over comparable non-pre-trained models.",
+      "Specialized architectures from SCAN and algorithm learning literature do not yield significant improvements on complex compositional generalization.",
+      "Combining MLM pre-training with an intermediate representation achieves a new state of the art on the CFQ benchmark."
     ],
     "limitations": [
-      "Current experiments limited to model sizes up to 1.5B parameters; scaling laws remain unexplored.",
-      "Optimal TransPoint positions depend on engineering optimization and may be further refined.",
-      "Variants of Transformer and Mamba were not combined, limiting exploration of hybrid variants."
+      "The study focuses on SCAN and CFQ datasets, which may limit generalizability to other semantic parsing tasks.",
+      "The paper does not explore the effect of combining pre-training with specialized architectures extensively.",
+      "Limited analysis on why certain specialized architectures fail to improve performance.",
+      "Results may depend on specific model configurations and hyperparameters not fully explored."
     ],
     "evaluates": [
-      "Transformer",
-      "Mamba2",
-      "Hybrid",
-      "TransMamba"
+      "Masked language model (MLM) pre-training",
+      "SCAN-inspired architectures for compositional generalization",
+      "Architectures from the area of algorithm learning",
+      "Combination of MLM pre-training with intermediate representations"
     ],
     "builds_on_unresolved": [
-      "Transformer architectures",
-      "Mamba and State Space Models",
-      "Hybrid Transformer-Mamba models",
-      "Consistency of Attention and SSM duality"
+      "SCAN dataset benchmarks",
+      "CFQ dataset benchmarks"
     ],
     "compares_to_unresolved": [
-      "Transformer",
-      "Mamba2",
-      "Hybrid Transformer-Mamba models"
-    ]
-  },
-  {
-    "paper_id": "99",
-    "summary": "This work systematically evaluates hybrid language model architectures that blend Transformer self-attention with structured state space models like Mamba, focusing on inter-layer (sequential) and intra-layer (parallel) fusion strategies. It identifies critical design choices influencing modeling quality, long-context capability, efficiency, and scaling, providing optimal recipes for hybrid model configurations.",
-    "why_it_matters": "Hybrid models offer a compelling balance between quality and computational efficiency, especially for long-context language tasks, overcoming limitations of homogeneous architectures and enabling faster training and inference with reduced memory usage. Understanding effective hybridization strategies is crucial for advancing efficient large-scale language models.",
-    "method_setup": "The authors conduct extensive experiments comparing inter-layer and intra-layer hybrid architectures against pure Transformers, Mamba, and sliding window attention models across multiple dimensions, including language modeling performance, downstream tasks, long-context evaluation, scaling behaviors, training and inference efficiency, and ablation studies on block ratios, module positioning, architectural variants, and dimension allocations.",
-    "key_claims": [
-      "Hybrid architectures consistently outperform homogeneous Transformer and Mamba models across language modeling and downstream benchmarks under identical compute budgets.",
-      "Intra-layer hybrids achieve a better quality-efficiency trade-off than inter-layer hybrids.",
-      "Hybrid models demonstrate robust long-context retrieval and length generalization outperforming individual primitives.",
-      "Hybrid architectures maintain faster end-to-end training times and higher inference throughput with smaller cache sizes due to Mamba's linear complexity.",
-      "Optimal inter-layer hybrid design uses Transformer:Mamba block ratios around 1:5 and avoids placing Transformer blocks in early layers.",
-      "Intra-layer hybrid design benefits from normalization, subtraction or concatenation fusion, and balanced Transformer and Mamba dimension allocations to improve quality and efficiency.",
-      "Hybrid architectures are compatible with Mixture-of-Experts scaling and exhibit intermediate compute-optimal scaling behavior between Transformer and Mamba.",
-      "Dynamic routing in intra-layer hybrids shows specialized contributions, with Mamba dominant in early layers and Transformer in middle layers for global reasoning."
-    ],
-    "limitations": [
-      "Experiments limited to models up to 3B parameters and 60B tokens pretraining; scalability to larger models and longer training remains to be validated.",
-      "Current analysis focuses on base Transformer and Mamba primitives; applicability to more advanced or diverse attention and linear modules requires further study.",
-      "No multimodal or non-language domain evaluations; extension to modalities like video remains future work.",
-      "More efficient architecture search or sensitivity analysis methods could better optimize block positioning than the manual ablations conducted."
-    ],
-    "evaluates": [
-      "Transformer architecture",
-      "Mamba architecture",
-      "Sliding Window Attention (SWA) models",
-      "Inter-layer hybrid models combining Transformer and Mamba blocks",
-      "Intra-layer hybrid models fusing Transformer and Mamba primitives within layers",
-      "Mixture-of-Experts (MoE) integrated models"
-    ],
-    "builds_on_unresolved": [
-      "glorioso2024zamba",
-      "ren2024samba",
-      "team2024jamba",
-      "dong2024hymba",
-      "zuo2025falcon",
-      "waleffe2024empirical",
-      "liu2024deepseek",
-      "kaplan2020scaling",
-      "hoffmann2022training"
-    ],
-    "compares_to_unresolved": [
-      "H3 model",
-      "MambaFormer",
-      "Zamba",
-      "Jamba",
-      "Samba",
-      "Hunyuan-TurboS",
-      "Nemotron nano 2",
-      "IBM Granite 4.0",
-      "MambaInLLaMA",
-      "MOHAWK",
-      "Zebra-Llama",
-      "Jet-Nemotron",
-      "STAR",
-      "Nemotron-Flash",
-      "Composer",
-      "RecurrentGemma",
-      "Griffin",
-      "Titans",
-      "RWKV-X",
-      "MiniMax-01",
-      "Qwen3-Next",
-      "Kimi Linear",
-      "Differential Transformer",
-      "Differential Mamba",
-      "Hymba",
-      "Falcon-H1"
-    ]
-  },
-  {
-    "paper_id": "100",
-    "summary": "Jamba is a large language model using a hybrid Transformer-Mamba mixture-of-experts architecture aimed at efficient large-context processing. It combines Transformer and state-space Mamba layers with MoE modules to optimize throughput, memory usage, and scaling up to 256K token contexts.",
-    "why_it_matters": "Jamba demonstrates that hybrid architectures can achieve state-of-the-art performance comparable to pure Transformer models while enabling significantly longer context lengths with less memory overhead, supporting more efficient inference and training.",
-    "method_setup": "Jamba interleaves Transformer and Mamba layers at a 1:7 ratio, applies MoE to every other MLP layer with 16 experts using top-2 routing, and fits within a single 80GB GPU with int8 weights, enabling high throughput and long-context support. Training used 52B total params with 12B active params, leveraging RMSNorm for stability and no explicit positional encoding.",
-    "key_claims": [
-      "Hybrid Transformer-Mamba architecture outperforms pure Transformer or pure Mamba models on benchmarks.",
-      "MoE integration improves capacity without increasing active compute significantly.",
-      "Jamba supports context lengths up to 256K tokens with drastically reduced KV cache size relative to Transformers.",
-      "Despite fewer attention layers, Jamba retains strong in-context learning capabilities similar to Transformers.",
-      "Jamba achieves 3x throughput of comparable models like Mixtral, especially for long-context inputs."
-    ],
-    "limitations": [
-      "Jamba base model is not instruction-tuned, aligned, or moderated and thus unsuitable for direct production use.",
-      "Current Jamba implementation uses specific hyperparameters tailored for single 80GB GPU setups; other configurations are unexplored.",
-      "No evidence yet that pure Mamba layers alone support induction mechanisms required for in-context learning; the hybrid model relies on attention layers for this.",
-      "Comparisons are primarily with few recent state-of-the-art open models; broader evaluation is limited.",
-      "The production-grade system is released only with base pretraining, leaving downstream fine-tuning and application open for future work."
-    ],
-    "evaluates": [
-      "Standard language model academic benchmarks including HellaSwag, WinoGrande, ARC, PIQA, BoolQ, QuAC, GSM8K, HumanEval, MMLU, and BBH.",
-      "Long-context synthetic needle-in-a-haystack tasks up to 256K tokens.",
-      "Naturalistic few-shot classification tasks with large label spaces.",
-      "Long-context question answering benchmarks including NarrativeQA, LongFQA, Natural Questions, CUAD, and SFiction."
-    ],
-    "builds_on_unresolved": [
-      "Transformer architecture limitations on long context and compute.",
-      "Recent state-space models like Mamba for efficient sequence modeling.",
-      "Mixture-of-experts (MoE) sparsity for scaling model capacity.",
-      "Prior hybrid attempts combining SSMs and attention layers at smaller scales.",
-      "Challenges in training large-scale hybrid architectures without positional embeddings."
-    ],
-    "compares_to_unresolved": [
-      "Mixtral-8x7B as a comparable mixture-of-experts Transformer baseline.",
-      "Llama-2 13B and 70B models for size and performance comparisons.",
-      "Pure Transformer and pure Mamba models for architectural ablations.",
-      "Other hybrid models like H3, Hyena, and StripedHyena with smaller or less effective hybrid designs.",
-      "State-space augmented transformers attempts for combining SSM and attention."
-    ]
-  },
-  {
-    "paper_id": "101",
-    "summary": "Samba is a scalable hybrid neural architecture that combines selective State Space Models (Mamba) with Sliding Window Attention to enable efficient language modeling with theoretically unlimited context length and linear time complexity. It outperforms state-of-the-art transformer models on a wide range of benchmarks and achieves superior speed and length extrapolation in processing long sequences.",
-    "why_it_matters": "Efficiently modeling very long sequences with good extrapolation and computational feasibility remains a critical challenge in language modeling. Samba\u2019s hybrid approach enables unprecedented context length extrapolation while maintaining competitive training speed and strong downstream task performance, making it highly practical for real-world applications requiring extensive context understanding.",
-    "method_setup": "Samba interleaves Mamba layers implementing selective state space models with Sliding Window Attention and SwiGLU MLP layers in a layer-wise fashion, leveraging Mamba's recurrent compression and SWA's precise memory recall. The architecture is scaled up to 3.8B parameters and pretrained on sequences of length 4K, with extensive evaluations on multi-domain benchmarks and length extrapolation tasks up to one million tokens.",
-    "key_claims": [
-      "Samba significantly outperforms transformer and pure SSM baselines on common sense reasoning, language understanding, math, and code generation benchmarks.",
-      "It efficiently extrapolates to context lengths up to 1 million tokens in zero-shot perplexity evaluations and up to 256K tokens with near-perfect recall after instruction tuning.",
-      "Samba achieves 3.7x higher prompt processing throughput and 3.6x faster decoding compared to full-attention transformers on very long sequences.",
-      "Combining Mamba and sliding window attention enables specialization where Mamba captures recurrent structures and SWA handles precise retrieval, improving overall modeling capacity.",
-      "The model trains at speeds comparable to transformer baselines, exhibiting practical wall-time efficiency at scale."
-    ],
-    "limitations": [
-      "Pretrained Samba\u2019s zero-shot retrieval performance still lags behind some zero-shot length extrapolation methods like Self-Extend.",
-      "Hybridization strategy is not uniformly superior; alternative hybrids (e.g., Mamba-SWA-MLP) perform better on specific tasks.",
-      "The model relies on a fixed 2048 sliding window for attention, which may limit flexibility in some long-context tasks.",
-      "Further improvements are needed to enhance the zero-shot retrieval ability without compromising efficiency or extrapolation.",
-      "Current results focus on language modeling and retrieval, leaving generalization to other modalities or tasks unexplored."
-    ],
-    "evaluates": [
-      "Commonsense reasoning benchmarks including ARC, PIQA, WinoGrande, SIQA, and HellaSwag.",
-      "Language understanding datasets including MMLU, BoolQ, OpenbookQA, SQuAD, and TruthfulQA.",
-      "Mathematics and programming tasks including GSM8K, MBPP, HumanEval.",
-      "Long-context evaluation on Proof-Pile, Passkey Retrieval, Phonebook, GovReport, and SQuALITY.",
-      "Perplexity on SlimPajama validation sets at varying sequence lengths (4K to 16K)."
-    ],
-    "builds_on_unresolved": [
-      "Mamba: Linear-time sequence modeling with selective state spaces (Gu & Dao, 2023)",
-      "Sliding Window Attention (Beltagy et al., 2020)",
-      "Previous hybrid SSM-Attention models including sparse and chunked attention methods",
-      "Length extrapolation methods such as Self-Extend (Jin et al., 2024) and position interpolation approaches",
-      "State Space Models and linear recurrent models for sequence modeling"
-    ],
-    "compares_to_unresolved": [
-      "Phi-3 and Llama-2 transformer architectures",
-      "Mistral and Llama-3 large language models",
-      "Hybrid architectures like Mamba-SWA-MLP, Mamba-MLP, and full attention hybrids",
-      "Other linear recurrent and hybrid models including RetNet, GLA, Mega-S6, Griffin, and RecurrentGemma",
-      "Zero-shot length extrapolation techniques and efficient sparse attention models"
-    ]
-  },
-  {
-    "paper_id": "102",
-    "summary": "This paper reveals strong theoretical connections between Transformers and state-space models (SSMs), introducing a unified framework via structured state space duality (SSD). It develops Mamba-2, a refined selective SSM architecture achieving 2-8X speedups with competitive language modeling performance.",
-    "why_it_matters": "Understanding the duality between Transformers and SSMs can lead to more efficient and scalable architectures for sequence modeling, advancing deep learning capabilities in language understanding.",
-    "method_setup": "The authors analyze decompositions of structured semiseparable matrices to establish formal duality between attention-based models and SSMs, culminating in the design and evaluation of the Mamba-2 model for language modeling tasks.",
-    "key_claims": [
-      "Transformers and SSMs are closely related through structured semiseparable matrices.",
-      "The state space duality framework unifies and generalizes variants of attention and SSMs.",
-      "Mamba-2, leveraging SSD, is 2-8X faster than previous selective SSMs while maintaining competitive performance on language modeling."
-    ],
-    "limitations": [
-      "The analysis and experiments focus primarily on small to medium scale tasks, leaving large-scale generalization unaddressed.",
-      "The practical deployment and robustness of Mamba-2 in diverse language modeling scenarios require more validation."
-    ],
-    "evaluates": [
-      "Language modeling tasks comparing Mamba-2 and Transformer performance."
-    ],
-    "builds_on_unresolved": [
-      "Selective State Space Models (Mamba)"
-    ],
-    "compares_to_unresolved": [
-      "Transformer architectures"
-    ]
-  },
-  {
-    "paper_id": "103",
-    "summary": "The paper theoretically analyzes state space models (SSMs) combined with fully connected neural networks (FNNs) and shows their capabilities are comparable to Transformers in dynamic token selection for sequence modeling. Using synthetic tasks (input copying and associative recall) and nonparametric regression, it proves that SSM+FNN architectures can efficiently extract essential tokens depending on the input, matching the performance of Transformers.",
-    "why_it_matters": "Transformers excel due to their dynamic token selection enabled by self-attention but are computationally costly. SSMs are more efficient but traditionally lack such dynamic selection. Demonstrating that SSMs combined with nonlinear layers achieve similar abilities advances understanding of efficient sequence models and helps develop less expensive alternatives to Transformers without sacrificing performance.",
-    "method_setup": "The authors define deep neural networks composed of alternated convolutional SSM layers and token-wise FNN layers with embedding layers, formally establishing their class. They analyze two synthetic tasks involving dynamic token importance and a nonparametric regression problem with sequence inputs modeled as piecewise smooth functions. Theoretical proofs show that two-layer SSM+FNN networks can mimic attention-based token selection and achieve comparable approximation and estimation rates to Transformers.",
-    "key_claims": [
-      "SSMs combined with FNN layers can perform dynamic token selection comparable to Transformers.",
-      "Two-layer SSM+FNN networks can solve input copying and associative recall tasks efficiently, where single SSM layers fail.",
-      "In nonparametric regression of piecewise smooth functions, SSM+FNN models achieve estimation error rates matching Transformers.",
-      "SSMs preceded and followed by FNNs can mimic the attention mechanism by dynamically selecting tokens based on input-dependent inner products.",
-      "Experimental results in DNA sequence classification validate the sparsity and dynamic nature of important tokens and SSMs' ability to extract them.",
-      "Theoretical bounds show that the number of parameters required grows only poly-logarithmically with sequence length and vocabulary size, similar to Transformers."
-    ],
-    "limitations": [
-      "The study focuses on approximation and estimation capabilities but does not analyze optimization efficiency of SSM-based architectures.",
-      "It does not explore extensions to other efficient sequence models like SSMs with data-dependent filters or linear attention mechanisms.",
-      "The analysis assumes general SSM parameter structures and does not address constraints used in practical applications, such as diagonal matrices in filters.",
-      "Empirical experiments are limited; the generalization to large-scale real-world datasets and tasks remains to be demonstrated.",
-      "The precise constants and computational overhead introduced by combining SSMs with FNNs compared to Transformers are not detailed."
-    ],
-    "evaluates": [
-      "Input Copying Task",
-      "Associative Recall Task",
-      "Nonparametric Regression on Piecewise Smooth Functions",
-      "Sparsity and Dynamic Extracting of Important Tokens in Genomic Sequence Classification"
-    ],
-    "builds_on_unresolved": [
-      "Jelassi et al. (2024) on limitations of single SSM layers in input copying task",
-      "Massaroli et al. (2024) showing Hyena-based SSMs\u2019 performance on associative recall",
-      "Takakura & Suzuki (2023) for nonparametric regression with Transformers",
-      "Theoretical studies of SSM universal approximation without nonlinear layers (Wang & Xue, 2023; Cirone et al., 2024; Alonso et al., 2024)"
-    ],
-    "compares_to_unresolved": [
-      "Transformers with self-attention for dynamic token selection (Vaswani et al., 2017)",
-      "Jelassi et al. (2024) showing single SSM layer limitations",
-      "Hyena-based SSMs (Massaroli et al., 2024) with higher parameter complexity on associative recall",
-      "Takakura & Suzuki (2023) demonstrating Transformers' estimation error bounds in nonparametric regression"
-    ]
-  },
-  {
-    "paper_id": "104",
-    "summary": "The paper presents a theoretical generalization error bound for selective state-space models (SSMs), leveraging their structural equivalence to attention mechanisms. It derives a novel covering number-based bound, analyzing how the spectral abscissa of the continuous-time state matrix governs model stability and generalization across sequence lengths. Empirical evaluations on synthetic and real-world tasks validate the theoretical insights.",
-    "why_it_matters": "Selective SSMs offer an efficient alternative to Transformers for sequence modeling but lack theoretical guarantees on their generalization capabilities. This work bridges that gap by providing provable bounds and insights into stability-dependent generalization behavior, essential for designing reliable sequence models.",
-    "method_setup": "The authors analyze selective SSMs by expressing their recursion as an attention-like mechanism, enabling the use of covering numbers and Rademacher complexity tools originally developed for Transformers. They impose norm bounds and Lipschitz continuity assumptions, and characterize generalization error in terms of the spectral properties of the continuous-time state matrix, corroborated by experiments on synthetic majority, IMDb sentiment, and ListOps tasks.",
-    "key_claims": [
-      "Derived a novel covering number-based generalization bound for selective SSMs exploiting their connection to attention.",
-      "Showed that the spectral abscissa of the continuous-time state matrix controls model stability and the length-dependence of the generalization bound.",
-      "Established length-independent generalization guarantees when spectral abscissa is negative and exponential dependence when positive.",
-      "Provided a simpler bound for linear attention as a special case of selective SSMs.",
-      "Empirically demonstrated that successful training drives the spectral abscissa towards stability, yielding length-independent generalization for various tasks."
-    ],
-    "limitations": [
-      "Theory assumes the specific continuous-time discretization of selective SSMs used in Mamba, limiting applicability to other variants.",
-      "Analysis presumes training and test data are drawn from the same distribution; does not address out-of-distribution generalization.",
-      "Bounds rely on norm and Lipschitz continuity assumptions which might not hold universally.",
-      "Lower bounds on Rademacher complexity suggest a gap between theoretical upper and lower bounds remains."
-    ],
-    "evaluates": [
-      "Synthetic majority task for sequence classification.",
-      "IMDb large movie review sentiment classification benchmark.",
-      "ListOps hierarchical reasoning benchmark."
-    ],
-    "builds_on_unresolved": [
-      "Covering number-based generalization bounds developed for Transformers and attention models.",
-      "Prior theoretical results on linear time-invariant SSMs notably from R\u00e1cz et al. and Liu and Li.",
-      "Recent works connecting SSMs to self-attention mechanisms and their expressive power analysis."
-    ],
-    "compares_to_unresolved": [
-      "Generalization behavior compared to vanilla RNNs showing similar stability-dependent length effects.",
-      "Linear attention generalization bounds as simplified selective SSM cases.",
-      "Softmax attention bounds highlighting normalization\u2019s role in length-independence.",
-      "Existing LTI SSM bounds based on system stability and transfer function norms distinct from selective SSM nonlinear analysis."
+      "Specialized architectures proposed for compositional generalization in SCAN",
+      "Algorithm learning architectures designed for compositional generalization"
     ]
   }
 ]

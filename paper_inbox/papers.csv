@@ -115,3 +115,7 @@ paper_id,title,url,year,authors,candidate_topic,source,paper_type,status,enrichm
 114,SayPlan: Grounding Large Language Models using 3D Scene Graphs for Scalable Robot Task Planning,https://arxiv.org/abs/2307.06135,2023,Rana et al.,software-agents,alphaxiv-mcp,system,ingested,enriched
 115,Look Before You Leap: Unveiling the Power of GPT-4V in Robotic Vision-Language Planning,https://arxiv.org/abs/2311.17842,2023,Hu et al.,software-agents,alphaxiv-mcp,system,ingested,enriched
 116,"Large Language Models for Robotics: Opportunities, Challenges, and Perspectives",https://arxiv.org/abs/2401.04334,2024,Wang et al.,software-agents,alphaxiv-mcp,survey,ingested,enriched
+117,The Interplay of Harness Design and Post-Training in LLM Agents,https://arxiv.org/abs/2606.25447,2026,Kim et al.,agent-harnesses,alphaxiv-mcp,system,ingested,enriched
+118,Measuring and Narrowing the Compositionality Gap in Language Models,https://arxiv.org/abs/2210.03350,2022,Press et al.,agent-evaluation,alphaxiv-mcp,benchmark,ingested,enriched
+119,How Do Language Models Compose Functions?,https://arxiv.org/abs/2510.01685,2025,Khandelwal and Pavlick,agent-evaluation,alphaxiv-mcp,benchmark,ingested,enriched
+120,Compositional Generalization in Semantic Parsing: Pre-training vs. Specialized Architectures,https://arxiv.org/abs/2007.08970,2020,Furrer et al.,agent-evaluation,alphaxiv-mcp,benchmark,ingested,enriched

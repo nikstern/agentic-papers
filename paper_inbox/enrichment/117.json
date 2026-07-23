@@ -1,0 +1,41 @@
+{
+  "paper_id": "117",
+  "summary": "This paper investigates how the design of the harness\u2014the wrapper scaffolding around tool-integrated large language model (LLM) agents\u2014interacts with their post-training performance and robustness. By extending ALFWorld to treat the harness as a controllable design variable and supporting evaluations under in-distribution and out-of-distribution (OOD) shifts to tasks and tool environments, the authors empirically show that harness-aware post-training crucially improves in-distribution accuracy and enables robustness across shifts.",
+  "why_it_matters": "Harness design has traditionally been treated as a static engineering detail separate from LLM training, despite substantially affecting agent performance. This work reveals that optimal agent performance and robustness to environmental shifts require joint consideration of harness design and post-training, highlighting the necessity of harness-aware training regimes for practical deployment of tool-integrated LLM agents.",
+  "method_setup": "The authors extend the ALFWorld interactive planning environment to treat the harness as a design variable with three levels of informativeness and to model task and tool environment shifts. Two reinforcement learning algorithms (GRPO and GiGPO) post-train open-source LLM agents (Qwen2.5 variants) under all harness configurations across training and evaluation splits representing in-distribution and OOD scenarios. Evaluation is based on success rates across ALFWorld tasks grouped by difficulty and on robustness to tool schema updates.",
+  "key_claims": [
+    "Harness informativeness monotonically improves zero-shot and post-trained agent success rates across multiple LLM sizes and RL algorithms.",
+    "Post-training with a harness in place yields significantly better results than applying the harness only after training (post-hoc).",
+    "Harness-aware post-training improves agents' robustness to tool environment shifts involving changes in tool invocation protocols.",
+    "Harness design enhances transferability of agents across different task distributions, boosting out-of-distribution generalization.",
+    "Agents trained under minimal harness design suffer catastrophic performance drops under strong tool environment shifts despite sophisticated RL algorithms."
+  ],
+  "limitations": [
+    "Study is limited to a single environment (ALFWorld) and two open-source LLM models; broader validation is pending.",
+    "Only three harness configurations were explored, limiting understanding of finer-grained design trade-offs or automated harness optimization.",
+    "The cost of producing informative harnesses (expert design or costly exploration) is acknowledged but not quantitatively addressed.",
+    "The research focuses on offline post-training and evaluation; online adaptive methods are not examined.",
+    "Compute constraints prevented exploration of larger scale models and wider RL algorithms beyond those tested."
+  ],
+  "evaluates": [
+    "harness design impact on zero-shot LLM agent performance",
+    "post-training effectiveness under distinct harness designs",
+    "robustness of post-trained agents to task distribution shifts (task shift)",
+    "robustness to changes in tool invocation protocols (tool environment shift)",
+    "effect of applying harness at training-time versus post-hoc"
+  ],
+  "builds_on_unresolved": [
+    "ALFWorld text-based planning environment extended for tool-integrated agentic tasks",
+    "Group-relative policy optimization (GRPO) for LLM agent post-training",
+    "Group-in-group policy optimization (GiGPO) enhancing credit assignment in multi-step LLM agent tasks",
+    "Prior work on harness design in training-free regimes for closed-source LLMs",
+    "Benchmarks assuming static tool environments and fixed harness"
+  ],
+  "compares_to_unresolved": [
+    "Training-only harness design approaches without joint post-training analysis",
+    "Prior post-training methods assuming static, fixed harnesses",
+    "ToolQA-D and ProEvolve benchmarks evaluating environment shifts without harness design control",
+    "Meta-Harness automated harness search without evaluating post-training interactions",
+    "Existing RL algorithms lacking explicit handling of harness design as a variable"
+  ]
+}
