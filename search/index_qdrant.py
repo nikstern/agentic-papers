@@ -142,9 +142,7 @@ def build_points(sections, vectors) -> list[PointStruct]:
             "text": section.text,
             "model": get_model_name(),
         }
-        points.append(
-            PointStruct(id=section.point_id, vector=vector.tolist(), payload=payload)
-        )
+        points.append(PointStruct(id=section.point_id, vector=vector, payload=payload))
     return points
 
 
@@ -152,12 +150,16 @@ def main() -> None:
     client = require_client()
     embedder = get_embedder()
     collection = get_collection_name()
-    vector_size = next(embedder.embed(["dimension probe"])).shape[0]
-
     rows = load_rows()
     sections = list(iter_sections(rows))
     texts = [section.text for section in sections]
-    vectors = list(embedder.embed(texts))
+    vector_size = len(embedder.embed_query("dimension probe"))
+    vectors = embedder.embed_documents(texts)
+    if any(len(vector) != vector_size for vector in vectors):
+        raise RuntimeError(
+            "Ollama returned document embeddings that do not match the query "
+            f"embedding dimension ({vector_size})"
+        )
     points = build_points(sections, vectors)
 
     if get_backend_mode() == "server":

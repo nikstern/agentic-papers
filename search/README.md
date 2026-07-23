@@ -2,7 +2,8 @@
 
 This folder adds a minimal semantic search layer for the vault.
 
-Default mode connects to a Qdrant server at `http://127.0.0.1:6333`. The
+Default mode uses Ollama for local embeddings and connects to a Qdrant server at
+`http://127.0.0.1:6333`. Paper text stays on the machine during embedding. The
 repository includes a Docker Compose service for Qdrant, backed by a persistent
 named volume and configured to restart when the local Docker runtime starts.
 
@@ -15,6 +16,7 @@ single-process and should only be used as an explicit fallback.
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r search/requirements.txt
+ollama pull embeddinggemma:300m
 make search-server-up
 python search/index_qdrant.py
 python search/search_qdrant.py "shared memory coordination failures"
@@ -43,7 +45,12 @@ for `colima status` to succeed, and then run `make search-server-up`.
 - `QDRANT_TIMEOUT`: server request timeout in seconds. Defaults to `5`.
 - `QDRANT_COLLECTION`: collection name. Defaults to `agentic-papers`.
 - `QDRANT_LOCAL_PATH`: embedded storage path. Defaults to `search/.qdrant`.
-- `EMBEDDING_MODEL`: FastEmbed model name. Defaults to `BAAI/bge-small-en-v1.5`.
+- `EMBEDDING_MODEL`: installed Ollama model. Defaults to `embeddinggemma:300m`.
+- `OLLAMA_BASE_URL`: local Ollama URL. Defaults to `http://127.0.0.1:11434`; remote endpoints are rejected.
+- `OLLAMA_BATCH_SIZE`: embedding request batch size. Defaults to `32`.
+- `OLLAMA_TIMEOUT`: request timeout in seconds. Defaults to `30`.
+
+Changing `EMBEDDING_MODEL` requires rebuilding the collection with `python search/index_qdrant.py` (or `make ingest`). For longer sections, `qwen3-embedding:0.6b` is an optional long-context alternative.
 
 Server reindexing builds a new physical collection, validates its point count,
 and atomically switches the stable `QDRANT_COLLECTION` alias. Searches therefore

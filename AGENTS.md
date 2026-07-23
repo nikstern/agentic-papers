@@ -78,5 +78,6 @@ Index maintenance:
 - Local embedded Qdrant is single-process; concurrent access should use a server deployment instead.
 
 External papers:
+- Use the `arxiv` MCP server for arXiv discovery and for downloading or reading paper content.
 - Papers found outside the vault are not vault knowledge until they are imported, approved, and ingested.
 - If a newly ingested paper is central to the current discussion, prefer enriching it before relying heavily on the generated note.

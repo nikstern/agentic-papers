@@ -4,7 +4,7 @@ This repository uses a deterministic paper workflow so papers can be discovered,
 
 ## Workflow Spec
 
-1. Discover with alphaXiv MCP.
+1. Discover with the project-configured `arxiv` MCP server.
 2. Present a numbered shortlist. Do not write anything yet.
 3. Wait for explicit approval.
 4. Import approved papers as flat metadata.
@@ -13,13 +13,13 @@ This repository uses a deterministic paper workflow so papers can be discovered,
 7. Store enrichment outside notes under `paper_inbox/enrichment/`.
 8. Record enrichment as `enriched` or `failed` in `papers.csv`.
 9. Rerender notes from metadata plus enrichment when enrichment completes.
-10. Refresh the semantic search index after ingest when the local search environment is available.
+10. Refresh the semantic search index after ingest when the local Ollama and Qdrant search environment is available.
 11. Resolve unresolved relation titles into local links on every ingest or rerender.
 12. Keep unmatched references as unresolved text for future reconciliation.
 
 ## Command Flow
 
-1. Gather candidates with alphaXiv MCP.
+1. Gather candidates with the project-configured `arxiv` MCP server.
 2. Save the shortlist in the JSON shape shown by `paper_inbox/mcp_candidates.example.json`.
 3. Import candidates with `make import-candidates FILE=...`.
 4. Read assigned IDs from `paper_inbox/last_import.json` or the import output.

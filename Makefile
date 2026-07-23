@@ -61,4 +61,5 @@ test:
 	python3 -m unittest discover -s tests -p 'test_*.py' -v
 
 test-search:
+	.venv/bin/python -m unittest discover -s search -p 'test_*.py' -v
 	.venv/bin/python -m unittest discover -s search/tests -p 'test_*.py' -v

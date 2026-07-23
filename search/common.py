@@ -8,7 +8,12 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable
 
-from fastembed import TextEmbedding
+from ollama_embedder import (
+    DEFAULT_OLLAMA_BASE_URL,
+    DEFAULT_OLLAMA_BATCH_SIZE,
+    DEFAULT_OLLAMA_TIMEOUT,
+    OllamaEmbedder,
+)
 from qdrant_client import QdrantClient
 import yaml
 
@@ -18,7 +23,7 @@ INBOX = ROOT / "paper_inbox" / "papers.csv"
 ENRICHMENT_DIR = ROOT / "paper_inbox" / "enrichment"
 NOTES_DIR = ROOT / "paper_notes"
 DEFAULT_COLLECTION = "agentic-papers"
-DEFAULT_MODEL = "BAAI/bge-small-en-v1.5"
+DEFAULT_MODEL = "embeddinggemma:300m"
 DEFAULT_LOCAL_PATH = ROOT / "search" / ".qdrant"
 DEFAULT_QDRANT_MODE = "server"
 DEFAULT_QDRANT_URL = "http://127.0.0.1:6333"
@@ -136,8 +141,15 @@ def require_client() -> QdrantClient:
     return client
 
 
-def get_embedder() -> TextEmbedding:
-    return TextEmbedding(model_name=get_model_name())
+def get_embedder() -> OllamaEmbedder:
+    return OllamaEmbedder(
+        base_url=os.environ.get("OLLAMA_BASE_URL", DEFAULT_OLLAMA_BASE_URL),
+        model=get_model_name(),
+        batch_size=int(
+            os.environ.get("OLLAMA_BATCH_SIZE", str(DEFAULT_OLLAMA_BATCH_SIZE))
+        ),
+        timeout=float(os.environ.get("OLLAMA_TIMEOUT", str(DEFAULT_OLLAMA_TIMEOUT))),
+    )
 
 
 def load_rows() -> list[dict[str, str]]:
