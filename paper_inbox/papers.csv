@@ -93,16 +93,16 @@ paper_id,title,url,year,authors,candidate_topic,source,paper_type,status,enrichm
 92,Retrieval-Augmented LLM Agents: Learning to Learn from Experience,https://arxiv.org/abs/2603.18272,2026,Ferraz et al.,search-retrieval,alphaxiv-mcp,system,ingested,enriched
 93,Reinforcing Multi-Turn Reasoning in LLM Agents via Turn-Level Reward Design,https://arxiv.org/abs/2505.11821,2025,Wei et al.,agent-harnesses,alphaxiv-mcp,system,ingested,enriched
 94,Large Language Model Agents Are Not Always Faithful Self-Evolvers,https://arxiv.org/abs/2601.22436,2026,Zhao et al.,agent-evaluation,alphaxiv-mcp,benchmark,ingested,enriched
-95,Benchmarking the Computational and Representational Efficiency of State Space Models against Transformers on Long-Context Dyadic Sessions,https://arxiv.org/abs/2601.01237,2026,Koledoye et al.,memory-context,alphaxiv-mcp,benchmark,ingested,pending
-96,Mechanistic evaluation of Transformers and state space models,https://arxiv.org/abs/2505.15105,2025,Arora et al.,memory-context,alphaxiv-mcp,benchmark,ingested,pending
-97,An Empirical Study of Mamba-based Language Models,https://arxiv.org/abs/2406.07887,2024,Waleffe et al.,memory-context,alphaxiv-mcp,benchmark,ingested,pending
-98,TransMamba: A Sequence-Level Hybrid Transformer-Mamba Language Model,https://arxiv.org/abs/2503.24067,2025,Li et al.,memory-context,alphaxiv-mcp,system,ingested,pending
-99,Hybrid Architectures for Language Models: Systematic Analysis and Design Insights,https://arxiv.org/abs/2510.04800,2025,Bae et al.,memory-context,alphaxiv-mcp,system,ingested,pending
-100,Jamba: A Hybrid Transformer-Mamba Language Model,https://arxiv.org/abs/2403.19887,2024,Lieber et al.,memory-context,alphaxiv-mcp,system,ingested,pending
-101,Samba: Simple Hybrid State Space Models for Efficient Unlimited Context Language Modeling,https://arxiv.org/abs/2406.07522,2024,Ren et al.,memory-context,alphaxiv-mcp,system,ingested,pending
-102,Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality,https://arxiv.org/abs/2405.21060,2024,Dao and Gu,memory-context,alphaxiv-mcp,position,ingested,pending
-103,State Space Models are Provably Comparable to Transformers in Dynamic Token Selection,https://arxiv.org/abs/2405.19036,2024,Nishikawa and Suzuki,memory-context,alphaxiv-mcp,position,ingested,pending
-104,Generalization Error Analysis for Selective State-Space Models Through the Lens of Attention,https://arxiv.org/abs/2502.01473,2025,Honarpisheh et al.,memory-context,alphaxiv-mcp,position,ingested,pending
+95,Benchmarking the Computational and Representational Efficiency of State Space Models against Transformers on Long-Context Dyadic Sessions,https://arxiv.org/abs/2601.01237,2026,Koledoye et al.,memory-context,alphaxiv-mcp,benchmark,ingested,enriched
+96,Mechanistic evaluation of Transformers and state space models,https://arxiv.org/abs/2505.15105,2025,Arora et al.,memory-context,alphaxiv-mcp,benchmark,ingested,enriched
+97,An Empirical Study of Mamba-based Language Models,https://arxiv.org/abs/2406.07887,2024,Waleffe et al.,memory-context,alphaxiv-mcp,benchmark,ingested,enriched
+98,TransMamba: A Sequence-Level Hybrid Transformer-Mamba Language Model,https://arxiv.org/abs/2503.24067,2025,Li et al.,memory-context,alphaxiv-mcp,system,ingested,enriched
+99,Hybrid Architectures for Language Models: Systematic Analysis and Design Insights,https://arxiv.org/abs/2510.04800,2025,Bae et al.,memory-context,alphaxiv-mcp,system,ingested,enriched
+100,Jamba: A Hybrid Transformer-Mamba Language Model,https://arxiv.org/abs/2403.19887,2024,Lieber et al.,memory-context,alphaxiv-mcp,system,ingested,enriched
+101,Samba: Simple Hybrid State Space Models for Efficient Unlimited Context Language Modeling,https://arxiv.org/abs/2406.07522,2024,Ren et al.,memory-context,alphaxiv-mcp,system,ingested,enriched
+102,Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality,https://arxiv.org/abs/2405.21060,2024,Dao and Gu,memory-context,alphaxiv-mcp,position,ingested,enriched
+103,State Space Models are Provably Comparable to Transformers in Dynamic Token Selection,https://arxiv.org/abs/2405.19036,2024,Nishikawa and Suzuki,memory-context,alphaxiv-mcp,position,ingested,enriched
+104,Generalization Error Analysis for Selective State-Space Models Through the Lens of Attention,https://arxiv.org/abs/2502.01473,2025,Honarpisheh et al.,memory-context,alphaxiv-mcp,position,ingested,enriched
 105,The importance of exploration: Modelling site-constant foraging,https://arxiv.org/abs/2503.20086,2025,MacQueen et al.,central-place-foraging,alphaxiv-mcp,application,ingested,enriched
 106,Critical habitat size of organisms diffusing with stochastic resetting,https://arxiv.org/abs/2505.03727,2025,Menon Jr. et al.,central-place-foraging,alphaxiv-mcp,application,ingested,enriched
 107,Reinforcement Learning as a Robotics-Inspired Framework for Insect Navigation: From Spatial Representations to Neural Implementation,https://arxiv.org/abs/2406.01501,2024,Lochner et al.,central-place-foraging,alphaxiv-mcp,system,ingested,enriched
