@@ -29,6 +29,8 @@ ACTIVE_READING_STATUSES = {"ingested", "skimmed", "deep_read", "approved"}
 TOPIC_WEIGHTS = {
     "memory-context": 4.0,
     "llm-multi-agent-systems": 3.5,
+    "medical-time-series": 3.5,
+    "multi-agent-foundations": 3.0,
     "agent-evaluation": 3.0,
     "task-allocation": 2.5,
     "search-retrieval": 2.5,

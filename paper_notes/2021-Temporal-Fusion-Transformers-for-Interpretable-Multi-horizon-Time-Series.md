@@ -1,0 +1,91 @@
+---
+paper_id: 146
+title: "Temporal Fusion Transformers for Interpretable Multi-horizon Time Series Forecasting"
+year: 2021
+authors: "Lim et al."
+url: "https://arxiv.org/abs/1912.09363"
+paper_type: "system"
+primary_topic: "medical-time-series"
+secondary_topics: []
+status: "ingested"
+priority: "0"
+last_read: ""
+enrichment_status: "enriched"
+tags:
+  - "papers"
+  - "medical-time-series"
+evaluates:
+  - "Temporal Fusion Transformer (TFT)"
+  - "DeepAR"
+  - "DSSM"
+  - "ConvTrans"
+  - "Multi-horizon Quantile Recurrent Forecaster (MQRNN)"
+  - "Seq2Seq models"
+  - "ARIMA"
+  - "ETS"
+  - "TRMF"
+builds_on: []
+compares_to: []
+builds_on_unresolved:
+  - "DeepAR autoregressive recurrent networks"
+  - "ConvTrans convolutional transformer architectures for time series"
+  - "Multi-horizon Quantile Recurrent Forecaster (MQRNN)"
+  - "Sequence-to-sequence models with LSTM encoders"
+compares_to_unresolved:
+  - "ARIMA models for time series forecasting"
+  - "ETS exponential smoothing methods"
+  - "Temporal Regularized Matrix Factorization (TRMF)"
+  - "Deep State Space Models (DSSM)"
+  - "Standard sequence-to-sequence models"
+relations: []
+source: "alphaxiv-mcp"
+---
+<!-- GENERATED:START -->
+# Summary
+The paper introduces the Temporal Fusion Transformer (TFT), an interpretable attention-based deep learning model designed for multi-horizon time series forecasting that integrates static covariates, known future inputs, and observed past inputs. TFT employs specialized components like gating mechanisms, variable selection networks, static covariate encoders, sequence-to-sequence processing, and interpretable multi-head attention for improved forecasting performance and interpretability.
+
+# Why It Matters
+TFT addresses limitations of existing black-box deep learning methods by effectively handling heterogeneous inputs and providing interpretable insights into temporal dynamics, which is crucial for trust and decision-making in high-stakes domains such as healthcare and retail.
+
+# Method / Setup
+TFT utilizes recurrent layers for local temporal processing and interpretable self-attention layers for long-term dependencies, combined with variable selection networks, gating layers, and static covariate encoders; it outputs quantile forecasts trained by minimizing quantile loss, and is benchmarked on real-world datasets with hyperparameter tuning and ablation studies.
+
+# Key Claims
+- TFT achieves state-of-the-art forecasting accuracy across diverse datasets including electricity consumption, traffic, retail sales, and financial volatility.
+- The model effectively integrates heterogeneous inputs including static covariates, known future inputs, and observed inputs without assuming future availability of all variables.
+- Specialized components like gating mechanisms and variable selection networks improve performance by suppressing irrelevant features and adaptively controlling model complexity.
+- Interpretable multi-head attention and variable selection weights enable practical use cases such as analyzing variable importance, visualizing temporal patterns, and detecting regime changes.
+- Ablation studies show all proposed components significantly contribute to performance improvements.
+- TFT can identify persistent temporal patterns like seasonality and relevant events across datasets through attention analyses.
+
+# Limitations
+- The paper does not discuss limitations on the scale of datasets or potential challenges in extremely large temporal dimensions.
+- Potential sensitivity to hyperparameter tuning is noted but not fully elucidated.
+- Interpretability depends on attention and selection mechanisms which may not capture all forms of model reasoning.
+- Comparison to non-attention-based interpretability methods is limited to specific contexts.
+- The computational cost, while manageable, may still be high for some applications without hardware acceleration.
+
+# Connections
+- [[Medical-Time-Series]]
+- `evaluates` Temporal Fusion Transformer (TFT)
+- `evaluates` DeepAR
+- `evaluates` DSSM
+- `evaluates` ConvTrans
+- `evaluates` Multi-horizon Quantile Recurrent Forecaster (MQRNN)
+- `evaluates` Seq2Seq models
+- `evaluates` ARIMA
+- `evaluates` ETS
+- `evaluates` TRMF
+- `builds_on_unresolved` DeepAR autoregressive recurrent networks
+- `builds_on_unresolved` ConvTrans convolutional transformer architectures for time series
+- `builds_on_unresolved` Multi-horizon Quantile Recurrent Forecaster (MQRNN)
+- `builds_on_unresolved` Sequence-to-sequence models with LSTM encoders
+- `compares_to_unresolved` ARIMA models for time series forecasting
+- `compares_to_unresolved` ETS exponential smoothing methods
+- `compares_to_unresolved` Temporal Regularized Matrix Factorization (TRMF)
+- `compares_to_unresolved` Deep State Space Models (DSSM)
+- `compares_to_unresolved` Standard sequence-to-sequence models
+<!-- GENERATED:END -->
+
+## My Notes
+

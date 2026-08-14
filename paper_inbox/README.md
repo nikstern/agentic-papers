@@ -41,6 +41,7 @@ Generated notes keep only flat, Obsidian-safe properties in frontmatter.
 ## Allowed `candidate_topic`
 
 - `llm-multi-agent-systems`
+- `multi-agent-foundations`
 - `agent-evaluation`
 - `agent-harnesses`
 - `task-allocation`
@@ -49,6 +50,7 @@ Generated notes keep only flat, Obsidian-safe properties in frontmatter.
 - `hallucination-factuality`
 - `software-agents`
 - `memory-context`
+- `medical-time-series`
 
 ## Allowed `paper_type`
 

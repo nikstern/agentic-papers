@@ -1,0 +1,106 @@
+[
+  {
+    "title": "Toto 2.0: Time Series Forecasting Enters the Scaling Era",
+    "url": "https://arxiv.org/abs/2605.20119",
+    "year": 2026,
+    "authors": "Khwaja et al.",
+    "candidate_topic": "medical-time-series",
+    "paper_type": "system"
+  },
+  {
+    "title": "MIRA: Medical Time Series Foundation Model for Real-World Health Data",
+    "url": "https://arxiv.org/abs/2506.07584",
+    "year": 2025,
+    "authors": "Li et al.",
+    "candidate_topic": "medical-time-series",
+    "paper_type": "system"
+  },
+  {
+    "title": "Vital Sign Forecasting for Sepsis Patients in ICUs",
+    "url": "https://arxiv.org/abs/2311.04770",
+    "year": 2023,
+    "authors": "Bhatti et al.",
+    "candidate_topic": "medical-time-series",
+    "paper_type": "application"
+  },
+  {
+    "title": "TFT-multi: simultaneous forecasting of vital sign trajectories in the ICU",
+    "url": "https://arxiv.org/abs/2409.15586",
+    "year": 2024,
+    "authors": "He and Chiang",
+    "candidate_topic": "medical-time-series",
+    "paper_type": "system"
+  },
+  {
+    "title": "Low-Rank Adaptation of Time Series Foundational Models for Out-of-Domain Modality Forecasting",
+    "url": "https://arxiv.org/abs/2405.10216",
+    "year": 2024,
+    "authors": "Gupta et al.",
+    "candidate_topic": "medical-time-series",
+    "paper_type": "application"
+  },
+  {
+    "title": "Assessing Foundation Models' Transferability to Physiological Signals in Precision Medicine",
+    "url": "https://arxiv.org/abs/2412.03427",
+    "year": 2024,
+    "authors": "Christenson et al.",
+    "candidate_topic": "medical-time-series",
+    "paper_type": "benchmark"
+  },
+  {
+    "title": "Towards Trustworthy Vital Sign Forecasting: Leveraging Uncertainty for Prediction Intervals",
+    "url": "https://arxiv.org/abs/2509.01319",
+    "year": 2025,
+    "authors": "Wang et al.",
+    "candidate_topic": "medical-time-series",
+    "paper_type": "system"
+  },
+  {
+    "title": "Multimodal Clinical Benchmark for Emergency Care (MC-BEC): A Comprehensive Benchmark for Evaluating Foundation Models in Emergency Medicine",
+    "url": "https://arxiv.org/abs/2311.04937",
+    "year": 2023,
+    "authors": "Chen et al.",
+    "candidate_topic": "medical-time-series",
+    "paper_type": "benchmark"
+  },
+  {
+    "title": "Benchmarking Early Deterioration Prediction Across Hospital-Rich and MCI-Like Emergency Triage Under Constrained Sensing",
+    "url": "https://arxiv.org/abs/2602.20168",
+    "year": 2026,
+    "authors": "Solaiman et al.",
+    "candidate_topic": "medical-time-series",
+    "paper_type": "benchmark"
+  },
+  {
+    "title": "A Transformer-based Diffusion Probabilistic Model for Heart Rate and Blood Pressure Forecasting in Intensive Care Unit",
+    "url": "https://arxiv.org/abs/2301.06625",
+    "year": 2023,
+    "authors": "Chang et al.",
+    "candidate_topic": "medical-time-series",
+    "paper_type": "system"
+  },
+  {
+    "title": "Predicting Intraoperative Hypoxemia with Hybrid Inference Sequence Autoencoder Networks",
+    "url": "https://arxiv.org/abs/2104.14756",
+    "year": 2021,
+    "authors": "Liu et al.",
+    "candidate_topic": "medical-time-series",
+    "paper_type": "system"
+  },
+  {
+    "title": "Classifying the evolution of COVID-19 severity on patients with combined dynamic Bayesian networks and neural networks",
+    "url": "https://arxiv.org/abs/2303.05972",
+    "year": 2023,
+    "authors": "Quesada et al.",
+    "candidate_topic": "medical-time-series",
+    "paper_type": "application"
+  },
+  {
+    "title": "Towards Real-Time Respiratory Motion Prediction based on Long Short-Term Memory Neural Networks",
+    "url": "https://arxiv.org/abs/1901.08638",
+    "year": 2019,
+    "authors": "Lin et al.",
+    "candidate_topic": "medical-time-series",
+    "paper_type": "application"
+  }
+]

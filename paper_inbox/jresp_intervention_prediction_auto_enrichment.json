@@ -1,0 +1,302 @@
+[
+  {
+    "paper_id": "142",
+    "summary": "The paper introduces four clinical prediction benchmarks derived from the MIMIC-III database covering in-hospital mortality, physiologic decompensation, length of stay, and phenotype classification. It proposes strong linear and neural network baselines, including channel-wise LSTMs and multitask learning, evaluates their performances, and provides a standard framework and dataset for benchmarking clinical time series prediction tasks.",
+    "why_it_matters": "Standardized benchmarks are crucial for advancing machine learning in healthcare by enabling reproducible evaluation and comparison of models across diverse clinical prediction tasks, addressing prior challenges in measuring progress due to variability and lack of public datasets.",
+    "method_setup": "The authors curated and processed ICU stay data from MIMIC-III, defined four distinct clinical prediction tasks representing classification and regression problems, and developed linear regression and LSTM-based models, including channel-wise and multitask LSTM architectures with deep supervision. They performed hyperparameter tuning, trained models with optimization techniques, and evaluated using metrics like AUC-ROC, Cohen's kappa, and precision-recall curves with bootstrapped confidence intervals.",
+    "key_claims": [
+      "LSTM-based models significantly outperform linear models across all four tasks.",
+      "Channel-wise LSTMs improve prediction performance by processing individual input variables separately before integration.",
+      "Multitask learning enhances performance for in-hospital mortality and decompensation prediction but may not improve phenotyping due to its intrinsic multitask nature.",
+      "Deep supervision improves model performance for decompensation and length-of-stay prediction tasks.",
+      "The four proposed benchmarks facilitate research on clinically relevant, heterogeneous temporal prediction tasks in intensive care settings."
+    ],
+    "limitations": [
+      "Data is collected from a single EHR system (MIMIC-III), which may contain systematic biases affecting generalizability.",
+      "Phenotype classification uses retrospective labels without timing, limiting temporal phenotype prediction.",
+      "Multitask training poses optimization challenges such as varying convergence rates and overfitting among tasks.",
+      "The length-of-stay prediction task is intrinsically difficult, reflected in lower performance metrics compared to other tasks.",
+      "Linear models with complex feature engineering might close the performance gap but were not extensively explored."
+    ],
+    "evaluates": [
+      "In-hospital mortality prediction models",
+      "Physiologic decompensation prediction models",
+      "Length-of-stay forecasting models",
+      "Acute care phenotype classification models",
+      "Effect of deep supervision and multitask training on LSTM models"
+    ],
+    "builds_on_unresolved": [
+      "PhysioNet/CinC Challenge 2012 for mortality prediction benchmark",
+      "Previous mortality prediction scores like APACHE and SAPS",
+      "Prior phenotype classification and multilabel classification approaches",
+      "Earlier studies using LSTM and neural networks in clinical time series",
+      "The lack of unified multitask clinical prediction benchmarks"
+    ],
+    "compares_to_unresolved": [
+      "Rajkomar et al.'s deep learning models on private EHR datasets",
+      "Prior early warning scores for decompensation such as MEWS and NEWS",
+      "Parallel MIMIC-III benchmarking work without decompensation prediction",
+      "Traditional severity scores (e.g., SAPS) and logistic regression baselines",
+      "Other neural architectures including bidirectional LSTMs and attention models"
+    ]
+  },
+  {
+    "paper_id": "143",
+    "summary": "This paper proposes GRU-D, a novel recurrent neural network model based on gated recurrent units (GRU) designed to handle informative missingness in multivariate time series data. GRU-D integrates masking and time interval information of missing patterns directly into its architecture using trainable decay mechanisms, enhancing its ability to exploit missing data patterns alongside temporal dependencies.",
+    "why_it_matters": "Handling missing values effectively is critical in real-world multivariate time series data, such as clinical records, where missingness can be informative and correlated with outcomes. GRU-D enables improved predictive performance by explicitly modeling these missingness patterns, which traditional imputation or na\u00efve approaches fail to capture.",
+    "method_setup": "GRU-D modifies standard GRU by introducing trainable decay rates that systematically decay input values towards empirical means and decay hidden states based on elapsed time since last observations. It incorporates masking vectors and time intervals as inputs, and learns decay parameters jointly via backpropagation on classification tasks. Evaluations use real-world healthcare datasets (MIMIC-III, PhysioNet), synthetic datasets, and various baselines including non-RNN models and other RNN variants.",
+    "key_claims": [
+      "GRU-D effectively captures and exploits informative missingness patterns through trainable decay mechanisms.",
+      "Incorporating masking and time interval information directly into the GRU architecture improves prediction accuracy over imputation and simple concatenation baselines.",
+      "GRU-D achieves state-of-the-art performance on multiple clinical time series classification tasks involving mortality and diagnoses.",
+      "GRU-D enables earlier and more accurate predictions from partially observed time series compared to existing methods.",
+      "The model scales effectively with growing dataset size, outperforming traditional machine learning and other RNN approaches."
+    ],
+    "limitations": [
+      "The model is primarily evaluated on clinical and synthetic datasets; generalizability to other domains is not thoroughly tested.",
+      "The complexity added by trainable decays may increase training time and require careful hyperparameter tuning.",
+      "GRU-D assumes missingness mechanisms that can be captured by decays; it might not fully model more complex missing data processes.",
+      "Evaluation focuses on classification tasks; its effectiveness on other time series problems (e.g., forecasting) remains unverified."
+    ],
+    "evaluates": [
+      "Non-RNN baselines: Logistic Regression (LR), Support Vector Machines (SVM), Random Forest (RF)",
+      "RNN baselines: GRU-mean, GRU-forward, GRU-simple, LSTM-mean",
+      "GRU variations: GRU-DI, GRU-DS, GRU-DM, GRU-IMP",
+      "Synthetic datasets with varied missingness-label correlations",
+      "Real-world clinical datasets: MIMIC-III, PhysioNet Challenge 2012",
+      "Multi-task classification involving mortality, length-of-stay, cardiac condition, surgery recovery, and ICD-9 code prediction"
+    ],
+    "builds_on_unresolved": [
+      "Standard gated recurrent units (GRU) for time series classification",
+      "Existing imputation techniques: mean imputation, forward imputation",
+      "Prior RNN-based methods incorporating missingness as concatenated features (masking and time interval)",
+      "Health care time series datasets with informative missing data patterns"
+    ],
+    "compares_to_unresolved": [
+      "GRU-mean, GRU-forward, and GRU-simple baseline models",
+      "Non-RNN models (LR, SVM, RF) with various imputation and masking strategies",
+      "Related RNN models in health care not explicitly modeling missingness (e.g., Lipton et al., Choi et al., Pham et al.)",
+      "Other GRU variations applying trainable decays on input or hidden states separately or masking decay"
+    ]
+  },
+  {
+    "paper_id": "146",
+    "summary": "The paper introduces the Temporal Fusion Transformer (TFT), an interpretable attention-based deep learning model designed for multi-horizon time series forecasting that integrates static covariates, known future inputs, and observed past inputs. TFT employs specialized components like gating mechanisms, variable selection networks, static covariate encoders, sequence-to-sequence processing, and interpretable multi-head attention for improved forecasting performance and interpretability.",
+    "why_it_matters": "TFT addresses limitations of existing black-box deep learning methods by effectively handling heterogeneous inputs and providing interpretable insights into temporal dynamics, which is crucial for trust and decision-making in high-stakes domains such as healthcare and retail.",
+    "method_setup": "TFT utilizes recurrent layers for local temporal processing and interpretable self-attention layers for long-term dependencies, combined with variable selection networks, gating layers, and static covariate encoders; it outputs quantile forecasts trained by minimizing quantile loss, and is benchmarked on real-world datasets with hyperparameter tuning and ablation studies.",
+    "key_claims": [
+      "TFT achieves state-of-the-art forecasting accuracy across diverse datasets including electricity consumption, traffic, retail sales, and financial volatility.",
+      "The model effectively integrates heterogeneous inputs including static covariates, known future inputs, and observed inputs without assuming future availability of all variables.",
+      "Specialized components like gating mechanisms and variable selection networks improve performance by suppressing irrelevant features and adaptively controlling model complexity.",
+      "Interpretable multi-head attention and variable selection weights enable practical use cases such as analyzing variable importance, visualizing temporal patterns, and detecting regime changes.",
+      "Ablation studies show all proposed components significantly contribute to performance improvements.",
+      "TFT can identify persistent temporal patterns like seasonality and relevant events across datasets through attention analyses."
+    ],
+    "limitations": [
+      "The paper does not discuss limitations on the scale of datasets or potential challenges in extremely large temporal dimensions.",
+      "Potential sensitivity to hyperparameter tuning is noted but not fully elucidated.",
+      "Interpretability depends on attention and selection mechanisms which may not capture all forms of model reasoning.",
+      "Comparison to non-attention-based interpretability methods is limited to specific contexts.",
+      "The computational cost, while manageable, may still be high for some applications without hardware acceleration."
+    ],
+    "evaluates": [
+      "Temporal Fusion Transformer (TFT)",
+      "DeepAR",
+      "DSSM",
+      "ConvTrans",
+      "Multi-horizon Quantile Recurrent Forecaster (MQRNN)",
+      "Seq2Seq models",
+      "ARIMA",
+      "ETS",
+      "TRMF"
+    ],
+    "builds_on_unresolved": [
+      "DeepAR autoregressive recurrent networks",
+      "ConvTrans convolutional transformer architectures for time series",
+      "Multi-horizon Quantile Recurrent Forecaster (MQRNN)",
+      "Sequence-to-sequence models with LSTM encoders"
+    ],
+    "compares_to_unresolved": [
+      "ARIMA models for time series forecasting",
+      "ETS exponential smoothing methods",
+      "Temporal Regularized Matrix Factorization (TRMF)",
+      "Deep State Space Models (DSSM)",
+      "Standard sequence-to-sequence models"
+    ]
+  },
+  {
+    "paper_id": "147",
+    "summary": "N-HiTS is a novel neural forecasting model that enhances long-horizon time series prediction by integrating multi-rate input sampling and hierarchical interpolation, achieving state-of-the-art accuracy with significantly reduced computational cost compared to Transformer-based methods. The approach decomposes forecasts into components at different frequencies and scales, enabling interpretable, efficient, and accurate predictions.",
+    "why_it_matters": "Long-horizon time series forecasting is crucial for applications in healthcare, energy, and infrastructure but remains challenging due to computational complexity and prediction volatility. N-HiTS addresses these challenges, delivering substantial accuracy gains with much lower computational resources, thus enabling practical deployment in real-world scenarios.",
+    "method_setup": "N-HiTS extends the N-BEATS architecture by applying multi-rate max-pooling sampling to input time series at each block, and employs hierarchical interpolation to generate forecasts at varying temporal granularities across blocks. The model sequentially sums multi-scale forecasts specialized in different frequency bands, trained via MLP blocks with jointly optimized hyperparameters on large-scale benchmark datasets.",
+    "key_claims": [
+      "N-HiTS achieves an average 16% MSE and 14% MAE improvement over existing state-of-the-art Transformer-based multivariate forecasting models across six large datasets.",
+      "The model reduces computational training time by up to 45 times compared to Transformer models and has significantly lower memory usage.",
+      "Hierarchical interpolation enables efficient approximation of arbitrarily long forecasting horizons with smoothness guarantees.",
+      "Multi-rate input sampling and hierarchical interpolation complement each other to improve both forecasting accuracy and computational efficiency.",
+      "N-HiTS provides interpretable decomposition of forecasts into trend/seasonality components at multiple scales.",
+      "The model maintains constant parameter and computational complexity regardless of dataset size due to its univariate setup with shared global parameters.",
+      "Hierarchical interpolation technique benefits other architectures such as DilRNN when integrated.",
+      "Top-down hierarchy (low-frequency components first) improves forecasting performance compared to bottom-up approaches."
+    ],
+    "limitations": [
+      "N-HiTS operates in a univariate setting, potentially limiting exploitation of multivariate correlations.",
+      "The model uses fixed hyperparameter search spaces and architectures; optimal configurations may vary across domains.",
+      "Comparisons to some recent concurrent methods are limited due to differences in experimental setups and lack of multiple runs for variance estimation.",
+      "Interpretability benefits may be less pronounced in architectures other than N-HiTS with hierarchical interpolation.",
+      "The efficacy of combining N-HiTS techniques with Transformer architectures remains an open question for future work."
+    ],
+    "evaluates": [
+      "Electricity Transformer Temperature dataset (ETTm2)",
+      "Exchange rate dataset",
+      "Electricity consumption dataset (ECL)",
+      "San Francisco Bay Area Highway Traffic dataset (TrafficL)",
+      "Weather dataset",
+      "Influenza-like illness dataset (ILI)"
+    ],
+    "builds_on_unresolved": [
+      "N-BEATS neural basis expansion analysis (Oreshkin et al. 2020)",
+      "Transformer-based multi-step forecasting methods such as Autoformer, Informer, LogTrans, and Reformer",
+      "Multi-step direct forecasting and joint forecasting strategies",
+      "Mixed data sampling regression (MIDAS) techniques for long-horizon forecasting",
+      "Interpolation techniques in time series forecasting for unevenly sampled data"
+    ],
+    "compares_to_unresolved": [
+      "State-of-the-art Transformer-based models for long-horizon forecasting (Autoformer, Informer, LogTrans, Reformer)",
+      "N-BEATS architecture variants (interpretable and generic)",
+      "Dilated Recurrent Neural Networks (DilRNN)",
+      "Auto-ARIMA and Prophet models for univariate forecasting",
+      "Recent concurrent Transformer enhancements such as ETSformer and Preformer"
+    ]
+  },
+  {
+    "paper_id": "148",
+    "summary": "This paper introduces DILATE, a novel differentiable loss function combining shape and temporal distortion terms for training deep neural networks to forecast non-stationary multistep time series with sudden changes. DILATE improves prediction of sharp changes by explicitly disentangling shape and timing errors and enabling efficient back-propagation via a custom implementation.",
+    "why_it_matters": "Accurately forecasting non-stationary time series with abrupt regime changes is critical in domains like medical signals and energy forecasting; existing losses like MSE fail to capture timing errors. DILATE better reflects real forecasting quality, improving model performance on shape and temporal metrics, which matters for practical decision-making.",
+    "method_setup": "DILATE loss combines a differentiable soft Dynamic Time Warping (DTW) shape term and a smooth temporal distortion term based on the gradient of smoothed DTW. It is incorporated into training deep neural networks, such as fully connected and Seq2Seq recurrent models, with custom forward and backward passes implemented for scalability and efficiency. Hyperparameters balance shape versus temporal penalty.",
+    "key_claims": [
+      "DILATE explicitly disentangles shape and temporal errors to improve multistep forecasting on non-stationary data with sudden changes.",
+      "DILATE loss outperforms standard MSE and smooth DTW losses across multiple datasets (synthetic, ECG5000, traffic) on shape (DTW, ramp score) and temporal (TDI, Hausdorff) evaluation metrics.",
+      "DILATE is model-agnostic, effective for both fully connected and recurrent architectures, and improves over state-of-the-art forecasting models trained with MSE.",
+      "Custom backward implementation of DILATE significantly speeds up computation compared to standard autodiff, enabling scalability to longer prediction horizons.",
+      "DILATE's separate optimization of shape and temporal terms yields better disentanglement than intertwined temporal constraints in DTW variants."
+    ],
+    "limitations": [
+      "DILATE, while outperforming on shape and timing metrics, is sometimes outperformed on MSE, indicating a trade-off in optimization objectives.",
+      "Experiments are limited to deterministic forecasting; extension to probabilistic forecasting is suggested as future work.",
+      "The approach requires tuning the balance hyperparameter alpha for combining shape and temporal losses, which may require dataset-specific validation.",
+      "The temporal loss relies on a smooth approximation of DTW gradients, which may have limitations in distinguishing complex temporal distortions.",
+      "Evaluation focuses on univariate and mostly small to medium scale datasets; applicability to high-dimensional multivariate series requires further exploration."
+    ],
+    "evaluates": [
+      "Mean Squared Error (MSE) loss",
+      "Smooth Dynamic Time Warping (DTW) loss",
+      "Ramp score",
+      "Temporal Distortion Index (TDI)",
+      "Hausdorff distance between detected change points",
+      "Weighted DTW and Band constrained DTW variants"
+    ],
+    "builds_on_unresolved": [
+      "Dynamic Time Warping (DTW)",
+      "Smooth DTW differentiable loss",
+      "Temporal Distortion Index (TDI)"
+    ],
+    "compares_to_unresolved": [
+      "Mean Squared Error (MSE) loss function",
+      "Weighted DTW and Band Constraint DTW",
+      "LSTNet",
+      "Tensor-Train RNN (TT-RNN)"
+    ]
+  },
+  {
+    "paper_id": "149",
+    "summary": "Chronos is a framework that adapts transformer-based language models to probabilistic time series forecasting by tokenizing and quantizing scaled time series data into discrete vocabularies, training on a large diverse corpus including synthetic data, and using a categorical cross-entropy loss without time series-specific architectural changes. It achieves strong in-domain and zero-shot forecasting performance across 42 benchmark datasets, outperforming classical, task-specific, and pretrained models while offering inference-only deployment convenience.",
+    "why_it_matters": "Chronos provides a minimalist, effective approach to unify time series forecasting tasks by leveraging existing language model architectures and training procedures, achieving competitive zero-shot accuracy and simplifying forecasting pipelines, thus positioning pretrained models as practical generalist forecasters across diverse domains.",
+    "method_setup": "Chronos scales and mean-normalizes univariate time series, quantizes them into discrete bins forming token sequences compatible with transformer architectures (mainly T5 variants), trains models with cross-entropy loss on a combination of real, augmented (TSMixup), and synthetic (KernelSynth via Gaussian processes) data, and generates probabilistic forecasts via autoregressive token sampling and inverse transformations. Evaluation covers in-domain and zero-shot tasks on 42 datasets with metrics like Weighted Quantile Loss and MASE.",
+    "key_claims": [
+      "Chronos models significantly outperform local and many task-specific deep learning baselines on datasets included in training (in-domain).",
+      "Chronos achieves strong zero-shot forecasting performance on unseen datasets, rivaling task-specific deep learning methods without dataset-specific tuning.",
+      "Use of simple tokenization via scaling and quantization enables application of standard language models without time-series-specific architectural changes.",
+      "Data augmentation with TSMixup and synthetic Gaussian process-based data improves model robustness and generalization.",
+      "Fine-tuning Chronos models on individual datasets further boosts performance beyond zero-shot results.",
+      "Random initialization of models performs as well or better than initializing with pretrained language model weights for time series forecasting.",
+      "Larger Chronos models yield better forecasting performance but have increased inference latency.",
+      "Categorical output distributions allow modeling flexible and multimodal predictive distributions despite using a non-distance-aware cross-entropy loss.",
+      "Chronos can effectively model fundamental time series components such as noise, trend, seasonality, and autoregressive processes.",
+      "Limitations in tokenization include range overflow and precision loss for certain scale-variance relationships in time series data."
+    ],
+    "limitations": [
+      "Chronos struggles with time series exhibiting strong exponential trends due to limited representation in training data and tokenization constraints.",
+      "Forecasting performance can degrade when the context window is too short to capture long-term trends or seasonality.",
+      "The fixed quantization bin range limits representation of values outside [-15s, 15s], causing overflow or precision loss for some series.",
+      "Inference speed of larger Chronos models is slower compared to task-specific deep learning models, which may hinder real-time applications.",
+      "Current framework primarily handles univariate, uniformly-sampled time series, lacking mechanisms to directly incorporate exogenous covariates or multivariate dependencies.",
+      "Use of standard cross-entropy loss ignores the ordinal nature of quantized tokens, potentially limiting regression accuracy.",
+      "Synthetic data generation via Gaussian processes does not capture all real-world data intricacies, limiting the improvement from synthetic data augmentation."
+    ],
+    "evaluates": [
+      "Classical statistical forecasting models such as AutoETS, AutoARIMA, AutoTheta, and SCUM ensemble.",
+      "Task-specific deep learning models including DeepAR, TFT, PatchTST, N-BEATS, N-HiTS, WaveNet.",
+      "Pretrained time series models like Lag-Llama and Moirai-1.0-R.",
+      "Zero-shot baseline methods such as ForecastPFN and LLMTime.",
+      "Transformer-based models fine-tuned on individual datasets (e.g., GPT4TS)."
+    ],
+    "builds_on_unresolved": [
+      "LLMTime and GPT4TS which adapt large language models for time series via prompting or fine-tuning but rely on pretrained NLP LLMs and large-scale models.",
+      "Recent concurrent transformer-based pretrained time series models incorporating time-series-specific features or architectures.",
+      "Techniques for time series data augmentation and synthetic data generation, including Mixup and Gaussian process synthesis.",
+      "Methodologies for zero-shot time series forecasting and transfer learning approaches."
+    ],
+    "compares_to_unresolved": [
+      "Classical and local forecasting models (ETS, ARIMA etc.) which fit models per time series independently.",
+      "Deep learning models trained per-task, lacking generalization to unseen datasets.",
+      "Large-scale pretrained NLP language models applied to time series forecasting either via prompting or fine-tuning, which require significant compute or task-specific engineering.",
+      "Prior approaches to zero-shot forecasting trained only on synthetic data without mixing real datasets.",
+      "Existing data augmentation methods like Mixup adapted for time series, and synthetic data generation via more complex or domain-specific mechanisms."
+    ]
+  },
+  {
+    "paper_id": "150",
+    "summary": "The paper introduces Moirai, a masked encoder-based universal transformer model for time series forecasting trained on LOTSA, a large-scale heterogeneous time series archive with over 27 billion observations from nine domains. Moirai addresses unique challenges of universal forecasting\u2014including cross-frequency learning, arbitrary variate number handling, and flexible distribution modeling\u2014achieving competitive or superior zero-shot forecasting performance compared to specialized full-shot models.",
+    "why_it_matters": "Traditional deep learning forecasting is constrained to one-model-per-dataset, limiting generalization and adaptability; Moirai demonstrates the feasibility of a single large model capable of universal time series forecasting across diverse datasets and domains, enabling efficiency and broad applicability without retraining per task.",
+    "method_setup": "Moirai employs multi patch size input/output projection layers to capture different frequency patterns, an Any-variate Attention mechanism enabling arbitrary multivariate inputs with permutation properties, and a mixture of parametric distributions for flexible probabilistic forecasting. It is pretrained on the LOTSA dataset with varying context and prediction lengths via masked encoder architecture and optimized using negative log-likelihood of the mixture distribution.",
+    "key_claims": [
+      "Moirai handles multiple time series frequencies effectively via multi patch size projections.",
+      "Any-variate Attention allows Moirai to process time series with arbitrary dimensions while respecting permutation invariances.",
+      "Flexible mixture distribution modeling improves probabilistic forecast quality over simpler parametric heads.",
+      "Training on the large, diverse LOTSA dataset enables Moirai to generalize zero-shot to unseen datasets competitively with full-shot specialized models.",
+      "Sequence packing during training substantially increases effective batch size and performance.",
+      "Moirai achieves state-of-the-art in-distribution and out-of-distribution forecasting across diverse datasets without fine-tuning."
+    ],
+    "limitations": [
+      "Limited hyperparameter tuning due to resource constraints may restrict current model performance.",
+      "Heuristic multi patch size mapping lacks unified, principled approach.",
+      "Current architecture scales less effectively to very high-dimensional time series inputs.",
+      "Masked encoder architecture may limit extensions requiring full autoregressive modeling.",
+      "LOTSA dataset, while large, could be expanded with more domain and frequency diversity.",
+      "Multi-modality (e.g., integration of tabular or textual data) is not addressed yet."
+    ],
+    "evaluates": [
+      "Monash Time Series Forecasting Benchmark datasets for in-distribution evaluation.",
+      "Multiple unseen datasets across energy, transport, climate, sales, and healthcare domains for zero-shot probabilistic forecasting.",
+      "Long sequence forecasting benchmark datasets excluding overlap with LOTSA sources.",
+      "Comparison against full-shot baselines including DeepAR, PatchTST, TiDE, TFT, AutoARIMA, and Seasonal Naive."
+    ],
+    "builds_on_unresolved": [
+      "TimeGPT-1 zero-shot forecasting model but lacking flexible probabilistic output.",
+      "ForecastPFN synthetic-data trained zero-shot forecasting specialized to low-data settings.",
+      "Lag-llama foundation model for forecasting using LLaMA architecture with restricted distribution heads.",
+      "TimesFM decoder-only patch-based forecasting model without flexible distributions.",
+      "TTM (Tiny Time Mixers) light mixture architectures for zero-shot forecasting.",
+      "LLMTime leveraging large language models for time series as strings with categorical distributions."
+    ],
+    "compares_to_unresolved": [
+      "DeepAR autoregressive recurrent network (Salinas et al. 2020) for probabilistic forecasting.",
+      "PatchTST transformer-based model treating each variate independently.",
+      "TiDE time series dense encoder for long-term forecasting.",
+      "Temporal Fusion Transformer (TFT) for multi-horizon forecasting.",
+      "AutoARIMA and Seasonal Naive classical statistical baselines.",
+      "iTransformer, TimesNet, Crossformer, DLinear, SCINet and FEDformer for long sequence forecasting tasks."
+    ]
+  }
+]

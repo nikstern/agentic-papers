@@ -1,0 +1,103 @@
+[
+  {
+    "paper_id": 121,
+    "summary": "Open Problems in Cooperative AI frames cooperation as a distinct AI research agenda spanning machine-machine and human-machine interaction, with attention to both individual capabilities and population-level institutions.",
+    "why_it_matters": "It gives the vault a broad foundation for asking what multi-agent systems should optimize beyond task completion and connects modern agent design to game theory, social choice, human interaction, and institutional design.",
+    "method_setup": "The position paper synthesizes work across multi-agent systems, reinforcement learning, game theory, social choice, human-machine interaction, and the behavioral sciences. It organizes cooperative capabilities around understanding, communication, commitment, and institutions, and distinguishes an individual-agent perspective from a social-planner perspective.",
+    "key_claims": [
+      "Cooperation should be treated as an explicit AI research problem rather than a side effect of general capability.",
+      "Useful cooperative agents need capabilities for understanding other actors, establishing common ground, making credible commitments, and operating within or improving institutions.",
+      "Evaluation should cover both machine-machine and human-machine cooperation under common and conflicting interests.",
+      "Cooperative capabilities can also enable exclusion, collusion, deception, or coercion, so welfare effects and governance must be studied directly."
+    ],
+    "limitations": [
+      "The paper is a research agenda rather than an implemented system or benchmark.",
+      "Its taxonomy is intentionally broad and does not specify a single operational evaluation protocol.",
+      "Many proposed capabilities and institutional interventions require empirical validation in realistic mixed human-machine populations."
+    ],
+    "evaluates": [
+      "cooperative AI research agenda",
+      "cooperative capabilities",
+      "human-machine cooperation",
+      "institutional mechanisms for cooperation"
+    ],
+    "builds_on_unresolved": [
+      "multi-agent systems",
+      "game theory",
+      "social choice",
+      "human-machine interaction"
+    ],
+    "compares_to_unresolved": []
+  },
+  {
+    "paper_id": 122,
+    "summary": "MADDPG adapts actor-critic learning to mixed cooperative-competitive multi-agent environments by training decentralized actors with centralized critics that can observe the actions and observations of other agents.",
+    "why_it_matters": "It is a foundational systems paper for non-stationarity, partner modeling, and centralized-training/decentralized-execution tradeoffs that recur in modern LLM-agent orchestration.",
+    "method_setup": "The paper formulates partially observable Markov games, introduces a centralized critic for each agent while retaining local actors at execution time, adds online approximations of other agents' policies and policy ensembles, and evaluates on cooperative communication, navigation, deception, keep-away, predator-prey, and covert-communication tasks in the multi-agent particle environment.",
+    "key_claims": [
+      "Independent reinforcement learners face non-stationarity because every other agent's changing policy alters the effective environment.",
+      "A centralized critic conditioned on all agents' observations and actions can stabilize training while preserving decentralized execution.",
+      "MADDPG outperforms decentralized DDPG and other standard reinforcement-learning baselines across cooperative and competitive coordination tasks.",
+      "Training against policy ensembles improves robustness to changes in collaborator and competitor behavior."
+    ],
+    "limitations": [
+      "Centralized critic inputs grow with the number of agents, limiting scalability.",
+      "Experiments use small simulated particle environments rather than open-world or human-partner settings.",
+      "The method assumes access during training to joint information or sufficiently accurate models of other agents.",
+      "The results concern learned control policies and do not directly establish that the same algorithm should train LLM-agent teams."
+    ],
+    "evaluates": [
+      "centralized training with decentralized execution",
+      "multi-agent non-stationarity",
+      "cooperative and competitive coordination",
+      "learned communication",
+      "policy robustness"
+    ],
+    "builds_on_unresolved": [
+      "Deep Deterministic Policy Gradient",
+      "partially observable Markov games"
+    ],
+    "compares_to_unresolved": [
+      "DDPG",
+      "DQN",
+      "TRPO",
+      "independent actor-critic"
+    ]
+  },
+  {
+    "paper_id": 123,
+    "summary": "The Hanabi Challenge proposes Hanabi as a benchmark for cooperative agents that must act under imperfect information, limited communication, and conventions that encode beliefs and intentions.",
+    "why_it_matters": "It supplies a concrete foundation for common-ground, partner-modeling, and protocol-compatibility failures that are easy to overlook when LLM-agent teams are evaluated only in self-play or with fixed prompts.",
+    "method_setup": "The paper introduces the open-source Hanabi Learning Environment, defines self-play and ad-hoc-team evaluation settings, and benchmarks learning and hand-coded agents across two-to-five-player games. Ad-hoc evaluation pairs independently trained policies that may use incompatible conventions.",
+    "key_claims": [
+      "Hanabi makes reasoning about partners' beliefs, intentions, and conventions central to cooperative success.",
+      "Strong self-play performance does not imply compatibility with unfamiliar partners.",
+      "Contemporary learning agents can perform reasonably in self-play yet remain brittle in ad-hoc teams.",
+      "Multi-agent evaluation should include held-out partner populations rather than only teams trained together."
+    ],
+    "limitations": [
+      "Hanabi is a stylized card game, so results do not directly establish performance in open-ended real-world collaboration.",
+      "The paper's ad-hoc experiments cover a limited pool of learning agents and do not directly evaluate human partners.",
+      "Some hand-coded agents could not be included in cross-play because their implementations were incompatible.",
+      "A high game score does not by itself isolate theory-of-mind reasoning from learned conventions or search."
+    ],
+    "evaluates": [
+      "cooperative multi-agent learning",
+      "self-play",
+      "ad-hoc team play",
+      "partner compatibility",
+      "belief and intention reasoning"
+    ],
+    "builds_on_unresolved": [
+      "decentralized Markov decision processes",
+      "theory of mind",
+      "dynamic epistemic logic"
+    ],
+    "compares_to_unresolved": [
+      "ACHA",
+      "BAD",
+      "Rainbow",
+      "rule-based Hanabi agents"
+    ]
+  }
+]
