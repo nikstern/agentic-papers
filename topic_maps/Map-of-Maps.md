@@ -11,6 +11,8 @@ Index of the vault's topic maps and cross-cutting synthesis hubs.
 
 ## Core Topic Maps
 
+- [[Medical-Time-Series]]
+- [[Multi-Agent-Foundations]]
 - [[LLM-Multi-Agent-Systems]]
 - [[Memory-Context]]
 - [[Software-Agents]]
@@ -53,9 +55,14 @@ Index of the vault's topic maps and cross-cutting synthesis hubs.
 
 ### Agent systems
 
+- [[Multi-Agent-Foundations]]
 - [[LLM-Multi-Agent-Systems]]
 - [[Task-Allocation]]
 - [[Agent-Evaluation]]
+
+### Medical predictive modeling
+
+- [[Medical-Time-Series]]
 - [[Self-Improving-Agents]]
 
 ## Notes

@@ -1,0 +1,87 @@
+---
+paper_id: 124
+title: "Toto 2.0: Time Series Forecasting Enters the Scaling Era"
+year: 2026
+authors: "Khwaja et al."
+url: "https://arxiv.org/abs/2605.20119"
+paper_type: "system"
+primary_topic: "medical-time-series"
+secondary_topics: []
+status: "ingested"
+priority: "0"
+last_read: ""
+enrichment_status: "enriched"
+tags:
+  - "papers"
+  - "medical-time-series"
+evaluates:
+  - "BOOM observability metric forecasting benchmark"
+  - "GIFT-Eval general-purpose multi-domain forecasting benchmark"
+  - "TIME zero-shot contamination-resistant forecasting benchmark"
+builds_on: []
+compares_to: []
+builds_on_unresolved:
+  - "Toto 1.0: a prior time series optimized transformer with autoregressive decoding and Student-T mixture outputs"
+  - "TiRex: autoregressive recurrent transformer with contiguous patch masking inspired architecture"
+  - "Chronos-2: strong foundation model and competitor on GIFT-Eval and TIME"
+  - "Muon and NorMuon optimizers for efficient large-scale model training"
+  - "Prior u-\u03bcP parametrization methods for hyperparameter transfer and scaling"
+  - "Synthetic data generation methods for nonstationary and changepoint-rich signals"
+compares_to_unresolved:
+  - "PatchTST-FM r1: foundation model competing on GIFT-Eval and TIME"
+  - "Chronos-2: strong baseline with longer sequence training and competitive results"
+  - "TiRex: original autoregressive recurrent transformer with patch masking"
+  - "FlowState: sampling-rate invariant TSFM"
+  - "FFORMA ensembling approach for heterogeneous forecasting models"
+relations: []
+source: "alphaxiv-mcp"
+---
+<!-- GENERATED:START -->
+# Summary
+Toto 2.0 presents a family of five scalable time series forecasting models from 4M to 2.5B parameters offering reliable improvements with size scaling, trained exclusively on synthetic and internal observability data. The models advance state-of-the-art on multiple benchmarks and employ architectural innovations like contiguous patch masking, quantile output heads, and a hyperparameter transfer pipeline based on u-μP.
+
+# Why It Matters
+Reliable scaling of time series foundation models enables practitioners to balance forecast quality and inference cost, surpassing classical baselines and prior models while facilitating production-ready deployment for diverse domains including observability metrics. This represents a significant step toward generalizable, high-quality forecasting at scale.
+
+# Method / Setup
+Toto 2.0 uses a decoder-only patched transformer with contiguous patch masking for single-pass parallel decoding and a quantile output head trained with pinball loss; optimizer NorMuon is used for matrix parameters, with architecture and training hyperparameters optimized on a 10M parameter proxy and transferred across scales using the unit-scaled maximal update parametrization (u-μP). Training data comprises entirely internal observability metrics from Datadog and synthetic data, excluding public data during pretraining but incorporating it in finetuning.
+
+# Key Claims
+- Scaling Toto 2.0 models from 4M to 2.5B parameters reliably improves forecasting quality across BOOM, GIFT-Eval, and TIME benchmarks.
+- A single training recipe and hyperparameter configuration optimized at proxy scale transfers effectively across all model sizes using u-μP.
+- The contiguous patch masking architecture enables faster and more stable single-pass decoding compared to autoregressive methods.
+- Quantile output heads with pinball loss improve training stability and calibration over prior Student-T mixture models at larger scales.
+- Optimizing with NorMuon adapts better to the pinball loss's sign-based gradients than AdamW, enhancing training efficiency.
+- Toto 2.0 models generalize well to benchmarks without exposure to public datasets during pretraining, demonstrating cross-domain robustness.
+- Finetuned and ensembled variants further improve over the base models on GIFT-Eval leaderboard.
+- Larger models maintain coherent multi-scale forecasts beyond their training context, outperforming prior generation TSFMs in long-horizon stability.
+
+# Limitations
+- Pretraining data is limited to synthetic and internal observability datasets from a single provider, possibly limiting generalization to other real-world time series domains.
+- Long-horizon forecasting beyond the training sequence length still shows some degradation in structure, indicating room for improved extrapolation capability.
+- The approach excludes a systematic study of the impact of incorporating diverse public datasets during pretraining, relying on empirical hyperparameter sweeps only.
+- Potential prediction interval properties and OOD behavior lag behind classical statistical methods, requiring architectural or objective innovations.
+- The quantile output head approach, while stable, still requires sorting predicted quantiles during inference to avoid crossings, adding complexity.
+- The current work focuses on univariate and multivariate series but does not yet address multimodal or complex real-world telemetry beyond metrics.
+- Overall scaling beyond 2.5B parameters and larger pretraining data volumes remain open questions.
+
+# Connections
+- [[Medical-Time-Series]]
+- `evaluates` BOOM observability metric forecasting benchmark
+- `evaluates` GIFT-Eval general-purpose multi-domain forecasting benchmark
+- `evaluates` TIME zero-shot contamination-resistant forecasting benchmark
+- `builds_on_unresolved` Toto 1.0: a prior time series optimized transformer with autoregressive decoding and Student-T mixture outputs
+- `builds_on_unresolved` TiRex: autoregressive recurrent transformer with contiguous patch masking inspired architecture
+- `builds_on_unresolved` Chronos-2: strong foundation model and competitor on GIFT-Eval and TIME
+- `builds_on_unresolved` Muon and NorMuon optimizers for efficient large-scale model training
+- `builds_on_unresolved` Prior u-μP parametrization methods for hyperparameter transfer and scaling
+- `builds_on_unresolved` Synthetic data generation methods for nonstationary and changepoint-rich signals
+- `compares_to_unresolved` PatchTST-FM r1: foundation model competing on GIFT-Eval and TIME
+- `compares_to_unresolved` Chronos-2: strong baseline with longer sequence training and competitive results
+- `compares_to_unresolved` TiRex: original autoregressive recurrent transformer with patch masking
+- `compares_to_unresolved` FlowState: sampling-rate invariant TSFM
+- `compares_to_unresolved` FFORMA ensembling approach for heterogeneous forecasting models
+<!-- GENERATED:END -->
+
+## My Notes
+

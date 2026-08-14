@@ -1,0 +1,114 @@
+[
+  {
+    "title": "A Machine Learning Trauma Triage Model for Critical Care Transport",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/40489113/",
+    "year": 2025,
+    "authors": "Galvagno et al.",
+    "candidate_topic": "medical-time-series",
+    "paper_type": "application"
+  },
+  {
+    "title": "Comparison of Continuous Vital Signs Data Analysis Versus Venous Lactate for the Prediction of Lifesaving Interventions in Patients With Traumatic Shock",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39447081/",
+    "year": 2025,
+    "authors": "Yang et al.",
+    "candidate_topic": "medical-time-series",
+    "paper_type": "application"
+  },
+  {
+    "title": "Manual Vital Signs Reliably Predict Need for Life-Saving Interventions in Trauma Patients",
+    "url": "https://doi.org/10.1097/01.ta.0000188125.44129.7c",
+    "year": 2005,
+    "authors": "Holcomb et al.",
+    "candidate_topic": "medical-time-series",
+    "paper_type": "application"
+  },
+  {
+    "title": "Compensatory Reserve and Pulse Character: Enhanced Potential to Predict Urgency for Transfusion and Other Life-Saving Interventions After Traumatic Injury",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/35748680/",
+    "year": 2022,
+    "authors": "Convertino et al.",
+    "candidate_topic": "medical-time-series",
+    "paper_type": "application"
+  },
+  {
+    "title": "Pilot Deployment of a Machine-Learning Enhanced Prediction of Need for Hemorrhage Resuscitation After Trauma: The ShockMatrix Pilot Study",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39468585/",
+    "year": 2024,
+    "authors": "Gauss et al.",
+    "candidate_topic": "medical-time-series",
+    "paper_type": "application"
+  },
+  {
+    "title": "Multitask Learning and Benchmarking with Clinical Time Series Data",
+    "url": "https://arxiv.org/abs/1703.07771",
+    "year": 2019,
+    "authors": "Harutyunyan et al.",
+    "candidate_topic": "medical-time-series",
+    "paper_type": "benchmark"
+  },
+  {
+    "title": "Recurrent Neural Networks for Multivariate Time Series with Missing Values",
+    "url": "https://arxiv.org/abs/1606.01865",
+    "year": 2018,
+    "authors": "Che et al.",
+    "candidate_topic": "medical-time-series",
+    "paper_type": "system"
+  },
+  {
+    "title": "Development and Validation of a Deep Learning Model for Prediction of Adult Physiological Deterioration",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39258951/",
+    "year": 2024,
+    "authors": "Delahanty et al.",
+    "candidate_topic": "medical-time-series",
+    "paper_type": "application"
+  },
+  {
+    "title": "Sequential Multi-Dimensional Self-Supervised Learning for Clinical Time Series",
+    "url": "https://proceedings.mlr.press/v202/raghu23a.html",
+    "year": 2023,
+    "authors": "Raghu et al.",
+    "candidate_topic": "medical-time-series",
+    "paper_type": "system"
+  },
+  {
+    "title": "Temporal Fusion Transformers for Interpretable Multi-horizon Time Series Forecasting",
+    "url": "https://arxiv.org/abs/1912.09363",
+    "year": 2021,
+    "authors": "Lim et al.",
+    "candidate_topic": "medical-time-series",
+    "paper_type": "system"
+  },
+  {
+    "title": "N-HiTS: Neural Hierarchical Interpolation for Time Series Forecasting",
+    "url": "https://arxiv.org/abs/2201.12886",
+    "year": 2023,
+    "authors": "Challu et al.",
+    "candidate_topic": "medical-time-series",
+    "paper_type": "system"
+  },
+  {
+    "title": "Shape and Time Distortion Loss for Training Deep Time Series Forecasting Models",
+    "url": "https://arxiv.org/abs/1909.09020",
+    "year": 2019,
+    "authors": "Le Guen and Thome",
+    "candidate_topic": "medical-time-series",
+    "paper_type": "system"
+  },
+  {
+    "title": "Chronos: Learning the Language of Time Series",
+    "url": "https://arxiv.org/abs/2403.07815",
+    "year": 2024,
+    "authors": "Ansari et al.",
+    "candidate_topic": "medical-time-series",
+    "paper_type": "system"
+  },
+  {
+    "title": "Unified Training of Universal Time Series Forecasting Transformers",
+    "url": "https://arxiv.org/abs/2402.02592",
+    "year": 2024,
+    "authors": "Woo et al.",
+    "candidate_topic": "medical-time-series",
+    "paper_type": "system"
+  }
+]

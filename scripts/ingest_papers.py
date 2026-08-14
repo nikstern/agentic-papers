@@ -35,6 +35,7 @@ REQUIRED_COLUMNS = [
 
 ALLOWED_TOPICS = {
     "llm-multi-agent-systems": "LLM-Multi-Agent-Systems.md",
+    "multi-agent-foundations": "Multi-Agent-Foundations.md",
     "agent-evaluation": "Agent-Evaluation.md",
     "agent-harnesses": "Agent-Harnesses.md",
     "task-allocation": "Task-Allocation.md",
@@ -43,6 +44,7 @@ ALLOWED_TOPICS = {
     "hallucination-factuality": "Hallucination-Factuality.md",
     "software-agents": "Software-Agents.md",
     "memory-context": "Memory-Context.md",
+    "medical-time-series": "Medical-Time-Series.md",
 }
 
 ALLOWED_TYPES = {"survey", "benchmark", "system", "position", "application"}

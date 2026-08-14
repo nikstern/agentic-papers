@@ -32,6 +32,7 @@ REQUIRED_INPUT_FIELDS = [
 ]
 ALLOWED_TOPICS = {
     "llm-multi-agent-systems",
+    "multi-agent-foundations",
     "agent-evaluation",
     "agent-harnesses",
     "task-allocation",
@@ -40,6 +41,7 @@ ALLOWED_TOPICS = {
     "hallucination-factuality",
     "software-agents",
     "memory-context",
+    "medical-time-series",
 }
 ALLOWED_TYPES = {"survey", "benchmark", "system", "position", "application"}
 

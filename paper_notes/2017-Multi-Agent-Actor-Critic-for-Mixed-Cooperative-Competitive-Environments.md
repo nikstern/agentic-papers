@@ -1,0 +1,74 @@
+---
+paper_id: 122
+title: "Multi-Agent Actor-Critic for Mixed Cooperative-Competitive Environments"
+year: 2017
+authors: "Lowe et al."
+url: "https://arxiv.org/abs/1706.02275"
+paper_type: "system"
+primary_topic: "multi-agent-foundations"
+secondary_topics: []
+status: "ingested"
+priority: "0"
+last_read: ""
+enrichment_status: "enriched"
+tags:
+  - "papers"
+  - "multi-agent-foundations"
+evaluates:
+  - "centralized training with decentralized execution"
+  - "multi-agent non-stationarity"
+  - "cooperative and competitive coordination"
+  - "learned communication"
+  - "policy robustness"
+builds_on: []
+compares_to: []
+builds_on_unresolved:
+  - "Deep Deterministic Policy Gradient"
+  - "partially observable Markov games"
+compares_to_unresolved:
+  - "DDPG"
+  - "DQN"
+  - "TRPO"
+  - "independent actor-critic"
+relations: []
+source: "alphaxiv-mcp"
+---
+<!-- GENERATED:START -->
+# Summary
+MADDPG adapts actor-critic learning to mixed cooperative-competitive multi-agent environments by training decentralized actors with centralized critics that can observe the actions and observations of other agents.
+
+# Why It Matters
+It is a foundational systems paper for non-stationarity, partner modeling, and centralized-training/decentralized-execution tradeoffs that recur in modern LLM-agent orchestration.
+
+# Method / Setup
+The paper formulates partially observable Markov games, introduces a centralized critic for each agent while retaining local actors at execution time, adds online approximations of other agents' policies and policy ensembles, and evaluates on cooperative communication, navigation, deception, keep-away, predator-prey, and covert-communication tasks in the multi-agent particle environment.
+
+# Key Claims
+- Independent reinforcement learners face non-stationarity because every other agent's changing policy alters the effective environment.
+- A centralized critic conditioned on all agents' observations and actions can stabilize training while preserving decentralized execution.
+- MADDPG outperforms decentralized DDPG and other standard reinforcement-learning baselines across cooperative and competitive coordination tasks.
+- Training against policy ensembles improves robustness to changes in collaborator and competitor behavior.
+
+# Limitations
+- Centralized critic inputs grow with the number of agents, limiting scalability.
+- Experiments use small simulated particle environments rather than open-world or human-partner settings.
+- The method assumes access during training to joint information or sufficiently accurate models of other agents.
+- The results concern learned control policies and do not directly establish that the same algorithm should train LLM-agent teams.
+
+# Connections
+- [[Multi-Agent-Foundations]]
+- `evaluates` centralized training with decentralized execution
+- `evaluates` multi-agent non-stationarity
+- `evaluates` cooperative and competitive coordination
+- `evaluates` learned communication
+- `evaluates` policy robustness
+- `builds_on_unresolved` Deep Deterministic Policy Gradient
+- `builds_on_unresolved` partially observable Markov games
+- `compares_to_unresolved` DDPG
+- `compares_to_unresolved` DQN
+- `compares_to_unresolved` TRPO
+- `compares_to_unresolved` independent actor-critic
+<!-- GENERATED:END -->
+
+## My Notes
+

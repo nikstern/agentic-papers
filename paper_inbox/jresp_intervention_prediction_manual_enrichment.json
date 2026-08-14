@@ -1,0 +1,178 @@
+[
+  {
+    "paper_id": 137,
+    "summary": "This retrospective cohort study develops an ensemble machine-learning model that predicts delivery of life-saving interventions from continuous physiological waveform features and vital-sign patterns recorded during prehospital critical-care transport of trauma patients.",
+    "why_it_matters": "It is the closest published analogue to the proposed JRESP task: forecasting actionable trauma interventions from already-captured continuous physiology with an explicit prediction lead time.",
+    "method_setup": "The study includes 2,809 trauma patients and 15,088 two-minute epochs from a regional critical-care air transport system. Models use physiological features from preceding epochs to predict an LSI in a subsequent epoch, with analyses extending prediction up to 15 minutes before intervention and separating LSI subcategories.",
+    "key_claims": [
+      "The overall LSI model achieved AUROC 0.810 with 0.960 specificity but only 0.268 sensitivity at the reported operating point.",
+      "Performance was similar or better for several intervention subcategories and remained useful when predicting first intervention events and at longer lead times.",
+      "Continuous physiological features can support prehospital trauma triage, but performance depends strongly on the selected alert threshold."
+    ],
+    "limitations": [
+      "The study is retrospective and comes from one critical-care transport system, so deployment and cross-site generalization remain untested.",
+      "Only 6% of epochs contained an LSI, making AUROC insufficient without precision-recall and operating-point analysis.",
+      "The reported high-specificity operating point has low sensitivity, which would miss many intervention events.",
+      "Intervention delivery reflects both patient physiology and clinician behavior and is not a pure latent-state label."
+    ],
+    "evaluates": [
+      "life-saving intervention prediction from continuous prehospital physiology",
+      "lead-time sensitivity of trauma intervention alerts",
+      "intervention-specific trauma triage models"
+    ],
+    "builds_on_unresolved": [],
+    "compares_to_unresolved": []
+  },
+  {
+    "paper_id": 138,
+    "summary": "This study compares models built from continuous vital-sign trajectories with models using initial vital signs, venous lactate, and other laboratory measurements for predicting life-saving interventions and critical-care needs after traumatic injury.",
+    "why_it_matters": "It directly tests the premise that vital-sign history contains predictive information beyond a single current measurement, providing a clinically relevant baseline for measuring Toto's incremental value.",
+    "method_setup": "A preplanned secondary analysis uses a prospectively enrolled aeromedical trauma cohort. Continuous vital signs and portable laboratory measurements are modeled with regularized gradient boosting and 10-fold cross-validation; 166 of 300 patients have complete vital-sign and laboratory data.",
+    "key_claims": [
+      "Continuous vital-sign models outperform models based only on initial vital-sign measurements for predicting LSI receipt and critical-care requirements.",
+      "Noninvasive continuous-vital-sign models show performance comparable to laboratory-only models for several outcomes.",
+      "Temporal summaries of routine physiology may provide useful prognostic information in resource-constrained transport settings."
+    ],
+    "limitations": [
+      "The complete-case analysis includes only 166 patients, creating substantial uncertainty and possible selection bias.",
+      "The study uses cross-validation within a single aeromedical cohort rather than temporal or external validation.",
+      "Gradient-boosted aggregate features do not establish that explicit future-trajectory forecasting improves intervention prediction."
+    ],
+    "evaluates": [
+      "continuous versus initial vital signs for trauma outcome prediction",
+      "life-saving intervention prediction",
+      "continuous physiology versus lactate and laboratory predictors"
+    ],
+    "builds_on_unresolved": [],
+    "compares_to_unresolved": []
+  },
+  {
+    "paper_id": 139,
+    "summary": "This study assesses whether simple manually obtained prehospital observations can predict the need for life-saving interventions as effectively as measurements requiring automated monitoring equipment.",
+    "why_it_matters": "It establishes a demanding low-complexity baseline: a sophisticated temporal model should demonstrate added value over pulse character, Glasgow Coma Scale components, thresholds, and simple regression.",
+    "method_setup": "Investigators analyze 381 helicopter-transport trauma patients after excluding severe head injury and incomplete records. Three nested feature groups, from manual examination through automated blood pressure, heart rate, end-tidal carbon dioxide, respiratory rate, and oxygen saturation, are compared using multivariable logistic regression.",
+    "key_claims": [
+      "Radial pulse character and verbal and motor Glasgow Coma Scale components predicted prehospital LSI need with a reported ROC area of 0.97.",
+      "Adding automated-monitor measurements did not improve the reported ROC area in this selected cohort.",
+      "Rapid manual assessment may be sufficient for effective triage in some non-head-injured trauma populations."
+    ],
+    "limitations": [
+      "The cohort is small, historical, and excludes severe head injury and incomplete records, limiting generalizability.",
+      "The analysis does not exploit longitudinal vital-sign trajectories or report modern calibration and precision-recall metrics.",
+      "The very high discrimination may partly reflect cohort selection and contemporaneous intervention practices."
+    ],
+    "evaluates": [
+      "manual versus automated vital-sign predictors of life-saving intervention",
+      "prehospital trauma triage",
+      "simple logistic-regression baselines"
+    ],
+    "builds_on_unresolved": [],
+    "compares_to_unresolved": []
+  },
+  {
+    "paper_id": 140,
+    "summary": "This prospective observational trauma study evaluates whether combining pulse character with a continuously derived compensatory reserve measurement improves prediction of transfusion and other life-saving interventions.",
+    "why_it_matters": "It demonstrates a useful experiment pattern for JRESP: test whether a learned temporal physiological representation adds incremental predictive value beyond a simple clinical state indicator.",
+    "method_setup": "Continuous compensatory reserve measurements are collected after arrival for 300 level-I trauma-center patients. A field systolic blood pressure below 100 mmHg serves as a surrogate for abnormal pulse character, and a compensatory reserve threshold below 60% marks physiological compromise. Individual and combined measures are evaluated against transfusion and a composite LSI outcome.",
+    "key_claims": [
+      "Combining compensatory reserve with pulse character improves prediction of LSI, transfusion, and the composite outcome compared with either measure alone.",
+      "Continuously derived physiological state can complement simple field assessments for recognizing decompensation risk.",
+      "Incremental-value analysis is more clinically informative than evaluating a temporal feature in isolation."
+    ],
+    "limitations": [
+      "The study evaluates a specific waveform-derived measurement and fixed thresholds rather than a general multivariate forecasting model.",
+      "It is a single-center observational cohort with limited evidence of external generalization.",
+      "The composite intervention label combines clinically heterogeneous actions."
+    ],
+    "evaluates": [
+      "incremental LSI prediction from continuous compensatory reserve",
+      "transfusion prediction after trauma",
+      "combined temporal and simple clinical predictors"
+    ],
+    "builds_on_unresolved": [
+      "Manual Vital Signs Reliably Predict Need for Life-Saving Interventions in Trauma Patients"
+    ],
+    "compares_to_unresolved": [
+      "pulse character alone",
+      "compensatory reserve measurement alone"
+    ]
+  },
+  {
+    "paper_id": 141,
+    "summary": "ShockMatrix develops an XGBoost decision-support model from prehospital variables to predict need for hemorrhage resuscitation and then pilots real-time predictor collection and clinician-facing predictions in four trauma centers.",
+    "why_it_matters": "It connects retrospective prediction to workflow feasibility and uses a recall-weighted metric appropriate to high-cost missed interventions, making it a strong translational comparator for the JRESP proposal.",
+    "method_setup": "Model development uses 28,614 registry patients, including 3,249 positive hemorrhage-resuscitation cases, and compares several models and imputation methods with RED FLAG and ABC scores. A nine-variable XGBoost model is evaluated by F4 score; a subsequent three-month pilot collects predictions through a smartphone app and compares them with trauma-leader judgment.",
+    "key_claims": [
+      "The best nine-variable XGBoost model achieved an F4 score of 0.76 with a 95% interval of 0.73 to 0.78.",
+      "Threshold adjustment could reach approximately 0.90 recall while retaining precision above 0.25 in validation analyses.",
+      "Real-time collection was feasible without reported workflow disruption, and model likelihood ratios were comparable to clinicians in the small pilot."
+    ],
+    "limitations": [
+      "The deployment pilot included only 139 patients and 22 outcome-positive cases.",
+      "The model uses a small structured feature set rather than continuous time-series forecasting.",
+      "Feasibility and clinician comparison do not establish improved patient outcomes."
+    ],
+    "evaluates": [
+      "need-for-hemorrhage-resuscitation prediction",
+      "recall-weighted trauma triage evaluation",
+      "real-time clinical workflow feasibility"
+    ],
+    "builds_on_unresolved": [],
+    "compares_to_unresolved": [
+      "RED FLAG score",
+      "Assessment of Blood Consumption score",
+      "trauma leader clinical judgment"
+    ]
+  },
+  {
+    "paper_id": 144,
+    "summary": "DETERIO is a deep-learning system for predicting a consensus-defined composite of adult physiological deterioration in emergency-department and inpatient populations, formulated as a state value-estimation problem.",
+    "why_it_matters": "Its temporal validation and fixed-false-alarm comparison illustrate the evaluation standard needed to claim that Toto improves actionable deterioration prediction rather than only average discrimination.",
+    "method_setup": "The derivation data contain 330,729 patients from the inpatient and emergency departments of two hospitals in one health system, with a separate temporal validation cohort of 65,898 patients. DETERIO predicts Adult Inpatient Decompensation Event criteria up to 12 hours before the event and is compared with the Epic Deterioration Index.",
+    "key_claims": [
+      "Temporal-validation AUROC was 0.775 for inpatients and 0.856 for emergency-department patients.",
+      "For inpatient temporal validation, DETERIO exceeded the Epic Deterioration Index and achieved higher sensitivity at a comparable false-alarm rate.",
+      "A value-estimation formulation can provide risk trajectories, confidence, and explanations for deterioration-oriented triage."
+    ],
+    "limitations": [
+      "The evaluation remains retrospective and is confined to one health system despite including two hospitals.",
+      "The composite deterioration endpoint groups heterogeneous clinical events.",
+      "Prospective workflow impact, external transportability, and patient benefit were not established."
+    ],
+    "evaluates": [
+      "adult physiological deterioration prediction",
+      "temporal validation of clinical early warning",
+      "sensitivity at comparable false-alarm rate"
+    ],
+    "builds_on_unresolved": [],
+    "compares_to_unresolved": [
+      "Epic Deterioration Index"
+    ]
+  },
+  {
+    "paper_id": 145,
+    "summary": "This paper proposes sequential multi-dimensional self-supervised learning for clinical trajectories that combine structured labs and vital signs with sequences of high-dimensional physiological measurements such as ECGs.",
+    "why_it_matters": "It supports testing Toto not only as a forecaster but also as a pretrained representation model whose embeddings may improve intervention or deterioration classification.",
+    "method_setup": "The method applies self-supervised losses at both the full-sequence level and the level of individual high-dimensional observations. It is evaluated on two real-world clinical datasets containing structured clinical time series and high-frequency ECG information, using both contrastive and non-contrastive objectives before downstream fine-tuning.",
+    "key_claims": [
+      "Joint sequence-level and component-level pretraining improves downstream clinical prediction over the evaluated baselines on both datasets.",
+      "The framework can be paired with different self-supervised objectives, including SimCLR-style contrastive learning and VICReg-style non-contrastive learning.",
+      "Modeling multiple temporal scales and modalities can produce more useful clinical representations than unimodal pretraining."
+    ],
+    "limitations": [
+      "The experiments focus on multimodal trajectories that include high-frequency ECG, while JRESP may initially use only structured vital signs.",
+      "Improved downstream benchmark performance does not establish intervention lead-time benefit or clinical deployment utility.",
+      "The method does not directly compare forecast-assisted classification with a direct classifier under identical inputs."
+    ],
+    "evaluates": [
+      "self-supervised clinical time-series representation learning",
+      "downstream fine-tuning from physiological pretraining",
+      "multimodal sequence and component-level objectives"
+    ],
+    "builds_on_unresolved": [],
+    "compares_to_unresolved": [
+      "SimCLR",
+      "VICReg"
+    ]
+  }
+]
